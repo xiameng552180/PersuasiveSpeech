@@ -10,10 +10,15 @@
             <input type="password" placeholder="Enter Password" name="psw" v-model="password" v-on:keyup.enter="onEnter" required>
             <button type="submit" v-on:click="login">Login</button>
         </div>
+        <div class="content"
+        id="LonginViewSVG"
+        style = "height: 600px; width: 800px">
+        </div>
     </div>
 </template>
 
 <script>
+import * as d3 from "d3";
 // import NetService from '../../services/net-service';
 // import DataService from '../../services/data-service';
 
@@ -21,15 +26,54 @@ export default {
     name: 'loginView',
     data() {
         return {
+            svg: null,
+            width: null,
+            height: null,
             username: null,
             password: null,
             errorMessage: null,
         };
     },
     mounted() {
+    this.initialize();
+    this.draw(this.svg);
+
     },
     methods: {
-        login() {
+    draw(svgNode){
+
+    svgNode
+        .append("line")
+        .attr("x1", 10)
+        .attr("y1", 0)
+        .attr("x2", 10)
+        .attr("y2", 1200)
+        .style("stroke", "black")
+        .style("stroke-width", "2px");
+
+    },
+
+    initialize() {
+      this.width = d3
+        .select("#LonginViewSVG")
+        .node()
+        .getBoundingClientRect().width;
+
+      this.height =
+        d3
+          .select("#LonginViewSVG")
+          .node()
+          .getBoundingClientRect().height;
+
+      this.svg = d3
+        .select("#LonginViewSVG")
+        .append("svg")
+        .attr("class", "d3SVG")
+        .attr("width", this.width)
+        .attr("height", this.height);
+    },
+
+    login() {
         },
 
         /* eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }] */
