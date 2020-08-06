@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "^4.5.1",
+    "bootstrap-vue": "^2.16.0",
     "d3": "^4.9.1",
     "d3-scale-chromatic": "^1.1.1",
     "d3-tip": "^0.7.1",
@@ -27,7 +28,7 @@
     "tether": "^1.4.0",
     "tsne-js": "^1.0.3",
     "underscore": "^1.8.3",
-    "vue": "^2.1.0",
+    "vue": "^2.6.11",
     "vue-awesome": "^2.1.0",
     "vue-material": "^0.5.2",
     "worker": "^0.2.1",
