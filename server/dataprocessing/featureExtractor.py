@@ -28,8 +28,21 @@ def find_sentence_errors(texts):
     errors_num = len(matches)
     # correct errors
     correct_texts = language_check.correct(texts, matches)
+    
+    # print(matches)
+    detailed = []
+    for m in matches:
+        detailed.append({
+            "category": m.category,
+            "contextoffset": m.contextoffset,
+            "errorlength": m.errorlength,
+            "message": m.msg,
+            "replacements":m.replacements,
+        })
+        # print(m.contextoffset, m.errorlength, m.category ,m.msg, m.replacements, m.locqualityissuetype)
+    
+    return [errors_num, correct_texts, detailed]
 
-    return [errors_num, correct_texts, matches]
 
 #### sentence concreteness calculation
 
@@ -64,7 +77,7 @@ def get_data(input_dir, outputdir):
                     # step1: eloquence score calculation
                     cContent = rcontent["content"]
                     errors = find_sentence_errors(cContent)
-                    # rcontent["elo_info"] = errors
+                    rcontent["elo_info"] = errors
                     rcontent["eloquence"] = errors[0]
                     # if errors[0] > 0:
                     #     rcontent["eloquence"] = errors[0]
