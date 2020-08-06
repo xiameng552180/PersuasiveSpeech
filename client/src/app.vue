@@ -68,7 +68,9 @@
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Compare View
           </h5>
-          <div class="card-body"></div>
+          <div class="card-body">
+            <compare-view></compare-view>
+          </div>
         </div>
       </div>
     </div>
@@ -78,8 +80,11 @@
 <script>
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import loginView from "./components/login/loginView";
-import inputView from "./components/login/inputView";
+import loginView from "./components/loginView";
+import SelectView from "./components/SelectView";
+import CompareView from "./components/CompareView";
+import ExampleView from "./components/ExampleView";
+import InputView from "./components/InputView";
 
 // import DataService from './services/data-service';
 // import PipeService from './services/pipe-service';
@@ -88,6 +93,10 @@ export default {
   name: "App",
   components: {
     loginView,
+    SelectView,
+    CompareView,
+    ExampleView,
+    InputView,
   },
   data() {
     return {
