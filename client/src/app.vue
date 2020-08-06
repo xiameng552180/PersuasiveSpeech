@@ -125,25 +125,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.window {
-  margin: 8px 4px 0px 4px;
-  padding: 0px 0px 0px 0px;
-  box-shadow: 0px 1px 1px #666;
-  background-color: #a9cefc4b;
-  border-color: #ffffff;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 2px;
-}
-
-.window .title {
-  padding: 1px 2px 1px 2px;
-  font-size: 16px;
-  color: #000;
-  border-color: rgb(250, 249, 249);
-  border-style: solid;
-  font-weight: 600;
-  border-width: 0px 0px 1px 0px;
-}
-</style>
+<style scoped></style>

@@ -1,8 +1,14 @@
 <template>
-  <div
-    id="SelectViewSVG"
-    style="height: 300px; width: 50%; overflow-x: hidden;"
-  ></div>
+  <div class="row">
+    <div
+      id="PieChartSVG"
+      style="height: 300px; width: 50%; overflow-x: hidden;"
+    ></div>
+    <div
+      id="BarChartSVG"
+      style="height: 300px; width: 50%; overflow-x: hidden;"
+    ></div>
+  </div>
 </template>
 
 <script>
@@ -12,30 +18,47 @@ export default {
   name: "SelectView",
   data() {
     svg: null;
+    svg1: null;
   },
   mounted() {
     this.initialize();
-    this.draw(this.svg);
+    this.drawPie(this.svg);
+    this.drawBar(this.svg1);
   },
   methods: {
     initialize() {
       this.width = d3
-        .select("#SelectViewSVG")
+        .select("#PieChartSVG")
         .node()
         .getBoundingClientRect().width;
       this.height = d3
-        .select("#SelectViewSVG")
+        .select("#PieChartSVG")
         .node()
         .getBoundingClientRect().height;
       this.svg = d3
-        .select("#SelectViewSVG")
+        .select("#PieChartSVG")
         .append("svg")
         .attr("class", "d3SVG")
         .attr("width", this.width)
         .attr("height", this.height);
+
+      this.width1 = d3
+        .select("#BarChartSVG")
+        .node()
+        .getBoundingClientRect().width;
+      this.height1 = d3
+        .select("#BarChartSVG")
+        .node()
+        .getBoundingClientRect().height;
+      this.svg1 = d3
+        .select("#BarChartSVG")
+        .append("svg")
+        .attr("class", "d3SVG")
+        .attr("width", this.width1)
+        .attr("height", this.height1);
     },
 
-    draw(svgNode) {
+    drawPie(svgNode) {
       var width = 300,
         height = 200;
       var svg = svgNode
@@ -126,6 +149,104 @@ export default {
           return midangle < Math.PI ? "start" : "end";
         });
     },
+
+    drawBar(svgNode) {
+      var width = 300,
+        height = 200;
+      var svg = svgNode.append("g");
+
+      //data
+      var data = [
+        { feature: "Logos", label: -33 },
+        { feature: "Pathos", label: -12 },
+        { feature: "Ethos", label: -41 },
+        { feature: "Evidence", label: 16 },
+        { feature: "Relevance", label: 59 },
+        { feature: "Others", label: 38 },
+      ];
+
+      data = data.sort((a, b) => d3.descending(a.label, b.label));
+      console.log(data);
+
+      // set the ranges
+      var y = d3.scaleBand().range([height, 0]).padding(0.1);
+
+      var x = d3.scaleLinear().range([0, width]);
+
+      // Scale the range of the data in the domains
+      x.domain([
+        -50,
+        d3.max(data, function (d) {
+          return d.label;
+        }),
+      ]);
+      y.domain(
+        data.map(function (d) {
+          return d.feature;
+        })
+      );
+      //y.domain([0, d3.max(data, function(d) { return d.label; })]);
+
+      // append the rectangles for the bar chart
+      svg
+        .selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        // .attr("class", (d) => {
+        //   return "bar-" + (d.label < 0 ? "neg" : "pos");
+        // })
+        .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
+        .attr("width", (d) => {
+          return Math.abs(x(d.label) - x(0));
+        })
+        .attr("x", (d) => {
+          return x(Math.min(0, d.label));
+        })
+        .attr("y", function (d) {
+          return y(d.feature);
+        })
+        .attr("height", y.bandwidth());
+
+      svg
+        .selectAll("text")
+        .data(data)
+        .enter()
+        .append("text")
+        .text((d) => d.label)
+        .attr("x", (d) => x(d.label))
+        .attr("y", function (d) {
+          return y(d.feature) + y.bandwidth() / 2;
+        })
+        .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
+        .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
+
+      // add the x Axis
+      svg
+        .append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+      // add the y Axis
+      svg
+        .append("g")
+        .attr("transform", "translate(" + x(0) + ",0)")
+        .call(d3.axisLeft(y));
+    },
   },
 };
 </script>
+
+<style scoped>
+.bar-pos {
+  fill: lightblue;
+}
+.bar-neg {
+  fill: rgb(240, 162, 162);
+}
+text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2em;
+}
+</style>
