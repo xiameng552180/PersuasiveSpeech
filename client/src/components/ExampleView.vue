@@ -57,14 +57,15 @@
 </template>
 
 <script>
-import json from "../../../server/dataset/posts/dating-16.json";
+//import json from "../../../server/dataset/posts_new/dating-16_new.json";
+import json from "../dating-16_new.json"
 export default {
   name: "SelectView",
   data() {
     return {
       opacity: { opacity: 0.5 },
-      name: json["Dating-16"][0]["reply-info"][0]["replyer_name"],
-      items: json["Dating-16"][0]["reply-info"][0]["reply_contents"],
+      name: json["dating-16"][0]["reply-info"][0]["replyer_name"],
+      items: json["dating-16"][0]["reply-info"][0]["reply_contents"],
     };
   },
   mounted() {
