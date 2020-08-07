@@ -1,13 +1,13 @@
 <template>
   <div class="row">
-    <div
-      id="PieChartSVG"
-      style="height: 300px; width: 50%; overflow-x: hidden;"
-    ></div>
-    <div
-      id="BarChartSVG"
-      style="height: 300px; width: 50%; overflow-x: hidden;"
-    ></div>
+    <!-- <div id="PieChartSVG" style="height: 300px; width: 50%; overflow-x: hidden;"></div> -->
+    <!-- <div id="chartholder"></div> -->
+    <!-- <br />
+    <div>
+      Value:
+      <span id="message"></span>
+    </div>-->
+    <div id="BarChartSVG" style="height: 300px; width: 50%; overflow-x: hidden;"></div>
   </div>
 </template>
 
@@ -15,32 +15,98 @@
 import * as d3 from "d3";
 
 export default {
-  name: "SelectView",
+  name: "CompareView",
   data() {
     svg: null;
     svg1: null;
   },
   mounted() {
     this.initialize();
-    this.drawPie(this.svg);
+    // this.drawPie(this.svg);
     this.drawBar(this.svg1);
+    // this.drawRose();
   },
   methods: {
+    /*
+    drawRose() {
+      d3.json("../ideal.json").then(function (json) {
+        console.log("json");
+        var colors = ["lightblue", "orange"];
+        var chart = d3.ez.chart.roseChart().colors(colors);
+        var legend = d3.ez.component.legend().title("Causes of Mortality");
+        var title = d3.ez.component
+          .title()
+          .mainText(
+            "Diagram of the Causes of Mortality in the Army in The East"
+          )
+          .subText("April 1854 to March 1855");
+
+        // Convert json to d3-ez data format
+
+        var data = d3
+          .nest()
+          .key(function (d) {
+            return d.feature;
+          })
+          .entries(json)
+          .map(function (obj) {
+            console.log(obj);
+
+            var rec = obj.values[0];
+            var scalar = 0.3;
+
+            var values = {
+              key: rec.feature,
+              values: [
+                {
+                  key: "Example",
+                  value: Math.sqrt(rec.example * scalar) / Math.PI,
+                },
+                {
+                  key: "Input",
+                  value: Math.sqrt(rec.input * scalar) / Math.PI,
+                },
+              ],
+            };
+
+            console.log(values);
+            return values;
+          });
+
+        console.log(data);
+
+        // Create chart base
+        var myChart = d3.ez
+          .base()
+          .width(700)
+          .height(400)
+          .chart(chart)
+          .legend(legend)
+          //   .title(title)
+          .on("customValueMouseOver", function (d) {
+            d3.select("#message").text(d.value);
+          });
+
+        // Add to page
+        d3.select("#chartholder").datum(data).call(myChart);
+      });
+    },
+*/
     initialize() {
-      this.width = d3
-        .select("#PieChartSVG")
-        .node()
-        .getBoundingClientRect().width;
-      this.height = d3
-        .select("#PieChartSVG")
-        .node()
-        .getBoundingClientRect().height;
-      this.svg = d3
-        .select("#PieChartSVG")
-        .append("svg")
-        .attr("class", "d3SVG")
-        .attr("width", this.width)
-        .attr("height", this.height);
+      // this.width = d3
+      //   .select("#PieChartSVG")
+      //   .node()
+      //   .getBoundingClientRect().width;
+      // this.height = d3
+      //   .select("#PieChartSVG")
+      //   .node()
+      //   .getBoundingClientRect().height;
+      // this.svg = d3
+      //   .select("#PieChartSVG")
+      //   .append("svg")
+      //   .attr("class", "d3SVG")
+      //   .attr("width", this.width)
+      //   .attr("height", this.height);
 
       this.width1 = d3
         .select("#BarChartSVG")

@@ -1,0 +1,32 @@
+[
+  {
+    "feature": "logos",
+    "input": 10,
+    "example": 12
+  },
+  {
+    "feature": "pathos",
+    "input": 8,
+    "example": 10
+  },
+  {
+    "feature": "ethos",
+    "input": 0,
+    "example": 1
+  },
+  {
+    "feature": "evidence",
+    "input": 7,
+    "example": 12
+  },
+  {
+    "feature": "relavence",
+    "input": 5,
+    "example": 3
+  },
+  {
+    "feature": "others",
+    "input": 2,
+    "example": 4
+  }
+]

@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-lg-5">
-        <div id="loginView" class="card border-light ml-3 shadow-sm">
+        <div id="InputView" class="card border-light ml-3 shadow-sm">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
           </h5>
@@ -11,37 +11,28 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">Input</span>
               </div>
-              <textarea
-                class="form-control"
-                aria-label="With textarea"
-              ></textarea>
+              <textarea class="form-control" aria-label="With textarea"></textarea>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-lg-7">
-        <div id="loginView" class="card border-light mr-3 shadow-sm">
+        <div id="ExampleView" class="card border-light mr-3 shadow-sm">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
           </h5>
           <div class="card-body">
             <ul class="list-group">
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
+              <li class="list-group-item d-flex justify-content-between align-items-center">
                 Example 1
                 <span class="badge badge-primary badge-pill">14</span>
               </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
+              <li class="list-group-item d-flex justify-content-between align-items-center">
                 Example 2
                 <span class="badge badge-primary badge-pill">2</span>
               </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
+              <li class="list-group-item d-flex justify-content-between align-items-center">
                 Example 3
                 <span class="badge badge-primary badge-pill">1</span>
               </li>
@@ -53,18 +44,18 @@
 
     <div class="row mt-5">
       <div class="col-lg-5">
-        <div id="loginView" class="card border-light ml-3 shadow-sm">
+        <div id="SelectView" class="card border-light ml-3 shadow-sm">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Select View
           </h5>
           <div class="card-body">
-            <p class="card-text">Please enter ...</p>
+            <select-view></select-view>
           </div>
         </div>
       </div>
 
       <div class="col-lg-7">
-        <div id="loginView" class="card border-light mr-3 shadow-sm">
+        <div id="CompareView" class="card border-light mr-3 shadow-sm">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Compare View
           </h5>
