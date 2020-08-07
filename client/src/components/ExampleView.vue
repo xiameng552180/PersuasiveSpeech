@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import json from "../dating-16.json";
+import json from "../../../server/dataset/posts/dating-16.json";
 export default {
   name: "SelectView",
   data() {
