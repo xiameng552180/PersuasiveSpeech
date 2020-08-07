@@ -30,9 +30,7 @@
                     "contextoffset": 0,
                     "errorlength": 4,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "Guys"
-                    ]
+                    "replacements": ["Guys"]
                   }
                 ]
               ]
@@ -74,9 +72,7 @@
                     "contextoffset": 3,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "doesn't"
-                    ]
+                    "replacements": ["doesn't"]
                   }
                 ]
               ]
@@ -135,9 +131,7 @@
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   }
                 ]
               ]
@@ -221,12 +215,7 @@
                     "contextoffset": 9,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "ally",
-                      "alley",
-                      "alloy",
-                      "allay"
-                    ]
+                    "replacements": ["ally", "alley", "alloy", "allay"]
                   }
                 ]
               ]
@@ -285,19 +274,14 @@
                     "contextoffset": 12,
                     "errorlength": 3,
                     "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "it's",
-                      "it is"
-                    ]
+                    "replacements": ["it's", "it is"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 33,
                     "errorlength": 2,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "I'm"
-                    ]
+                    "replacements": ["I'm"]
                   }
                 ]
               ]
