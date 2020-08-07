@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-lg-5">
-        <div id="InputView" class="card border-light ml-3 shadow-sm">
+        <div id="InputView" class="card border-light ml-3 shadow-sm" style="height:400px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
           </h5>
@@ -18,19 +18,41 @@
       </div>
 
       <div class="col-lg-7">
-        <div id="ExampleView" class="card border-light mr-3 shadow-sm">
+        <div id="ExampleView" class="card border-light mr-3 shadow-sm" style="height:400px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
           </h5>
-          <div class="card-body">
+          <div class="card-body overflow-auto">
             <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Example 1
-                <span class="badge badge-primary badge-pill">14</span>
+                <div class="row col-2">
+                  <span class="badge badge-primary m-1">L</span>
+                  <span class="badge badge-secondary m-1">P</span>
+                  <span class="badge badge-success m-1">Eth</span>
+                  <span class="badge badge-danger m-1">Ev</span>
+                  <span class="badge badge-info m-1">R</span>
+                </div>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Example 2
                 <span class="badge badge-primary badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Example 3
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Example 3
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Example 3
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Example 3
+                <span class="badge badge-primary badge-pill">1</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Example 3
