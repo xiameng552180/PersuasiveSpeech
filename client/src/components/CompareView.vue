@@ -9,6 +9,10 @@
 
 <script>
 import * as d3 from "d3";
+import NetService from "../services/net-service";
+import DataService from "../services/data-service";
+import PipeService from "../services/pipe-service";
+
 import json from "../ideal.json";
 import input from "../input.json";
 
@@ -27,16 +31,24 @@ export default {
         [355.8698, -196.94835],
         [164.89957, 282.22745],
         [-22.538868, 57.171097],
-        [268.002, 45.677574],
-        [-120.43425, 303.28888],
+        // [268.002, 45.677574],
+        // [-120.43425, 303.28888],
       ],
       margin: { top: 10, right: 30, bottom: 30, left: 30 },
+      examples: null,
+      ex_order: null,
     };
   },
   mounted() {
     this.initialize();
-    this.drawCircle(this.svg);
+    PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
+      this.ex_order = DataService.ex_order;
+      this.examples = DataService.examples;
+      this.drawCircle(this.svg);
+      console.log(this.examples);
+    });
     this.drawBar(this.svg1);
+
     // this.drawRose();
   },
   methods: {
@@ -95,15 +107,24 @@ export default {
         .attr("transform", "translate(30," + height + ")")
         .call(d3.axisBottom(xScale));
 
-      for (var i = 0; i < this.pos.length; i++) {
-        svgNode
-          .append("circle")
-          .attr("cx", xScale(this.pos[i][0]))
-          .attr("cy", yScale(this.pos[i][1]))
-          .attr("r", 10)
-          .style("opacity", 0.7)
-          .style("fill", "orange");
-      }
+      // for (var i = 0; i < this.pos.length; i++) {
+      var circles = d3
+        .selectAll("circle")
+        .data(this.examples)
+        .enter()
+        .append("circle")
+        .attr("class", "pie")
+        .attr("cx", (d, i) => xScale(this.pos[i][0]))
+        .attr("cy", (d, i) => yScale(this.pos[i][1]))
+        .attr("r", 10)
+        .style("opacity", 0.7)
+        .style("fill", "orange")
+        .on("click", (d, i) => {
+          // d3.select(this).style("stroke", "red");
+
+          DataService.ex_order = i;
+        });
+      // }
     },
 
     drawBar(svgNode) {
@@ -123,7 +144,6 @@ export default {
       ];
 
       data = data.sort((a, b) => d3.descending(a.label, b.label));
-      // console.log(data);
 
       // set the ranges
       var y = d3.scaleBand().range([height, 0]).padding(0.1);

@@ -61,28 +61,34 @@
 import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
-import json from "../../../server/dataset/posts_new/dating-16_new.json";
-// import json from "../dating-16_new.json";
+
 export default {
   name: "ExampleView",
   data() {
     return {
       opacity: { opacity: 0.5 },
-      name: json["dating-16"][0]["reply-info"][0]["replyer_name"],
-      items: json["dating-16"][0]["reply-info"][0]["reply_contents"],
+      name: null,
+      items: null,
       counter: null,
+      examples: null,
+      ex_order: null,
     };
   },
   mounted() {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
       this.counter = DataService.counter;
+      this.ex_order = DataService.ex_order;
+      this.examples = DataService.examples;
+      this.display();
     });
   },
   methods: {
-    initialize() {
-      //   console.log(json);
-      //   console.log(json["dating-16"][0]["reply-info"][0]["reply_contents"]);
+    initialize() {},
+    display() {
+      //   console.log(this.examples);
+      this.name = this.examples[this.ex_order]["replyer_name"];
+      this.items = this.examples[this.ex_order]["reply_contents"];
     },
   },
 };

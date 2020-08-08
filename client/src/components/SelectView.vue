@@ -66,7 +66,7 @@ export default {
       json19["dating-19"][0]["reply-info"].forEach((item) =>
         DataService.examples.push(item)
       );
-      console.log(DataService.examples);
+      //   console.log(DataService.examples);
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);

@@ -8,6 +8,7 @@ class Service {
     }
 
     this.counter = 0;
+    this.ex_order = 0;
     this.examples = [];
 
     return instance;
