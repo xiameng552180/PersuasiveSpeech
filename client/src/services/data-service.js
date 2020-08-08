@@ -2,26 +2,28 @@
 
 let instance = null;
 class Service {
-    constructor() {
-        if (!instance) {
-            instance = this;
-        }
-
-        return instance;
+  constructor() {
+    if (!instance) {
+      instance = this;
     }
 
-    getServerVideoUrl() {
-        return this.serverVideoUrl;
-    }
+    this.counter = 0;
+    this.examples = [];
 
-    setUserId(data) {
-        this.userId = data;
-    }
+    return instance;
+  }
 
-    getUserId() {
-        return this.userId;
-    }
+  getServerVideoUrl() {
+    return this.serverVideoUrl;
+  }
 
+  setUserId(data) {
+    this.userId = data;
+  }
+
+  getUserId() {
+    return this.userId;
+  }
 }
 
 const DataService = new Service();

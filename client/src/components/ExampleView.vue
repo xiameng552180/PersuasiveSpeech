@@ -1,5 +1,6 @@
 <template>
   <div class="card-body overflow-auto">
+    <p>Counter:{{counter}}</p>
     <p>Replyer name: {{name}}</p>
     <span>Calim type:</span>
     <span class="badge badge-claim m-1">interpretation</span>
@@ -57,24 +58,31 @@
 </template>
 
 <script>
-//import json from "../../../server/dataset/posts_new/dating-16_new.json";
-import json from "../dating-16_new.json"
+import NetService from "../services/net-service";
+import DataService from "../services/data-service";
+import PipeService from "../services/pipe-service";
+import json from "../../../server/dataset/posts_new/dating-16_new.json";
+// import json from "../dating-16_new.json";
 export default {
-  name: "SelectView",
+  name: "ExampleView",
   data() {
     return {
       opacity: { opacity: 0.5 },
       name: json["dating-16"][0]["reply-info"][0]["replyer_name"],
       items: json["dating-16"][0]["reply-info"][0]["reply_contents"],
+      counter: null,
     };
   },
   mounted() {
     this.initialize();
+    PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
+      this.counter = DataService.counter;
+    });
   },
   methods: {
     initialize() {
-      console.log(json);
-      console.log(json["Dating-16"][0]["reply-info"][0]["reply_contents"]);
+      //   console.log(json);
+      //   console.log(json["dating-16"][0]["reply-info"][0]["reply_contents"]);
     },
   },
 };

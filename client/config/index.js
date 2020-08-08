@@ -18,7 +18,7 @@ module.exports = {
   },
   dev: {
     env: require("./dev.env"),
-    port: 8084,
+    port: 8085,
     assetsSubDirectory: "static",
     assetsPublicPath: "/", // 不加点
     proxyTable: {
