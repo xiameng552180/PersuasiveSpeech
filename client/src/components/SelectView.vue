@@ -67,9 +67,9 @@ export default {
         DataService.examples.push(item)
       );
       //   console.log(DataService.examples);
+      PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
-      PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
     },
     addCounter: function (event) {
       DataService.counter += 1;

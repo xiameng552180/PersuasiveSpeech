@@ -61,9 +61,9 @@ import SelectView from "./components/SelectView";
 import CompareView from "./components/CompareView";
 import ExampleView from "./components/ExampleView";
 import InputView from "./components/InputView";
-
-// import DataService from './services/data-service';
-// import PipeService from './services/pipe-service';
+import NetService from "./services/net-service";
+import DataService from "./services/data-service";
+import PipeService from "./services/pipe-service";
 
 export default {
   name: "App",

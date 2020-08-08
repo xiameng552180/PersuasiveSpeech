@@ -31,8 +31,6 @@ export default {
         [355.8698, -196.94835],
         [164.89957, 282.22745],
         [-22.538868, 57.171097],
-        // [268.002, 45.677574],
-        // [-120.43425, 303.28888],
       ],
       margin: { top: 10, right: 30, bottom: 30, left: 30 },
       examples: null,
@@ -42,13 +40,13 @@ export default {
   mounted() {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
+      console.log("ok");
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.drawCircle(this.svg);
       console.log(this.examples);
+      this.drawBar(this.svg1);
     });
-    this.drawBar(this.svg1);
-
     // this.drawRose();
   },
   methods: {
