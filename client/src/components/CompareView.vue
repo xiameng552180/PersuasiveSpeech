@@ -39,14 +39,14 @@ export default {
   },
   mounted() {
     this.initialize();
-    PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
-      console.log("ok");
-      this.ex_order = DataService.ex_order;
-      this.examples = DataService.examples;
-      this.drawCircle(this.svg);
-      console.log(this.examples);
-      this.drawBar(this.svg1);
-    });
+    // PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
+    console.log("ok");
+    this.ex_order = DataService.ex_order;
+    this.examples = DataService.examples;
+    this.drawCircle(this.svg);
+    console.log(this.examples);
+    this.drawBar(this.svg1);
+    // });
     // this.drawRose();
   },
   methods: {
@@ -105,24 +105,27 @@ export default {
         .attr("transform", "translate(30," + height + ")")
         .call(d3.axisBottom(xScale));
 
-      // for (var i = 0; i < this.pos.length; i++) {
-      var circles = d3
-        .selectAll("circle")
-        .data(this.examples)
-        .enter()
-        .append("circle")
-        .attr("class", "pie")
-        .attr("cx", (d, i) => xScale(this.pos[i][0]))
-        .attr("cy", (d, i) => yScale(this.pos[i][1]))
-        .attr("r", 10)
-        .style("opacity", 0.7)
-        .style("fill", "orange")
-        .on("click", (d, i) => {
-          // d3.select(this).style("stroke", "red");
+      for (var i = 0; i < this.pos.length; i++) {
+        // var circles = d3
+        // .selectAll("circle")
+        // .data(this.examples)
+        // .enter()
+        svgNode
+          .append("circle")
+          .attr("class", "pie")
+          // .attr("cx", (d, i) => xScale(this.pos[i][0]))
+          // .attr("cy", (d, i) => yScale(this.pos[i][1]))
+          .attr("cx", () => xScale(this.pos[i][0]))
+          .attr("cy", () => yScale(this.pos[i][1]))
+          .attr("r", 10)
+          .style("opacity", 0.7)
+          .style("fill", "orange");
+        // .on("click", (d, i) => {
+        // d3.select(this).style("stroke", "red");
 
-          DataService.ex_order = i;
-        });
-      // }
+        // DataService.ex_order = i;
+        // });
+      }
     },
 
     drawBar(svgNode) {
