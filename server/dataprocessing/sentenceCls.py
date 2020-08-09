@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 import math
+from scipy import stats
 import torch
-
 import transformers as ppb # pytorch transformers
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
@@ -53,16 +53,19 @@ class ModelSelector(object):
             {"alpha": [math.pow(10, -i) for i in range(0,11)]}, # M-NB
             {}, # G-NB
             {"n_neighbors": [i for i in range(1,11)]}, # NN
-            {}, # adaboost tree
+            {"n_estimators": [10, 50, 100, 150, 200, 500, 1000], "learning_rate": [1, 1e-1, 1e-2, 1e-3, 1e-4]}, # adaboost tree
         ]
     def initialization(self):
         print("--- this is testing ---")
         digits = datasets.load_digits()
         self.X = digits.images.reshape((len(digits.images), -1))
         self.y = digits.target
+        # print(stats.describe(self.y))
+        # exit()
     
     def gridSearches(self):
         print("--- model hyper-parameter grid search ---")
+        clfs = []
         for modelid, model in enumerate(self.models):
             print(modelid, model, self.hyperparams[modelid])
             clf_para = self.hyperparams[modelid]
@@ -79,6 +82,8 @@ class ModelSelector(object):
             print()
             y_true, y_pred = self.y, clf.predict(self.X)
             print(classification_report(y_true, y_pred))
+            clfs.append(clf)
+        return clfs
             
         
 
