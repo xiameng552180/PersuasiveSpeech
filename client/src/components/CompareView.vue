@@ -39,14 +39,15 @@ export default {
   },
   mounted() {
     this.initialize();
-    // PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
-    console.log("ok");
+    console.log("---ok---before on");
+    PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
+    console.log("---ok---");
     this.ex_order = DataService.ex_order;
     this.examples = DataService.examples;
     this.drawCircle(this.svg);
     console.log(this.examples);
     this.drawBar(this.svg1);
-    // });
+    });
     // this.drawRose();
   },
   methods: {

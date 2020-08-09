@@ -68,13 +68,14 @@ export default {
       );
       //   console.log(DataService.examples);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-      PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-      PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+      // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+      // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
     },
     addCounter: function (event) {
       DataService.counter += 1;
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+      PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       console.log(this.counter);
     },
   },
