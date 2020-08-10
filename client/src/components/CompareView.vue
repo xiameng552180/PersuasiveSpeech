@@ -41,12 +41,12 @@ export default {
     this.initialize();
     console.log("---ok---before on");
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
-    console.log("---ok---");
-    this.ex_order = DataService.ex_order;
-    this.examples = DataService.examples;
-    this.drawCircle(this.svg);
-    console.log(this.examples);
-    this.drawBar(this.svg1);
+      console.log("---ok---");
+      this.ex_order = DataService.ex_order;
+      this.examples = DataService.examples;
+      this.svg1.selectAll("*").remove();
+      this.drawCircle(this.svg);
+      this.drawBar(this.svg1);
     });
     // this.drawRose();
   },
@@ -83,6 +83,7 @@ export default {
     drawCircle(svgNode) {
       var xdomain = this.pos.map((d) => d[0]),
         ydomain = this.pos.map((d) => d[1]),
+        rdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
         height = this.height - this.margin.bottom,
         width = this.width - this.margin.right;
 
@@ -96,65 +97,101 @@ export default {
         .domain(d3.extent(ydomain))
         .range([height, this.margin.top]);
 
-      svgNode
-        .append("g")
-        .attr("transform", "translate(" + this.margin.left + ")")
-        .call(d3.axisLeft(yScale));
+      var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([10, 20]);
 
-      svgNode
-        .append("g")
-        .attr("transform", "translate(30," + height + ")")
-        .call(d3.axisBottom(xScale));
+      // svgNode
+      //   .append("g")
+      //   .attr("transform", "translate(" + this.margin.left + ")")
+      //   .call(d3.axisLeft(yScale));
 
-      for (var i = 0; i < this.pos.length; i++) {
-        // var circles = d3
-        // .selectAll("circle")
-        // .data(this.examples)
-        // .enter()
-        svgNode
-          .append("circle")
-          .attr("class", "pie")
-          // .attr("cx", (d, i) => xScale(this.pos[i][0]))
-          // .attr("cy", (d, i) => yScale(this.pos[i][1]))
-          .attr("cx", () => xScale(this.pos[i][0]))
-          .attr("cy", () => yScale(this.pos[i][1]))
-          .attr("r", 10)
-          .style("opacity", 0.7)
-          .style("fill", "orange");
-        // .on("click", (d, i) => {
-        // d3.select(this).style("stroke", "red");
+      // svgNode
+      //   .append("g")
+      //   .attr("transform", "translate(30," + height + ")")
+      //   .call(d3.axisBottom(xScale));
 
-        // DataService.ex_order = i;
-        // });
-      }
+      var circles = svgNode
+        .selectAll("circle")
+        .data(this.examples)
+        .enter()
+        .append("circle")
+        .attr("class", "pie")
+        .attr("cx", (d, i) => xScale(this.pos[i][0]))
+        .attr("cy", (d, i) => yScale(this.pos[i][1]))
+        .attr("r", (d) => rScale(d["reply_delta_num"]))
+        .style("opacity", 0.7)
+        .style("fill", "orange")
+        .on("mouseover", (d, i) => {
+          d3.selectAll("circle")
+            .filter((circle, index) => i === index)
+            .style("fill", "red")
+            .attr("class", "highlightCircle");
+          // .classed("highlightCircle", true); ???
+        })
+        .on("mouseout", (d, i) => {
+          d3.selectAll(".highlightCircle")
+            .style("fill", "orange")
+            // .filter((circle, index) => i === index)
+            .classed("highlightCircle", false);
+        })
+        .on("click", (d, i) => {
+          DataService.ex_order = i;
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+        });
     },
 
     drawBar(svgNode) {
-      var width = 300,
-        height = 200;
+      var width = this.width1,
+        height = this.height1;
       var svg = svgNode.append("g");
 
-      //data
-      var data = [
-        { feature: "logos", label: 5 },
-        { feature: "pathos", label: -1 },
-        { feature: "ethos", label: 1 },
-        { feature: "evidence", label: 2 },
-        { feature: "relevance", label: 4 },
-        { feature: "concreteness", label: 0.04 },
-        { feature: "eloquence", label: -1 },
-      ];
+      var exampledata = this.examples[this.ex_order]["reply_contents"];
+      console.log(exampledata);
+      var examplesum = {
+        logos: 0,
+        pathos: 0,
+        ethos: 0,
+        evidence: 0,
+        relevance: 0,
+        concreteness: 0,
+        eloquence: 0,
+      };
+      exampledata.forEach((element) => {
+        examplesum["logos"] += parseInt(element["logos"]);
+        examplesum["pathos"] += parseInt(element["pathos"]);
+        examplesum["ethos"] += parseInt(element["ethos"]);
+        examplesum["evidence"] += parseInt(element["evidence"]);
+        examplesum["relevance"] += parseInt(element["relevance"]);
+        examplesum["concreteness"] += element["concreteness"];
+        examplesum["eloquence"] += element["eloquence"];
+      });
+      console.log(examplesum);
+
+      var data = input["input"].map((d) => {
+        console.log(examplesum[d.feature] - d.label);
+        return {
+          feature: d.feature,
+          label: examplesum[d.feature] - d.label,
+        };
+      });
+      console.log(data);
 
       data = data.sort((a, b) => d3.descending(a.label, b.label));
 
       // set the ranges
-      var y = d3.scaleBand().range([height, 0]).padding(0.1);
+      var y = d3
+        .scaleBand()
+        .range([height - 40, 40])
+        .padding(0.1);
 
-      var x = d3.scaleLinear().range([0, width]);
+      var x = d3.scaleLinear().range([40, width - 40]);
 
       // Scale the range of the data in the domains
       x.domain([
-        -50,
+        d3.min(data, function (d) {
+          return d.label;
+        }),
         d3.max(data, function (d) {
           return d.label;
         }),
@@ -164,7 +201,6 @@ export default {
           return d.feature;
         })
       );
-      //y.domain([0, d3.max(data, function(d) { return d.label; })]);
 
       // append the rectangles for the bar chart
       svg
@@ -203,7 +239,7 @@ export default {
       // add the x Axis
       svg
         .append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + (height - 40) + ")")
         .call(d3.axisBottom(x));
 
       // add the y Axis
@@ -284,15 +320,4 @@ export default {
 </script>
 
 <style scoped>
-.bar-pos {
-  fill: lightblue;
-}
-.bar-neg {
-  fill: rgb(240, 162, 162);
-}
-text {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 2em;
-}
 </style>

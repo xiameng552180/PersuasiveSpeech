@@ -1,6 +1,5 @@
 <template>
   <div class="card-body overflow-auto">
-    <p>Counter:{{counter}}</p>
     <p>Replyer name: {{name}}</p>
     <span>Calim type:</span>
     <span class="badge badge-claim m-1">interpretation</span>
@@ -77,7 +76,7 @@ export default {
   mounted() {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
-      this.counter = DataService.counter;
+      // this.counter = DataService.counter;
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.display();

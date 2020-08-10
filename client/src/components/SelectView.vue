@@ -28,7 +28,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary my-1" v-on:click="addCounter">Submit</button>
-    <p>Count: {{counter}}</p>
+    <!-- <p>Count: {{counter}}</p> -->
   </div>
 </template>
 
@@ -50,9 +50,9 @@ export default {
   },
   mounted() {
     this.addExamples();
-    PipeService.$on(PipeService.UPDATE_SELECTVIEW, () => {
-      this.counter = DataService.counter;
-    });
+    // PipeService.$on(PipeService.UPDATE_SELECTVIEW, () => {
+    //   this.counter = DataService.counter;
+    // });
   },
 
   methods: {
@@ -72,11 +72,11 @@ export default {
       // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
     },
     addCounter: function (event) {
-      DataService.counter += 1;
+      // DataService.counter += 1;
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-      console.log(this.counter);
+      // console.log(this.counter);
     },
   },
 };
