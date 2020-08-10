@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-lg-5">
-        <div id="InputView" class="card border-light ml-3 shadow-sm" style="height:400px">
+        <div id="InputView" class="card border-light ml-3 shadow-sm" style="height:300px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
           </h5>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="col-lg-7">
-        <div id="ExampleView" class="card border-light mr-3 shadow-sm" style="height:400px">
+        <div id="ExampleView" class="card border-light mr-3 shadow-sm" style="height:300px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
           </h5>
@@ -29,7 +29,7 @@
 
     <div class="row mt-5 mb-5">
       <div class="col-lg-4">
-        <div id="SelectView" class="card border-light ml-3 shadow-sm" style="height:500px">
+        <div id="SelectView" class="card border-light ml-3 shadow-sm" style="height:400px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Select View
           </h5>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="col-lg-8">
-        <div id="CompareView" class="card border-light mr-3 shadow-sm" style="height:600px">
+        <div id="CompareView" class="card border-light mr-3 shadow-sm" style="height:400px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Compare View
           </h5>

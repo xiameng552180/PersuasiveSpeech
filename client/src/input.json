@@ -1,11 +1,11 @@
 {
-  "is_claim": 0,
-  "claim_type": 0,
-  "logos": 10,
-  "pathos": 5,
-  "ethos": 1,
-  "evidence": 12,
-  "relevance": 3,
-  "concreteness": 0.17,
-  "eloquece": 1
+  "input": [
+    { "feature": "logos", "label": 5 },
+    { "feature": "pathos", "label": -1 },
+    { "feature": "ethos", "label": 1 },
+    { "feature": "evidence", "label": 2 },
+    { "feature": "relevance", "label": 4 },
+    { "feature": "concreteness", "label": 0.04 },
+    { "feature": "eloquence", "label": -1 }
+  ]
 }

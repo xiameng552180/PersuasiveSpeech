@@ -3,20 +3,41 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topic</label>
       <select class="form-control" id="exampleFormControlSelect1">
-        <option>Dating</option>
         <option>Abortion</option>
+        <option>Dating</option>
+        <option>Immortality</option>
         <option>Marriage</option>
+        <option>Parenthood</option>
+        <option>Pride</option>
+        <option>Suicidce</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="exampleFormControlInput1">Background</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g. ..." />
-    </div>
+      <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g. ..." /> -->
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Abortion</option>
+        <option>Dating</option>
+        <option>Immortality</option>
+        <option>Marriage</option>
+        <option>Parenthood</option>
+        <option>Pride</option>
+        <option>Suicidce</option>
+      </select>
+   </div>
 
     <div class="form-group">
-      <label for="exampleFormControlInput1">Prefer Style</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g. ..." />
+      <label for="exampleFormControlInput1">Strategies</label>
+      <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
+                <option value="0">Logical</option>
+                <option value="1">Storytelling</option>
+                <option value="2">Authoritative</option>
+                <option value="3">Evidence</option>
+                <option value="4">New ideas</option>
+                <option value="5">Specific</option>
+                <option value="6">Fluent</option>
+      </select>
     </div>
 
     <div class="form-group">
@@ -26,9 +47,8 @@
       </div>
       <input type="range" class="form-control-range" id="formControlRange" />
     </div>
-
     <button type="submit" class="btn btn-primary my-1" v-on:click="addCounter">Submit</button>
-    <p>Count: {{counter}}</p>
+    <!-- <p>Count: {{counter}}</p> -->
   </div>
 </template>
 
@@ -50,9 +70,9 @@ export default {
   },
   mounted() {
     this.addExamples();
-    PipeService.$on(PipeService.UPDATE_SELECTVIEW, () => {
-      this.counter = DataService.counter;
-    });
+    // PipeService.$on(PipeService.UPDATE_SELECTVIEW, () => {
+    //   this.counter = DataService.counter;
+    // });
   },
 
   methods: {
@@ -72,11 +92,12 @@ export default {
       // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
     },
     addCounter: function (event) {
-      DataService.counter += 1;
+      // DataService.counter += 1;
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-      console.log(this.counter);
+      //console.log(this.counter);
+      console.log($('#strategy').val());
     },
   },
 };
