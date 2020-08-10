@@ -77,6 +77,7 @@ export default {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
       //this.counter = DataService.counter;
+
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.display();

@@ -87,6 +87,7 @@ export default {
         height = this.height - this.margin.bottom - this.margin.top,
         width = this.width - this.margin.right - this.margin.left;
 
+
       var xScale = d3
         .scaleLinear()
         .domain(d3.extent(xdomain))
@@ -103,10 +104,12 @@ export default {
       //   .append("g")
       //   .attr("transform", "translate(" + this.margin.left + ")")
       //   .call(d3.axisLeft(yScale));
+
       // svgNode
       //   .append("g")
       //   .attr("transform", "translate(30," + height + ")")
       //   .call(d3.axisBottom(xScale));
+
       var circles = svgNode
         .selectAll("circle")
         .data(this.examples)
@@ -137,12 +140,14 @@ export default {
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
-    }, 
 
-drawBar(svgNode) {
+    },
+
+    drawBar(svgNode) {
       var width = this.width1,
         height = this.height1;
       var svg = svgNode.append("g");
+
       var exampledata = this.examples[this.ex_order]["reply_contents"];
       console.log(exampledata);
       var examplesum = {
@@ -164,6 +169,7 @@ drawBar(svgNode) {
         examplesum["eloquence"] += element["eloquence"];
       });
       console.log(examplesum);
+
       var data = input["input"].map((d) => {
         console.log(examplesum[d.feature] - d.label);
         return {
@@ -172,13 +178,17 @@ drawBar(svgNode) {
         };
       });
       console.log(data);
+
       data = data.sort((a, b) => d3.descending(a.label, b.label));
       // set the ranges
       var y = d3
         .scaleBand()
         .range([height - 40, 40])
         .padding(0.1);
+
       var x = d3.scaleLinear().range([40, width - 40]);
+
+
       // Scale the range of the data in the domains
       x.domain([
         d3.min(data, function (d) {
@@ -193,6 +203,7 @@ drawBar(svgNode) {
           return d.feature;
         })
       );
+      
       // append the rectangles for the bar chart
       svg
         .selectAll(".bar")

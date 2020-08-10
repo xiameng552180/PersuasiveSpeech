@@ -98,6 +98,7 @@ export default {
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       //console.log(this.counter);
       console.log($('#strategy').val());
+
     },
   },
 };
