@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div id="CircleSVG" style="height: 400px; width: 50%; overflow-x: hidden;"></div>
+    <div id="CircleSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
     <!-- <div id="chartholder"></div> -->
 
-    <div id="BarChartSVG" style="height: 400px; width: 50%; overflow-x: hidden;"></div>
+    <div id="BarChartSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
   </div>
 </template>
 
@@ -45,10 +45,11 @@ export default {
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.svg1.selectAll("*").remove();
+      // this.svg.selectAll("*").remove();
       this.drawCircle(this.svg);
       this.drawBar(this.svg1);
+      this.drawRose(this.svg);
     });
-    // this.drawRose();
   },
   methods: {
     initialize() {
@@ -87,7 +88,6 @@ export default {
         height = this.height - this.margin.bottom - this.margin.top,
         width = this.width - this.margin.right - this.margin.left;
 
-
       var xScale = d3
         .scaleLinear()
         .domain(d3.extent(xdomain))
@@ -97,10 +97,10 @@ export default {
         .scaleLinear()
         .domain(d3.extent(ydomain))
         .range([this.margin.top, height - this.margin.bottom]);
-      
-    var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([10, 20]);
 
-    // svgNode
+      var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([20, 40]);
+
+      // svgNode
       //   .append("g")
       //   .attr("transform", "translate(" + this.margin.left + ")")
       //   .call(d3.axisLeft(yScale));
@@ -140,7 +140,6 @@ export default {
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
-
     },
 
     drawBar(svgNode) {
@@ -149,7 +148,7 @@ export default {
       var svg = svgNode.append("g");
 
       var exampledata = this.examples[this.ex_order]["reply_contents"];
-      console.log(exampledata);
+      // console.log(exampledata);
       var examplesum = {
         logos: 0,
         pathos: 0,
@@ -168,16 +167,16 @@ export default {
         examplesum["concreteness"] += element["concreteness"];
         examplesum["eloquence"] += element["eloquence"];
       });
-      console.log(examplesum);
+      // console.log(examplesum);
 
       var data = input["input"].map((d) => {
-        console.log(examplesum[d.feature] - d.label);
+        // console.log(examplesum[d.feature] - d.label);
         return {
           feature: d.feature,
           label: examplesum[d.feature] - d.label,
         };
       });
-      console.log(data);
+      // console.log(data);
 
       data = data.sort((a, b) => d3.descending(a.label, b.label));
       // set the ranges
@@ -187,7 +186,6 @@ export default {
         .padding(0.1);
 
       var x = d3.scaleLinear().range([40, width - 40]);
-
 
       // Scale the range of the data in the domains
       x.domain([
@@ -203,7 +201,7 @@ export default {
           return d.feature;
         })
       );
-      
+
       // append the rectangles for the bar chart
       svg
         .selectAll(".bar")
@@ -248,6 +246,94 @@ export default {
         .call(d3.axisLeft(y));
     },
 
+    drawRose(svg) {
+      // rose distribution
+      var xdomain = this.pos.map((d) => d[0]),
+        ydomain = this.pos.map((d) => d[1]),
+        rdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
+        height = this.height - this.margin.bottom - this.margin.top,
+        width = this.width - this.margin.right - this.margin.left;
+
+      var xScale = d3
+        .scaleLinear()
+        .domain(d3.extent(xdomain))
+        .range([this.margin.left, width - this.margin.right]);
+
+      var yScale = d3
+        .scaleLinear()
+        .domain(d3.extent(ydomain))
+        .range([this.margin.top, height - this.margin.bottom]);
+
+      var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([20, 40]); // outer r scale
+
+      for (var i = 0; i < this.examples.length; i++) {
+        var exampledata = this.examples[i]["reply_contents"];
+        // console.log(exampledata);
+        var examplesum = [
+          { feature: "is_claim", label: 0 },
+          { feature: "logos", label: 0 },
+          { feature: "pathos", label: 0 },
+          { feature: "ethos", label: 0 },
+          { feature: "evidence", label: 0 },
+          { feature: "relevance", label: 0 },
+        ];
+        exampledata.forEach((element) => {
+          examplesum[0].label += parseInt(element["is_claim"]);
+          examplesum[1].label += parseInt(element["logos"]);
+          examplesum[2].label += parseInt(element["pathos"]);
+          examplesum[3].label += parseInt(element["ethos"]);
+          examplesum[4].label += parseInt(element["evidence"]);
+          examplesum[5].label += parseInt(element["relevance"]);
+        });
+        examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
+        // console.log(examplesum);
+
+        // Compute the position of each group on the pie:
+        var pie = d3.pie().value(function (d) {
+          return 1; // equal arc
+        });
+        var data_ready = pie(d3.entries(examplesum));
+
+        // set inner radius scale:
+        var outerR = rScale(this.examples[i]["reply_delta_num"]);
+        var innerRScale = d3.scaleLinear().domain([0, 10]).range([10, outerR]);
+        console.log(outerR);
+
+        // set color scale:
+        var color = d3
+          .scaleOrdinal()
+          .domain(d3.range(6))
+          .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
+
+        svg
+          .selectAll("whatever")
+          .data(data_ready)
+          .enter()
+          .append("path")
+          .attr("transform", () => {
+            return (
+              "translate(" +
+              xScale(this.pos[i][0]) +
+              "," +
+              yScale(this.pos[i][1]) +
+              ")"
+            );
+          })
+          .attr(
+            "d",
+            d3
+              .arc()
+              .innerRadius(0)
+              .outerRadius((d) => innerRScale(d.data.value.label))
+          )
+          .attr("fill", (d) => {
+            return color(d.data.key);
+          })
+          .attr("stroke", "black")
+          .style("stroke-width", "1px")
+          .style("opacity", 0.7);
+      }
+    },
 
     /*
     drawRose() {
