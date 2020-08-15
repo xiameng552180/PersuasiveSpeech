@@ -272,7 +272,7 @@ export default {
 
       // draw rose
       // for (var i = 0; i < this.examples.length; i++) {
-      function drawrose(d, i, pos) {
+      function drawFrontRose(d, i, pos) {
         var exampledata = d["reply_contents"];
         // console.log(exampledata);
         var examplesum = [
@@ -325,7 +325,14 @@ export default {
         // set color scale:
         var color = d3
           .scaleOrdinal()
-          .domain(d3.range(6))
+          .domain([
+            "logos",
+            "pathos",
+            "ethos",
+            "relevance",
+            "evidence",
+            "is_claim",
+          ])
           .range([
             "#848ccf",
             "#93b5e1",
@@ -360,13 +367,13 @@ export default {
               .outerRadius((d) => innerRScale(d.data.value.radius))
           )
           .attr("fill", (d) => {
-            return color(d.data.key);
+            // console.log(d.data.feature)
+            return color(d.data.value.feature);
           })
           .attr("stroke", "black")
           .style("stroke-width", "1px")
           .style("opacity", 0.7)
           .on("mouseover", (d) => {
-            console.log(d.data.value);
             div.transition().duration(200).style("opacity", 0.7);
             div
               .html(d.data.value.feature + ":" + d.data.value.label)
@@ -379,11 +386,36 @@ export default {
           });
       }
 
+      function drawBackRose(r, i, pos) {
+        var pie = d3.pie().value(function (d) {
+          return 1; // equal arc
+        });
+        var data_ready = pie(d3.entries(d3.range(6)));
+        svg
+          .selectAll("whatever")
+          .data(data_ready)
+          .enter()
+          .append("path")
+          .attr("transform", () => {
+            return (
+              "translate(" + xScale(pos[i][0]) + "," + yScale(pos[i][1]) + ")"
+            );
+          })
+          .attr("d", d3.arc().innerRadius(0).outerRadius(r))
+          .attr("fill", "yellow")
+          .attr("stroke", "black")
+          .style("stroke-width", "1px")
+          .style("opacity", 0.7);
+      }
+
       // background pie
       var circles = svg
         .selectAll("circle")
         .data(this.examples)
         .enter()
+        .each((d, i) =>
+          drawBackRose(outerRScale(d["reply_delta_num"]), i, this.pos)
+        )
         .append("circle")
         .attr("class", "pie")
         .attr("cx", (d, i) => xScale(this.pos[i][0]))
@@ -410,7 +442,7 @@ export default {
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         })
-        .each((d, i) => drawrose(d, i, this.pos));
+        .each((d, i) => drawFrontRose(d, i, this.pos));
     },
 
     /*
