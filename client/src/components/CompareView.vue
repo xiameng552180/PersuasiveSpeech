@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div id="CircleSVG" style="height: 400px; width: 50%; overflow-x: hidden;"></div>
+    <div id="CircleSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
     <!-- <div id="chartholder"></div> -->
 
-    <div id="BarChartSVG" style="height: 400px; width: 50%; overflow-x: hidden;"></div>
+    <div id="BarChartSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
   </div>
 </template>
 
@@ -85,7 +85,7 @@ export default {
         ydomain = this.pos.map((d) => d[1]),
         rdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
         height = this.height - this.margin.bottom - this.margin.top,
-        width = this.width - this.margin.right - this.margin.left;
+        width = this.width;
 
 
       var xScale = d3
@@ -96,7 +96,7 @@ export default {
       var yScale = d3
         .scaleLinear()
         .domain(d3.extent(ydomain))
-        .range([this.margin.top, height - this.margin.bottom]);
+        .range([this.margin.top, height]);
       
     var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([10, 20]);
 
@@ -149,7 +149,7 @@ export default {
       var svg = svgNode.append("g");
 
       var exampledata = this.examples[this.ex_order]["reply_contents"];
-      console.log(exampledata);
+      //console.log(exampledata);
       var examplesum = {
         logos: 0,
         pathos: 0,
@@ -203,7 +203,7 @@ export default {
           return d.feature;
         })
       );
-      
+
       // append the rectangles for the bar chart
       svg
         .selectAll(".bar")

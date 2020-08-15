@@ -5,7 +5,7 @@
     <span class="badge badge-claim m-1">interpretation</span>
     <span class="badge badge-claim m-1">evaluation</span>
     <span class="badge badge-claim m-1">disagreement</span>
-    <br />
+    
     <span class="badge badge-logos m-1">L</span>
     <span>Logos</span>
     <span class="badge badge-pathos m-1">P</span>
@@ -16,7 +16,7 @@
     <span>Evidence</span>
     <span class="badge badge-relevance m-1">R</span>
     <span>Relevance</span>
-    <br />
+    <br/><br/>
     <span>Concreteness (from low to high)</span>
     <span class="badge badge-concreteness m-1" style="opacity:0.2">C</span>
     <span class="badge badge-concreteness m-1" style="opacity:0.5">C</span>
@@ -27,7 +27,7 @@
     <span class="badge badge-eloquence m-1" style="opacity:1">El</span>
 
     <ul class="list-group" id="examplelist">
-      <br />
+      <br /> 
       <li
         class="list-group-item"
         v-for="item in items"
@@ -50,6 +50,7 @@
             >C</span>
             <span class="badge badge-eloquence m-1" v-bind:style="{opacity:item.eloquence/2}">El</span>
           </div>
+        <hr>
         </div>
       </li>
     </ul>
@@ -68,7 +69,7 @@ export default {
       opacity: { opacity: 0.5 },
       name: null,
       items: null,
-      counter: null,
+      //counter: null,
       examples: null,
       ex_order: null,
     };
@@ -77,7 +78,6 @@ export default {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
       //this.counter = DataService.counter;
-
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.display();

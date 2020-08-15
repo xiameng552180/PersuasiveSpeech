@@ -6,6 +6,6 @@
     { "feature": "evidence", "label": 2 },
     { "feature": "relevance", "label": 4 },
     { "feature": "concreteness", "label": 0.04 },
-    { "feature": "eloquence", "label": -1 }
+    { "feature": "eloquence", "label": 3 }
   ]
 }

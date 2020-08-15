@@ -18,12 +18,12 @@ module.exports = {
   },
   dev: {
     env: require("./dev.env"),
-    port: 8085,
+    port: 8085,  //8085 changed
     assetsSubDirectory: "static",
     assetsPublicPath: "/", // 不加点
     proxyTable: {
       "/api/*": {
-        target: "http://localhost:5003",
+        target: "http://127.0.0.1:5000",
       },
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

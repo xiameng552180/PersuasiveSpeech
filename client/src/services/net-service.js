@@ -1,7 +1,9 @@
 import axios from 'axios';
+import qs from 'qs'
 // import GlobalConfig from './global-config';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-const devApiUrl = 'http://localhost:5003/api'; // for local testing
+const devApiUrl = 'http://127.0.0.1:5000/api'; // for local testing
 
 const GET_REQUEST = 'get';
 const POST_REQUEST = 'post';
@@ -13,8 +15,12 @@ function request(url, params, type, callback) {
     } else if (type === POST_REQUEST) {
         func = axios.post;
     }
-
-    func(url, params).then((response) => {
+    let config = {
+        headers: {
+            'Content-Type':'application/x-www-form-urlencoded',
+        }
+    };
+    func(url, qs.stringify(params), config).then((response) => {
         if (response.status === 200) {
             callback(response);
         } else {
@@ -33,7 +39,31 @@ function getLoginData(userName, password, callback) {
     request(url, params, POST_REQUEST, callback);
 }
 
+function uploadInput(inputContent, callback) {
+    const url = `${devApiUrl}/uploadInput`;
+    //var params = { inputContent };
+    const params = { label : "Test" , text : "Test"};
+    // let userData = new FormData();
+    // userData.append('input', inputContent)
+    console.log(url, params);
+    request(url, params, POST_REQUEST, callback);
+
+    // $.ajax({
+    //     type: 'post',
+    //     url: `${devApiUrl}/uploadInput`,
+    //     data: JSON.stringify({ label : "Test" , text : "Test"}),
+    //     dataType:'json',
+
+    //     beforeSend: function () { },
+    //     success: function (data) { },
+    //     complete: function () {}
+    // })
+
+}
+
+
 export default {
     getLoginData,
+    uploadInput,
 };
 

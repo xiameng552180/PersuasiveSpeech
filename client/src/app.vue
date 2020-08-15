@@ -2,23 +2,18 @@
   <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-lg-5">
-        <div id="InputView" class="card border-light ml-3 shadow-sm" style="height:300px">
+        <div id="InputView" class="card border-light ml-3 shadow-sm" style="height:400px">
           <h5 class="card-header">
-            <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
+              <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
           </h5>
           <div class="card-body">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Input</span>
-              </div>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
-            </div>
+              <input-view></input-view>
           </div>
         </div>
       </div>
 
       <div class="col-lg-7">
-        <div id="ExampleView" class="card border-light mr-3 shadow-sm" style="height:300px">
+        <div id="ExampleView" class="card border-light mr-3 shadow-sm" style="height:400px">
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
           </h5>
@@ -95,7 +90,7 @@ export default {
   },
   methods: {
     initialize() {
-      console.log("hello world");
+      //console.log("hello world");
     },
   },
 };
