@@ -11,26 +11,23 @@ const POST_REQUEST = 'post';
 function request(url, params, type, callback) {
     let func;
     if (type === GET_REQUEST) {
-        func = axios.get;
+      func = axios.get;
     } else if (type === POST_REQUEST) {
-        func = axios.post;
+      func = axios.post;
     }
-    let config = {
-        headers: {
-            'Content-Type':'application/x-www-form-urlencoded',
-        }
-    };
-    func(url, qs.stringify(params), config).then((response) => {
+  
+    func(url, params)
+      .then((response) => {
         if (response.status === 200) {
-            callback(response);
+          callback(response);
         } else {
-            console.error(response);
+          console.error(response);
         }
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.error(error);
-    });
-}
+      });
+  }
 
 function getLoginData(userName, password, callback) {
     const url = `${devApiUrl}/auth/login`;
