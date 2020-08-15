@@ -86,7 +86,6 @@ export default {
   mounted() {
     this.$nextTick(function foo() {
       this.initialize();
-      NetService.uploadInput("hello", x=>{console.log(x)});
     });
   },
   methods: {

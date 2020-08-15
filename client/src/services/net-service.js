@@ -3,30 +3,42 @@ import qs from 'qs'
 // import GlobalConfig from './global-config';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-const devApiUrl = 'http://127.0.0.1:5000/api'; // for local testing
+const devApiUrl = 'http://localhost:5000'; // for local testing
 
 const GET_REQUEST = 'get';
 const POST_REQUEST = 'post';
 
 function request(url, params, type, callback) {
-    let func;
-    if (type === GET_REQUEST) {
-      func = axios.get;
-    } else if (type === POST_REQUEST) {
-      func = axios.post;
+    console.log(callback)
+    let config = {
+      headers:{
+        // 'Content-Type':'application/x-www-form-urlencoded'
+      }
     }
-  
-    func(url, params)
-      .then((response) => {
+    if (type === GET_REQUEST) {
+      for(let key in config){
+        params[key] = config[key]
+      }
+      axios.get(url, params).then((response) => {
         if (response.status === 200) {
           callback(response);
         } else {
           console.error(response);
         }
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.error(error);
       });
+    } else if (type === POST_REQUEST) {
+      axios.post(url, params, config).then((response) => {
+        if (response.status === 200) {
+          callback(response);
+        } else {
+          console.error(response);
+        }
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
   }
 
 function getLoginData(userName, password, callback) {
