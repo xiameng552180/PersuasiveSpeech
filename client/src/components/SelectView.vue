@@ -27,7 +27,7 @@
       </select>
    </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="exampleFormControlInput1">Strategies</label>
       <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
                 <option value="0">Logical</option>
@@ -40,7 +40,7 @@
                 <option value="7">Fluent</option>
                 
       </select>
-    </div>
+    </div> -->
 
     <div class="form-group">
       <div class="row">
@@ -99,7 +99,7 @@ export default {
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       //console.log(this.counter);
-      console.log($('#strategy').val());
+      // console.log($('#strategy').val());
 
     },
   },

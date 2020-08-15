@@ -1,9 +1,37 @@
 <template>
-  <div class="row">
-    <div id="CircleSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
-    <!-- <div id="chartholder"></div> -->
 
-    <div id="BarChartSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
+  <div class="row">
+    <!--select strategies-->
+    <div class="col-lg-1">
+        <div class="form-group" >
+        <label for="exampleFormControlInput1">Strategies</label>
+        <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
+                  <option value="0">Logical</option>
+                  <option value="1">Storytelling</option>
+                  <option value="2">Authoritative</option>
+                  <option value="3">Evidence</option>
+                  <option value="4">Relevance</option>
+                  <option value="5">New ideas</option>
+                  <option value="6">Specific</option>
+                  <option value="7">Fluent</option>    
+        </select>
+      </div>
+    </div>
+
+    <div class="col-lg-11">
+      <!--summary view-->
+      <div class="col-lg-4" style="height: 360px;  overflow-x: hidden;">
+      </div>
+      <!--rose chart view-->
+      <div class="col-lg-4">
+          <div id="CircleSVG" style="height: 360px;  overflow-x: hidden;"></div>
+      </div>
+      <!-- <div id="chartholder"></div> -->
+      <!--bar view-->
+      <div class="col-lg-4">
+          <div id="BarChartSVG" style="height: 360px; overflow-x: hidden;"></div>
+      </div>
+  </div>
   </div>
 </template>
 
@@ -47,6 +75,7 @@ export default {
       this.svg1.selectAll("*").remove();
       this.drawCircle(this.svg);
       this.drawBar(this.svg1);
+      console.log($('#strategy').val());
     });
     // this.drawRose();
   },
