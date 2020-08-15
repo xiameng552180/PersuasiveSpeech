@@ -46,7 +46,7 @@ export default {
       this.examples = DataService.examples;
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
-      this.drawCircle(this.svg);
+      // this.drawCircle(this.svg);
       this.drawBar(this.svg1);
       this.drawRose(this.svg);
     });
@@ -247,10 +247,10 @@ export default {
     },
 
     drawRose(svg) {
-      // rose distribution
+      // x, y scale
       var xdomain = this.pos.map((d) => d[0]),
         ydomain = this.pos.map((d) => d[1]),
-        rdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
+        outerRdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
         height = this.height - this.margin.bottom - this.margin.top,
         width = this.width - this.margin.right - this.margin.left;
 
@@ -263,11 +263,17 @@ export default {
         .scaleLinear()
         .domain(d3.extent(ydomain))
         .range([this.margin.top, height - this.margin.bottom]);
+      // background r scale
+      var outerRScale = d3
+        .scaleLinear()
+        .domain(d3.extent(outerRdomain)) // depends on delta
+        .range([20, 40]);
+      var examples = this.examples;
 
-      var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([20, 40]); // outer r scale
-
-      for (var i = 0; i < this.examples.length; i++) {
-        var exampledata = this.examples[i]["reply_contents"];
+      // draw rose
+      // for (var i = 0; i < this.examples.length; i++) {
+      function drawrose(d, i, pos) {
+        var exampledata = d["reply_contents"];
         // console.log(exampledata);
         var examplesum = [
           { feature: "is_claim", label: 0 },
@@ -285,8 +291,30 @@ export default {
           examplesum[4].label += parseInt(element["evidence"]);
           examplesum[5].label += parseInt(element["relevance"]);
         });
+        examplesum = examplesum.map((d) => {
+          return {
+            feature: d.feature,
+            label: d.label,
+            radius: Math.sqrt(d.label) / Math.PI,
+          };
+        });
         examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
         // console.log(examplesum);
+
+        var total_label = 0;
+        examplesum.forEach((element) => {
+          total_label += element.label;
+        });
+
+        var total_r = Math.sqrt(total_label) / Math.PI;
+
+        // set inner radius scale:
+        var outerR = outerRScale(d["reply_delta_num"]);
+        var innerRdomain = examplesum.map((d) => d.radius);
+        var innerRScale = d3
+          .scaleLinear()
+          .domain([d3.min(innerRdomain), total_r])
+          .range([0, outerR]);
 
         // Compute the position of each group on the pie:
         var pie = d3.pie().value(function (d) {
@@ -294,16 +322,25 @@ export default {
         });
         var data_ready = pie(d3.entries(examplesum));
 
-        // set inner radius scale:
-        var outerR = rScale(this.examples[i]["reply_delta_num"]);
-        var innerRScale = d3.scaleLinear().domain([0, 10]).range([10, outerR]);
-        console.log(outerR);
-
         // set color scale:
         var color = d3
           .scaleOrdinal()
           .domain(d3.range(6))
-          .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
+          .range([
+            "#848ccf",
+            "#93b5e1",
+            "#ffe4e4",
+            "#be5683",
+            "#318fb5",
+            "#b0cac7",
+          ]);
+
+        // set tooltips
+        var div = d3
+          .select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
 
         svg
           .selectAll("whatever")
@@ -312,11 +349,7 @@ export default {
           .append("path")
           .attr("transform", () => {
             return (
-              "translate(" +
-              xScale(this.pos[i][0]) +
-              "," +
-              yScale(this.pos[i][1]) +
-              ")"
+              "translate(" + xScale(pos[i][0]) + "," + yScale(pos[i][1]) + ")"
             );
           })
           .attr(
@@ -324,15 +357,60 @@ export default {
             d3
               .arc()
               .innerRadius(0)
-              .outerRadius((d) => innerRScale(d.data.value.label))
+              .outerRadius((d) => innerRScale(d.data.value.radius))
           )
           .attr("fill", (d) => {
             return color(d.data.key);
           })
           .attr("stroke", "black")
           .style("stroke-width", "1px")
-          .style("opacity", 0.7);
+          .style("opacity", 0.7)
+          .on("mouseover", (d) => {
+            console.log(d.data.value);
+            div.transition().duration(200).style("opacity", 0.7);
+            div
+              .html(d.data.value.feature + ":" + d.data.value.label)
+              .style("left", d3.event.pageX + "px")
+              .style("top", d3.event.pageY - 28 + "px");
+          })
+          .on("mouseout", function (d) {
+            div.transition().duration(500).style("opacity", 0);
+            // d3.selectAll(".tooltip").remove();
+          });
       }
+
+      // background pie
+      var circles = svg
+        .selectAll("circle")
+        .data(this.examples)
+        .enter()
+        .append("circle")
+        .attr("class", "pie")
+        .attr("cx", (d, i) => xScale(this.pos[i][0]))
+        .attr("cy", (d, i) => yScale(this.pos[i][1]))
+        .attr("r", (d) => outerRScale(d["reply_delta_num"]))
+        .style("opacity", 0.7)
+        .style("fill", "orange")
+        .on("mouseover", (d, i) => {
+          d3.selectAll("circle")
+            .filter((circle, index) => i === index)
+            .style("fill", "red")
+            .attr("class", "highlightCircle");
+          // .classed("highlightCircle", true); ???
+        })
+        .on("mouseout", (d, i) => {
+          d3.selectAll(".highlightCircle")
+            .style("fill", "orange")
+            // .filter((circle, index) => i === index)
+            .classed("highlightCircle", false);
+        })
+        .on("click", (d, i) => {
+          DataService.ex_order = i;
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+        })
+        .each((d, i) => drawrose(d, i, this.pos));
     },
 
     /*
