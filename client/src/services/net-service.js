@@ -41,26 +41,10 @@ function getLoginData(userName, password, callback) {
 
 function uploadInput(inputContent, callback) {
     const url = `${devApiUrl}/uploadInput`;
-    //var params = { inputContent };
-    const params = { label : "Test" , text : "Test"};
-    // let userData = new FormData();
-    // userData.append('input', inputContent)
+    var params = { inputContent };
     console.log(url, params);
     request(url, params, POST_REQUEST, callback);
-
-    // $.ajax({
-    //     type: 'post',
-    //     url: `${devApiUrl}/uploadInput`,
-    //     data: JSON.stringify({ label : "Test" , text : "Test"}),
-    //     dataType:'json',
-
-    //     beforeSend: function () { },
-    //     success: function (data) { },
-    //     complete: function () {}
-    // })
-
 }
-
 
 export default {
     getLoginData,

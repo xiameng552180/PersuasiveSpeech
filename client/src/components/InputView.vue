@@ -34,8 +34,8 @@ export default {
   mounted() {
     this.initialize();
       //var inputContent = document.getElementById("userInput").value;
-    NetService.uploadInput();
-    //this.updateInput();
+    NetService.uploadInput("hello");
+    // this.updateInput();
     
   },
   methods: {

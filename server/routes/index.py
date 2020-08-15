@@ -35,7 +35,7 @@ def register():
 
 @app.route('/uploadInput', methods=['POST','GET']) 
 def uploadInput():
-    print(request.json)
+    print(request)
     return "get input!"
     # if len(request.data) == 0:
     #     return json.dumps("null")
