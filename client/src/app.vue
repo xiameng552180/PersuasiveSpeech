@@ -5,21 +5,13 @@
         <div
           id="InputView"
           class="card border-light ml-3 shadow-sm"
-          style="height: 300px;"
+          style="height: 400px;"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
           </h5>
           <div class="card-body">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Input</span>
-              </div>
-              <textarea
-                class="form-control"
-                aria-label="With textarea"
-              ></textarea>
-            </div>
+            <input-view></input-view>
           </div>
         </div>
       </div>
@@ -28,7 +20,7 @@
         <div
           id="ExampleView"
           class="card border-light mr-3 shadow-sm"
-          style="height: 300px;"
+          style="height: 400px;"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
@@ -39,7 +31,7 @@
     </div>
 
     <div class="row mt-5 mb-5">
-      <div class="col-lg-4">
+      <div class="col-lg-2">
         <div
           id="SelectView"
           class="card border-light ml-3 shadow-sm"
@@ -54,7 +46,7 @@
         </div>
       </div>
 
-      <div class="col-lg-8">
+      <div class="col-lg-10">
         <div
           id="CompareView"
           class="card border-light mr-3 shadow-sm"
@@ -114,7 +106,7 @@ export default {
   },
   methods: {
     initialize() {
-      console.log("hello world");
+      // console.log("hello world");
     },
   },
 };
