@@ -1,9 +1,39 @@
 <template>
   <div class="row">
-    <div id="CircleSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
-    <!-- <div id="chartholder"></div> -->
+    <!--select strategies-->
+    <div class="col-lg-1">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Strategies</label>
+        <select
+          id="strategy"
+          class="selectpicker show-menu-arrow form-control"
+          multiple
+        >
+          <option value="0">Logical</option>
+          <option value="1">Storytelling</option>
+          <option value="2">Authoritative</option>
+          <option value="3">Evidence</option>
+          <option value="4">Relevance</option>
+          <option value="5">New ideas</option>
+          <option value="6">Specific</option>
+          <option value="7">Fluent</option>
+        </select>
+      </div>
+    </div>
 
-    <div id="BarChartSVG" style="height: 360px; width: 50%; overflow-x: hidden;"></div>
+    <div class="col-lg-11">
+      <!--summary view-->
+      <div class="col-lg-4" style="height: 360px; overflow-x: hidden;"></div>
+      <!--rose chart view-->
+      <div class="col-lg-4">
+        <div id="CircleSVG" style="height: 360px; overflow-x: hidden;"></div>
+      </div>
+      <!-- <div id="chartholder"></div> -->
+      <!--bar view-->
+      <div class="col-lg-4">
+        <div id="BarChartSVG" style="height: 360px; overflow-x: hidden;"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,6 +79,7 @@ export default {
       // this.drawCircle(this.svg);
       this.drawBar(this.svg1);
       this.drawRose(this.svg);
+      console.log($("#strategy").val());
     });
   },
   methods: {
@@ -86,7 +117,7 @@ export default {
         ydomain = this.pos.map((d) => d[1]),
         rdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
         height = this.height - this.margin.bottom - this.margin.top,
-        width = this.width - this.margin.right - this.margin.left;
+        width = this.width;
 
       var xScale = d3
         .scaleLinear()
@@ -96,7 +127,8 @@ export default {
       var yScale = d3
         .scaleLinear()
         .domain(d3.extent(ydomain))
-        .range([this.margin.top, height - this.margin.bottom]);
+        .range([this.margin.top, height]);
+      
 
       var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([20, 40]);
 
@@ -515,5 +547,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

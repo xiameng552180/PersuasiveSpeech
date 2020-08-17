@@ -5,7 +5,7 @@
     <span class="badge badge-claim m-1">interpretation</span>
     <span class="badge badge-claim m-1">evaluation</span>
     <span class="badge badge-claim m-1">disagreement</span>
-    <br />
+    
     <span class="badge badge-logos m-1">L</span>
     <span>Logos</span>
     <span class="badge badge-pathos m-1">P</span>
@@ -16,7 +16,7 @@
     <span>Evidence</span>
     <span class="badge badge-relevance m-1">R</span>
     <span>Relevance</span>
-    <br />
+    <br/><br/>
     <span>Concreteness (from low to high)</span>
     <span class="badge badge-concreteness m-1" style="opacity:0.2">C</span>
     <span class="badge badge-concreteness m-1" style="opacity:0.5">C</span>
@@ -26,8 +26,33 @@
     <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
     <span class="badge badge-eloquence m-1" style="opacity:1">El</span>
 
-    <ul class="list-group" id="examplelist">
-      <br />
+    <!--highlight text-->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Replyer name: {{name}}</h5>
+        <p class="card-text text-secondary">Furthermore, what gives you the right to take away someone's kid when they haven't done anything wrong yet.
+ <mark class="textbg-claim">You don't put put people in jail until they prove they're not a threat - everyone is assumed to have a basic level of competence and morality, and only when they show they are a danger to themselves or others do they get punished
+ It's very hard to justify inflicting harm on someone unless they've demonstrated it necessary.</mark>
+The problem with this rapidly becomes, "who are you to decide what objective standards should exist for parenthood.
+" <mark class="textbg-ethos">In essence, you are advocating for eugenics (only part of the population should be allowed to breed for the betterment of mankind)</mark>, and eugenics has some wonky moral hurdles
+I think a better solution is to take the pressure to have children off.
+ If more of us lived with a mentality of, "if I don't want kids I shouldn't have them" perhaps the problem would sort itself out
+ <mark class="textbg-logos">A cultural change instead of mandating standards for parenthood.</mark>
+I'm uncomfortable giving anything like a government the ability to decide which citizens should or shouldn't be allowed to have kids
+ And whose to say we can really quantify what makes a good parent
+Genetics is quite limited at the moment.</p>
+      </div>
+    </div>
+
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">Replyer name: {{name}}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <p class="card-text text-secondary"></p>
+      </div>
+    </div>
+    <!-- <ul class="list-group" id="examplelist">
+      <br /> 
       <li
         class="list-group-item"
         v-for="item in items"
@@ -50,9 +75,10 @@
             >C</span>
             <span class="badge badge-eloquence m-1" v-bind:style="{opacity:item.eloquence/2}">El</span>
           </div>
+        <hr>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -68,7 +94,7 @@ export default {
       opacity: { opacity: 0.5 },
       name: null,
       items: null,
-      counter: null,
+      //counter: null,
       examples: null,
       ex_order: null,
     };
@@ -77,7 +103,6 @@ export default {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
       //this.counter = DataService.counter;
-
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.display();
@@ -95,6 +120,41 @@ export default {
 </script>
 
 <style scoped>
+/* for text bg color */
+.textbg-claim {
+  background-color: rgb(182, 3, 77);
+  color: white;
+}
+.textbg-logos {
+  background-color: rgb(126, 182, 228);
+  color: white;
+}
+.textbg-pathos {
+  background-color: rgb(140, 215, 250);
+  color: white;
+}
+.textbg-ethos {
+  background-color: rgb(143, 145, 252);
+  color: white;
+}
+.textbg-evidence {
+  background-color: rgb(250, 140, 173);
+  color: white;
+}
+.textbg-relevance {
+  background-color: rgb(224, 92, 92);
+  color: white;
+}
+.textbg-concreteness {
+  background-color: rgb(1, 83, 19);
+  color: white;
+}
+.textbg-eloquence {
+  background-color: rgb(1, 13, 83);
+  color: white;
+}
+
+/* for badge */
 .badge-claim {
   background-color: rgb(182, 3, 77);
   color: white;
