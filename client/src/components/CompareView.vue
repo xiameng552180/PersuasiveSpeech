@@ -80,7 +80,7 @@ export default {
         .attr("width", this.width1)
         .attr("height", this.height1);
     },
-
+    /*
     drawCircle(svgNode) {
       var xdomain = this.pos.map((d) => d[0]),
         ydomain = this.pos.map((d) => d[1]),
@@ -141,6 +141,7 @@ export default {
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
     },
+    */
 
     drawBar(svgNode) {
       var width = this.width1,
@@ -367,7 +368,6 @@ export default {
               .outerRadius((d) => innerRScale(d.data.value.radius))
           )
           .attr("fill", (d) => {
-            // console.log(d.data.feature)
             return color(d.data.value.feature);
           })
           .attr("stroke", "black")
@@ -386,6 +386,7 @@ export default {
           });
       }
 
+      // background pie
       function drawBackRose(r, i, pos) {
         var pie = d3.pie().value(function (d) {
           return 1; // equal arc
@@ -402,13 +403,12 @@ export default {
             );
           })
           .attr("d", d3.arc().innerRadius(0).outerRadius(r))
-          .attr("fill", "yellow")
+          .attr("fill", "lightblue")
           .attr("stroke", "black")
           .style("stroke-width", "1px")
           .style("opacity", 0.7);
       }
 
-      // background pie
       var circles = svg
         .selectAll("circle")
         .data(this.examples)
@@ -422,7 +422,7 @@ export default {
         .attr("cy", (d, i) => yScale(this.pos[i][1]))
         .attr("r", (d) => outerRScale(d["reply_delta_num"]))
         .style("opacity", 0.7)
-        .style("fill", "orange")
+        .style("fill", "white")
         .on("mouseover", (d, i) => {
           d3.selectAll("circle")
             .filter((circle, index) => i === index)
@@ -432,7 +432,7 @@ export default {
         })
         .on("mouseout", (d, i) => {
           d3.selectAll(".highlightCircle")
-            .style("fill", "orange")
+            .style("fill", "white")
             // .filter((circle, index) => i === index)
             .classed("highlightCircle", false);
         })
