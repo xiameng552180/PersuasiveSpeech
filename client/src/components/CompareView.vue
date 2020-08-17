@@ -4,11 +4,7 @@
     <div class="col-lg-1">
       <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
-        <select
-          id="strategy"
-          class="selectpicker show-menu-arrow form-control"
-          multiple
-        >
+        <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
           <option value="0">Logical</option>
           <option value="1">Storytelling</option>
           <option value="2">Authoritative</option>
@@ -28,7 +24,6 @@
       <div class="col-lg-4">
         <div id="CircleSVG" style="height: 360px; overflow-x: hidden;"></div>
       </div>
-      <!-- <div id="chartholder"></div> -->
       <!--bar view-->
       <div class="col-lg-4">
         <div id="BarChartSVG" style="height: 360px; overflow-x: hidden;"></div>
@@ -43,7 +38,6 @@ import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
-import json from "../ideal.json";
 import input from "../input.json";
 
 export default {

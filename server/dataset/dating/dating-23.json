@@ -1,0 +1,98 @@
+{
+  "dating-23": [
+    {
+      "op_claim": "I do not think its transphobic to refuse to date a trans person. CMV",
+      "op_premise": "[None]",
+      "reply-info": [
+        {
+          "replyer_name": "RobertK1",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "11",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "If you met an amazing, charming woman who you found beautiful, interesting, intelligent, and engaging, and then found out she was half Mexican and decided not to date her welp",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "I mean it\\s basically like I\\d date you, except I found out one piece of information about your personal history that will in no way affect you or me today, and now I won\\t, even though I find you super attractive and otherwise worth dating yeah, I find it a little bigoted",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "Im not saying you dont have a right to your personal preference, because you do (as does the person who wont date anyone with a drop of Mexican blood) but it does come off as prejudiced",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "May I ask why you wouldnt date a trans woman",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            }
+          ]
+        },
+        {
+          "replyer_name": "Amarkov",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "30",
+          "reply_votes": "53 points",
+          "reply_contents": [
+            {
+              "content": "But why dont you want to date one",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Its clearly not that you arent attracted to or sexually compatible with trans people; you admit the possibility that you might be sexually involved with a trans person without knowing about it",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

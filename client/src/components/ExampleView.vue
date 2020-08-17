@@ -5,7 +5,7 @@
     <span class="badge badge-claim m-1">interpretation</span>
     <span class="badge badge-claim m-1">evaluation</span>
     <span class="badge badge-claim m-1">disagreement</span>
-    
+
     <span class="badge badge-logos m-1">L</span>
     <span>Logos</span>
     <span class="badge badge-pathos m-1">P</span>
@@ -16,7 +16,8 @@
     <span>Evidence</span>
     <span class="badge badge-relevance m-1">R</span>
     <span>Relevance</span>
-    <br/><br/>
+    <br />
+    <br />
     <span>Concreteness (from low to high)</span>
     <span class="badge badge-concreteness m-1" style="opacity:0.2">C</span>
     <span class="badge badge-concreteness m-1" style="opacity:0.5">C</span>
@@ -26,59 +27,82 @@
     <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
     <span class="badge badge-eloquence m-1" style="opacity:1">El</span>
 
-    <!--highlight text-->
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Replyer name: {{name}}</h5>
-        <p class="card-text text-secondary">Furthermore, what gives you the right to take away someone's kid when they haven't done anything wrong yet.
- <mark class="textbg-claim">You don't put put people in jail until they prove they're not a threat - everyone is assumed to have a basic level of competence and morality, and only when they show they are a danger to themselves or others do they get punished
- It's very hard to justify inflicting harm on someone unless they've demonstrated it necessary.</mark>
-The problem with this rapidly becomes, "who are you to decide what objective standards should exist for parenthood.
-" <mark class="textbg-ethos">In essence, you are advocating for eugenics (only part of the population should be allowed to breed for the betterment of mankind)</mark>, and eugenics has some wonky moral hurdles
-I think a better solution is to take the pressure to have children off.
- If more of us lived with a mentality of, "if I don't want kids I shouldn't have them" perhaps the problem would sort itself out
- <mark class="textbg-logos">A cultural change instead of mandating standards for parenthood.</mark>
-I'm uncomfortable giving anything like a government the ability to decide which citizens should or shouldn't be allowed to have kids
- And whose to say we can really quantify what makes a good parent
-Genetics is quite limited at the moment.</p>
-      </div>
+    <br />
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <button class="btn btn-sm btn-claim m-1" v-on:click="click_claim">claim</button>
+      <button class="btn btn-sm btn-logos m-1" v-on:click="click_logos">logos</button>
+      <button class="btn btn-sm btn-pathos m-1" v-on:click="click_pathos">pathos</button>
+      <button class="btn btn-sm btn-ethos m-1" v-on:click="click_ethos">ethos</button>
+      <button class="btn btn-sm btn-evidence m-1" v-on:click="click_evidence">evidence</button>
+      <button class="btn btn-sm btn-relevance m-1" v-on:click="click_relevance">relevance</button>
     </div>
 
-    <div class="card" >
-      <div class="card-body">
-        <h5 class="card-title">Replyer name: {{name}}</h5>
-        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-        <p class="card-text text-secondary"></p>
+    <!--highlight text-->
+    <div class="card">
+      <div v-for="example in examples" :key="example.id" class="card-body">
+        <h5 class="card-title">Replyer name: {{example.content["replyer_name"]}}</h5>
+        <p v-if="if_claim==true" class="card-text text-secondary">
+          <span v-for="item in example.content.reply_contents" :key="item.content">
+            <mark
+              class="textbg-claim"
+              v-if="item.is_claim!=='0' && if_claim==true"
+            >{{item.content+". "}}</mark>
+            <span v-else>{{item.content+". "}}</span>
+          </span>
+        </p>
+        <p v-else-if="if_logos==true" class="card-text text-secondary">
+          <span v-for="item in example.content.reply_contents" :key="item.content">
+            <mark
+              class="textbg-logos"
+              v-if="item.logos!=='0' && if_logos==true"
+            >{{item.content+". "}}</mark>
+            <span v-else>{{item.content+". "}}</span>
+          </span>
+        </p>
+        <p v-else-if="if_pathos==true" class="card-text text-secondary">
+          <span v-for="item in example.content.reply_contents" :key="item.content">
+            <mark
+              class="textbg-pathos"
+              v-if="item.pathos!=='0' && if_pathos==true"
+            >{{item.content+". "}}</mark>
+            <span v-else>{{item.content+". "}}</span>
+          </span>
+        </p>
+        <p v-else-if="if_ethos==true" class="card-text text-secondary">
+          <span v-for="item in example.content.reply_contents" :key="item.content">
+            <mark
+              class="textbg-ethos"
+              v-if="item.ethos!=='0' && if_ethos==true"
+            >{{item.content+". "}}</mark>
+            <span v-else>{{item.content+". "}}</span>
+          </span>
+        </p>
+        <p v-else-if="if_evidence==true" class="card-text text-secondary">
+          <span v-for="item in example.content.reply_contents" :key="item.content">
+            <mark
+              class="textbg-evidence"
+              v-if="item.evidence!=='0' && if_evidence==true"
+            >{{item.content+". "}}</mark>
+            <span v-else>{{item.content+". "}}</span>
+          </span>
+        </p>
+        <p v-else-if="if_relevance==true" class="card-text text-secondary">
+          <span v-for="item in example.content.reply_contents" :key="item.content">
+            <mark
+              class="textbg-relevance"
+              v-if="item.relevance!=='0' && if_relevance==true"
+            >{{item.content+". "}}</mark>
+            <span v-else>{{item.content+". "}}</span>
+          </span>
+        </p>
+        <p v-else class="card-text text-secondary">
+          <span
+            v-for="item in example.content.reply_contents"
+            :key="item.content"
+          >{{item.content+". "}}</span>
+        </p>
       </div>
     </div>
-    <!-- <ul class="list-group" id="examplelist">
-      <br /> 
-      <li
-        class="list-group-item"
-        v-for="item in items"
-        :key="item.content"
-      >
-        <div class="row">
-          <div class="col-8">{{item.content}}</div>
-          <div class="col-2">
-            <span class="badge badge-claim m-1" v-if="item.is_claim!=='0'">{{item.claim_type}}</span>
-            <span class="badge badge-logos m-1" v-if="item.logos!=='0'">L</span>
-            <span class="badge badge-pathos m-1" v-if="item.pathos!=='0'">P</span>
-            <span class="badge badge-ethos m-1" v-if="item.ethos!=='0'">E</span>
-            <span class="badge badge-evidence m-1" v-if="item.evidence!=='0'">Ev</span>
-            <span class="badge badge-relevance m-1" v-if="item.relevance!=='0'">R</span>
-          </div>
-          <div class="col-2">
-            <span
-              class="badge badge-concreteness m-1"
-              v-bind:style="{opacity:((item.concreteness-0.15)*10)}"
-            >C</span>
-            <span class="badge badge-eloquence m-1" v-bind:style="{opacity:item.eloquence/2}">El</span>
-          </div>
-        <hr>
-        </div>
-      </li>
-    </ul> -->
   </div>
 </template>
 
@@ -92,9 +116,12 @@ export default {
   data() {
     return {
       opacity: { opacity: 0.5 },
-      name: null,
-      items: null,
-      //counter: null,
+      if_claim: false,
+      if_logos: false,
+      if_pathos: false,
+      if_ethos: false,
+      if_evidence: false,
+      if_relevance: false,
       examples: null,
       ex_order: null,
     };
@@ -102,7 +129,6 @@ export default {
   mounted() {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
-      //this.counter = DataService.counter;
       this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.display();
@@ -112,8 +138,56 @@ export default {
     initialize() {},
     display() {
       //   console.log(this.examples);
-      this.name = this.examples[this.ex_order]["replyer_name"];
-      this.items = this.examples[this.ex_order]["reply_contents"];
+    },
+    click_claim() {
+      this.if_claim = true;
+      this.if_logos = false;
+      this.if_pathos = false;
+      this.if_ethos = false;
+      this.if_evidence = false;
+      this.if_relevance = false;
+      console.log("claim:" + this.if_claim);
+    },
+    click_logos() {
+      this.if_claim = false;
+      this.if_logos = true;
+      this.if_pathos = false;
+      this.if_ethos = false;
+      this.if_evidence = false;
+      this.if_relevance = false;
+      console.log("logos:" + this.if_logos);
+    },
+    click_pathos() {
+      this.if_claim = false;
+      this.if_logos = false;
+      this.if_pathos = true;
+      this.if_ethos = false;
+      this.if_evidence = false;
+      this.if_relevance = false;
+    },
+    click_ethos() {
+      this.if_claim = false;
+      this.if_logos = false;
+      this.if_pathos = false;
+      this.if_ethos = true;
+      this.if_evidence = false;
+      this.if_relevance = false;
+    },
+    click_evidence() {
+      this.if_claim = false;
+      this.if_logos = false;
+      this.if_pathos = false;
+      this.if_ethos = false;
+      this.if_evidence = true;
+      this.if_relevance = false;
+    },
+    click_relevance() {
+      this.if_claim = false;
+      this.if_logos = false;
+      this.if_pathos = false;
+      this.if_ethos = false;
+      this.if_evidence = false;
+      this.if_relevance = true;
     },
   },
 };
@@ -151,6 +225,32 @@ export default {
 }
 .textbg-eloquence {
   background-color: rgb(1, 13, 83);
+  color: white;
+}
+
+/* for button */
+.btn-claim {
+  background-color: rgb(182, 3, 77);
+  color: white;
+}
+.btn-logos {
+  background-color: rgb(126, 182, 228);
+  color: white;
+}
+.btn-pathos {
+  background-color: rgb(140, 215, 250);
+  color: white;
+}
+.btn-ethos {
+  background-color: rgb(143, 145, 252);
+  color: white;
+}
+.btn-evidence {
+  background-color: rgb(250, 140, 173);
+  color: white;
+}
+.btn-relevance {
+  background-color: rgb(224, 92, 92);
   color: white;
 }
 
