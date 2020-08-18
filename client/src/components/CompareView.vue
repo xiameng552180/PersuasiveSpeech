@@ -39,6 +39,7 @@ import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
 import input from "../input.json";
+import dating_pos from "../dating-pos.json";
 
 export default {
   name: "CompareView",
@@ -46,17 +47,8 @@ export default {
     return {
       svg: null,
       svg1: null,
-      pos: [
-        [-122.181656, -387.4932],
-        [65.003456, -162.4631],
-        [-313.18588, 91.801956],
-        [-225.66704, -151.02963],
-        [163.1909, -408.45877],
-        [355.8698, -196.94835],
-        [164.89957, 282.22745],
-        [-22.538868, 57.171097],
-      ],
-      margin: { top: 30, right: 30, bottom: 30, left: 30 },
+      pos: {},
+      margin: { top: 30, right: 0, bottom: 0, left: 30 },
       examples: null,
       ex_order: null,
     };
@@ -66,12 +58,12 @@ export default {
 
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       console.log("---ok---");
-      this.ex_order = DataService.ex_order;
+      // this.ex_order = DataService.ex_order;
       this.examples = DataService.examples;
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
       // this.drawCircle(this.svg);
-      this.drawBar(this.svg1);
+      // this.drawBar(this.svg1);
       this.drawRose(this.svg);
       console.log($("#strategy").val());
     });
@@ -274,10 +266,60 @@ export default {
     },
 
     drawRose(svg) {
+      // transform dating_pos
+      var i = 0;
+      dating_pos["16"].forEach((d) => {
+        this.pos["dating-16-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["17"].forEach((d) => {
+        this.pos["dating-17-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["19"].forEach((d) => {
+        this.pos["dating-19-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["20"].forEach((d) => {
+        this.pos["dating-20-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["21"].forEach((d) => {
+        var id = "dating-21-" + i;
+        this.pos["dating-21-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["22"].forEach((d) => {
+        this.pos["dating-22-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["23"].forEach((d) => {
+        this.pos["dating-23-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["25"].forEach((d) => {
+        this.pos["dating-25-" + i] = d;
+        i++;
+      });
+      var i = 0;
+      dating_pos["26"].forEach((d) => {
+        this.pos["dating-26-" + i] = d;
+        i++;
+      });
+
       // x, y scale
-      var xdomain = this.pos.map((d) => d[0]),
-        ydomain = this.pos.map((d) => d[1]),
-        outerRdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
+      var xdomain = Object.values(this.pos).map((d) => d[0]),
+        ydomain = Object.values(this.pos).map((d) => d[1]),
+        outerRdomain = this.examples.map((d) =>
+          parseInt(d.content["reply_delta_num"])
+        ),
         height = this.height - this.margin.bottom - this.margin.top,
         width = this.width - this.margin.right - this.margin.left;
 
@@ -298,9 +340,8 @@ export default {
       var examples = this.examples;
 
       // draw rose
-      // for (var i = 0; i < this.examples.length; i++) {
-      function drawFrontRose(d, i, pos) {
-        var exampledata = d["reply_contents"];
+      function drawFrontRose(d, id, pos) {
+        var exampledata = d.content["reply_contents"];
         // console.log(exampledata);
         var examplesum = [
           { feature: "is_claim", label: 0 },
@@ -326,17 +367,18 @@ export default {
           };
         });
         examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
-        // console.log(examplesum);
 
         var total_label = 0;
         examplesum.forEach((element) => {
           total_label += element.label;
         });
 
+        console.log(examplesum);
+
         var total_r = Math.sqrt(total_label) / Math.PI;
 
         // set inner radius scale:
-        var outerR = outerRScale(d["reply_delta_num"]);
+        var outerR = outerRScale(d.content["reply_delta_num"]);
         var innerRdomain = examplesum.map((d) => d.radius);
         var innerRScale = d3
           .scaleLinear()
@@ -383,7 +425,7 @@ export default {
           .append("path")
           .attr("transform", () => {
             return (
-              "translate(" + xScale(pos[i][0]) + "," + yScale(pos[i][1]) + ")"
+              "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
             );
           })
           .attr(
@@ -391,7 +433,10 @@ export default {
             d3
               .arc()
               .innerRadius(0)
-              .outerRadius((d) => innerRScale(d.data.value.radius))
+              .outerRadius((d) => {
+                console.log(innerRScale(d.data.value.radius));
+                return innerRScale(d.data.value.radius);
+              })
           )
           .attr("fill", (d) => {
             return color(d.data.value.feature);
@@ -413,7 +458,7 @@ export default {
       }
 
       // background pie
-      function drawBackRose(r, i, pos) {
+      function drawBackRose(r, id, pos) {
         var pie = d3.pie().value(function (d) {
           return 1; // equal arc
         });
@@ -425,7 +470,7 @@ export default {
           .append("path")
           .attr("transform", () => {
             return (
-              "translate(" + xScale(pos[i][0]) + "," + yScale(pos[i][1]) + ")"
+              "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
             );
           })
           .attr("d", d3.arc().innerRadius(0).outerRadius(r))
@@ -435,18 +480,25 @@ export default {
           .style("opacity", 0.7);
       }
 
+      // combine pie and rose
       var circles = svg
         .selectAll("circle")
         .data(this.examples)
         .enter()
         .each((d, i) =>
-          drawBackRose(outerRScale(d["reply_delta_num"]), i, this.pos)
+          drawBackRose(
+            outerRScale(d.content["reply_delta_num"]),
+            d.id,
+            this.pos
+          )
         )
         .append("circle")
         .attr("class", "pie")
-        .attr("cx", (d, i) => xScale(this.pos[i][0]))
-        .attr("cy", (d, i) => yScale(this.pos[i][1]))
-        .attr("r", (d) => outerRScale(d["reply_delta_num"]))
+        .attr("cx", (d, i) => {
+          return xScale(this.pos[d.id][0]);
+        })
+        .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.7)
         .style("fill", "white")
         .on("mouseover", (d, i) => {
@@ -468,7 +520,7 @@ export default {
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         })
-        .each((d, i) => drawFrontRose(d, i, this.pos));
+        .each((d, i) => drawFrontRose(d, d.id, this.pos));
     },
 
     /*

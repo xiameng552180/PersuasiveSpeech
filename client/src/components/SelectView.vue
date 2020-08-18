@@ -49,7 +49,7 @@
       </div>
       <input type="range" class="form-control-range" id="formControlRange" />
     </div>
-    <button type="submit" class="btn btn-primary my-1" v-on:click="addCounter">Submit</button>
+    <button type="submit" class="btn btn-primary my-1" v-on:click="onSubmit">Submit</button>
     <!-- <p>Count: {{counter}}</p> -->
   </div>
 </template>
@@ -158,7 +158,7 @@ export default {
       // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
     },
-    addCounter: function (event) {
+    onSubmit: function (event) {
       // DataService.counter += 1;
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
