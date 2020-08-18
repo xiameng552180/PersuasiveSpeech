@@ -1,106 +1,113 @@
 <template>
-  <div class="card-body overflow-auto">
-    <p>Replyer name: {{name}}</p>
-    <span>Calim type:</span>
-    <span class="badge badge-claim m-1">interpretation</span>
-    <span class="badge badge-claim m-1">evaluation</span>
-    <span class="badge badge-claim m-1">disagreement</span>
+  <div class="card overflow-auto">
+    <h5 class="card-header">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <button class="btn btn-sm btn-claim m-1" v-on:click="click_claim">claim</button>
+        <button class="btn btn-sm btn-logos m-1" v-on:click="click_logos">logos</button>
+        <button class="btn btn-sm btn-pathos m-1" v-on:click="click_pathos">pathos</button>
+        <button class="btn btn-sm btn-ethos m-1" v-on:click="click_ethos">ethos</button>
+        <button class="btn btn-sm btn-evidence m-1" v-on:click="click_evidence">evidence</button>
+        <button class="btn btn-sm btn-relevance m-1" v-on:click="click_relevance">relevance</button>
+      </div>
+    </h5>
+    <div class="card-body overflow-auto">
+      <span>Calim type:</span>
+      <span class="badge badge-claim m-1">interpretation</span>
+      <span class="badge badge-claim m-1">evaluation</span>
+      <span class="badge badge-claim m-1">disagreement</span>
 
-    <span class="badge badge-logos m-1">L</span>
-    <span>Logos</span>
-    <span class="badge badge-pathos m-1">P</span>
-    <span>Pathos</span>
-    <span class="badge badge-ethos m-1">E</span>
-    <span>Ethos</span>
-    <span class="badge badge-evidence m-1">Ev</span>
-    <span>Evidence</span>
-    <span class="badge badge-relevance m-1">R</span>
-    <span>Relevance</span>
-    <br />
-    <br />
-    <span>Concreteness (from low to high)</span>
-    <span class="badge badge-concreteness m-1" style="opacity:0.2">C</span>
-    <span class="badge badge-concreteness m-1" style="opacity:0.5">C</span>
-    <span class="badge badge-concreteness m-1" style="opacity:1">C</span>
-    <span class="ml-4">Eloquence (from low to high)</span>
-    <span class="badge badge-eloquence m-1" style="opacity:0.2">El</span>
-    <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
-    <span class="badge badge-eloquence m-1" style="opacity:1">El</span>
+      <span class="badge badge-logos m-1">L</span>
+      <span>Logos</span>
+      <span class="badge badge-pathos m-1">P</span>
+      <span>Pathos</span>
+      <span class="badge badge-ethos m-1">E</span>
+      <span>Ethos</span>
+      <span class="badge badge-evidence m-1">Ev</span>
+      <span>Evidence</span>
+      <span class="badge badge-relevance m-1">R</span>
+      <span>Relevance</span>
+      <br />
+      <br />
+      <span>Concreteness (from low to high)</span>
+      <span class="badge badge-concreteness m-1" style="opacity:0.2">C</span>
+      <span class="badge badge-concreteness m-1" style="opacity:0.5">C</span>
+      <span class="badge badge-concreteness m-1" style="opacity:1">C</span>
+      <span class="ml-4">Eloquence (from low to high)</span>
+      <span class="badge badge-eloquence m-1" style="opacity:0.2">El</span>
+      <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
+      <span class="badge badge-eloquence m-1" style="opacity:1">El</span>
 
-    <br />
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <button class="btn btn-sm btn-claim m-1" v-on:click="click_claim">claim</button>
-      <button class="btn btn-sm btn-logos m-1" v-on:click="click_logos">logos</button>
-      <button class="btn btn-sm btn-pathos m-1" v-on:click="click_pathos">pathos</button>
-      <button class="btn btn-sm btn-ethos m-1" v-on:click="click_ethos">ethos</button>
-      <button class="btn btn-sm btn-evidence m-1" v-on:click="click_evidence">evidence</button>
-      <button class="btn btn-sm btn-relevance m-1" v-on:click="click_relevance">relevance</button>
-    </div>
+      <br />
 
-    <!--highlight text-->
-    <div class="card">
-      <div v-for="example in examples" :key="example.id" class="card-body">
-        <h5 class="card-title">Replyer name: {{example.content["replyer_name"]}}</h5>
-        <p v-if="if_claim==true" class="card-text text-secondary">
-          <span v-for="item in example.content.reply_contents" :key="item.content">
-            <mark
-              class="textbg-claim"
-              v-if="item.is_claim!=='0' && if_claim==true"
-            >{{item.content+". "}}</mark>
-            <span v-else>{{item.content+". "}}</span>
-          </span>
-        </p>
-        <p v-else-if="if_logos==true" class="card-text text-secondary">
-          <span v-for="item in example.content.reply_contents" :key="item.content">
-            <mark
-              class="textbg-logos"
-              v-if="item.logos!=='0' && if_logos==true"
-            >{{item.content+". "}}</mark>
-            <span v-else>{{item.content+". "}}</span>
-          </span>
-        </p>
-        <p v-else-if="if_pathos==true" class="card-text text-secondary">
-          <span v-for="item in example.content.reply_contents" :key="item.content">
-            <mark
-              class="textbg-pathos"
-              v-if="item.pathos!=='0' && if_pathos==true"
-            >{{item.content+". "}}</mark>
-            <span v-else>{{item.content+". "}}</span>
-          </span>
-        </p>
-        <p v-else-if="if_ethos==true" class="card-text text-secondary">
-          <span v-for="item in example.content.reply_contents" :key="item.content">
-            <mark
-              class="textbg-ethos"
-              v-if="item.ethos!=='0' && if_ethos==true"
-            >{{item.content+". "}}</mark>
-            <span v-else>{{item.content+". "}}</span>
-          </span>
-        </p>
-        <p v-else-if="if_evidence==true" class="card-text text-secondary">
-          <span v-for="item in example.content.reply_contents" :key="item.content">
-            <mark
-              class="textbg-evidence"
-              v-if="item.evidence!=='0' && if_evidence==true"
-            >{{item.content+". "}}</mark>
-            <span v-else>{{item.content+". "}}</span>
-          </span>
-        </p>
-        <p v-else-if="if_relevance==true" class="card-text text-secondary">
-          <span v-for="item in example.content.reply_contents" :key="item.content">
-            <mark
-              class="textbg-relevance"
-              v-if="item.relevance!=='0' && if_relevance==true"
-            >{{item.content+". "}}</mark>
-            <span v-else>{{item.content+". "}}</span>
-          </span>
-        </p>
-        <p v-else class="card-text text-secondary">
-          <span
-            v-for="item in example.content.reply_contents"
-            :key="item.content"
-          >{{item.content+". "}}</span>
-        </p>
+      <!--highlight text-->
+      <div class="card">
+        <div v-for="example in examples" :key="example.id" class="card-body">
+          <h5
+            class="card-title"
+            :id="example.id"
+            :ref="example.id"
+          >Replyer name: {{example.content["replyer_name"]}}</h5>
+          <p v-if="if_claim==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-claim"
+                v-if="item.is_claim!=='0' && if_claim==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_logos==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-logos"
+                v-if="item.logos!=='0' && if_logos==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_pathos==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-pathos"
+                v-if="item.pathos!=='0' && if_pathos==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_ethos==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-ethos"
+                v-if="item.ethos!=='0' && if_ethos==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_evidence==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-evidence"
+                v-if="item.evidence!=='0' && if_evidence==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_relevance==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-relevance"
+                v-if="item.relevance!=='0' && if_relevance==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >{{item.content+". "}}</span>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -123,13 +130,13 @@ export default {
       if_evidence: false,
       if_relevance: false,
       examples: null,
-      ex_order: null,
+      ex_id: "",
     };
   },
   mounted() {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
-      this.ex_order = DataService.ex_order;
+      this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
       this.display();
     });
@@ -137,7 +144,13 @@ export default {
   methods: {
     initialize() {},
     display() {
-      //   console.log(this.examples);
+      if (this.ex_id !== "") {
+        var element = document.getElementById(this.ex_id);
+        console.log(this.ex_id);
+        console.log(document.getElementById(this.ex_id));
+
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     },
     click_claim() {
       this.if_claim = true;
@@ -146,7 +159,6 @@ export default {
       this.if_ethos = false;
       this.if_evidence = false;
       this.if_relevance = false;
-      console.log("claim:" + this.if_claim);
     },
     click_logos() {
       this.if_claim = false;
@@ -155,7 +167,6 @@ export default {
       this.if_ethos = false;
       this.if_evidence = false;
       this.if_relevance = false;
-      console.log("logos:" + this.if_logos);
     },
     click_pathos() {
       this.if_claim = false;

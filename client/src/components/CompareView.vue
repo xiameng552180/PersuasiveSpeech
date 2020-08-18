@@ -50,7 +50,7 @@ export default {
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       examples: null,
-      ex_order: null,
+      ex_id: "",
     };
   },
   mounted() {
@@ -58,12 +58,11 @@ export default {
 
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       console.log("---ok---");
-      // this.ex_order = DataService.ex_order;
+      this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
-      // this.drawCircle(this.svg);
-      // this.drawBar(this.svg1);
+      this.drawBar(this.svg1);
       this.drawRose(this.svg);
       console.log($("#strategy").val());
     });
@@ -97,172 +96,116 @@ export default {
         .attr("width", this.width1)
         .attr("height", this.height1);
     },
-    /*
-    drawCircle(svgNode) {
-      var xdomain = this.pos.map((d) => d[0]),
-        ydomain = this.pos.map((d) => d[1]),
-        rdomain = this.examples.map((d) => parseInt(d["reply_delta_num"])),
-        height = this.height - this.margin.bottom - this.margin.top,
-        width = this.width;
-
-      var xScale = d3
-        .scaleLinear()
-        .domain(d3.extent(xdomain))
-        .range([this.margin.left, width - this.margin.right]);
-
-      var yScale = d3
-        .scaleLinear()
-        .domain(d3.extent(ydomain))
-        .range([this.margin.top, height]);
-      
-
-      var rScale = d3.scaleLinear().domain(d3.extent(rdomain)).range([20, 40]);
-
-      // svgNode
-      //   .append("g")
-      //   .attr("transform", "translate(" + this.margin.left + ")")
-      //   .call(d3.axisLeft(yScale));
-
-      // svgNode
-      //   .append("g")
-      //   .attr("transform", "translate(30," + height + ")")
-      //   .call(d3.axisBottom(xScale));
-
-      var circles = svgNode
-        .selectAll("circle")
-        .data(this.examples)
-        .enter()
-        .append("circle")
-        .attr("class", "pie")
-        .attr("cx", (d, i) => xScale(this.pos[i][0]))
-        .attr("cy", (d, i) => yScale(this.pos[i][1]))
-        .attr("r", (d) => rScale(d["reply_delta_num"]))
-        .style("opacity", 0.7)
-        .style("fill", "orange")
-        .on("mouseover", (d, i) => {
-          d3.selectAll("circle")
-            .filter((circle, index) => i === index)
-            .style("fill", "red")
-            .attr("class", "highlightCircle");
-          // .classed("highlightCircle", true); ???
-        })
-        .on("mouseout", (d, i) => {
-          d3.selectAll(".highlightCircle")
-            .style("fill", "orange")
-            // .filter((circle, index) => i === index)
-            .classed("highlightCircle", false);
-        })
-        .on("click", (d, i) => {
-          DataService.ex_order = i;
-          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-          PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
-          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-        });
-    },
-    */
 
     drawBar(svgNode) {
       var width = this.width1,
         height = this.height1;
       var svg = svgNode.append("g");
 
-      var exampledata = this.examples[this.ex_order]["reply_contents"];
-      // console.log(exampledata);
-      var examplesum = {
-        logos: 0,
-        pathos: 0,
-        ethos: 0,
-        evidence: 0,
-        relevance: 0,
-        concreteness: 0,
-        eloquence: 0,
-      };
-      exampledata.forEach((element) => {
-        examplesum["logos"] += parseInt(element["logos"]);
-        examplesum["pathos"] += parseInt(element["pathos"]);
-        examplesum["ethos"] += parseInt(element["ethos"]);
-        examplesum["evidence"] += parseInt(element["evidence"]);
-        examplesum["relevance"] += parseInt(element["relevance"]);
-        examplesum["concreteness"] += element["concreteness"];
-        examplesum["eloquence"] += element["eloquence"];
-      });
-      // console.log(examplesum);
+      var index = this.examples.map((d) => d.id).indexOf(this.ex_id);
 
-      var data = input["input"].map((d) => {
-        // console.log(examplesum[d.feature] - d.label);
-        return {
-          feature: d.feature,
-          label: examplesum[d.feature] - d.label,
+      if (this.ex_id !== "") {
+        var exampledata = this.examples.map((d) => d.content)[index]
+          .reply_contents;
+        console.log("exampledata:");
+        console.log(exampledata);
+
+        var examplesum = {
+          logos: 0,
+          pathos: 0,
+          ethos: 0,
+          evidence: 0,
+          relevance: 0,
+          concreteness: 0,
+          eloquence: 0,
         };
-      });
-      // console.log(data);
+        exampledata.forEach((element) => {
+          examplesum["logos"] += parseInt(element["logos"]);
+          examplesum["pathos"] += parseInt(element["pathos"]);
+          examplesum["ethos"] += parseInt(element["ethos"]);
+          examplesum["evidence"] += parseInt(element["evidence"]);
+          examplesum["relevance"] += parseInt(element["relevance"]);
+          examplesum["concreteness"] += element["concreteness"];
+          examplesum["eloquence"] += element["eloquence"];
+        });
+        // console.log(examplesum);
 
-      data = data.sort((a, b) => d3.descending(a.label, b.label));
-      // set the ranges
-      var y = d3
-        .scaleBand()
-        .range([height - 40, 40])
-        .padding(0.1);
+        var data = input["input"].map((d) => {
+          // console.log(examplesum[d.feature] - d.label);
+          return {
+            feature: d.feature,
+            label: examplesum[d.feature] - d.label,
+          };
+        });
+        // console.log(data);
 
-      var x = d3.scaleLinear().range([40, width - 40]);
+        data = data.sort((a, b) => d3.descending(a.label, b.label));
+        // set the ranges
+        var y = d3
+          .scaleBand()
+          .range([height - 40, 40])
+          .padding(0.1);
 
-      // Scale the range of the data in the domains
-      x.domain([
-        d3.min(data, function (d) {
-          return d.label;
-        }),
-        d3.max(data, function (d) {
-          return d.label;
-        }),
-      ]);
-      y.domain(
-        data.map(function (d) {
-          return d.feature;
-        })
-      );
+        var x = d3.scaleLinear().range([40, width - 40]);
 
-      // append the rectangles for the bar chart
-      svg
-        .selectAll(".bar")
-        .data(data)
-        .enter()
-        .append("rect")
-        // .attr("class", (d) => {
-        //   return "bar-" + (d.label < 0 ? "neg" : "pos");
-        // })
-        .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
-        .attr("width", (d) => {
-          return Math.abs(x(d.label) - x(0));
-        })
-        .attr("x", (d) => {
-          return x(Math.min(0, d.label));
-        })
-        .attr("y", function (d) {
-          return y(d.feature);
-        })
-        .attr("height", y.bandwidth());
-      svg
-        .selectAll("text")
-        .data(data)
-        .enter()
-        .append("text")
-        .text((d) => d.label)
-        .attr("x", (d) => x(d.label))
-        .attr("y", function (d) {
-          return y(d.feature) + y.bandwidth() / 2;
-        })
-        .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
-        .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
-      // add the x Axis
-      svg
-        .append("g")
-        .attr("transform", "translate(0," + (height - 40) + ")")
-        .call(d3.axisBottom(x));
-      // add the y Axis
-      svg
-        .append("g")
-        .attr("transform", "translate(" + x(0) + ",0)")
-        .call(d3.axisLeft(y));
+        // Scale the range of the data in the domains
+        x.domain([
+          d3.min(data, function (d) {
+            return d.label;
+          }),
+          d3.max(data, function (d) {
+            return d.label;
+          }),
+        ]);
+        y.domain(
+          data.map(function (d) {
+            return d.feature;
+          })
+        );
+
+        // append the rectangles for the bar chart
+        svg
+          .selectAll(".bar")
+          .data(data)
+          .enter()
+          .append("rect")
+          // .attr("class", (d) => {
+          //   return "bar-" + (d.label < 0 ? "neg" : "pos");
+          // })
+          .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
+          .attr("width", (d) => {
+            return Math.abs(x(d.label) - x(0));
+          })
+          .attr("x", (d) => {
+            return x(Math.min(0, d.label));
+          })
+          .attr("y", function (d) {
+            return y(d.feature);
+          })
+          .attr("height", y.bandwidth());
+        svg
+          .selectAll("text")
+          .data(data)
+          .enter()
+          .append("text")
+          .text((d) => d.label)
+          .attr("x", (d) => x(d.label))
+          .attr("y", function (d) {
+            return y(d.feature) + y.bandwidth() / 2;
+          })
+          .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
+          .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
+        // add the x Axis
+        svg
+          .append("g")
+          .attr("transform", "translate(0," + (height - 40) + ")")
+          .call(d3.axisBottom(x));
+        // add the y Axis
+        svg
+          .append("g")
+          .attr("transform", "translate(" + x(0) + ",0)")
+          .call(d3.axisLeft(y));
+      }
     },
 
     drawRose(svg) {
@@ -373,7 +316,7 @@ export default {
           total_label += element.label;
         });
 
-        console.log(examplesum);
+        // console.log(examplesum);
 
         var total_r = Math.sqrt(total_label) / Math.PI;
 
@@ -434,7 +377,6 @@ export default {
               .arc()
               .innerRadius(0)
               .outerRadius((d) => {
-                console.log(innerRScale(d.data.value.radius));
                 return innerRScale(d.data.value.radius);
               })
           )
@@ -514,13 +456,13 @@ export default {
             // .filter((circle, index) => i === index)
             .classed("highlightCircle", false);
         })
-        .on("click", (d, i) => {
-          DataService.ex_order = i;
+        .on("click", (d) => {
+          DataService.ex_id = d.id;
           PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         })
-        .each((d, i) => drawFrontRose(d, d.id, this.pos));
+        .each((d) => drawFrontRose(d, d.id, this.pos));
     },
 
     /*
