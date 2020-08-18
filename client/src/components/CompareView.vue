@@ -256,6 +256,7 @@ export default {
         this.pos["dating-26-" + i] = d;
         i++;
       });
+      console.log(this.pos);
 
       // x, y scale
       var xdomain = Object.values(this.pos).map((d) => d[0]),
@@ -346,12 +347,12 @@ export default {
             "is_claim",
           ])
           .range([
-            "#848ccf",
-            "#93b5e1",
-            "#ffe4e4",
-            "#be5683",
-            "#318fb5",
-            "#b0cac7",
+            "#7eb6e4",
+            "#8cd390",
+            "#8f91fc",
+            "#e05c5c",
+            "#fa8cad",
+            "#b6034d",
           ]);
 
         // set tooltips

@@ -207,27 +207,27 @@ export default {
 <style scoped>
 /* for text bg color */
 .textbg-claim {
-  background-color: rgb(182, 3, 77);
+  background-color: #b6034d;
   color: white;
 }
 .textbg-logos {
-  background-color: rgb(126, 182, 228);
+  background-color: #7eb6e4;
   color: white;
 }
 .textbg-pathos {
-  background-color: rgb(140, 215, 250);
+  background-color: #8cd390;
   color: white;
 }
 .textbg-ethos {
-  background-color: rgb(143, 145, 252);
+  background-color: #8f91fc;
   color: white;
 }
 .textbg-evidence {
-  background-color: rgb(250, 140, 173);
+  background-color: #fa8cad;
   color: white;
 }
 .textbg-relevance {
-  background-color: rgb(224, 92, 92);
+  background-color: #e05c5c;
   color: white;
 }
 .textbg-concreteness {
@@ -249,7 +249,7 @@ export default {
   color: white;
 }
 .btn-pathos {
-  background-color: rgb(140, 215, 250);
+  background-color: #8cd390;
   color: white;
 }
 .btn-ethos {
@@ -275,7 +275,7 @@ export default {
   color: white;
 }
 .badge-pathos {
-  background-color: rgb(140, 215, 250);
+  background-color: #8cd390;
   color: white;
 }
 .badge-ethos {
