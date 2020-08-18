@@ -19,10 +19,12 @@
 
     <div class="col-lg-11">
       <!--summary view-->
-      <div class="col-lg-4" style="height: 360px; overflow-x: hidden;"></div>
+      <div class="col-lg-4" style="height: 360px;  overflow-x: hidden;">
+        <div id="RadarSVG" style="height: 360px;  overflow-x: hidden;"></div>
+      </div>
       <!--rose chart view-->
       <div class="col-lg-4">
-        <div id="CircleSVG" style="height: 360px; overflow-x: hidden;"></div>
+        <div id="CircleSVG" style="height: 360px;  overflow-x: hidden;"></div>
       </div>
       <!--bar view-->
       <div class="col-lg-4">
@@ -49,13 +51,25 @@ export default {
       svg1: null,
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
+
+      svg2: null,
+      datingSum: [
+        //dating summary
+        { axis: "claim_num", value: 28 },
+        { axis: "logos_num", value: 119 },
+        { axis: "pathos_num", value: 41 },
+        { axis: "ethos_num", value: 9 },
+        { axis: "evidence_num", value: 97 },
+        { axis: "relevance_num", value: 25 },
+        { axis: "others", value: 186 },
+      ],
       examples: null,
       ex_id: "",
     };
   },
   mounted() {
     this.initialize();
-
+    this.drawRadar(this.svg2);
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       console.log("---ok---");
       this.ex_id = DataService.ex_id;
@@ -95,7 +109,336 @@ export default {
         .attr("class", "d3SVG")
         .attr("width", this.width1)
         .attr("height", this.height1);
+
+      this.width2 = d3.select("#RadarSVG").node().getBoundingClientRect().width;
+      this.height2 = d3
+        .select("#RadarSVG")
+        .node()
+        .getBoundingClientRect().height;
+      this.svg2 = d3
+        .select("#RadarSVG")
+        .append("svg")
+        .attr("class", "d3SVG")
+        .attr("width", this.width1)
+        .attr("height", this.height1);
+      2;
     },
+    drawRadar(svgNode) {
+      var d = [
+        [
+          //dating summary
+          { area: "claim_num", value: 28 },
+          { area: "logos_num", value: 119 },
+          { area: "pathos_num", value: 41 },
+          { area: "ethos_num", value: 9 },
+          { area: "evidence_num", value: 97 },
+          { area: "relevance_num", value: 25 },
+          { area: "others", value: 186 },
+        ],
+      ];
+      var options = {
+        w: this.width2,
+        h: this.height2,
+        maxValue: 190,
+        levels: 5,
+        ExtraWidthX: 300,
+      };
+
+      var cfg = {
+        radius: 5,
+        w: 300,
+        h: 300,
+        factor: 1,
+        factorLegend: 0.85,
+        levels: 3,
+        maxValue: 0,
+        radians: 2 * Math.PI,
+        opacityArea: 0.5,
+        ToRight: 5,
+        TranslateX: 80,
+        TranslateY: 30,
+        ExtraWidthX: 100,
+        ExtraWidthY: 100,
+        color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"]),
+      };
+
+      if ("undefined" !== typeof options) {
+        for (var i in options) {
+          if ("undefined" !== typeof options[i]) {
+            cfg[i] = options[i];
+          }
+        }
+      }
+
+      cfg.maxValue = 200;
+
+      var allAxis = d[0].map(function (i, j) {
+        return i.area;
+      });
+      var total = allAxis.length;
+      var radius = cfg.factor * Math.min(cfg.w / 2, cfg.h / 2);
+      var Format = d3.format("%");
+      d3.select("#RadarSVG").select("svg").remove();
+
+      var g = d3
+        .select("#RadarSVG")
+        .append("svg")
+        .attr("width", cfg.w + cfg.ExtraWidthX)
+        .attr("height", cfg.h + cfg.ExtraWidthY)
+        .append("g")
+        .attr(
+          "transform",
+          "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")"
+        );
+
+      var tooltip;
+
+      //Circular segments
+      for (var j = 0; j < cfg.levels; j++) {
+        var levelFactor = cfg.factor * radius * ((j + 1) / cfg.levels);
+        g.selectAll(".levels")
+          .data(allAxis)
+          .enter()
+          .append("svg:line")
+          .attr("x1", function (d, i) {
+            return (
+              levelFactor *
+              (1 - cfg.factor * Math.sin((i * cfg.radians) / total))
+            );
+          })
+          .attr("y1", function (d, i) {
+            return (
+              levelFactor *
+              (1 - cfg.factor * Math.cos((i * cfg.radians) / total))
+            );
+          })
+          .attr("x2", function (d, i) {
+            return (
+              levelFactor *
+              (1 - cfg.factor * Math.sin(((i + 1) * cfg.radians) / total))
+            );
+          })
+          .attr("y2", function (d, i) {
+            return (
+              levelFactor *
+              (1 - cfg.factor * Math.cos(((i + 1) * cfg.radians) / total))
+            );
+          })
+          .attr("class", "line")
+          .style("stroke", "grey")
+          .style("stroke-opacity", "0.75")
+          .style("stroke-width", "0.3px")
+          .attr(
+            "transform",
+            "translate(" +
+              (cfg.w / 2 - levelFactor) +
+              ", " +
+              (cfg.h / 2 - levelFactor) +
+              ")"
+          );
+      }
+
+      //Text indicating at what % each level is
+      for (var j = 0; j < cfg.levels; j++) {
+        var levelFactor = cfg.factor * radius * ((j + 1) / cfg.levels);
+        g.selectAll(".levels")
+          .data([1]) //dummy data
+          .enter()
+          .append("svg:text")
+          .attr("x", function (d) {
+            return levelFactor * (1 - cfg.factor * Math.sin(0));
+          })
+          .attr("y", function (d) {
+            return levelFactor * (1 - cfg.factor * Math.cos(0));
+          })
+          .attr("class", "legend")
+          .style("font-family", "sans-serif")
+          .style("font-size", "10px")
+          .attr(
+            "transform",
+            "translate(" +
+              (cfg.w / 2 - levelFactor + cfg.ToRight) +
+              ", " +
+              (cfg.h / 2 - levelFactor) +
+              ")"
+          )
+          .attr("fill", "#737373")
+          .text(((j + 1) * 200) / cfg.levels); //100
+      }
+
+      var series = 0;
+
+      var axis = g
+        .selectAll(".axis")
+        .data(allAxis)
+        .enter()
+        .append("g")
+        .attr("class", "axis");
+
+      axis
+        .append("line")
+        .attr("x1", cfg.w / 2)
+        .attr("y1", cfg.h / 2)
+        .attr("x2", function (d, i) {
+          return (
+            (cfg.w / 2) * (1 - cfg.factor * Math.sin((i * cfg.radians) / total))
+          );
+        })
+        .attr("y2", function (d, i) {
+          return (
+            (cfg.h / 2) * (1 - cfg.factor * Math.cos((i * cfg.radians) / total))
+          );
+        })
+        .attr("class", "line")
+        .style("stroke", "grey")
+        .style("stroke-width", "1px");
+
+      axis
+        .append("text")
+        .attr("class", "legend")
+        .text(function (d) {
+          return d;
+        })
+        .style("font-family", "sans-serif")
+        .style("font-size", "11px")
+        .attr("text-anchor", "middle")
+        .attr("dy", "1.5em")
+        .attr("transform", function (d, i) {
+          return "translate(0, -10)";
+        })
+        .attr("x", function (d, i) {
+          return (
+            (cfg.w / 2) *
+              (1 - cfg.factorLegend * Math.sin((i * cfg.radians) / total)) -
+            60 * Math.sin((i * cfg.radians) / total)
+          );
+        })
+        .attr("y", function (d, i) {
+          return (
+            (cfg.h / 2) * (1 - Math.cos((i * cfg.radians) / total)) -
+            20 * Math.cos((i * cfg.radians) / total)
+          );
+        });
+
+      var dataValues = [];
+      d.forEach(function (y, x) {
+        g.selectAll(".nodes").data(y, function (j, i) {
+          dataValues.push([
+            (cfg.w / 2) *
+              (1 -
+                (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
+                  cfg.factor *
+                  Math.sin((i * cfg.radians) / total)),
+            (cfg.h / 2) *
+              (1 -
+                (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
+                  cfg.factor *
+                  Math.cos((i * cfg.radians) / total)),
+          ]);
+        });
+        dataValues.push(dataValues[0]);
+        g.selectAll(".area")
+          .data([dataValues])
+          .enter()
+          .append("polygon")
+          .attr("class", "radar-chart-serie" + series)
+          .style("stroke-width", "2px")
+          .style("stroke", cfg.color(series))
+          .attr("points", function (d) {
+            var str = "";
+            for (var pti = 0; pti < d.length; pti++) {
+              str = str + d[pti][0] + "," + d[pti][1] + " ";
+            }
+            return str;
+          })
+          .style("fill", function (j, i) {
+            return cfg.color(series);
+          })
+          .style("fill-opacity", cfg.opacityArea);
+        // .on('mouseover', function (d){
+        //           z = "polygon."+d3.select(this).attr("class");
+        //           g.selectAll("polygon")
+        //           .transition(200)
+        //           .style("fill-opacity", 0.1);
+        //           g.selectAll(z)
+        //           .transition(200)
+        //           .style("fill-opacity", .7);
+        //           })
+        // .on('mouseout', function(){
+        //           g.selectAll("polygon")
+        //           .transition(200)
+        //           .style("fill-opacity", cfg.opacityArea);
+        // });
+        series++;
+      });
+      series = 0;
+
+      var tooltip = d3
+        .select("#RadarSVG")
+        .append("div")
+        .attr("class", "toolTip");
+      d.forEach(function (y, x) {
+        g.selectAll(".nodes")
+          .data(y)
+          .enter()
+          .append("svg:circle")
+          .attr("class", "radar-chart-serie" + series)
+          .attr("r", cfg.radius)
+          .attr("alt", function (j) {
+            return Math.max(j.value, 0);
+          })
+          .attr("cx", function (j, i) {
+            dataValues.push([
+              (cfg.w / 2) *
+                (1 -
+                  (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
+                    cfg.factor *
+                    Math.sin((i * cfg.radians) / total)),
+              (cfg.h / 2) *
+                (1 -
+                  (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
+                    cfg.factor *
+                    Math.cos((i * cfg.radians) / total)),
+            ]);
+            return (
+              (cfg.w / 2) *
+              (1 -
+                (Math.max(j.value, 0) / cfg.maxValue) *
+                  cfg.factor *
+                  Math.sin((i * cfg.radians) / total))
+            );
+          })
+          .attr("cy", function (j, i) {
+            return (
+              (cfg.h / 2) *
+              (1 -
+                (Math.max(j.value, 0) / cfg.maxValue) *
+                  cfg.factor *
+                  Math.cos((i * cfg.radians) / total))
+            );
+          })
+          .attr("data-id", function (j) {
+            return j.area;
+          })
+          .style("fill", "#fff")
+          .style("stroke-width", "2px")
+          .style("stroke", cfg.color(series))
+          .style("fill-opacity", 0.9)
+          .on("mouseover", function (d) {
+            console.log(d.area);
+            tooltip
+              .style("left", d3.event.pageX - 40 + "px")
+              .style("top", d3.event.pageY - 80 + "px")
+              .style("display", "inline-block")
+              .html(d.area + "<br><span>" + d.value + "</span>");
+          })
+          .on("mouseout", function (d) {
+            tooltip.style("display", "none");
+          });
+
+        series++;
+      });
+    }, //RadarChart
 
     drawBar(svgNode) {
       var width = this.width1,
@@ -445,8 +788,14 @@ export default {
         .style("opacity", 0.7)
         .style("fill", "white")
         .on("mouseover", (d, i) => {
-          d3.selectAll("circle")
-            .filter((circle, index) => i === index)
+          // d3.select(this).style("fill","red");
+          d3.selectAll(".pie")
+            .filter((circle, index) => {
+              console.log(d);
+              console.log(i);
+
+              return i === index;
+            })
             .style("fill", "red")
             .attr("class", "highlightCircle");
           // .classed("highlightCircle", true); ???
@@ -465,73 +814,6 @@ export default {
         })
         .each((d) => drawFrontRose(d, d.id, this.pos));
     },
-
-    /*
-    drawRose() {
-      console.log(json);
-      d3.json("../ideal.json").then(function (json) {
-        console.log(json);
-        var colors = ["lightblue", "orange"];
-        var chart = d3.ez.chart.roseChart().colors(colors);
-        var legend = d3.ez.component.legend().title("Causes of Mortality");
-        var title = d3.ez.component
-          .title()
-          .mainText(
-            "Diagram of the Causes of Mortality in the Army in The East"
-          )
-          .subText("April 1854 to March 1855");
-
-        // Convert json to d3-ez data format
-
-        var data = d3
-          .nest()
-          .key(function (d) {
-            return d.feature;
-          })
-          .entries(json)
-          .map(function (obj) {
-            console.log(obj);
-
-            var rec = obj.values[0];
-            var scalar = 0.3;
-
-            var values = {
-              key: rec.feature,
-              values: [
-                {
-                  key: "Example",
-                  value: Math.sqrt(rec.example * scalar) / Math.PI,
-                },
-                {
-                  key: "Input",
-                  value: Math.sqrt(rec.input * scalar) / Math.PI,
-                },
-              ],
-            };
-
-            console.log(values);
-            return values;
-          });
-
-        console.log(data);
-
-        // Create chart base
-        var myChart = d3.ez
-          .base()
-          .width(700)
-          .height(400)
-          .chart(chart)
-          .legend(legend)
-          //   .title(title)
-          .on("customValueMouseOver", function (d) {
-            d3.select("#message").text(d.value);
-          });
-
-        // Add to page
-        d3.select("#chartholder").datum(data).call(myChart);
-      });
-    },
-    */
   },
 };
 </script>
