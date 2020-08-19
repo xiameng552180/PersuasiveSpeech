@@ -2,16 +2,52 @@
   <div class="card overflow-auto">
     <h5 class="card-header">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <button class="btn btn-sm btn-claim m-1" v-on:click="click_claim">claim</button>
-        <button class="btn btn-sm btn-logos m-1" v-on:click="click_logos">logos</button>
-        <button class="btn btn-sm btn-pathos m-1" v-on:click="click_pathos">pathos</button>
-        <button class="btn btn-sm btn-ethos m-1" v-on:click="click_ethos">ethos</button>
-        <button class="btn btn-sm btn-evidence m-1" v-on:click="click_evidence">evidence</button>
-        <button class="btn btn-sm btn-relevance m-1" v-on:click="click_relevance">relevance</button>
+        <button
+          class="btn btn-sm btn-claim m-1"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The category of what is being claimed"
+          v-on:click="click_claim"
+        >claim</button>
+        <button
+          class="btn btn-sm btn-logos m-1"
+          v-on:click="click_logos"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The use of logic, rationality, and critical reasoning to persuade"
+        >logos</button>
+        <button
+          class="btn btn-sm btn-pathos m-1"
+          v-on:click="click_pathos"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The use of emotion and affect to persuade"
+        >pathos</button>
+        <button
+          class="btn btn-sm btn-ethos m-1"
+          v-on:click="click_ethos"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The use of authority or credibility of the presenter to persuade"
+        >ethos</button>
+        <button
+          class="btn btn-sm btn-evidence m-1"
+          v-on:click="click_evidence"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The statement decribe a concrete example"
+        >evidence</button>
+        <button
+          class="btn btn-sm btn-relevance m-1"
+          v-on:click="click_relevance"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The statement revelant to the parent claim"
+        >relevance</button>
       </div>
     </h5>
     <div class="card-body overflow-auto">
-      <span>Calim type:</span>
+      <!-- <span>Calim type:</span>
       <span class="badge badge-claim m-1">interpretation</span>
       <span class="badge badge-claim m-1">evaluation</span>
       <span class="badge badge-claim m-1">disagreement</span>
@@ -37,7 +73,7 @@
       <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
       <span class="badge badge-eloquence m-1" style="opacity:1">El</span>
 
-      <br />
+      <br />-->
 
       <!--highlight text-->
       <div class="card">

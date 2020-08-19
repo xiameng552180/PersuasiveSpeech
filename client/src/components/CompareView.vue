@@ -787,25 +787,25 @@ export default {
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.7)
         .style("fill", "white")
-        .on("mouseover", (d, i) => {
-          // d3.select(this).style("fill","red");
-          d3.selectAll(".pie")
-            .filter((circle, index) => {
-              console.log(d);
-              console.log(i);
+        // .on("mouseover", (d, i) => {
+        //   // d3.select(this).style("fill","red");
+        //   d3.selectAll(".pie")
+        //     .filter((circle, index) => {
+        //       console.log(d);
+        //       console.log(i);
 
-              return i === index;
-            })
-            .style("fill", "red")
-            .attr("class", "highlightCircle");
-          // .classed("highlightCircle", true); ???
-        })
-        .on("mouseout", (d, i) => {
-          d3.selectAll(".highlightCircle")
-            .style("fill", "white")
-            // .filter((circle, index) => i === index)
-            .classed("highlightCircle", false);
-        })
+        //       return i === index;
+        //     })
+        //     .style("fill", "red")
+        //     .attr("class", "highlightCircle");
+        //   // .classed("highlightCircle", true); ???
+        // })
+        // .on("mouseout", (d, i) => {
+        //   d3.selectAll(".highlightCircle")
+        //     .style("fill", "white")
+        //     // .filter((circle, index) => i === index)
+        //     .classed("highlightCircle", false);
+        // })
         .on("click", (d) => {
           DataService.ex_id = d.id;
           PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
