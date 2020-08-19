@@ -28,8 +28,8 @@
       </div>
       <!--bar view-->
       <div class="col-lg-4">
-        <div id="RadarSVG" style="height: 230px;"></div>
-        <div id="BarChartSVG" style="height: 220px; overflow-x: hidden;"></div>
+        <div id="RadarSVG" style="height: 240px; width: 200px; margin:auto;"></div>
+        <div id="BarChartSVG" style="height: 240px; overflow-x: hidden;"></div>
       </div>
     </div>
   </div>
@@ -56,13 +56,13 @@ export default {
       dataRadar: [
         [
           //dating summary
-          { area: "claim_num", value: 28 },
-          { area: "logos_num", value: 119 },
-          { area: "pathos_num", value: 41 },
-          { area: "ethos_num", value: 9 },
-          { area: "evidence_num", value: 97 },
-          { area: "relevance_num", value: 25 },
-          { area: "others", value: 186 },
+          { area: "claim", value: 28 },
+          { area: "logos", value: 119 },
+          { area: "pathos", value: 41 },
+          { area: "ethos", value: 9 },
+          { area: "evidence", value: 97 },
+          { area: "relevance", value: 25 },
+          { area: "others", value: 186 }          
         ],
       ],
       datingSum: [
@@ -72,8 +72,8 @@ export default {
         { axis: "pathos_num", value: 41 },
         { axis: "ethos_num", value: 9 },
         { axis: "evidence_num", value: 97 },
-        { axis: "relevance_num", value: 25 },
-        { axis: "others", value: 186 },
+        { axis: "relevance_num", value: 25 }
+        // { axis: "others", value: 186 },
       ],
       examples: null,
       ex_id: "",
@@ -122,11 +122,11 @@ export default {
         .attr("width", this.width1)
         .attr("height", this.height1);
 
-      this.width2 = d3.select("#RadarSVG").node().getBoundingClientRect().width - 100;
+      this.width2 = d3.select("#RadarSVG").node().getBoundingClientRect().width;
       this.height2 = d3
         .select("#RadarSVG")
         .node()
-        .getBoundingClientRect().height - 30;
+        .getBoundingClientRect().height;
       this.svg2 = d3
         .select("#RadarSVG")
         .append("svg")
@@ -147,20 +147,20 @@ export default {
 
       var cfg = {
         radius: 5,
-        w: 300,
-        h: 200,
+        w: 150,
+        h: 150,
         factor: 1,
-        factorLegend: 0.85,
+        factorLegend: 0.6,
         levels: 3,
         maxValue: 0,
         radians: 2 * Math.PI,
         opacityArea: 0.5,
         ToRight: 5,
-        TranslateX: 80,
-        TranslateY: 30,
-        ExtraWidthX: 100,
-        ExtraWidthY: 100,
-        color: d3.scaleOrdinal().range(["#6F257F"]),
+        TranslateX: 30, //margin left
+        TranslateY: 30,  //margin top
+        ExtraWidthX: 50,
+        ExtraWidthY: 50,
+        color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"]),
       };
 
       if ("undefined" !== typeof options) {
@@ -170,16 +170,18 @@ export default {
           }
         }
       }
-
-      cfg.maxValue = 360; //??
+      var maxValue = Math.max(cfg.maxValue, d3.max(d, function(i){return d3.max(i.map(function(o){return o.value;}))}));
+      //cfg.maxValue = 200; //??
 
       var allAxis = d[0].map(function (i, j) {
         return i.area;
       });
-      var total = allAxis.length;
+      var total = allAxis.length; //6
+      
       var radius = cfg.factor * Math.min(cfg.w / 2, cfg.h / 2);
       var Format = d3.format("%");
       d3.select("#RadarSVG").select("svg").remove();
+
 
       var g = d3
         .select("#RadarSVG")
@@ -192,7 +194,7 @@ export default {
           "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")"
         );
 
-      
+      var tooltip;
 
       //Circular segments
       for (var j = 0; j < cfg.levels; j++) {
@@ -264,7 +266,7 @@ export default {
               ")"
           )
           .attr("fill", "#737373")
-          .text(((j + 1) * 200) / cfg.levels); 
+          .text(((j + 1) * 200) / cfg.levels);  //axis
       }
 
       var series = 0;
@@ -280,10 +282,11 @@ export default {
         .append("line")
         .attr("x1", cfg.w / 2)
         .attr("y1", cfg.h / 2)
-        .attr("x2", function (d, i) {
+        .attr("x2", function (d, i) {   
           return (
             (cfg.w / 2) * (1 - cfg.factor * Math.sin((i * cfg.radians) / total))
           );
+          
         })
         .attr("y2", function (d, i) {
           return (
@@ -294,6 +297,7 @@ export default {
         .style("stroke", "grey")
         .style("stroke-width", "1px");
 
+      
       axis
         .append("text")
         .attr("class", "legend")
@@ -309,9 +313,8 @@ export default {
         })
         .attr("x", function (d, i) {
           return (
-            (cfg.w / 2) *
-              (1 - cfg.factorLegend * Math.sin((i * cfg.radians) / total)) -
-            20 * Math.sin((i * cfg.radians) / total)
+            (cfg.w / 2) *(1 - cfg.factorLegend * Math.sin((i * cfg.radians) / total)) -
+            60 * Math.sin((i * cfg.radians) / total)
           );
         })
         .attr("y", function (d, i) {
@@ -321,7 +324,7 @@ export default {
           );
         });
 
-      var dataValues = [];
+      var dataValues = []; //add
       d.forEach(function (y, x) {
         g.selectAll(".nodes").data(y, function (j, i) {
           dataValues.push([
