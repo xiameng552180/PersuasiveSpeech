@@ -2,12 +2,12 @@
   <div class="card overflow-auto">
     <h5 class="card-header">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-         <button
-        <button class="btn btn-sm btn-logos m-1" v-on:click="click_logos">logos</button>	          class="btn btn-sm btn-claim m-1"
-        <button class="btn btn-sm btn-pathos m-1" v-on:click="click_pathos">pathos</button>	          data-toggle="tooltip"
-        <button class="btn btn-sm btn-ethos m-1" v-on:click="click_ethos">ethos</button>	          data-placement="bottom"
-        <button class="btn btn-sm btn-evidence m-1" v-on:click="click_evidence">evidence</button>	          title="The category of what is being claimed"
-        <button class="btn btn-sm btn-relevance m-1" v-on:click="click_relevance">relevance</button>	          v-on:click="click_claim"
+        <button
+          class="btn btn-sm btn-claim m-1"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The category of what is being claimed"
+          v-on:click="click_claim"
         >claim</button>
         <button
           class="btn btn-sm btn-logos m-1"
@@ -73,7 +73,7 @@
       <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
       <span class="badge badge-eloquence m-1" style="opacity:1">El</span> -->
 
-      <br />
+      <br />-->
 
       <!--highlight text-->
       <div class="card">

@@ -653,7 +653,9 @@ export default {
             radius: Math.sqrt(d.label) / Math.PI,
           };
         });
-        //examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
+
+        // examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
+
 
         var total_label = 0;
         examplesum.forEach((element) => {
