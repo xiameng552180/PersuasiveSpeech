@@ -73,7 +73,7 @@
       <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
       <span class="badge badge-eloquence m-1" style="opacity:1">El</span> -->
 
-      <br />-->
+      <br />
 
       <!--highlight text-->
       <div class="card">

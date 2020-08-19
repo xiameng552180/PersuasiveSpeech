@@ -19,16 +19,17 @@
 
     <div class="col-lg-11">
       <!--summary view-->
-      <div class="col-lg-4" style="height: 360px;  overflow-x: hidden;">
-        <div id="RadarSVG" style="height: 360px;  width: 400px; overflow-x: hidden;"></div>
+      <div class="col-lg-4" style="height: 400px;  overflow-x: hidden;">
+        
       </div>
       <!--rose chart view-->
       <div class="col-lg-4">
-        <div id="CircleSVG" style="height: 360px;  overflow-x: hidden;"></div>
+        <div id="CircleSVG" style="height: 400px;  overflow-x: hidden;"></div>
       </div>
       <!--bar view-->
       <div class="col-lg-4">
-        <div id="BarChartSVG" style="height: 360px; overflow-x: hidden;"></div>
+        <div id="RadarSVG" style="height: 230px;"></div>
+        <div id="BarChartSVG" style="height: 220px; overflow-x: hidden;"></div>
       </div>
     </div>
   </div>
@@ -51,8 +52,19 @@ export default {
       svg1: null,
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
-
       svg2: null,
+      dataRadar: [
+        [
+          //dating summary
+          { area: "claim_num", value: 28 },
+          { area: "logos_num", value: 119 },
+          { area: "pathos_num", value: 41 },
+          { area: "ethos_num", value: 9 },
+          { area: "evidence_num", value: 97 },
+          { area: "relevance_num", value: 25 },
+          { area: "others", value: 186 },
+        ],
+      ],
       datingSum: [
         //dating summary
         { axis: "claim_num", value: 28 },
@@ -69,7 +81,7 @@ export default {
   },
   mounted() {
     this.initialize();
-    this.drawRadar(this.svg2);
+    this.drawRadar(this.svg2, this.dataRadar);
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       console.log("---ok---");
       this.ex_id = DataService.ex_id;
@@ -110,11 +122,11 @@ export default {
         .attr("width", this.width1)
         .attr("height", this.height1);
 
-      this.width2 = d3.select("#RadarSVG").node().getBoundingClientRect().width;
+      this.width2 = d3.select("#RadarSVG").node().getBoundingClientRect().width - 100;
       this.height2 = d3
         .select("#RadarSVG")
         .node()
-        .getBoundingClientRect().height;
+        .getBoundingClientRect().height - 30;
       this.svg2 = d3
         .select("#RadarSVG")
         .append("svg")
@@ -123,25 +135,14 @@ export default {
         .attr("height", this.height1);
       2;
     },
-    drawRadar(svgNode) {
-      var d = [
-        [
-          //dating summary
-          { area: "claim_num", value: 28 },
-          { area: "logos_num", value: 119 },
-          { area: "pathos_num", value: 41 },
-          { area: "ethos_num", value: 9 },
-          { area: "evidence_num", value: 97 },
-          { area: "relevance_num", value: 25 },
-          { area: "others", value: 186 },
-        ],
-      ];
+    drawRadar(svgNode, d) {
+      
       var options = {
         w: this.width2,
         h: this.height2,
-        maxValue: 190,
+        maxValue: 200,
         levels: 5,
-        ExtraWidthX: 300,
+        ExtraWidthX: 100,
       };
 
       var cfg = {
@@ -159,7 +160,7 @@ export default {
         TranslateY: 30,
         ExtraWidthX: 100,
         ExtraWidthY: 100,
-        color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"]),
+        color: d3.scaleOrdinal().range(["#6F257F"]),
       };
 
       if ("undefined" !== typeof options) {
@@ -170,7 +171,7 @@ export default {
         }
       }
 
-      cfg.maxValue = 200;
+      cfg.maxValue = 360; //??
 
       var allAxis = d[0].map(function (i, j) {
         return i.area;
@@ -191,7 +192,7 @@ export default {
           "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")"
         );
 
-      var tooltip;
+      
 
       //Circular segments
       for (var j = 0; j < cfg.levels; j++) {
@@ -227,7 +228,7 @@ export default {
           .attr("class", "line")
           .style("stroke", "grey")
           .style("stroke-opacity", "0.75")
-          .style("stroke-width", "0.3px")
+          .style("stroke-width", "0.5px")
           .attr(
             "transform",
             "translate(" +
@@ -263,7 +264,7 @@ export default {
               ")"
           )
           .attr("fill", "#737373")
-          .text(((j + 1) * 200) / cfg.levels); //100
+          .text(((j + 1) * 200) / cfg.levels); 
       }
 
       var series = 0;
@@ -302,7 +303,7 @@ export default {
         .style("font-family", "sans-serif")
         .style("font-size", "11px")
         .attr("text-anchor", "middle")
-        .attr("dy", "1.5em")
+        .attr("dy", "1.2em")
         .attr("transform", function (d, i) {
           return "translate(0, -10)";
         })
@@ -310,7 +311,7 @@ export default {
           return (
             (cfg.w / 2) *
               (1 - cfg.factorLegend * Math.sin((i * cfg.radians) / total)) -
-            60 * Math.sin((i * cfg.radians) / total)
+            20 * Math.sin((i * cfg.radians) / total)
           );
         })
         .attr("y", function (d, i) {
@@ -342,7 +343,7 @@ export default {
           .enter()
           .append("polygon")
           .attr("class", "radar-chart-serie" + series)
-          .style("stroke-width", "2px")
+          .style("stroke-width", "1px")
           .style("stroke", cfg.color(series))
           .attr("points", function (d) {
             var str = "";
@@ -373,71 +374,71 @@ export default {
       });
       series = 0;
 
-      var tooltip = d3
-        .select("#RadarSVG")
-        .append("div")
-        .attr("class", "toolTip");
-      d.forEach(function (y, x) {
-        g.selectAll(".nodes")
-          .data(y)
-          .enter()
-          .append("svg:circle")
-          .attr("class", "radar-chart-serie" + series)
-          .attr("r", cfg.radius)
-          .attr("alt", function (j) {
-            return Math.max(j.value, 0);
-          })
-          .attr("cx", function (j, i) {
-            dataValues.push([
-              (cfg.w / 2) *
-                (1 -
-                  (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
-                    cfg.factor *
-                    Math.sin((i * cfg.radians) / total)),
-              (cfg.h / 2) *
-                (1 -
-                  (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
-                    cfg.factor *
-                    Math.cos((i * cfg.radians) / total)),
-            ]);
-            return (
-              (cfg.w / 2) *
-              (1 -
-                (Math.max(j.value, 0) / cfg.maxValue) *
-                  cfg.factor *
-                  Math.sin((i * cfg.radians) / total))
-            );
-          })
-          .attr("cy", function (j, i) {
-            return (
-              (cfg.h / 2) *
-              (1 -
-                (Math.max(j.value, 0) / cfg.maxValue) *
-                  cfg.factor *
-                  Math.cos((i * cfg.radians) / total))
-            );
-          })
-          .attr("data-id", function (j) {
-            return j.area;
-          })
-          .style("fill", "#fff")
-          .style("stroke-width", "2px")
-          .style("stroke", cfg.color(series))
-          .style("fill-opacity", 0.9)
-          .on("mouseover", function (d) {
-            console.log(d.area);
-            tooltip
-              .style("left", d3.event.pageX - 40 + "px")
-              .style("top", d3.event.pageY - 80 + "px")
-              .style("display", "inline-block")
-              .html(d.area + "<br><span>" + d.value + "</span>");
-          })
-          .on("mouseout", function (d) {
-            tooltip.style("display", "none");
-          });
+      // var tooltip = d3
+      //   .select("#RadarSVG")
+      //   .append("div")
+      //   .attr("class", "toolTip");
+      // d.forEach(function (y, x) {
+      //   g.selectAll(".nodes")
+      //     .data(y)
+      //     .enter()
+      //     .append("svg:circle")
+      //     .attr("class", "radar-chart-serie" + series)
+      //     .attr("r", cfg.radius)
+      //     .attr("alt", function (j) {
+      //       return Math.max(j.value, 0);
+      //     })
+      //     .attr("cx", function (j, i) {
+      //       dataValues.push([
+      //         (cfg.w / 2) *
+      //           (1 -
+      //             (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
+      //               cfg.factor *
+      //               Math.sin((i * cfg.radians) / total)),
+      //         (cfg.h / 2) *
+      //           (1 -
+      //             (parseFloat(Math.max(j.value, 0)) / cfg.maxValue) *
+      //               cfg.factor *
+      //               Math.cos((i * cfg.radians) / total)),
+      //       ]);
+      //       return (
+      //         (cfg.w / 2) *
+      //         (1 -
+      //           (Math.max(j.value, 0) / cfg.maxValue) *
+      //             cfg.factor *
+      //             Math.sin((i * cfg.radians) / total))
+      //       );
+      //     })
+      //     .attr("cy", function (j, i) {
+      //       return (
+      //         (cfg.h / 2) *
+      //         (1 -
+      //           (Math.max(j.value, 0) / cfg.maxValue) *
+      //             cfg.factor *
+      //             Math.cos((i * cfg.radians) / total))
+      //       );
+      //     })
+      //     .attr("data-id", function (j) {
+      //       return j.area;
+      //     })
+      //     .style("fill", "#fff")
+      //     .style("stroke-width", "2px")
+      //     .style("stroke", cfg.color(series))
+      //     .style("fill-opacity", 0.9)
+      //     .on("mouseover", function (d) {
+      //       console.log(d.area);
+      //       tooltip
+      //         .style("left", d3.event.pageX - 40 + "px")
+      //         .style("top", d3.event.pageY - 80 + "px")
+      //         .style("display", "inline-block")
+      //         .html(d.area + "<br><span>" + d.value + "</span>");
+      //     })
+      //     .on("mouseout", function (d) {
+      //       tooltip.style("display", "none");
+      //     });
 
-        series++;
-      });
+      //   series++;
+      // });
     }, //RadarChart
 
     drawBar(svgNode) {
