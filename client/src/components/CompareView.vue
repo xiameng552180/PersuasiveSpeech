@@ -20,7 +20,7 @@
     <div class="col-lg-11">
       <!--summary view-->
       <div class="col-lg-4" style="height: 360px;  overflow-x: hidden;">
-        <div id="RadarSVG" style="height: 360px;  overflow-x: hidden;"></div>
+        <div id="RadarSVG" style="height: 360px;  width: 400px; overflow-x: hidden;"></div>
       </div>
       <!--rose chart view-->
       <div class="col-lg-4">
@@ -147,7 +147,7 @@ export default {
       var cfg = {
         radius: 5,
         w: 300,
-        h: 300,
+        h: 200,
         factor: 1,
         factorLegend: 0.85,
         levels: 3,
@@ -653,7 +653,7 @@ export default {
             radius: Math.sqrt(d.label) / Math.PI,
           };
         });
-        examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
+        //examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
 
         var total_label = 0;
         examplesum.forEach((element) => {
@@ -787,25 +787,25 @@ export default {
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.7)
         .style("fill", "white")
-        .on("mouseover", (d, i) => {
-          // d3.select(this).style("fill","red");
-          d3.selectAll(".pie")
-            .filter((circle, index) => {
-              console.log(d);
-              console.log(i);
+        // .on("mouseover", (d, i) => {
+        //   // d3.select(this).style("fill","red");
+        //   d3.selectAll(".pie")
+        //     .filter((circle, index) => {
+        //       console.log(d);
+        //       console.log(i);
 
-              return i === index;
-            })
-            .style("fill", "red")
-            .attr("class", "highlightCircle");
-          // .classed("highlightCircle", true); ???
-        })
-        .on("mouseout", (d, i) => {
-          d3.selectAll(".highlightCircle")
-            .style("fill", "white")
-            // .filter((circle, index) => i === index)
-            .classed("highlightCircle", false);
-        })
+        //       return i === index;
+        //     })
+        //     .style("fill", "red")
+        //     .attr("class", "highlightCircle");
+        //   // .classed("highlightCircle", true); ???
+        // })
+        // .on("mouseout", (d, i) => {
+        //   d3.selectAll(".highlightCircle")
+        //     .style("fill", "white")
+        //     // .filter((circle, index) => i === index)
+        //     .classed("highlightCircle", false);
+        // })
         .on("click", (d) => {
           DataService.ex_id = d.id;
           PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
