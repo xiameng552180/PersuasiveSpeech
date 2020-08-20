@@ -120,15 +120,6 @@ export default {
       2;
     },
     drawRadar(svgNode, d) {
-      
-      // var options = {
-      //   w: this.width2,
-      //   h: this.height2,
-      //   maxValue: 200,
-      //   levels: 5,
-      //   ExtraWidthX: 0,
-      // };
-
       var cfg = {
         radius: 5,
         w: 160,
@@ -537,6 +528,111 @@ export default {
           .attr("transform", "translate(" + x(0) + ",0)")
           .call(d3.axisLeft(y));
       }
+      else {
+        //var tempSum = this.labelRadar[0][1]["value"];
+        //console.log("barSum", tempSum["area"]);
+
+        // compute eloquenceSum & concretenessSum
+        var eloquenceSum = 0;
+        var concretenessSum = 0;
+        this.examples.forEach((element) => {    //num of reply
+          var tempElement = element.content.reply_contents;
+          tempElement.forEach((d) =>{
+            //console.log("this:", d.eloquence);
+            eloquenceSum += parseInt(d.eloquence);
+            concretenessSum += parseInt(d.concreteness);
+          });
+        });
+
+        var barSum = {
+          logos: this.labelRadar[0][1]["value"],
+          pathos: this.labelRadar[0][2]["value"],
+          ethos: this.labelRadar[0][3]["value"],
+          evidence: this.labelRadar[0][4]["value"],
+          relevance: this.labelRadar[0][5]["value"],
+          concreteness: concretenessSum,
+          eloquence: eloquenceSum,
+        };
+        //console.log("barSum", barSum);
+        var dataInput = input["input"].map((d) => {
+          // console.log(examplesum[d.feature] - d.label);
+          return {
+            feature: d.feature,
+            label: barSum[d.feature] - d.label,
+          };
+        });
+        //console.log("sum-input", dataInput);
+        // sort for barChart show
+        dataInput = dataInput.sort((a, b) => d3.descending(a.label, b.label));
+
+        //draw Sumbar
+        var y = d3
+          .scaleBand()
+          .range([height - 40, 40])
+          .padding(0.1);
+
+        var x = d3.scaleLinear().range([40, width - 40]);
+
+        // Scale the range of the data in the domains
+        x.domain([
+          d3.min(dataInput, function (d) {
+            return d.label;
+          }),
+          d3.max(dataInput, function (d) {
+            return d.label;
+          }),
+        ]);
+        y.domain(
+          dataInput.map(function (d) {
+            return d.feature;
+          })
+        );
+
+        // append the rectangles for the bar chart
+        svg
+          .selectAll(".bar")
+          .data(dataInput)
+          .enter()
+          .append("rect")
+          // .attr("class", (d) => {
+          //   return "bar-" + (d.label < 0 ? "neg" : "pos");
+          // })
+          .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
+          .attr("width", (d) => {
+            return Math.abs(x(d.label) - x(0));
+          })
+          .attr("x", (d) => {
+            return x(Math.min(0, d.label));
+          })
+          .attr("y", function (d) {
+            return y(d.feature);
+          })
+          .attr("height", y.bandwidth());
+        svg
+          .selectAll("text")
+          .data(dataInput)
+          .enter()
+          .append("text")
+          .text((d) => d.label)
+          .attr("x", (d) => x(d.label))
+          .attr("y", function (d) {
+            return y(d.feature) + y.bandwidth() / 2;
+          })
+          .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
+          .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
+        // add the x Axis
+        svg
+          .append("g")
+          .attr("transform", "translate(0," + (height - 40) + ")")
+          .call(d3.axisBottom(x));
+        // add the y Axis
+        svg
+          .append("g")
+          .attr("transform", "translate(" + x(0) + ",0)")
+          .call(d3.axisLeft(y));
+
+      }
+
     },
 
     drawRose(svg) {
@@ -797,6 +893,8 @@ export default {
         //     .classed("highlightCircle", false);
         // })
         .on("click", (d) => {
+          //muliple select
+
           DataService.ex_id = d.id;
           PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
