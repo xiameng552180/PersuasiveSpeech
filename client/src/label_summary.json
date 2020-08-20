@@ -1,48 +1,50 @@
 { "label_summary":
 [
   {
-    "abortion": {
-      "claim_num": 51,
-      "logos_num": 180,
-      "pathos_num": 14,
-      "ethos_num": 2,
-      "evidence_num": 114,
-      "relevance_num": 41,
-      "others": 9
-    }
+    "abortion": [[
+      { "area": "claim", "value": 51 },
+          { "area": "logos", "value": 180 },
+          { "area": "pathos", "value": 14 },
+          { "area": "ethos", "value": 2 },
+          { "area": "evidence", "value": 114 },
+          { "area": "relevance", "value": 41 },
+          { "area": "others", "value": 9 }  
+    ]]
   },
   {
-    "dating": {
-      "claim_num": 28,
-      "logos_num": 119,
-      "pathos_num": 41,
-      "ethos_num": 9,
-      "evidence_num": 97,
-      "relevance_num": 25,
-      "others": 4
-    }
+    "dating": [[
+          { "area": "claim", "value": 28 },
+          { "area": "logos", "value": 119 },
+          { "area": "pathos", "value": 41 },
+          { "area": "ethos", "value": 9 },
+          { "area": "evidence", "value": 97 },
+          { "area": "relevance", "value": 25 },
+          { "area": "others", "value": 4 }  
+    ]]
   },
   {
-    "eugenics": {
-      "claim_num": 32,
-      "logos_num": 45,
-      "pathos_num": 23,
-      "ethos_num": 0,
-      "evidence_num": 42,
-      "relevance_num": 9,
-      "others": 6
-    }
+    "eugenics": 
+      [[
+        { "area": "claim", "value": 32 },
+        { "area": "logos", "value": 45 },
+        { "area": "pathos", "value": 23 },
+        { "area": "ethos", "value": 0 },
+        { "area": "evidence", "value": 42 },
+        { "area": "relevance", "value": 9 },
+        { "area": "others", "value": 6 }  
+  ]]
   },
   {
-    "immortality": {
-      "claim_num": 12,
-      "logos_num": 33,
-      "pathos_num": 27,
-      "ethos_num": 0,
-      "evidence_num": 99,
-      "relevance_num": 4,
-      "others": 1
+    "immortality": 
+      [[
+        { "area": "claim", "value": 12 },
+        { "area": "logos", "value": 33 },
+        { "area": "pathos", "value": 27 },
+        { "area": "ethos", "value": 0 },
+        { "area": "evidence", "value": 99 },
+        { "area": "relevance", "value": 4 },
+        { "area": "others", "value": 1 }  
+  ]]
     }
-  }
 ]
 }

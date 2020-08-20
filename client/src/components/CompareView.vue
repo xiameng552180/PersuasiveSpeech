@@ -42,7 +42,8 @@ import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
 import input from "../input.json";
-import dating_pos from "../dating-pos.json";
+import labelSum from "../label_summary.json"
+import dating_pos from "../dating-pos.json"
 
 export default {
   name: "CompareView",
@@ -53,26 +54,17 @@ export default {
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
-      dataSum: [
-        [
-          //dating summary
-          { area: "claim", value: 28 },
-          { area: "logos", value: 119 },
-          { area: "pathos", value: 41 },
-          { area: "ethos", value: 9 },
-          { area: "evidence", value: 97 },
-          { area: "relevance", value: 25 },
-          { area: "others", value: 4 }          
-        ],
-      ],
+      labelRadar: labelSum["label_summary"][1]["dating"],
 
       examples: null,
       ex_id: "",
     };
   },
   mounted() {
+    
     this.initialize();
-    this.drawRadar(this.svg2, this.dataSum);
+    this.drawRadar(this.svg2, this.labelRadar);
+
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       //console.log("---ok---");
       this.ex_id = DataService.ex_id;
