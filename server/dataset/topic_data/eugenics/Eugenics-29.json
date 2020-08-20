@@ -1,0 +1,238 @@
+{
+  "Eugenics-29": [
+    {
+      "op_claim": "I think that a system of eugenics is the only morally correct path for a society to take and that selective breeding to remove a variety of negative conditions from the human race should be enacted. CMV",
+      "op_premise": "[\"People with genetic disorders, brain damage, mental retardation, allergies, natural predispositions to certain conditions (cancer, diabetes) or hereditary illnesses should not be able to have children because this creates a future in which these conditions are invariably worse and more prevalent. The especially unintelligent (cognitively-speaking) or naturally weak (physically) should also be prevented from breeding in order to nurture a smarter and stronger human race. I've always felt this way and though that (in this sense only) Hitler was right to want to further human advancement through artificial selection.\"]",
+      "reply-info": [
+        {
+          "replyer_name": "shayne1987'",
+          "reply_time": "7 years ago'",
+          "reply_delta_num": "10",
+          "reply_votes": "7 points'",
+          "reply_contents": [
+            {
+              "content": "because this creates a future in which these conditions are invariably worse and more prevalent",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "Every person has two copies of every gene on autosomal chromosomes, one from mother and one from father",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " If a genetic trait is recessive, a person needs to inherit two copies of the gene for the trait to be expressed",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Thus, both parents have to be carriers of a recessive trait in order for a child to express that trait",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Note that \"expression\" in this sense does not refer to genetic expression (i.e. transcription and translation) of the gene",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Instead, \"expression\" here refers to the observance of the gene within the phenotype",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " If both parents are carriers, there is a 25% chance with each child to show the recessive trait in the phenotype (https://en.wikipedia.org/wiki/Recessive_trait)",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "6",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            }
+          ]
+        },
+        {
+          "replyer_name": "ulyssessword'",
+          "reply_time": "7 years ago'",
+          "reply_delta_num": "15",
+          "reply_votes": "1 point'",
+          "reply_contents": [
+            {
+              "content": "There would be far too many unintended consequences to this",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " If you get rid of Autism, there goes people like Temple Grandin (who revolutionized meat processing plants) and many of the best software bug testers who would never have been born",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " If you get rid of dyslexia, there goes a majority of NASA employees",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Sickle cell anemia is associated with resistance to certain diseases",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Having a predisposition to diabetes just means that your ancestral diet is different from your current one, and food fashions change relatively quickly",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " I'm sure that there are hidden upsides to most, if not all negative traits being in the gene pool",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "2",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            }
+          ]
+        },
+        {
+          "replyer_name": "Amarkov'",
+          "reply_time": "7 years ago'",
+          "reply_delta_num": "30",
+          "reply_votes": "8 points'",
+          "reply_contents": [
+            {
+              "content": "Whenever you have something like this, it's very useful to rephrase it in the active voice, and applied to yourself",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Because it sounds someone reasonable to say \"selective breeding to remove a variety of negative conditions from the human race should be enacted\", but there are obvious problems with \"if I have severe allergies, the government should forcibly sterilize me\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

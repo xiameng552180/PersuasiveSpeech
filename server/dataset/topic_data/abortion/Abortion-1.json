@@ -1,0 +1,325 @@
+{
+  "Abortion-1": [
+    {
+      "op_claim": "I believe that abortion is always wrong because life begins at conception. CMV",
+      "op_premise": "[Caveats:, Why conception? No other jumping off point makes sense to me. If there is one, please explain., \"I find the violinist argument of Judith Jarvis Thompson to be unpersuasive: I think that the right of the violinist to life certainly trumps the right to not have ones body used by the violinist. If you wish to use some version of the argument, explain to me why the latter right trumps the former. For those unfamiliar with the argument:\", http://en.wikipedia.org/wiki/A_Defense_of_Abortion, \"Thank you for participating. This is basically the only issue where I part ways with my fellow progressives, and I would like to see r/changemyviews take.\", Edit: A third element I failed to include that is present in \"A Defense of Abortion\". Although the fetus may only be a clump of non-sentient cells, there is a fundamental difference between it and an amoeba or tree leaf cell: it\\s in the process of becoming sentient unless we actively move to stop it. So I view it as akin to someone who does have brain damage or something equivalent, but is improving and will be aware in nine months. Just like I think it would be murder to take that person off life support, the same applies in the case of a fetus. Here\\s the appropriate portion from \"A Defense of Abortion\":, \"<You wake up in the morning and find yourself back to back in bed with an unconscious violinist. A famous unconscious violinist. He has been found to have a fatal kidney ailment, and the Society of Music Lovers has canvassed all the available medical records and found that you alone have the right blood type to help. They have therefore kidnapped you, and last night the violinists circulatory system was plugged into yours, so that your kidneys can be used to extract poisons from his blood as well as your own. [If he is unplugged from you now, he will die; but] in nine months he will have recovered from his ailment, and can safely be unplugged from you.>\"]",
+      "reply-info": [
+        {
+          "replyer_name": "nikoberg",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "83",
+          "reply_votes": "2 points",
+          "reply_contents": [
+            {
+              "content": "its in the process of becoming sentient unless we actively move to stop itI would question why you think something being in the progress of development unless stopped is ethically relevant\"",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Suppose we have the reverse situation, where someones brain is in the progress of deteriorating due to a completely natural disease\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Are we any less obligated to stop it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "Similarly, suppose a fetus contains a gene which will cause it to die unless we intervene and give the mother a certain medication",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Does the fact that it\\s not the \"natural\" course of development for the fetus to become sentient now change anything",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Are you okay with an abortion in this case",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "In your response to another comment:in one case, we have a growing human being that just so happens to be inside of someone",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " In the other case, we have the building blocks to make a human being, but not together yetWhy exactly is the fetus a human being",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " It\\s not as simple as saying \"it has the genetic material of a human being,\" because a discarded skin cell does as well",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " You need some other distinction, like the one you made of \"inevitable\" or \"natural\" progress",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " But I think thats simply too vague and confusing a criteria to matter\"",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " If you place the right sperm and right egg together in close proximity, they will fertilize each other without any outside interference",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Does that mean that the egg and sperm have the same status as the embryo",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Take it back one more step",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Sperm will naturally travel up into the ovaries from the vagina, and then be in close proximity, and then become an embryo",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " So does the system of sperm/ovaries/egg now have the same status as an embryo",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Once ejaculation occurs when the penis is inserted, sperm will be in the vagina",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " So is the relevant factor where personhood is determined the moment of ejaculation",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " This doesnt seem to be a workable way to view the issue\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Rather, all we can say is that the embryo has the potential to become human, and is more likely to than any given combination of chemicals in the environment",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "But how much does that mean",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " Id say not a whole lot; the embryo is still quite a ways off from being human, and shouldnt be accorded the same status\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " It possibly has more than zero status- no one views abortion as a casual thing, and shouldnt\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " But the fetus is not a person, and abortion is not murder",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "38",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            }
+          ]
+        },
+        {
+          "replyer_name": "Joined_Today",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "31",
+          "reply_votes": "27 points",
+          "reply_contents": []
+        }
+      ]
+    }
+  ]
+}

@@ -28,7 +28,7 @@
       </div>
       <!--bar view-->
       <div class="col-lg-4">
-        <div id="RadarSVG" style="height: 240px; width: 200px; margin:auto;"></div>
+        <div id="RadarSVG" style="height: 220px; width: 220px; margin:auto;"></div>
         <div id="BarChartSVG" style="height: 240px; overflow-x: hidden;"></div>
       </div>
     </div>
@@ -53,7 +53,7 @@ export default {
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
-      dataRadar: [
+      dataSum: [
         [
           //dating summary
           { area: "claim", value: 28 },
@@ -65,32 +65,24 @@ export default {
           { area: "others", value: 186 }          
         ],
       ],
-      datingSum: [
-        //dating summary
-        { axis: "claim_num", value: 28 },
-        { axis: "logos_num", value: 119 },
-        { axis: "pathos_num", value: 41 },
-        { axis: "ethos_num", value: 9 },
-        { axis: "evidence_num", value: 97 },
-        { axis: "relevance_num", value: 25 }
-        // { axis: "others", value: 186 },
-      ],
+
       examples: null,
       ex_id: "",
     };
   },
   mounted() {
     this.initialize();
-    this.drawRadar(this.svg2, this.dataRadar);
+    this.drawRadar(this.svg2, this.dataSum);
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
-      console.log("---ok---");
+      //console.log("---ok---");
       this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
       this.drawBar(this.svg1);
       this.drawRose(this.svg);
-      console.log($("#strategy").val());
+      //filtering val
+      //console.log($("#strategy").val());
     });
   },
   methods: {
@@ -137,22 +129,22 @@ export default {
     },
     drawRadar(svgNode, d) {
       
-      var options = {
-        w: this.width2,
-        h: this.height2,
-        maxValue: 200,
-        levels: 5,
-        ExtraWidthX: 100,
-      };
+      // var options = {
+      //   w: this.width2,
+      //   h: this.height2,
+      //   maxValue: 200,
+      //   levels: 5,
+      //   ExtraWidthX: 0,
+      // };
 
       var cfg = {
         radius: 5,
-        w: 150,
-        h: 150,
+        w: 160,
+        h: 160,
         factor: 1,
         factorLegend: 0.6,
-        levels: 3,
-        maxValue: 0,
+        levels: 5,
+        maxValue: 200,
         radians: 2 * Math.PI,
         opacityArea: 0.5,
         ToRight: 5,
@@ -186,7 +178,7 @@ export default {
       var g = d3
         .select("#RadarSVG")
         .append("svg")
-        .attr("width", cfg.w + cfg.ExtraWidthX)
+        .attr("width", cfg.w +  cfg.ExtraWidthX)
         .attr("height", cfg.h + cfg.ExtraWidthY)
         .append("g")
         .attr(
