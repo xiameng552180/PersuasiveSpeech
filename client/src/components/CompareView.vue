@@ -62,7 +62,7 @@ export default {
           { area: "ethos", value: 9 },
           { area: "evidence", value: 97 },
           { area: "relevance", value: 25 },
-          { area: "others", value: 186 }          
+          { area: "others", value: 4 }          
         ],
       ],
 
@@ -144,7 +144,7 @@ export default {
         factor: 1,
         factorLegend: 0.6,
         levels: 5,
-        maxValue: 200,
+        maxValue: 150, //hard code
         radians: 2 * Math.PI,
         opacityArea: 0.5,
         ToRight: 5,
@@ -258,7 +258,7 @@ export default {
               ")"
           )
           .attr("fill", "#737373")
-          .text(((j + 1) * 200) / cfg.levels);  //axis
+          .text(((j + 1) * cfg.maxValue) / cfg.levels);  //axis  maxValue
       }
 
       var series = 0;

@@ -1,0 +1,48 @@
+{ "label_summary":
+[
+  {
+    "abortion": {
+      "claim_num": 51,
+      "logos_num": 180,
+      "pathos_num": 14,
+      "ethos_num": 2,
+      "evidence_num": 114,
+      "relevance_num": 41,
+      "others": 9
+    }
+  },
+  {
+    "dating": {
+      "claim_num": 28,
+      "logos_num": 119,
+      "pathos_num": 41,
+      "ethos_num": 9,
+      "evidence_num": 97,
+      "relevance_num": 25,
+      "others": 4
+    }
+  },
+  {
+    "eugenics": {
+      "claim_num": 32,
+      "logos_num": 45,
+      "pathos_num": 23,
+      "ethos_num": 0,
+      "evidence_num": 42,
+      "relevance_num": 9,
+      "others": 6
+    }
+  },
+  {
+    "immortality": {
+      "claim_num": 12,
+      "logos_num": 33,
+      "pathos_num": 27,
+      "ethos_num": 0,
+      "evidence_num": 99,
+      "relevance_num": 4,
+      "others": 1
+    }
+  }
+]
+}
