@@ -19,9 +19,6 @@ from math import sqrt
 # app = Flask(__name__)
 # CORS(app, supports_credentials=True)
 
-# app = Flask(__name__)
-# CORS(app, supports_credentials=True)
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -35,31 +32,13 @@ def register():
 
 @app.route('/uploadInput', methods=['POST','GET']) 
 def uploadInput():
-    print(request.args)
-    print(request.data)
-    # print(request.body)
-    # print(request.params)
-    # print(request.query)
-    return "get input!"
-    # if len(request.data) == 0:
-    #     return json.dumps("null")
-    # else:
-    #     inputResult = request.data
-    #     print(inputResult)
-    #     return json.dumps(inputResult)
+    temp = json.dumps(request.data.decode("utf-8"))
+    print(temp, type(temp))
+    return temp
 
 
-# @app.route('/uploadInput', methods=['POST'])
-# def post_route():
-#     if request.method == 'POST':
-#         headers = request.headers
-#         data = request.get_json()
-#         print'headers:',headers
-#         print('Data Received: "{data}"'.format(data=data))
-#         return "Request Processed.\n"
 
-# if __name__ == "__main__":
-#     app.run()
+
 
 
  

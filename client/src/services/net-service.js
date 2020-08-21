@@ -48,12 +48,19 @@ function getLoginData(userName, password, callback) {
     request(url, params, POST_REQUEST, callback);
 }
 
-function uploadInput(inputContent, callback) {
+function uploadInput(input, callback) {
     const url = `${devApiUrl}/uploadInput`;
-    var params = { inputContent };
+    var params = { input };
     console.log(url, params);
     request(url, params, POST_REQUEST, callback);
 }
+
+// function uploadInput(input, callback) {
+//   const url = `${devApiUrl}/uploadInput`;
+//   var params = { input };
+//   console.log(url, params);
+//   request(url, params, GET_REQUEST, callback);
+// }
 
 export default {
     getLoginData,

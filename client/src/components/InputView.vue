@@ -1,12 +1,7 @@
 <template>
-    <!-- <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">Input</span>
-        </div>
-            <textarea class="form-control" aria-label="With textarea" style="height:240px"></textarea>
-    </div> -->
     <div>
-        <textarea class="form-control" id="userInput" style="height:240px" placeholder="Input your text here" aria-label="With textarea">qqq</textarea>
+        <textarea class="form-control" id="userInput" style="height:240px" 
+            placeholder="Input your text here" aria-label="With textarea">123</textarea>
         <br />
         <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
     </div>
@@ -33,23 +28,18 @@ export default {
   },
   mounted() {
     this.initialize();
-      //var inputContent = document.getElementById("userInput").value;
-    // NetService.uploadInput("hello");
-    // this.updateInput();
-    NetService.uploadInput({name: "hello"}, (x)=>{console.log(x)});
     
   },
   methods: {
     initialize() {},
     updateInput: function (event) {
         var inputContent = document.getElementById("userInput").value;
-        this.backdata = NetService.uploadInput(inputContent);
-        console.log(this.backdata);
-        // NetService.uploadInput(inputContent => {
-        //   console.log(inputContent);
-        // });
-      
-
+        //this.backdata = NetService.uploadInput(inputContent);
+        NetService.uploadInput(inputContent, (x)=>{
+           //console.log("callback", x);
+           this.backdata = x;
+           });
+        console.log("from backend: ", this.backdata);
       }
     },
    
