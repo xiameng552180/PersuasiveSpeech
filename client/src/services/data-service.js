@@ -11,6 +11,17 @@ class Service {
     this.ex_id = "";
     this.examples = [];
     //this.inputdata = [];
+    this.selectIDarray = [];
+    this.selectIDIndex = [];
+    this.examplesum = {
+      logos: 0,
+      pathos: 0,
+      ethos: 0,
+      evidence: 0,
+      relevance: 0,
+      concreteness: 0,
+      eloquence: 0,
+    };
 
     return instance;
   }

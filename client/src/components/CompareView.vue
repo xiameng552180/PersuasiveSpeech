@@ -24,7 +24,14 @@
       </div>
       <!--rose chart view-->
       <div class="col-lg-4">
-        <div id="CircleSVG" style="height: 400px;  overflow-x: hidden;"></div>
+        <div id="CircleSVG" style="height: 400px;  overflow-x: hidden;"></div>     
+          <div class="row" style="margin:auto;">
+            <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
+             <label id="cbTxt">Select is disabled</label>&nbsp;
+             <p id="selectInd"></p>
+             <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
+          </div>
+        
       </div>
       <!--bar view-->
       <div class="col-lg-4">
@@ -55,9 +62,20 @@ export default {
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
       labelRadar: labelSum["label_summary"][1]["dating"],
-
+      selectIDarray: [],
+      selectIDIndex: [],
       examples: null,
       ex_id: "",
+      examplesum: {
+          logos: 0,
+          pathos: 0,
+          ethos: 0,
+          evidence: 0,
+          relevance: 0,
+          concreteness: 0,
+          eloquence: 0,
+      },
+      flag: 0,
     };
   },
   mounted() {
@@ -69,6 +87,10 @@ export default {
       //console.log("---ok---");
       this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
+      this.selectIDarray = DataService.selectIDarray;
+      this.selectIDIndex = DataService.selectIDIndex;
+      this.examplesum = DataService.examplesum;
+
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
       this.drawBar(this.svg1);
@@ -117,8 +139,27 @@ export default {
         .attr("class", "d3SVG")
         .attr("width", this.width1)
         .attr("height", this.height1);
-      2;
     },
+
+    mulipleSelect: function (event) {
+      if ($('#cbTxt').text() == 'Select is enabled') { //disable
+        console.log("close");
+        $('#selectInd').text('');
+        DataService.selectIDarray = [];
+        DataService.selectIDIndex = [];
+        $('#cbTxt').text('Select is disabled');
+        $('#genBar').css('display', 'none');
+      }
+      else {
+        console.log("open");
+        $('#cbTxt').text('Select is enabled');
+        $('#genBar').css('display', 'block');
+      
+      };
+    },
+
+
+
     drawRadar(svgNode, d) {
       var cfg = {
         radius: 5,
@@ -426,37 +467,98 @@ export default {
 
       var index = this.examples.map((d) => d.id).indexOf(this.ex_id);
 
+      // var examplesum = {
+      //     logos: 0,
+      //     pathos: 0,
+      //     ethos: 0,
+      //     evidence: 0,
+      //     relevance: 0,
+      //     concreteness: 0,
+      //     eloquence: 0,
+      //   };
+      console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
       if (this.ex_id !== "") {
-        var exampledata = this.examples.map((d) => d.content)[index]
-          .reply_contents;
-        console.log("exampledata:");
-        console.log(exampledata);
-
-        var examplesum = {
-          logos: 0,
-          pathos: 0,
-          ethos: 0,
-          evidence: 0,
-          relevance: 0,
-          concreteness: 0,
-          eloquence: 0,
-        };
-        exampledata.forEach((element) => {
-          examplesum["logos"] += parseInt(element["logos"]);
-          examplesum["pathos"] += parseInt(element["pathos"]);
-          examplesum["ethos"] += parseInt(element["ethos"]);
-          examplesum["evidence"] += parseInt(element["evidence"]);
-          examplesum["relevance"] += parseInt(element["relevance"]);
-          examplesum["concreteness"] += element["concreteness"];
-          examplesum["eloquence"] += element["eloquence"];
-        });
+        if (this.selectIDIndex.length == 0) { //draw single data
+            this.examplesum = {
+                logos: 0,
+                pathos: 0,
+                ethos: 0,
+                evidence: 0,
+                relevance: 0,
+                concreteness: 0,
+                eloquence: 0,
+              };
+            var exampledata = this.examples.map((d) => d.content)[index].reply_contents;
+            exampledata.forEach((element) => {
+              this.examplesum["logos"] += parseInt(element["logos"]);
+              this.examplesum["pathos"] += parseInt(element["pathos"]);
+              this.examplesum["ethos"] += parseInt(element["ethos"]);
+              this.examplesum["evidence"] += parseInt(element["evidence"]);
+              this.examplesum["relevance"] += parseInt(element["relevance"]);
+              this.examplesum["concreteness"] += element["concreteness"];
+              this.examplesum["eloquence"] += element["eloquence"];
+            });
         // console.log(examplesum);
+        }
+        else { //draw group data
+          
+              this.examplesum = {
+                logos: 0,
+                pathos: 0,
+                ethos: 0,
+                evidence: 0,
+                relevance: 0,
+                concreteness: 0,
+                eloquence: 0,
+              };
+              this.selectIDIndex.forEach((ind) =>{ //all replies
+              var exampledata = this.examples.map((d) => d.content)[ind].reply_contents;
+              
+              exampledata.forEach((sentence) =>{
+                  this.examplesum["logos"] += parseInt(sentence['logos']);
+                  this.examplesum["pathos"] += parseInt(sentence["pathos"]);
+                  this.examplesum["ethos"] += parseInt(sentence["ethos"]);
+                  this.examplesum["evidence"] += parseInt(sentence["evidence"]);
+                  this.examplesum["relevance"] += parseInt(sentence["relevance"]);
+                  this.examplesum["concreteness"] += sentence["concreteness"];
+                  this.examplesum["eloquence"] += sentence["eloquence"];
+                });
+            });
+        }
+ 
+        
+      }
+      else{ //draw all data
 
-        var data = input["input"].map((d) => {
+        // compute eloquenceSum & concretenessSum
+        var eloquenceSum = 0;
+        var concretenessSum = 0;
+        this.examples.forEach((element) => {    //num of reply
+          var tempElement = element.content.reply_contents;
+          tempElement.forEach((d) =>{
+            //console.log("this:", d.eloquence);
+            eloquenceSum += parseInt(d.eloquence);
+            concretenessSum += parseInt(d.concreteness);
+          });
+        });
+
+        this.examplesum = {
+          logos: this.labelRadar[0][1]["value"],
+          pathos: this.labelRadar[0][2]["value"],
+          ethos: this.labelRadar[0][3]["value"],
+          evidence: this.labelRadar[0][4]["value"],
+          relevance: this.labelRadar[0][5]["value"],
+          concreteness: concretenessSum,
+          eloquence: eloquenceSum,
+        };
+        //console.log("barSum", barSum);
+      }
+
+      var data = input["input"].map((d) => {
           // console.log(examplesum[d.feature] - d.label);
           return {
             feature: d.feature,
-            label: examplesum[d.feature] - d.label,
+            label: this.examplesum[d.feature] - d.label,
           };
         });
         // console.log(data);
@@ -527,111 +629,6 @@ export default {
           .append("g")
           .attr("transform", "translate(" + x(0) + ",0)")
           .call(d3.axisLeft(y));
-      }
-      else {
-        //var tempSum = this.labelRadar[0][1]["value"];
-        //console.log("barSum", tempSum["area"]);
-
-        // compute eloquenceSum & concretenessSum
-        var eloquenceSum = 0;
-        var concretenessSum = 0;
-        this.examples.forEach((element) => {    //num of reply
-          var tempElement = element.content.reply_contents;
-          tempElement.forEach((d) =>{
-            //console.log("this:", d.eloquence);
-            eloquenceSum += parseInt(d.eloquence);
-            concretenessSum += parseInt(d.concreteness);
-          });
-        });
-
-        var barSum = {
-          logos: this.labelRadar[0][1]["value"],
-          pathos: this.labelRadar[0][2]["value"],
-          ethos: this.labelRadar[0][3]["value"],
-          evidence: this.labelRadar[0][4]["value"],
-          relevance: this.labelRadar[0][5]["value"],
-          concreteness: concretenessSum,
-          eloquence: eloquenceSum,
-        };
-        //console.log("barSum", barSum);
-        var dataInput = input["input"].map((d) => {
-          // console.log(examplesum[d.feature] - d.label);
-          return {
-            feature: d.feature,
-            label: barSum[d.feature] - d.label,
-          };
-        });
-        //console.log("sum-input", dataInput);
-        // sort for barChart show
-        dataInput = dataInput.sort((a, b) => d3.descending(a.label, b.label));
-
-        //draw Sumbar
-        var y = d3
-          .scaleBand()
-          .range([height - 40, 40])
-          .padding(0.1);
-
-        var x = d3.scaleLinear().range([40, width - 40]);
-
-        // Scale the range of the data in the domains
-        x.domain([
-          d3.min(dataInput, function (d) {
-            return d.label;
-          }),
-          d3.max(dataInput, function (d) {
-            return d.label;
-          }),
-        ]);
-        y.domain(
-          dataInput.map(function (d) {
-            return d.feature;
-          })
-        );
-
-        // append the rectangles for the bar chart
-        svg
-          .selectAll(".bar")
-          .data(dataInput)
-          .enter()
-          .append("rect")
-          // .attr("class", (d) => {
-          //   return "bar-" + (d.label < 0 ? "neg" : "pos");
-          // })
-          .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
-          .attr("width", (d) => {
-            return Math.abs(x(d.label) - x(0));
-          })
-          .attr("x", (d) => {
-            return x(Math.min(0, d.label));
-          })
-          .attr("y", function (d) {
-            return y(d.feature);
-          })
-          .attr("height", y.bandwidth());
-        svg
-          .selectAll("text")
-          .data(dataInput)
-          .enter()
-          .append("text")
-          .text((d) => d.label)
-          .attr("x", (d) => x(d.label))
-          .attr("y", function (d) {
-            return y(d.feature) + y.bandwidth() / 2;
-          })
-          .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
-          .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
-        // add the x Axis
-        svg
-          .append("g")
-          .attr("transform", "translate(0," + (height - 40) + ")")
-          .call(d3.axisBottom(x));
-        // add the y Axis
-        svg
-          .append("g")
-          .attr("transform", "translate(" + x(0) + ",0)")
-          .call(d3.axisLeft(y));
-
-      }
 
     },
 
@@ -683,7 +680,7 @@ export default {
         this.pos["dating-26-" + i] = d;
         i++;
       });
-      console.log(this.pos);
+      //console.log(this.pos);
 
       // x, y scale
       var xdomain = Object.values(this.pos).map((d) => d[0]),
@@ -714,7 +711,7 @@ export default {
       function drawFrontRose(d, id, pos) {
         var exampledata = d.content["reply_contents"];
         // console.log(exampledata);
-        var examplesum = [
+        var Rosesum = [
           { feature: "is_claim", label: 0 },
           { feature: "logos", label: 0 },
           { feature: "pathos", label: 0 },
@@ -723,14 +720,14 @@ export default {
           { feature: "relevance", label: 0 },
         ];
         exampledata.forEach((element) => {
-          examplesum[0].label += parseInt(element["is_claim"]);
-          examplesum[1].label += parseInt(element["logos"]);
-          examplesum[2].label += parseInt(element["pathos"]);
-          examplesum[3].label += parseInt(element["ethos"]);
-          examplesum[4].label += parseInt(element["evidence"]);
-          examplesum[5].label += parseInt(element["relevance"]);
+          Rosesum[0].label += parseInt(element["is_claim"]);
+          Rosesum[1].label += parseInt(element["logos"]);
+          Rosesum[2].label += parseInt(element["pathos"]);
+          Rosesum[3].label += parseInt(element["ethos"]);
+          Rosesum[4].label += parseInt(element["evidence"]);
+          Rosesum[5].label += parseInt(element["relevance"]);
         });
-        examplesum = examplesum.map((d) => {
+        Rosesum = Rosesum.map((d) => {
           return {
             feature: d.feature,
             label: d.label,
@@ -738,21 +735,21 @@ export default {
           };
         });
 
-        // examplesum = examplesum.sort((a, b) => d3.descending(a.label, b.label));
+        // Rosesum = Rosesum.sort((a, b) => d3.descending(a.label, b.label));
 
 
         var total_label = 0;
-        examplesum.forEach((element) => {
+        Rosesum.forEach((element) => {
           total_label += element.label;
         });
 
-        // console.log(examplesum);
+        // console.log(Rosesum);
 
         var total_r = Math.sqrt(total_label) / Math.PI;
 
         // set inner radius scale:
         var outerR = outerRScale(d.content["reply_delta_num"]);
-        var innerRdomain = examplesum.map((d) => d.radius);
+        var innerRdomain = Rosesum.map((d) => d.radius);
         var innerRScale = d3
           .scaleLinear()
           .domain([d3.min(innerRdomain), total_r])
@@ -762,7 +759,7 @@ export default {
         var pie = d3.pie().value(function (d) {
           return 1; // equal arc
         });
-        var data_ready = pie(d3.entries(examplesum));
+        var data_ready = pie(d3.entries(Rosesum));
 
         // set color scale:
         var color = d3
@@ -853,6 +850,9 @@ export default {
       }
 
       // combine pie and rose
+      //user select
+      // var selectIDarray = []; //select rose chart IDarray
+      // var selectIDIndex = [];
       var circles = svg
         .selectAll("circle")
         .data(this.examples)
@@ -893,12 +893,30 @@ export default {
         //     .classed("highlightCircle", false);
         // })
         .on("click", (d) => {
-          //muliple select
-
-          DataService.ex_id = d.id;
-          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-          PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
-          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+          //muliple select: submit and then check enabled
+          if ($('#cbTxt').text() == 'Select is enabled'){
+              PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+              this.selectIDarray.push(d.id);
+              this.selectIDIndex.push(this.examples.map((d) => d.id).indexOf(d.id)); //d.id is consistent
+              $('#selectInd').text(this.selectIDIndex);
+              PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+              //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
+          }
+          if ($('#cbTxt').text() == 'Select is disabled'){
+            DataService.ex_id = d.id;
+            DataService.selectIDIndex = [];// clear IDarray
+            DataService.selectIDIndex = [];//clear index
+            
+            PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+            PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+            PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+          }
+          //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
+        
+          // DataService.ex_id = d.id;
+          // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         })
         .each((d) => drawFrontRose(d, d.id, this.pos));
     },
