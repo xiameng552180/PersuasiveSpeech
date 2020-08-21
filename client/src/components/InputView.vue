@@ -4,6 +4,8 @@
             placeholder="Input your text here" aria-label="With textarea">123</textarea>
         <br />
         <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
+        &nbsp;&nbsp;&nbsp;
+        <label id="eloquenceScore">eloquence: 5</label>
     </div>
         
     
