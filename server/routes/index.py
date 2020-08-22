@@ -81,8 +81,9 @@ def run_models(sentence):
         p_label = p_model.predict(p_f)[0]
         return [a_label, p_label]
 
-run_models("hello")
-exit()
+# run_models("hello")
+# exit()
+
 # app = Flask(__name__)
 # CORS(app, supports_credentials=True)
 
