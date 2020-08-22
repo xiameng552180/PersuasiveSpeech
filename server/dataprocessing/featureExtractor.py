@@ -59,6 +59,7 @@ def cal_sentence_concreteness(texts):
 
 def get_data(input_dir, outputdir):
     data_lists = os.listdir(input_dir)
+    print(data_lists)
     for data_list in data_lists:
         data_path = os.path.join(input_dir, data_list)
         with open(data_path, "r") as f:

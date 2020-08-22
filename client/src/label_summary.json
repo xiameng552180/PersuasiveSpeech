@@ -1,0 +1,50 @@
+{ "label_summary":
+[
+  {
+    "abortion": [[
+      { "area": "claim", "value": 51 },
+          { "area": "logos", "value": 180 },
+          { "area": "pathos", "value": 14 },
+          { "area": "ethos", "value": 2 },
+          { "area": "evidence", "value": 114 },
+          { "area": "relevance", "value": 41 },
+          { "area": "others", "value": 9 }  
+    ]]
+  },
+  {
+    "dating": [[
+          { "area": "claim", "value": 28 },
+          { "area": "logos", "value": 119 },
+          { "area": "pathos", "value": 41 },
+          { "area": "ethos", "value": 9 },
+          { "area": "evidence", "value": 97 },
+          { "area": "relevance", "value": 25 },
+          { "area": "others", "value": 4 }  
+    ]]
+  },
+  {
+    "eugenics": 
+      [[
+        { "area": "claim", "value": 32 },
+        { "area": "logos", "value": 45 },
+        { "area": "pathos", "value": 23 },
+        { "area": "ethos", "value": 0 },
+        { "area": "evidence", "value": 42 },
+        { "area": "relevance", "value": 9 },
+        { "area": "others", "value": 6 }  
+  ]]
+  },
+  {
+    "immortality": 
+      [[
+        { "area": "claim", "value": 12 },
+        { "area": "logos", "value": 33 },
+        { "area": "pathos", "value": 27 },
+        { "area": "ethos", "value": 0 },
+        { "area": "evidence", "value": 99 },
+        { "area": "relevance", "value": 4 },
+        { "area": "others", "value": 1 }  
+  ]]
+    }
+]
+}
