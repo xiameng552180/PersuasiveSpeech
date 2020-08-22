@@ -1,0 +1,418 @@
+{
+  "Eugenics-42": [
+    {
+      "op_claim": "I believe all mentally disabled people should be sterilized. CMV",
+      "op_premise": "['None']",
+      "reply-info": [
+        {
+          "replyer_name": "TryUsingScience'",
+          "reply_time": "7 years ago'",
+          "reply_delta_num": "10",
+          "reply_votes": "2 points'",
+          "reply_contents": [
+            {
+              "content": "In itself, I don't believe this is a bad idea",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1676,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "In itself, I don't believe this is a bad idea",
+                []
+              ]
+            },
+            {
+              "content": " The problem is the precedent it sets",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2497,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The problem is the precedent it sets",
+                []
+              ]
+            },
+            {
+              "content": "Right now, we as a citizenry are generally pretty adamant about having the rights to control our own bodies",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2505,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Right now, we as a citizenry are generally pretty adamant about having the rights to control our own bodies",
+                []
+              ]
+            },
+            {
+              "content": " The government can physically move your body somewhere like jail, but that's about all we'll let it do",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1914,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The government can physically move your body somewhere like jail, but that's about all we'll let it do",
+                []
+              ]
+            },
+            {
+              "content": " If \"all mentally disabled people are to be sterilized\" were to be come law tomorrow, it would set the precedent that the government can forcibly sterilize someone",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2318,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " If \u201call mentally disabled people are to be sterilized\u201d were to be come law tomorrow, it would set the precedent that the government can forcibly sterilize someone",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 4,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The government can control someone's body - and not just for their own good, but for the good of society",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2112,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The government can control someone's body - and not just for their own good, but for the good of society",
+                []
+              ]
+            },
+            {
+              "content": "Slippery slope is a fallacy in most arguments, but precedents are very important in law",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2506,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Slippery slope is a fallacy in most arguments, but precedents are very important in law",
+                []
+              ]
+            },
+            {
+              "content": " If the government can exercise control over someone's body for the good of society, what will they want to do next",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1975,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " If the government can exercise control over someone's body for the good of society, what will they want to do next",
+                []
+              ]
+            },
+            {
+              "content": " Maybe forcibly sterilize everyone convicted of a felony - after all, those people's kids are far more likely to end up as criminals",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2227,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Maybe forcibly sterilize everyone convicted of a felony - after all, those people's kids are far more likely to end up as criminals",
+                []
+              ]
+            },
+            {
+              "content": " Society would be better off without them",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2045,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Society would be better off without them",
+                []
+              ]
+            },
+            {
+              "content": "It's also a difficult system to implement perfectly",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2714,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "It's also a difficult system to implement perfectly",
+                []
+              ]
+            },
+            {
+              "content": " IQ tests have been shown to have many flaws",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1599,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " IQ tests have been shown to have many flaws",
+                []
+              ]
+            },
+            {
+              "content": " Do you know why we don't require an intelligence test before voting",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.234,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Do you know why we don't require an intelligence test before voting",
+                []
+              ]
+            },
+            {
+              "content": " Because it's incredibly likely that the test would end up politically biased and cut out one or the other party's support",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2076,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Because it's incredibly likely that the test would end up politically biased and cut out one or the other party's support",
+                []
+              ]
+            },
+            {
+              "content": " It's easy to imagine this policy ending up in a similar way, where liberal views or conservative views are recorded as signs of retardation and tip the scale toward sterilization",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2569,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " It's easy to imagine this policy ending up in a similar way, where liberal views or conservative views are recorded as signs of retardation and tip the scale toward sterilization",
+                [
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 16,
+                    "message": "Consider replacing \"in a similar way\" with adverb for \"similar\"; eg, \"in a hasty manner\" with \"hastily\".",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Not to mention things like IQ tests often end up racially biased",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2307,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Not to mention things like IQ tests often end up racially biased",
+                []
+              ]
+            },
+            {
+              "content": "4",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "4",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Amarkov'",
+          "reply_time": "7 years ago'",
+          "reply_delta_num": "30",
+          "reply_votes": "11 points'",
+          "reply_contents": [
+            {
+              "content": "You're using the passive voice here, and it obscures a major problem with your idea",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2143,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You're using the passive voice here, and it obscures a major problem with your idea",
+                []
+              ]
+            },
+            {
+              "content": " Who gets to judge if someone is disabled enough to be sterilized",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2339,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Who gets to judge if someone is disabled enough to be sterilized",
+                []
+              ]
+            },
+            {
+              "content": " Who performs the sterilization",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.3141,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Who performs the sterilization",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 4,
+                    "message": "\u201cWho\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Why do you think anyone has a right to fill either of these roles",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1875,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Why do you think anyone has a right to fill either of these roles",
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "dating-21": [
+    {
+      "op_claim": "I understand and agree with the social stigma associated with online dating. CMV.",
+      "op_premise": "[First off, I realize that this stigma is fading more and more in the last years, and meeting your partner on the internet is more and more becoming both a common occurance, and a socially accepted practice - however, most people still seem to feel somewhat uneasy or embarassed about it, and a conversation about it can easily turn into an awkward situation., Secondly, I have to disclose that I\\m not exactly qualified to have an opinion on this matter at all, being a (mostly kissless) virgin at age 21 who never really dabbled in dating in general so far - I have, however, been romantically active on the internet in the past, holding some sort-of online relationships that consisted of prolonged and daily instant messaging with a few girls, but that never lead to any real-life interaction and ultimately faded away into mutual silence., But maybe because of my former experience with this topic, I can\\t help but agree with the social consensus about online dating being weird, unnormal or weak. Resorting to online dating seems, to me, like a kind-of last resort, something you either do after you\\ve had no success dating people in reality and are afraid or hesitant to try again, or something you attempt due to social and sexual anxiety, a lack of confidence and unwillingness to put yourself out there and give it a shot for real., Whenever I\\m with a group and someone tells about how they\\ve met their partner online, I smile and nod like everyone else, trying to not be judgemental and keep an open mind, but I can\\t shake some thoughts in the back of my head along the lines of Well, no surprise there! and What a loser. - and looking around the rest of the group, I get the impression that other people are also thinking similar things, and that no one quite knows how to react., I realize these thoughts are quite arrogant and douche-y, especially considering my own lack of experience and my former history. I both feel like I\\m unqualified to judge other people in this way because I have nothing to show for myself, yet also competent because I\\ve been there before and can understand the motivations., But who knows - Im probably just bitter. Id love to become more open-minded in this regard. Please, CMV., TLDR: I\\ve never dated, and only held some online relationships - yet I still think online dating is for losers. CMV., EDIT: I want to emphasize that I dont mean to offend anyone with the points or choices of words presented here - please, do not think that! I am here because I recognize this mentality as faulty, and would love to hear some arguments that convince me to finally discard it., EDIT2: Changed unnatural to unnormal. Because that sounds so much better.]",
+      "reply-info": [
+        {
+          "replyer_name": "nikoberg",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "83",
+          "reply_votes": "9 points",
+          "reply_contents": [
+            {
+              "content": "Over 60% of gay relationships start online",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2432,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Over 60% of gay relationships start online",
+                []
+              ]
+            },
+            {
+              "content": " If you have a more specific set of interests, you arent exposed to nearly as many people youre compatible with",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2112,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " If you have a more specific set of interests, you aren't exposed to nearly as many people you're compatible with",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "aren't"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you're"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Online dating is a huge plus, especially if you live in a more rural area",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.194,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Online dating is a huge plus, especially if you live in a more rural area",
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

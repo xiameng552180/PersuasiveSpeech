@@ -1,0 +1,1066 @@
+{
+  "Eugenics-27": [
+    {
+      "op_claim": "I think that Eugenics would be beneficial to society and create a far more peaceful world. CMV",
+      "op_premise": "[\"I think that a world in which only the most superior humans live would be a much better one in helping our race to survive. It is fundamentally evolution. The world would be more peaceful and a much better place to live than it is today. Movies like Gattaca show a possibility of having superior being living alongside inferior but I think that natural birth should become illegal and babies can only be created using eugenics. I know this would be hard to do but families should really think before having natural birth when Eugenics is available considering their child would have a much lesser life. Eventually I think that the world would only exist of superior beings capable of solving many crisis' and protecting our race.\"]",
+      "reply-info": [
+        {
+          "replyer_name": "cwenham'",
+          "reply_time": "6 years ago'",
+          "reply_delta_num": "79",
+          "reply_votes": "10 points'",
+          "reply_contents": [
+            {
+              "content": "Eugenics creates a feedback loop that amplifies and distorts any flaws in our understanding of phylogeny, gene functions, and epigenetic effects",
+              "is_claim": "1",
+              "claim_type": "interpratation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2455,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Eugenics creates a feedback loop that amplifies and distorts any flaws in our understanding of phylogeny, gene functions, and epigenetic effects",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Possible spelling mistake found",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " It\\'s like pointing the microphone to the speaker and getting a squeal; eugenics leads to an escalating exaggeration of any trait that we subjectively think is \"good\", so it reflects our increasingly exaggerated tastes and prejudices, not what\\'s necessary for survival",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2392,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " It\\'s like pointing the microphone to the speaker and getting a squeal; eugenics leads to an escalating exaggeration of any trait that we subjectively think is \u201cgood\u201d, so it reflects our increasingly exaggerated tastes and prejudices, not what\\'s necessary for survival",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Intelligence, for example, is often thought of as if it were like temperature, because the IQ scale looks like a thermometer's gradient",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2212,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Intelligence, for example, is often thought of as if it were like temperature, because the IQ scale looks like a thermometer's gradient",
+                []
+              ]
+            },
+            {
+              "content": " Therefore all we need to do is figure out how to make the number bigger and we'll have the power to solve all problems",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1845,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Therefore, all we need to do is figure out how to make the number bigger and we'll have the power to solve all problems",
+                [
+                  {
+                    "category": "Punctuation Errors",
+                    "contextoffset": 1,
+                    "errorlength": 9,
+                    "message": "Did you forget a comma after a conjunctive/linking adverb?",
+                    "replacements": [
+                      "Therefore,"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "But intelligence is not really a linear thing, and I\\'m not talking about \"emotional intelligence\" or \"kinesthetic intelligence\" and other buzzwords, I mean it\\'s a subjective illusion created by many specialized components in your head",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2143,
+              "eloquence": 5,
+              "elo_info": [
+                5,
+                "But intelligence is not really a linear thing, and I\\'m not talking about \u201cemotional intelligence\u201d or \u201canesthetic intelligence\u201d and other buzzwords, I mean it\\'s a subjective illusion created by many specialized components in your head",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 11,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "anesthetic"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " You could use raw deduction to discern the difference between a photo of Marilyn Monroe and Cameron Diaz, but you don\\'t have to, because there\\'s a \"face recognizer\" gadget in your head called the fusiform gyrus and it does it for you",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2062,
+              "eloquence": 5,
+              "elo_info": [
+                5,
+                " You could use raw deduction to discern the difference between a photo of Marilyn Monroe and Cameron Dial, but you don\\'t have to, because there\\'s a \u201cface recognizer\u201d gadget in your head called the uniform Cyrus and it does it for you",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Dial",
+                      "Dias",
+                      "Ditz",
+                      "Diam"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 8,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "uniform"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Cyrus",
+                      "gurus",
+                      "gyros",
+                      "Grus"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Later, the same component started doing double-duty as a word recognizer, categorizer, and color processor",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2434,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Later, the same component started doing double-duty as a word recognizer, categorized, and color processor",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 11,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "categorized",
+                      "categorize",
+                      "categorizes",
+                      "categorize r"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "That gadget evolved because a mutation was cultured and worked on for millions of years in an environment where none of the people who had it realized that they needed it, and those who didn't have it may never have considered it important\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2062,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "That gadget evolved because a mutation was cultured and worked on for millions of years in an environment where none of the people who had it realized that they needed it, and those who didn't have it may never have considered it important\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Why waste neurons doing something we can easily accomplish by smell",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2214,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Why waste neurons doing something we can easily accomplish by smell",
+                []
+              ]
+            },
+            {
+              "content": " Put those neurons to work in the olfactory bulb where they'll be more productive",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2361,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Put those neurons to work in the olfactory bulb where they'll be more productive",
+                []
+              ]
+            },
+            {
+              "content": "Eliminating natural births and putting individual gene allocation in the hands of the parents will suppress that effect, because most of the new \"gadgets\" that improve our intelligence will begin as useless or even subjectively detrimental mutations",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2651,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Eliminating natural births and putting individual gene allocation in the hands of the parents will suppress that effect, because most of the new \u201cgadgets\u201d that improve our intelligence will begin as useless or even subjectively detrimental mutations",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " You don't get a cerebellum in one shot, you get something unrelated, which changes into something else, which changes into something else, until after millions of generations you have the organ that we recognize today",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2204,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " You don't get a cerebellum in one shot, you get something unrelated, which changes into something else, which changes into something else, until after millions of generations you have the organ that we recognize today",
+                []
+              ]
+            },
+            {
+              "content": "Like the pre-frontal cortex, which evolved from an olfactory bul",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2847,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Like the pre-frontal cortex, which evolved from an olfactory but",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 9,
+                    "errorlength": 11,
+                    "message": "Possible spelling mistake found",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 3,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "but",
+                      "bus",
+                      "bulk",
+                      "buy",
+                      "bull",
+                      "bug",
+                      "bulb",
+                      "Bud",
+                      "bud",
+                      "bun",
+                      "Jul",
+                      "bum",
+                      "Burl",
+                      "bbl",
+                      "bur",
+                      "burl",
+                      "bub",
+                      "Blu",
+                      "UL",
+                      "bl",
+                      "bu",
+                      "bu l"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Eugenics won't get you a superior race",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.21,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Eugenics won't get you a superior race",
+                []
+              ]
+            },
+            {
+              "content": "It'll get you a damn stupid one",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1756,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "It'll get you a damn stupid one",
+                []
+              ]
+            },
+            {
+              "content": "14",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "14",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Imwe'",
+          "reply_time": "6 years ago'",
+          "reply_delta_num": "14",
+          "reply_votes": "5 points'",
+          "reply_contents": [
+            {
+              "content": "I think that a world in which only the most superior humans live would be a much better one in helping our race to surviveIn hich only the most superior humans live or should be allowed to reproduce",
+              "is_claim": "1",
+              "claim_type": "evalutation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2048,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "I think that a world in which only the most superior humans live would be a much better one in helping our race to survive In which only the most superior humans live or should be allowed to reproduce",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 9,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "survive In"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "which",
+                      "high",
+                      "rich",
+                      "Rich",
+                      "hitch",
+                      "Mich",
+                      "hick",
+                      "hi ch"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Although both options are awful",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2206,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Although both options are awful",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 9,
+                    "message": "\u201cAlthough\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " What are your standards to determine who is superior",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2448,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " What are your standards to determine who is superior",
+                []
+              ]
+            },
+            {
+              "content": " Do we go by intelligence, physical health, mental health, sense of humor, or another standard",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2443,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Do we go by intelligence, physical health, mental health, sense of humor, or another standard",
+                []
+              ]
+            },
+            {
+              "content": " Can you \"objectively\" determine a superior human that will be accepted by the majority of people",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2319,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Can you \u201cobjectively\u201d determine a superior human that will be accepted by the majority of people",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 9,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 21,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "It is fundamentally evolution",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.4,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "It is fundamentally evolution",
+                []
+              ]
+            },
+            {
+              "content": "What does this mean",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1786,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "What does this mean",
+                []
+              ]
+            },
+            {
+              "content": " Evolution is directionless",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Evolution is directionless",
+                []
+              ]
+            },
+            {
+              "content": " \"Superior\" is a loaded term that has no connection to evolution",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2364,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " \u201cSuperior\u201d is a loaded term that has no connection to evolution",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 1,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 10,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "The world would be more peaceful and a much better place to live than it is today",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1957,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The world would be more peaceful and a much better place to live than it is today",
+                []
+              ]
+            },
+            {
+              "content": "You've got absolutely no evidence for this",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2376,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You've got absolutely no evidence for this",
+                []
+              ]
+            },
+            {
+              "content": "Eventually I think that the world would only exist of superior beings capable of solving many crisis' and protecting our race",
+              "is_claim": "1",
+              "claim_type": "evalutation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2228,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Eventually I think that the world would only exist of superior beings capable of solving many crisis' and protecting our race",
+                []
+              ]
+            },
+            {
+              "content": "Which crisis do you suppose they will solve",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2523,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Which crisis do you suppose they will solve",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 5,
+                    "message": "\u201cWhich\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " They pretty obviously failed to protect the right to bodily autonomy and the right to family planning for the majority of people",
+              "is_claim": "1",
+              "claim_type": "evalutation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2167,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " They pretty obviously failed to protect the right to bodily autonomy and the right to family planning for the majority of people",
+                []
+              ]
+            },
+            {
+              "content": "5",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "5",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Nepene'",
+          "reply_time": "6 years ago'",
+          "reply_delta_num": "179",
+          "reply_votes": "1 point'",
+          "reply_contents": [
+            {
+              "content": "Genetics is quite limited at the moment",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2463,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Genetics is quite limited at the moment",
+                []
+              ]
+            },
+            {
+              "content": " We are a long way from being able to tell how certain characteristics like intelligence are inherited since there's a lot of environmental factors and a lot of genes control it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.225,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " We are a long way from being able to tell how certain characteristics like intelligence are inherited since there's a lot of environmental factors and a lot of genes control it",
+                []
+              ]
+            },
+            {
+              "content": "It would be unfair to kill people without an effective way of measuring the most important trait, intelligence'",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.223,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "It would be unfair to kill people without an effective way of measuring the most important trait, intelligence'",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: ''' seems to be missing",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "By the time we know how to do it we'll probably have ways of genetically engineering people to boost their intelligence, muscle strength and such",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.216,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "By the time we know how to do it we'll probably have ways of genetically engineering people to boost their intelligence, muscle strength and such",
+                []
+              ]
+            },
+            {
+              "content": " Superior beings are inevitable, but there's a nicer way to do it",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1656,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Superior beings are inevitable, but there's a nicer way to do it",
+                []
+              ]
+            },
+            {
+              "content": "5",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "5",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "ralph-j'",
+          "reply_time": "6 years ago'",
+          "reply_delta_num": "285",
+          "reply_votes": "14 points'",
+          "reply_contents": [
+            {
+              "content": "It is fundamentally evolution",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.4,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "It is fundamentally evolution",
+                []
+              ]
+            },
+            {
+              "content": "Evolution is natural selection, where beings survive and procreate based on how well they fare in their environments",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2494,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Evolution is natural selection, where beings survive and procreate based on how well they fare in their environments",
+                []
+              ]
+            },
+            {
+              "content": " Eugenics is artificial selection, meaning that humans select based on what they think is beneficial",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2583,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Eugenics is artificial selection, meaning that humans select based on what they think is beneficial",
+                []
+              ]
+            },
+            {
+              "content": "The problem is: who decides what to select for",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2005,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The problem is: who decides what to select for",
+                []
+              ]
+            },
+            {
+              "content": " Skin color, sexual orientation, sex",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.4224,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Skin color, sexual orientation, sex",
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
