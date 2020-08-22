@@ -282,7 +282,7 @@ class SentenceEmbedder(object):
         print("---sentence embedder initialization---")
     def encode(self, data, labels):
         tokenized = data.apply((lambda x: self.tokenizer.encode(x, add_special_tokens=True)))
-        print("encoding shapre: {}".format(tokenized.shape))
+        # print("encoding shape: {}".format(tokenized.shape))
         # padding feature vectors to have the same length (default to the max length of the sentences)
         max_len = 0
         for i in tokenized.values:
@@ -312,7 +312,7 @@ class SentenceEmbedder(object):
     
     def encode_one(self, sentence, max_len):
         tokenized = self.tokenizer.encode(sentence, add_special_tokens=True)
-        print("encoding shapre: {}".format(len(tokenized)))
+        # print("encoding shape: {}".format(len(tokenized)))
         if max_len < len(tokenized):
             padded = tokenized[:max_len]
         else:

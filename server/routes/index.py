@@ -55,7 +55,34 @@ def load_models():
         ml_premise = joblib.load(f)
 
     return [[arg_model, ml_arg], [claim_model, ml_claim], [premise_model, ml_premise]]
+all_models = load_models()
 
+def run_models(sentence):
+    # argumentation
+    ## non-argument: 0, claim: 1, premise: 2
+    a_model = all_models[0][0]
+    ml_arg = all_models[0][1]
+    a_f = sentenceEmbedder.encode_one(sentence, ml_arg)
+    a_label = a_model.predict(a_f)[0]
+
+    if a_label == 0:
+        return []
+    elif a_label == 1:
+        # claim_type model
+        c_model = all_models[1][0]
+        ml_claim = all_models[1][1]
+        c_f = sentenceEmbedder.encode_one(sentence, ml_claim)
+        c_label = c_model.predict(c_f)[0]
+        return [a_label, c_label]
+    elif a_label == 2:
+        p_model = all_models[2][0]
+        ml_premise = all_models[2][1]
+        p_f = sentenceEmbedder.encode_one(sentence, ml_premise)
+        p_label = p_model.predict(p_f)[0]
+        return [a_label, p_label]
+
+run_models("hello")
+exit()
 # app = Flask(__name__)
 # CORS(app, supports_credentials=True)
 
@@ -73,7 +100,7 @@ def register():
 @app.route('/uploadInput', methods=['POST','GET']) 
 def uploadInput():
     temp = json.dumps(request.data.decode("utf-8"))
-        
+    
     return temp
 
 
