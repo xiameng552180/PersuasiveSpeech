@@ -152,10 +152,15 @@ def register():
 def uploadInput():
     temp = json.loads(request.data.decode("utf-8"))
     print("receive: ", temp)
-    sentence = temp["input"]
-    results = run_models(sentence)
-    print("results:", results)
-    return results
+    sentences = temp["input"].split(".")
+    all_results = []
+    for sentence in sentences:
+        results = run_models(sentence)
+        all_results.append(results)
+    print("results:", all_results)
+    return {
+        "results": all_results
+    }
 
 
 
