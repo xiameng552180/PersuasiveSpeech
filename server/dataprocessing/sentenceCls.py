@@ -28,8 +28,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 #### data folder configuration
-new_dataset_folder = "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/posts_new/"
-models_path = "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/models/"
+dir_path = os.path.dirname(os.path.realpath(__file__))
+new_dataset_folder = os.path.join(dir_path, '../dataset/posts_new/')
+
+# "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/posts_new/"
+models_path = os.path.join(dir_path, '../dataset/models/')
+# "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/models/"
 # df = pd.read_csv('samples/train.tsv', delimiter='\t', header=None)[:2000]
 # # print(df.head())
 
