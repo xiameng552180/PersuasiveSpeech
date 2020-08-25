@@ -1,0 +1,790 @@
+{
+  "Abortion-1": [
+    {
+      "op_claim": "I believe that abortion is always wrong because life begins at conception. CMV",
+      "op_premise": "[Caveats:, Why conception? No other jumping off point makes sense to me. If there is one, please explain., \"I find the violinist argument of Judith Jarvis Thompson to be unpersuasive: I think that the right of the violinist to life certainly trumps the right to not have ones body used by the violinist. If you wish to use some version of the argument, explain to me why the latter right trumps the former. For those unfamiliar with the argument:\", http://en.wikipedia.org/wiki/A_Defense_of_Abortion, \"Thank you for participating. This is basically the only issue where I part ways with my fellow progressives, and I would like to see r/changemyviews take.\", Edit: A third element I failed to include that is present in \"A Defense of Abortion\". Although the fetus may only be a clump of non-sentient cells, there is a fundamental difference between it and an amoeba or tree leaf cell: it\\s in the process of becoming sentient unless we actively move to stop it. So I view it as akin to someone who does have brain damage or something equivalent, but is improving and will be aware in nine months. Just like I think it would be murder to take that person off life support, the same applies in the case of a fetus. Here\\s the appropriate portion from \"A Defense of Abortion\":, \"<You wake up in the morning and find yourself back to back in bed with an unconscious violinist. A famous unconscious violinist. He has been found to have a fatal kidney ailment, and the Society of Music Lovers has canvassed all the available medical records and found that you alone have the right blood type to help. They have therefore kidnapped you, and last night the violinists circulatory system was plugged into yours, so that your kidneys can be used to extract poisons from his blood as well as your own. [If he is unplugged from you now, he will die; but] in nine months he will have recovered from his ailment, and can safely be unplugged from you.>\"]",
+      "reply-info": [
+        {
+          "replyer_name": "nikoberg",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "83",
+          "reply_votes": "2 points",
+          "reply_contents": [
+            {
+              "content": "its in the process of becoming sentient unless we actively move to stop itI would question why you think something being in the progress of development unless stopped is ethically relevant\"",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2279,
+              "eloquence": 5,
+              "elo_info": [
+                5,
+                "Its in the process of becoming sentient unless we actively move to stop it would question why you think something being in the progress of development unless stopped is ethically relevant\u201d",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "Its"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
+                    "replacements": [
+                      "it's",
+                      "it is"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 3,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "it",
+                      "its",
+                      "IT",
+                      "It",
+                      "Ito",
+                      "Ti",
+                      "ii",
+                      "iii",
+                      "ite",
+                      "ti",
+                      "it I"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Suppose we have the reverse situation, where someones brain is in the progress of deteriorating due to a completely natural disease\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2249,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Suppose we have the reverse situation, where someones brain is in the progress of deteriorating due to a completely natural disease\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Are we any less obligated to stop it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1782,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Are we any less obligated to stop it",
+                []
+              ]
+            },
+            {
+              "content": "Similarly, suppose a fetus contains a gene which will cause it to die unless we intervene and give the mother a certain medication",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2464,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Similarly, suppose a fetus contains a gene which will cause it to die unless we intervene and give the mother a certain medication",
+                []
+              ]
+            },
+            {
+              "content": " Does the fact that it\\s not the \"natural\" course of development for the fetus to become sentient now change anything",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2416,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Does the fact that it\\s not the \u201cnatural\u201d course of development for the fetus to become sentient now change anything",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 33,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Are you okay with an abortion in this case",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2331,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Are you okay with an abortion in this case",
+                []
+              ]
+            },
+            {
+              "content": "In your response to another comment:in one case, we have a growing human being that just so happens to be inside of someone",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1934,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "In your response to another comment:in one case, we have a growing human being that just so happens to be inside of someone",
+                []
+              ]
+            },
+            {
+              "content": " In the other case, we have the building blocks to make a human being, but not together yetWhy exactly is the fetus a human being",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.204,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " In the other case, we have the building blocks to make a human being, but not together tetchy exactly is the fetus a human being",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "tetchy",
+                      "Jetway"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " It\\s not as simple as saying \"it has the genetic material of a human being,\" because a discarded skin cell does as well",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2283,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " It\\s not as simple as saying \u201cit has the genetic material of a human being,\u201d because a discarded skin cell does as well",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 30,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " You need some other distinction, like the one you made of \"inevitable\" or \"natural\" progress",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1867,
+              "eloquence": 4,
+              "elo_info": [
+                4,
+                " You need some other distinction, like the one you made of \u201cinevitable\u201d or \u201cnatural\u201d progress",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " But I think thats simply too vague and confusing a criteria to matter\"",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2167,
+              "eloquence": 4,
+              "elo_info": [
+                4,
+                " But I think that's simply too vague and confusing a criterion to matter\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 13,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "that's"
+                    ]
+                  },
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Don't use indefinite articles with plural words. Did you mean 'a criterion' or simply 'criteria'?",
+                    "replacements": [
+                      "a criterion",
+                      "criteria"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " If you place the right sperm and right egg together in close proximity, they will fertilize each other without any outside interference",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2286,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " If you place the right sperm and right egg together in proximity, they will fertilize each other without any outside interference",
+                [
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 15,
+                    "message": "Use simply 'proximity'.",
+                    "replacements": [
+                      "proximity"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Does that mean that the egg and sperm have the same status as the embryo",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2439,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Does that mean that the egg and sperm have the same status as the embryo",
+                []
+              ]
+            },
+            {
+              "content": " Take it back one more step",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1666,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Take it back one more step",
+                []
+              ]
+            },
+            {
+              "content": " Sperm will naturally travel up into the ovaries from the vagina, and then be in close proximity, and then become an embryo",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2289,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Sperm will naturally travel up into the ovaries from the vagina, and then be in proximity, and then become an embryo",
+                [
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 15,
+                    "message": "Use simply 'proximity'.",
+                    "replacements": [
+                      "proximity"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " So does the system of sperm/ovaries/egg now have the same status as an embryo",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2657,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " So does the system of sperm/ovaries/egg now have the same status as an embryo",
+                []
+              ]
+            },
+            {
+              "content": " Once ejaculation occurs when the penis is inserted, sperm will be in the vagina",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2811,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Once ejaculation occurs when the penis is inserted, sperm will be in the vagina",
+                []
+              ]
+            },
+            {
+              "content": " So is the relevant factor where personhood is determined the moment of ejaculation",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.3168,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " So is the relevant factor where person hood is determined the moment of ejaculation",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 33,
+                    "errorlength": 10,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "person hood"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " This doesnt seem to be a workable way to view the issue\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2115,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " This doesn't seem to be a workable way to view the issue\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 6,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "doesn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Rather, all we can say is that the embryo has the potential to become human, and is more likely to than any given combination of chemicals in the environment",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2294,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Rather, all we can say is that the embryo has the potential to become human, and is more likely to than any given combination of chemicals in the environment",
+                []
+              ]
+            },
+            {
+              "content": "But how much does that mean",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1947,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "But how many does that mean",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 8,
+                    "errorlength": 4,
+                    "message": "Use 'many' with countable nouns.",
+                    "replacements": [
+                      "many"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Id say not a whole lot; the embryo is still quite a ways off from being human, and shouldnt be accorded the same status\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2047,
+              "eloquence": 6,
+              "elo_info": [
+                6,
+                " I'd say not a lot; the embryo is still quite a way off from being human, and shouldn't be accorded the same status\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 2,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "I'd"
+                    ]
+                  },
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 14,
+                    "errorlength": 9,
+                    "message": "Use simply 'lot'.",
+                    "replacements": [
+                      "lot"
+                    ]
+                  },
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Don't use indefinite articles with plural words. Did you mean 'a way' or simply 'ways'?",
+                    "replacements": [
+                      "a way",
+                      "ways"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 8,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "shouldn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " It possibly has more than zero status- no one views abortion as a casual thing, and shouldnt\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2284,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " It possibly has more than zero status- no one views abortion as a casual thing, and shouldn't\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 8,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "shouldn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " But the fetus is not a person, and abortion is not murder",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2697,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " But the fetus is not a person, and abortion is not murder",
+                []
+              ]
+            },
+            {
+              "content": "38",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "38",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Joined_Today",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "31",
+          "reply_votes": "27 points",
+          "reply_contents": []
+        }
+      ]
+    }
+  ]
+}

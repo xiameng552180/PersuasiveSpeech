@@ -1,0 +1,1090 @@
+{
+  "Abortion-13": [
+    {
+      "op_claim": "I think the abortion debate focuses too much on womens rights, and not enough on fetal rights CMV",
+      "op_premise": "[\"I believe that the real question when debating abortion is at what point does the fetus have rights (ie to not be aborted). Any discussion before establishing this is idiotic in my opinion. Of course, if the fetus doesnt have any rights the women should be able to get an abortion! Its their body they should be in control of their health.\", Therefore, i believe that all this talk about \"women\\s rights\" really misses the point. Both sides should be defending why/why not, at a certain point in gestation, a fetus does or does not have rights. Simply saying \"its the woman\\s body she should be able to do what she wants\" does not acknowledge the fact that at some point the rights of the fetus needs to be taken into account. And where that point is, is actually the crux of the debate., \"Note: Im very pro womens health, and womens rights. I just believe that the debate isnt really a matter of womens rights, its a matter of at what point does the fetus have rights.\", \"Edit: Im talking about elective abortion\"]",
+      "reply-info": [
+        {
+          "replyer_name": "BoozeoisPig",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "11",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "The fetuses rights are not THE point, they are A point",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1776,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "The fetuses right are not THE point, they are A point",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 12,
+                    "errorlength": 6,
+                    "message": "You should probably use 'right'.",
+                    "replacements": [
+                      "right"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " On one hand we have the woman who says that she deserves to have the right to bodily autonomy and/or her health at the expense of any fetus growing inside her",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2201,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " On one hand we have the woman who says that she deserves to have the right to bodily autonomy and/or her health at the expense of any fetus growing inside her",
+                []
+              ]
+            },
+            {
+              "content": " On the other hand we have a fetus who lots of people outside of the womb say has the right to the mother, at the expense of her bodily autonomy and sometimes health",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2186,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " On the other hand we have a fetus who lots of people outside of the womb say has the right to the mother, at the expense of her bodily autonomy and sometimes health",
+                []
+              ]
+            },
+            {
+              "content": "I dont think that fetuses have rights to life\"",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1659,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "I don't think that fetuses have rights to life\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 2,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " They should have a right to an intact body, while alive, that can only be violated in the process of terminating that life",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2152,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " They should have a right to an intact body, while alive, that can only be violated in the process of terminating that life",
+                []
+              ]
+            },
+            {
+              "content": " I think a fully grown womans desire not to harbor a parasitic vessel inside of her is more worthy of satiating than a fetuses desire to stay alive\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2298,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " I think a fully grown women desire not to harbor a parasitic vessel inside of her is more worthy of satiating than a fetuses desire to stay alive\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 23,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'women', the irregular plural form of the noun 'woman'?",
+                    "replacements": [
+                      "women",
+                      "woman",
+                      "Romans",
+                      "woman s"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Or the general desire of anyone to see that all fetus have a chance to find happiness in life\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2244,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Or the general desire of anyone to see that all fetus have a chance to find happiness in life\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " And that the desire of that woman outweighs those desires of the fetus and the people outside of her by a factor that is so large that it would induce carpel tunnel if I tried to type it out",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2288,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " And that the desire of that woman outweighs those desires of the fetus and the people outside of her by a factor that is so large that it would induce carpel tunnel if I tried to type it out",
+                []
+              ]
+            },
+            {
+              "content": "But I just dont see a fetus or even a newborn as having the sapience necessary to justify a right to life\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2384,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "But I just don't see a fetus or even a newborn as having the sapience necessary to justify a right to life\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 11,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The possible future sapience that a human will entail if it grows up justifies keeping fetuses and babies as intact and healthy as possible WHILE still alive and on that path",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2528,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The possible future sapience that a human will entail if it grows up justifies keeping fetuses and babies as intact and healthy as possible WHILE still alive and on that path",
+                []
+              ]
+            },
+            {
+              "content": " So really my pro-choice stems from both a respect for women and a lack of respect for fetuses and newborns, full stop",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1963,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " So really my pro-choice stems from both a respect for women and a lack of respect for fetuses and newborns, full stop",
+                []
+              ]
+            },
+            {
+              "content": "11",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "11",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "funchy",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "19",
+          "reply_votes": "8 points",
+          "reply_contents": [
+            {
+              "content": "Why should a fetus have legal rights",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.285,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Why should a fetus have legal rights",
+                []
+              ]
+            },
+            {
+              "content": " Under the law, for the most part at least, it\\s does not attain \"personhood\" until birth",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2104,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " Under the law, for the most part at least, it\\s does not attain \u201cperson hood\u201d until birth",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "person hood"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Why would it have rights if its not a person\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1703,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Why would it have rights if its not a person\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "You can argue a fetus should have rights because its a potential person\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.226,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "You can argue a fetus should have rights because it's a potential person\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 3,
+                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
+                    "replacements": [
+                      "it's",
+                      "it is"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "But when aren\\t sex cells coming together in a healthy womb not a \"potential person\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2208,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "But when aren\\t sex cells coming together in a healthy womb not a \u201cpotential person\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " An ovulated egg plus ejaculated sperm are \"potential people\" too if they\\re in close proximity to each other",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.242,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " An ovulated egg plus ejaculated sperm are \u201cpotential people\u201d too if they\\re in proximity to each other",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 15,
+                    "message": "Use simply 'proximity'.",
+                    "replacements": [
+                      "proximity"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " What of the \"potential people\" who are never born because of The Pill or condoms",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1762,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " What of the \u201cpotential people\u201d who are never born because of The Pill or condoms",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 13,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 30,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " What about the rights of the \"potential people\" who weren\\t allowed to implant in a womb because of birth control or IVF",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2134,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " What about the rights of the \u201cpotential people\u201d who weren\\t allowed implanting in a womb because of birth control or IVF",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 30,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Did you mean 'implanting'? Or maybe you should add a pronoun? In active voice, 'allow' + 'to' takes an object, usually a pronoun.",
+                    "replacements": [
+                      "implanting"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Imagine how many people were denied a chance at life! One of those couldve been the next genius, world leader, or Saint\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1851,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " Imagine how many people were denied a chance at life! One of those could ve been the next genius, world leader, or Saint\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 7,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "could ve"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " If we give legal rights to a fetus at any stage, why not give it to the fertilized egg seeking to implant in the uterine lining",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2365,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " If we give legal rights to a fetus at any stage, why not give it to the fertilized egg seeking to implant in the uterine lining",
+                []
+              ]
+            },
+            {
+              "content": " Theyre all potential people, right\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.277,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " They're all potential people, right\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "They're"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 35,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 35,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "2",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "2",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Amablue",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "133",
+          "reply_votes": "72 points",
+          "reply_contents": [
+            {
+              "content": "The people touting womens rights are doing so because they generally believe that a womans rights to her body trumps the fetuss right to her body, thats the whole point\"",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1874,
+              "eloquence": 6,
+              "elo_info": [
+                6,
+                "The people touting women rights are doing so because they generally believe that a women rights to her body trumps the fetuses right to her body, that's the whole point\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 19,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "women",
+                      "omens",
+                      "w omens",
+                      "women s"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'women', the irregular plural form of the noun 'woman'?",
+                    "replacements": [
+                      "women",
+                      "woman",
+                      "Romans",
+                      "woman s"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'fetuses', the irregular plural form of the noun 'fetus'?",
+                    "replacements": [
+                      "fetuses",
+                      "fetus",
+                      "fetus s"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "that's"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Theyre not failing to acknowledge the fetuss rights, theyre arguing that its rights dont supersede the mothers\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2602,
+              "eloquence": 6,
+              "elo_info": [
+                6,
+                " They're not failing to acknowledge the fetuses rights, they're arguing that its rights don't supersede the mothers\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "They're"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 39,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'fetuses', the irregular plural form of the noun 'fetus'?",
+                    "replacements": [
+                      "fetuses",
+                      "fetus",
+                      "fetus s"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "they're"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "3",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "3",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "cahpahkah",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "59",
+          "reply_votes": "10 points",
+          "reply_contents": [
+            {
+              "content": "At what point does the fetus have rights (ie to not be aborted)=\"at what point does the woman lose the right to control her body (i.e., to have an abortion) ",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1933,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "At what point does the fetus have rights (IE to not be aborted)=\u201dat what point does the woman lose the right to control her body (i.e., to have an abortion) ",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 2,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "IE",
+                      "in",
+                      "is",
+                      "I",
+                      "he",
+                      "it",
+                      "we",
+                      "be",
+                      "me",
+                      "if",
+                      "air",
+                      "aid",
+                      "die",
+                      "ice",
+                      "lie",
+                      "tie",
+                      "ID",
+                      "IQ",
+                      "id",
+                      "pie",
+                      "ire",
+                      "vie",
+                      "OE",
+                      "aim",
+                      "ain",
+                      "ail",
+                      "fie",
+                      "Be",
+                      "Ce",
+                      "DE",
+                      "E",
+                      "Fe",
+                      "GE",
+                      "Ge",
+                      "He",
+                      "IA",
+                      "IL",
+                      "IN",
+                      "IT",
+                      "IV",
+                      "Ia",
+                      "Ice",
+                      "Ike",
+                      "In",
+                      "Io",
+                      "Ir",
+                      "It",
+                      "Le",
+                      "Lie",
+                      "ME",
+                      "Me",
+                      "NE",
+                      "Ne",
+                      "PE",
+                      "Re",
+                      "SE",
+                      "Se",
+                      "Te",
+                      "Xe",
+                      "e",
+                      "hie",
+                      "i",
+                      "ii",
+                      "ite",
+                      "iv",
+                      "ix",
+                      "ne",
+                      "re",
+                      "ve",
+                      "ye",
+                      "i e"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "This already is the argument",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2307,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "This already is the argument",
+                []
+              ]
+            },
+            {
+              "content": " How does your rephrasing change, clarify or improve it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2508,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " How does your rephrasing change, clarify or improve it",
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

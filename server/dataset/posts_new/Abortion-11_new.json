@@ -1,0 +1,2165 @@
+{
+  "Abortion-11": [
+    {
+      "op_claim": "I think its hypocritical that if a pregnant woman is killed, its a double homicide, but abortion is perfectly legal. CMV.",
+      "op_premise": "[I live in the United States, I am against abortion, and it confuses me that if a woman is killed while pregnant it is classified as a double homicide (implying that the baby was alive), while abortion in the first two trimesters is legal. Does the baby only count as a life if the mother wants it to? NOTE: I do not want to debate abortion, I simply want to understand what seems like a double standard.]",
+      "reply-info": [
+        {
+          "replyer_name": "funchy",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "19",
+          "reply_votes": "5 points",
+          "reply_contents": [
+            {
+              "content": "By your logic, a woman who miscarries must be charged with manslaughter",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2108,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "By your logic, a woman who miscarries must be charged with manslaughter",
+                []
+              ]
+            },
+            {
+              "content": " How would you feel about that",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2027,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " How would you feel about that",
+                []
+              ]
+            },
+            {
+              "content": "By this logic, a mother who does anything society deems \"wrong\" during gestation should be charged with child endangerment or abuse as a result",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2473,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "By this logic, a mother who does anything society deem \u201cwrong\u201d during gestation should be charged with child endangerment or abuse as a result",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Did you mean 'deem'?",
+                    "replacements": [
+                      "deem"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " For example, women would have to prove they took prenatal vitamins every day if the baby had any defects",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2236,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " For example, women would have to prove they took prenatal vitamins every day if the baby had any defects",
+                []
+              ]
+            },
+            {
+              "content": " The woman must attend all prenatal check-ups and if she missed one and there was a problem that maybe couldve been treated/prevented, shed be charged with a crime\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.212,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " The woman must attend all prenatal check-ups and if she missed one and there was a problem that maybe could ve been treated/prevented, shed be charged with a crime\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 7,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "could ve"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "If a fetus is a human and anyone harms it, shouldnt they also be charged with child endangerment\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2163,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "If a fetus is a human and anyone harms it, shouldn't they also be charged with child endangerment\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 8,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "shouldn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " For example if a women feels stressed at work, we know stress puts a fetus in danger",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2296,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " For example if a woman feels stressed at work, we know stress puts a fetus in danger",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 18,
+                    "errorlength": 5,
+                    "message": "'woman' is the singular form of 'women'. Consider using 'woman'?",
+                    "replacements": [
+                      "woman"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Should her boss be investigated for child endangerment if he doesnt stop giving her so many deadlines\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2108,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " Should her boss be investigated for child endangerment if he doesn't stop giving her so many deadlines\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "doesn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Or if her partner argues with her all the time and it causes her stress, can we charge him with a crime if she goes into labor early",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2045,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Or if her partner argues with her all the time and it causes her stress, can we charge him with a crime if she goes into labor early",
+                []
+              ]
+            },
+            {
+              "content": "Do we call the coroner in and set up a crime scene investigation any time its discovered that a woman miscarried\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2247,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Do we call the coroner in and set up a crime scene investigation any time its discovered that a woman miscarried\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " How can we be sure the miscarriage was absolutely un-preventable",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2392,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " How can we be sure the miscarriage was absolutely unpreventable",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 14,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "unpreventable"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "I agree there a double standard: I think its wrong a person is charged with double-murder when a fetus dies as a result of murdering the mother\"",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.197,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "I agree there a double standard: I think its wrong a person is charged with double-murder when a fetus dies as a result of murdering the mother\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " However, that said, that murder (like any murder of a person) should be prosecuted under the full power of the law",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2284,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " However, that said, that murder (like any murder of a person) should be prosecuted under the full power of the law",
+                []
+              ]
+            },
+            {
+              "content": " The murder of the mother itself should be punishable severely",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2323,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The murder of the mother itself should be punishable severely",
+                []
+              ]
+            },
+            {
+              "content": " Any intentional murder of a person should",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2371,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Any intentional murder of a person should",
+                []
+              ]
+            },
+            {
+              "content": "Crazy question: if any death of a human is murder and someone should be held accountable",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2331,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Crazy question: if any death of a human is murder and someone should be held accountable",
+                []
+              ]
+            },
+            {
+              "content": " what do you say when women who are having serious complications and who die when theyre denied abortion\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1709,
+              "eloquence": 4,
+              "elo_info": [
+                4,
+                " What do you say when women who are having serious complications and who die when they're denied abortion\u201d",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 1,
+                    "errorlength": 4,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "What"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "they're"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Do we hold the doctor who intentionally withheld lifesaving care accountable",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2426,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Do we hold the doctor who intentionally withheld lifesaving care accountable",
+                []
+              ]
+            },
+            {
+              "content": " For example, the irish woman, Savita Halappanavar who was left to slowly die of septicemia",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2486,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " For example, the Irish woman, Santa Halappanavar who was left to slowly die of septicemia",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 18,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Irish",
+                      "iris h"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 31,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Santa",
+                      "Saving",
+                      "Cavity",
+                      "Anita",
+                      "Saliva",
+                      "Sanity",
+                      "Savior",
+                      "Avila",
+                      "Sabina",
+                      "Vita",
+                      "Evita",
+                      "Davits",
+                      "Saith",
+                      "Davit",
+                      "Suavity",
+                      "Akita",
+                      "Fajita"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 38,
+                    "errorlength": 12,
+                    "message": "Possible spelling mistake found",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Or what if its a case of saving the fetus versus saving the mother: if the fetus is the direct cause of the womans death, if the fetus survives is he somehow responsible for involuntary manslaughter\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2609,
+              "eloquence": 4,
+              "elo_info": [
+                4,
+                " Or what if it's a case of saving the fetus versus saving the mother: if the fetus is the direct cause of the women death, if the fetus survives is he somehow responsible for involuntary manslaughter\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 12,
+                    "errorlength": 3,
+                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
+                    "replacements": [
+                      "it's",
+                      "it is"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'women', the irregular plural form of the noun 'woman'?",
+                    "replacements": [
+                      "women",
+                      "woman",
+                      "Romans",
+                      "woman s"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Do you see what happens when you insist on looking at all human deaths as possible \"murders\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1957,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Do you see what happens when you insist on looking at all human deaths as possible \u201cmurders\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "12",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "12",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "EvilNalu",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "10",
+          "reply_votes": "2 points",
+          "reply_contents": [
+            {
+              "content": "If you understand the underpinnings of the Roe v",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1843,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "If you understand the underpinnings of the Roe v",
+                []
+              ]
+            },
+            {
+              "content": " Wade decision, you will see how to construct an argument that it is valid for the state to punish people who kill fetuses while invalid for the state to punish abortions",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2263,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Wade decision, you will see how to construct an argument that it is valid for the state to punish people who kill fetuses while invalid for the state to punish abortions",
+                []
+              ]
+            },
+            {
+              "content": " Allow me to attempt it:The first thing to understand is that Roe v.\"Wade",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1978,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " Allow me to attempt it:The first thing to understand is that Roe v.\u201d Wade",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Add a space between sentences",
+                    "replacements": [
+                      " Wade"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Wade was about balancing the mothers right to privacy and bodily autonomy with the states interest in prohibiting abortion, not with the childs right to life\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2161,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " Wade was about balancing the mothers right to privacy and bodily autonomy with the states interest in prohibiting abortion, not with the children right to life\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'children', the irregular plural form of the noun 'child'?",
+                    "replacements": [
+                      "children",
+                      "child",
+                      "chills",
+                      "child s"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The Roe decision stated emphatically that \"the word \\person,\\ as used in the Fourteenth Amendment, does not include the unborn,\" so the fetus itself does not have any cognizable interest",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2233,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " The Roe decision stated emphatically that \u201cthe word \\person, \\ as used in the Fourteenth Amendment, does not include the unborn,\u201d so the fetus itself does not have any cognizable interest",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 2,
+                    "message": "Put a space after the comma",
+                    "replacements": [
+                      ", \\"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "The Roe court balanced the mothers privacy/autonomy with the states interest in protecting potential life, and held that prior to viability, the mothers interest outweighed the states interest in protecting potential life\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2449,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "The Roe court balanced the mothers' privacy/autonomy with the states interest in protecting potential life, and held that prior to viability, the mothers interest outweighed the states interest in protecting potential life\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 27,
+                    "errorlength": 7,
+                    "message": "Possible typo: apostrophe is missing. Did you mean 'mothers'' or 'mother's'?",
+                    "replacements": [
+                      "mothers'",
+                      "mother's"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " However, it went on to find that after viability, the states interest in protecting potential life became larger than the womans interest in privacy/autonomy, so a state could constitutionally prohibit abortion after viability\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2381,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " However, it went on to find that after viability, the states interest in protecting potential life became larger than the women interest in privacy/autonomy, so a state could constitutionally prohibit abortion after viability\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'women', the irregular plural form of the noun 'woman'?",
+                    "replacements": [
+                      "women",
+                      "woman",
+                      "Romans",
+                      "woman s"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Now lets shift to the murder case: the state has a legitimate interest in protecting potential life, as we see from Roe v.\"Wade",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2404,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "Now lets shift to the murder case: the state has a legitimate interest in protecting potential life, as we see from Roe v.\u201d Wade",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Add a space between sentences",
+                    "replacements": [
+                      " Wade"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The person committing the homicide does not have a legitimate interest in killing people analogous to the womans interest in privacy/autonomy\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2446,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " The person committing the homicide does not have a legitimate interest in killing people analogous to the women interest in privacy/autonomy\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake. Did you mean 'women', the irregular plural form of the noun 'woman'?",
+                    "replacements": [
+                      "women",
+                      "woman",
+                      "Romans",
+                      "woman s"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Thus, when we balance the states interest with the killers interest, we see that the states interest in potential life can outweigh the killers interest in killing people even from the point of conception, so a prohibition on killing fetuses is constitutional\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2196,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Thus, when we balance the states interest with the killers interest, we see that the states interest in potential life can outweigh the killers interest in killing people even from the point of conception, so a prohibition on killing fetuses is constitutional\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "12",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "12",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Amablue",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "133",
+          "reply_votes": "24 points",
+          "reply_contents": [
+            {
+              "content": "There is a difference between killing someone and allowing them to die, at least according to the law",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2093,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "There is a difference between killing someone and allowing them to die, at least according to the law",
+                []
+              ]
+            },
+            {
+              "content": " Killing a fetus is homicide just like killing a person is",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2675,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Killing a fetus is homicide just like killing a person is",
+                []
+              ]
+            },
+            {
+              "content": " Denying a fetus the use of your body results in its death but only because a fetus cannot survive without the mother\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2181,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Denying a fetus the use of your body results in its death but only because a fetus cannot survive without the mother\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "I use this example a lot, but consider a case where there is a sick person hooked up to you with some contraption that allows them to use your liver to filter their blood because they are sick and cannot use their own liver",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.204,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I use this example a lot, but consider a case where there is a sick person hooked up to you with some contraption that allows them to use your liver to filter their blood because they are sick and cannot use their own liver",
+                []
+              ]
+            },
+            {
+              "content": " You didnt agree to be hooked up to this person, you just woke up and found yourself here\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1916,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " You didn't agree to be hooked up to this person, you just woke up and found yourself here\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 5,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "didn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " If they disconnect from your body, they die",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2048,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " If they disconnect from your body, they die",
+                []
+              ]
+            },
+            {
+              "content": " However, they do not have a right to use your body unless you consent to it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1867,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " However, they do not have a right to use your body unless you consent to it",
+                []
+              ]
+            },
+            {
+              "content": "If you decide you dont consent, you can unhook yourself, and leave\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2077,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "If you decide you don't consent, you can unhook yourself, and leave\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 18,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The person dies",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1868,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The person dies",
+                []
+              ]
+            },
+            {
+              "content": " Oh well, they didnt have a right to use your body anyway\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1634,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Oh well, they didn't have a right to use your body anyway\"",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 15,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "didn't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Thats different from taking a pistol and shooting the person (or to be closer to the example, taking a pistol and shooting you, resulting in both deaths)\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1838,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " That's different from taking a pistol and shooting the person (or to be closer to the example, taking a pistol and shooting you, resulting in both deaths)\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "That's"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "9",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "9",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "carasci",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "42",
+          "reply_votes": "63 points",
+          "reply_contents": [
+            {
+              "content": "In the U.S. the legality abortion is normally governed by the \"viability\" metric established in Roe v.Wade.",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2805,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "In the U.S. the legality abortion is normally governed by the \u201cviability\u201d metric established in Roe v. Wade.",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Add a space between sentences",
+                    "replacements": [
+                      " Wade"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Basically, up until the point where a fetus can survive outside the mother its legal to abort, but after that its illegal to do so\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2094,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Basically, up until the point where a fetus can survive outside the mother its legal to abort, but after that its illegal to do so\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Usually this is considered to be somewhere around 24-28 weeks",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2096,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Usually this is considered to be somewhere around 24-28 weeks",
+                []
+              ]
+            },
+            {
+              "content": "After this point, the fetus is treated much like a living person because its no longer fully dependent on the mother for its survival\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.197,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "After this point, the fetus is treated much like a living person because its no longer fully dependent on the mother for its survival\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " One consequence, of course, is that its no longer legal to abort it except in emergency cases\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2345,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " One consequence, of course, is that its no longer legal to abort it except in emergency cases\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Another is that if its killed by someone else, its treated like a person for the purposes of criminal law\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1897,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Another is that if its killed by someone else, its treated like a person for the purposes of criminal law\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Thus, in cases after 24-28 weeks killing the mother and child is considered a double homicide",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2108,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Thus, in cases after 24-28 weeks killing the mother and child is considered a double homicide",
+                []
+              ]
+            },
+            {
+              "content": "Earlier would be hypocritical, but to my knowledge all of the cases in question have fallen after that essential 24-28 week mark",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2096,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Earlier would be hypocritical, but to my knowledge all the cases in question have fallen after that essential 24-28 week mark",
+                [
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Simply use 'all the'.",
+                    "replacements": [
+                      "all the"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "7",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "7",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "TryUsingScience",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "10",
+          "reply_votes": "155 points",
+          "reply_contents": [
+            {
+              "content": "Does the baby only count as a life if the mother wants it to",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1687,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Does the baby only count as a life if the mother wants it to",
+                []
+              ]
+            },
+            {
+              "content": "Thats exactly it\"",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2996,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "That's exactly it\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 0,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "That's"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 16,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 16,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " A pregnant woman who is hoping to have a baby counts as two lives to those who love her - her own life, and the life that is about to happen",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.1876,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " A pregnant woman who is hoping to have a baby counts as two lives to those who love her - her own life, and the life that is about to happen",
+                []
+              ]
+            },
+            {
+              "content": " While its possible the fetus would have been lost to a miscarriage anyway, its also possible the woman would have had a heart attack the next day\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2236,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " While its possible the fetus would have been lost to a miscarriage anyway, its also possible the woman would have had a heart attack the next day\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Its about the fact that there is more to lose than just the woman herself\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2041,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " It's about the fact that there is more to lose than just the woman herself\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 3,
+                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
+                    "replacements": [
+                      "It's",
+                      "It is"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "You can argue that if you murder a woman on the way to an abortion clinic you should probably only be charged with one homicide",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2315,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You can argue that if you murder a woman on the way to an abortion clinic you should probably only be charged with one homicide",
+                []
+              ]
+            },
+            {
+              "content": " I have no idea if that would hold up in court but it would be interesting to see",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1875,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " I have no idea if that would hold up in court but it would be interesting to see",
+                []
+              ]
+            },
+            {
+              "content": "5",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "5",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "BoozeoisPig",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "11",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "I dont think that it should count as homicide either and Im radically pro choice\"",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2334,
+              "eloquence": 4,
+              "elo_info": [
+                4,
+                "I don't think that it should count as homicide either and I'm radically pro choice\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 2,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 2,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "I'm"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " But I think this comes down to my opinions on fetal personhood",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2377,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " But I think this comes down to my opinions on fetal person hood",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "person hood"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " I dont think that fetuses are people and should not be treated as such\"",
+              "is_claim": "1",
+              "claim_type": "interpretatgion",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1813,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " I don't think that fetuses are people and should not be treated as such\u201d",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 3,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " I would be fine if you charged the person with destruction of property criminally and unnecessary and devastating emotional damage on the civil level (if she is still alive)",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2397,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " I would be fine if you charged the person with destruction of property criminally and unnecessary and devastating emotional damage on the civil level (if she is still alive)",
+                []
+              ]
+            },
+            {
+              "content": " This is separate from the assault or murder charges that will already be levied of course",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2482,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " This is separate from the assault or murder charges that will already be levied of course",
+                []
+              ]
+            },
+            {
+              "content": "3",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "3",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "whiteraven4",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "27",
+          "reply_votes": "5 points",
+          "reply_contents": [
+            {
+              "content": "Is it considered a double homicide at any stage of the pregnancy",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2394,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Is it considered a double homicide at any stage of the pregnancy",
+                []
+              ]
+            },
+            {
+              "content": " Because abortion is legal only up to a certain point",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2492,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Because abortion is legal only up to a certain point",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 8,
+                    "message": "\u201cBecause\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " So at that point its no longer a double standard\"",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1687,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " So at that point it's no longer a double standard\"",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 18,
+                    "errorlength": 3,
+                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
+                    "replacements": [
+                      "it's",
+                      "it is"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "Abortion-6": [
+    {
+      "op_claim": "Im pro-choice, but I think 20 weeks is not an unreasonable limit on abortions. CMV.",
+      "op_premise": "[Is five months not more than enough to time for a woman to determine she is pregnant, decide to have an abortion, and if necessary, finance the operation? I support a woman\\s right to choose, but I think the sooner the abortion happens, the better. In cases where the mother\\s life is in danger, I absolutely support late-term abortions. I understand that the \"20 week rule\" could be a step towards outlawing abortion and overturning Roe v. Wade, so I don\\t want to hear a slippery-slope argument. I want to judge the 20 week rule on its own.]",
+      "reply-info": [
+        {
+          "replyer_name": "Imwe",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "14",
+          "reply_votes": "21 points",
+          "reply_contents": [
+            {
+              "content": "The current limit is set at 24 weeks",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2528,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The current limit is set at 24 weeks",
+                []
+              ]
+            },
+            {
+              "content": " After 24 weeks the fetus is viable outside the womb although it is unlikely to develop without being handicapped",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2864,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " After 24 weeks the fetus is viable outside the womb although it is unlikely to develop without being handicapped",
+                []
+              ]
+            },
+            {
+              "content": " Why exactly does this limit need to be shortened in favor of a limit at 20 weeks",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1992,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Why exactly does this limit need to be shortened in favor of a limit at 20 weeks",
+                []
+              ]
+            },
+            {
+              "content": "In a more practical sense, the same legislaters who are trying to set the 20 week limit are also trying (and succeeding) to limit the number of abortion providers, and setting waiting periods for abortions",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2139,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "In a more practical sense, the same legislators who are trying to set the 20 week limit are also trying (and succeeding) to limit the number of abortion providers, and setting waiting periods for abortions",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 36,
+                    "errorlength": 11,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "legislators",
+                      "legislates",
+                      "legislate rs"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " That means that women might have to travel hundreds of miles to get to an abortion provider, have a consultation, and then have an abortion after a waiting period of 1-2 days",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2226,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " That means that women might have to travel hundreds of miles to get to an abortion provider, have a consultation, and then have an abortion after a waiting period of 1-2 days",
+                []
+              ]
+            },
+            {
+              "content": " That means they have to take a several day trip to get the abortion",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2059,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " That means they have to take a several day trip to get the abortion",
+                []
+              ]
+            },
+            {
+              "content": " They have to find out they are pregnant, decide what to do, get the money for the trip and procedure, (possibly) take time off work to travel, and finally have the actual abortion",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1946,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " They have to find out they are pregnant, decide what to do, get the money for the trip and procedure, (possibly) take time off work to travel, and finally have the actual abortion",
+                []
+              ]
+            },
+            {
+              "content": " Why would you needlessly shorten the time they have to do this",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1887,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Why would you needlessly shorten the time they have to do this",
+                []
+              ]
+            },
+            {
+              "content": "6",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "6",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "kekabillie",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "11",
+          "reply_votes": "-2 points",
+          "reply_contents": [
+            {
+              "content": "Its really unlikely that you know you are pregnant straight away unless you were specifically looking out for it\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2195,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Its really unlikely that you know you are pregnant straight away unless you were specifically looking out for it\u201d",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Most pregnancy tests take a couple of weeks to register because your body has to react to the pregnancy",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2129,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Most pregnancy tests take a couple of weeks to register because your body has to react to the pregnancy",
+                []
+              ]
+            },
+            {
+              "content": " Most women would work it out sometime in the first two months, but if you were on birth control that stopped your period or were used to irregular periods there might not be other signs in the first few months",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1982,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Most women would work it out sometime in the first two months, but if you were on birth control that stopped your period or were used to irregular periods there might not be other signs in the first few months",
+                []
+              ]
+            },
+            {
+              "content": " Then you would have to take time off work, you might have to find someone else to take time off work too in order to drive you there, you might have to find someone to mind your kids, you have to find a clinic and make an appointment, you might accidentally go to one of those pro life centers first and your state might have counselling sessions or other hoops for you to jump through",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1866,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Then you would have to take time off work, you might have to find someone else to take time off work too in order to drive you there, you might have to find someone to mind your kids, you have to find a clinic and make an appointment, you might accidentally go to one of those pro life centers first and your state might have counseling sessions or other hoops for you to jump through",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 11,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "counseling",
+                      "counsel ling"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " So if you found out around the three month mark, then that might be a lot to organise",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1944,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " So if you found out around the three month mark, then that might be a lot to organism",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 8,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "organism",
+                      "organize",
+                      "organist",
+                      "org anise"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " And the decision might be difficult to make, the SO might disagree",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2218,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " And the decision might be difficult to make, the SO might disagree",
+                []
+              ]
+            },
+            {
+              "content": "3",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "3",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "moonflower",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "82",
+          "reply_votes": "0 points",
+          "reply_contents": [
+            {
+              "content": "How did you arrive at the 20 week limit",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2002,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "How did you arrive at the 20 week limit",
+                []
+              ]
+            },
+            {
+              "content": " What significant difference is there between a 19 week foetus and a 20 week foetus",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2157,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " What significant difference is there between a 19 week fetus and a 20 week fetus",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "fetus"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "fetus"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " And what significant difference is there between a 20 week foetus and a 21 week foetus",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2096,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " And what significant difference is there between a 20 week fetus and a 21 week fetus",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "fetus"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "fetus"
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

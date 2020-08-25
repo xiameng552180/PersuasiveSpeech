@@ -1,0 +1,1678 @@
+{
+  "Immortality-45": [
+    {
+      "op_claim": "I remain unconvinced that my death has a fixed 100% probability, CMV.",
+      "op_premise": "[Context, Despite the overwhelming evidence that all human life so far has been subject to mortality, I still remain skeptical its impossible to achieve immortality. There are already effectively immortal lifeforms existing on Earth (eg. certain jellyfish, plants, lobsters) why couldnt clever scientists eventually transpose the benefits to human life?]",
+      "reply-info": [
+        {
+          "replyer_name": "Sahasrahla",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "20",
+          "reply_votes": "4.0k points",
+          "reply_contents": [
+            {
+              "content": "First of all, whether or not this is true depends on how stringently you mean 100%",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1879,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "First of all, whether this is true depends on how stringently you mean 100%",
+                [
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 14,
+                    "errorlength": 14,
+                    "message": "Perhaps you can shorten this phrase to just 'whether'. It is correct though if you mean 'regardless of whether'.",
+                    "replacements": [
+                      "whether"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " If we get right down to it we can\\t know that we\\re not, say, living in some sort of computer simulation; if that\\s the case the real world could be anything you could imagine with any sort of arbitrary physics and rules",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2252,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " If we get right down to it we can\\t know that we\\re not, say, living in some sort of computer simulation; if that\\s the case the real world could be anything you could imagine with any sort of arbitrary physics and rules",
+                []
+              ]
+            },
+            {
+              "content": " Nothing (with perhaps the exception of math and logic) can be known for sure",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2173,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Nothing (with perhaps the exception of math and logic) can be known for sure",
+                []
+              ]
+            },
+            {
+              "content": " But, that makes for a boring argument",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.205,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " But, that makes for a boring argument",
+                []
+              ]
+            },
+            {
+              "content": " So lets start with the premise that reality exists and is pretty much how we observe it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2413,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " So Let's start with the premise that reality exists and is pretty much how we observe it",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 4,
+                    "errorlength": 4,
+                    "message": "Did you mean 'Let's' (let's = let us; lets = 3rd person singular of 'let')?",
+                    "replacements": [
+                      "Let's"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Not too much to ask, right",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1798,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Not too much to ask, right",
+                []
+              ]
+            },
+            {
+              "content": "The first thing youll realize when you start thinking about this is that to have a non-zero chance of dying you have to live forever",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1927,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "The first thing you'll realize when you start thinking about this is that to have a non-zero chance of dying you have to live forever",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 16,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'll"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Were not talking about just living indefinitely long, replacing organs as you go and whatnot, but instead I should be able to name any time in the future and youll still be around",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2015,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Were not talking about just living indefinitely long, replacing organs as you go and whatnot, but instead I should be able to name any time in the future and you'll still be around",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'll"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Lets take a look at what that will take",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1832,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Let's take a look at what that will take",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 4,
+                    "message": "Did you mean 'Let's' (let's = let us; lets = 3rd person singular of 'let')?",
+                    "replacements": [
+                      "Let's"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "100 years: Ill assume youre in your early twenties right now so I have a number to work with",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1818,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "100 years: I'll assume you're in your early twenties right now so I have a number to work with",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 11,
+                    "errorlength": 3,
+                    "message": "Did you mean 'I'll'?",
+                    "replacements": [
+                      "I'll"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 22,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you're"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The longest living person that Im aware of was Jeanne Calment who lived to the age of 122",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1874,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " The longest living person that I'm aware of was Jeanne Calmest who lived to the age of 122",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 32,
+                    "errorlength": 2,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "I'm"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 7,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Calmest"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " So, if you want to live another 100 years, you could maybe do it just with good genes and good luck",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1886,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " So, if you want to live another 100 years, you could maybe do it just with good genes and good luck",
+                []
+              ]
+            },
+            {
+              "content": " Were only looking for a non-zero chance, so were doing good so far",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1842,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Were only looking for a non-zero chance, so were doing good so far",
+                []
+              ]
+            },
+            {
+              "content": "200 years: Congratulations",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "200 years: Congratulations",
+                []
+              ]
+            },
+            {
+              "content": " Youve lived another 200 years and managed to break all records of human lifespan previously known",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.221,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You've lived another 200 years and managed to break all records of human lifespan previously known",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " To get to this point unprecedented medical advances have been made",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2409,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " To get to this point unprecedented medical advances have been made",
+                []
+              ]
+            },
+            {
+              "content": " New organs can be grown replaced as you need them, and methods have been devised to keep your brain cells healthy, or at least to replace them bit by bit",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1948,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " New organs can be grown replaced as you need them, and methods have been devised to keep your brain cells healthy, or at least to replace them bit by bit",
+                []
+              ]
+            },
+            {
+              "content": " Or maybe you do get a brain replacement every now and then, but your old memories, personality, intelligence, etc.  are imprinted on it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1836,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Or maybe you do get a brain replacement now and then, but your old memories, personality, intelligence, etc. are imprinted on it",
+                [
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 18,
+                    "message": "Use simply 'now and then'.",
+                    "replacements": [
+                      "now and then"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 2,
+                    "message": "Possible typo: you repeated a whitespace",
+                    "replacements": [
+                      " "
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Would that still count as you",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1908,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Would that still count as you",
+                []
+              ]
+            },
+            {
+              "content": " For the sake of argument lets say sure, why not",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2063,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " For the sake of argument lets say sure, why not",
+                []
+              ]
+            },
+            {
+              "content": "Almost as important as the advances in medical technology is your access to it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2362,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Almost as important as the advances in medical technology is your access to it",
+                []
+              ]
+            },
+            {
+              "content": " Perhaps this tech is available only to the rich and influential, or maybe its so cheap and easy everyone can use it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2201,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Perhaps this tech is available only to the rich and influential, or maybe its so cheap and easy everyone can use it",
+                []
+              ]
+            },
+            {
+              "content": " In any case, youve managed to discover the fountain of youth, and you have a long life ahead of you",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1954,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " In any case, you've managed to discover the fountain of youth, and you have a long life ahead of you",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 14,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "10,000 years: A lot has changed in your lifetime",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2305,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "10,000 years: A lot has changed in your lifetime",
+                []
+              ]
+            },
+            {
+              "content": " Youre one of the oldest humans alive, having been lucky enough to be in the first generation that had access to effective immortality",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.243,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You're one of the oldest humans alive, having been lucky enough to be in the first generation that had access to effective immortality",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You're"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Aging and disease are distant memories",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2809,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Aging and disease are distant memories",
+                []
+              ]
+            },
+            {
+              "content": " Youve managed to live through the strife caused by the end of death",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2209,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You've managed to live through the strife caused by the end of death",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Perhaps that elixir of immortality is available to only a select few, or perhaps humanity has spread beyond Earth to cope with an ever-growing population, or maybe childbirth is strictly controlled",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2625,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Perhaps that elixir of immortality is available to only a select few, or perhaps humanity has spread beyond Earth to cope with an ever-growing population, or maybe childbirth is strictly controlled",
+                []
+              ]
+            },
+            {
+              "content": " Whatever happened society lives on, and you with it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2117,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Whatever happened society lives on, and you with it",
+                []
+              ]
+            },
+            {
+              "content": "100,000 years: Youve managed to go a thousand centuries without your head getting crushed under the back wheels of a bus",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1764,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "100,000 years: You've managed to go a thousand centuries without your head getting crushed under the back wheels of a bus",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 15,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Kudos",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Kudos",
+                []
+              ]
+            },
+            {
+              "content": "1,000,000 years: A million years",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2588,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "1,000,000 years: A million years",
+                []
+              ]
+            },
+            {
+              "content": " Wow",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Wow",
+                []
+              ]
+            },
+            {
+              "content": " How much memory can the human mind hold, anyway",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2045,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " How much memory can the human mind hold, anyway",
+                []
+              ]
+            },
+            {
+              "content": " Do you remember your childhood, your first kiss, the face of your parents",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1731,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Do you remember your childhood, your first kiss, the face of your parents",
+                []
+              ]
+            },
+            {
+              "content": " Perhaps you have some sort of external memory",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2299,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Perhaps you have some sort of external memory",
+                []
+              ]
+            },
+            {
+              "content": " How recognizable would you be now to yourself in the year 2013AD",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2015,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " How recognizable would you be now to yourself in the year 2013AD",
+                []
+              ]
+            },
+            {
+              "content": " Are you still human, even",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2131,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Are you still human, even",
+                []
+              ]
+            },
+            {
+              "content": " Whatever you are, lets say that youre still you, and youve lived this long",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1846,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Whatever you are, lets say that you're still you, and you've lived this long",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 33,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you're"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Youve seen the rise and fall of countless civilizations",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2246,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "You've seen the rise and fall of countless civilizations",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 0,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Most of human history is in your mind",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.193,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Most of human history is in your mind",
+                []
+              ]
+            },
+            {
+              "content": " The invention of agriculture and the city happened a mere 10,000 years before you were born; at this point, thats pretty much a rounding error in your age",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2091,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " The invention of agriculture and the city happened a mere 10,000 years before you were born; at this point, that's pretty much a rounding error in your age",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "that's"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "109 years: The Earth is about 5.54 billion years old now",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2241,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "109 years: The Earth is about 5.54 billion years old now",
+                []
+              ]
+            },
+            {
+              "content": " Youve been around for 18% of that",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2041,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You've been around for 18% of that",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " When you were born there had been five major mass extinction events in Earths history",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2478,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " When you were born there had been five major mass extinction events in Earths history",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 5,
+                    "message": "\u201cWhen\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Has another one happened by now",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1894,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Has another one happened by now",
+                []
+              ]
+            },
+            {
+              "content": " Perhaps a giant comet or meteor has struck the Earth in your lifetime, shrouding it in a cloud of debris that blocked the sun",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1945,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Perhaps a giant comet or meteor has struck the Earth in your lifetime, shrouding it in a cloud of debris that blocked the sun",
+                []
+              ]
+            },
+            {
+              "content": " Maybe a nearby star went super nova and bathed the Earth in gamma radiation, driving you and everyone else underground",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2243,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Maybe a nearby star went super nova and bathed the Earth in gamma radiation, driving you and everyone else underground",
+                []
+              ]
+            },
+            {
+              "content": " Whatever has or hasnt happened, humanity must have god-like technology by now for you to have survived this long",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2062,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Whatever has or hasn't happened, humanity must have god-like technology by now for you to have survived this long",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 17,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "hasn't"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Were definitely in the realm of science fiction now, but you said 100% certainty, so why not",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2226,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Were definitely in the realm of science fiction now, but you said 100% certainty, so why not",
+                []
+              ]
+            },
+            {
+              "content": "3 x 109 years: The Milky Way and the nearby Andromeda galaxy merge",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.27,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "3 x 109 years: The Milky Way and the nearby Andromeda galaxy merge",
+                []
+              ]
+            },
+            {
+              "content": " Youve seen Andromeda grow in the night sky from the little smudge it is today to a giant, sky filling wonder",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1834,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You've seen Andromeda grow in the night sky from the little smudge it is today to a giant, sky filling wonder",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Dont worry, galaxies are mostly empty space, so its very unlikely that our sun will be hit by another star",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2112,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Don't worry, galaxies are mostly empty space, so its very unlikely that our sun will be hit by another star",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Don't"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " You and whoever else is around will have to think of a name for the new galaxy that forms",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2022,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " You and whoever else is around will have to think of a name for the new galaxy that forms",
+                []
+              ]
+            },
+            {
+              "content": "5 x 109 years: Youre about half as old as the Earth now and the sun is dying",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1906,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "5 x 109 years: You're about half as old as the Earth now and the sun is dying",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 15,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You're"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " As it burns through its hydrogen fuel it begins to fuse helium and heavier elements",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2753,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " As it burns through its hydrogen fuel it begins to fuse helium and heavier elements",
+                []
+              ]
+            },
+            {
+              "content": " The sun expands and swallows up the planet Mercury, then Venus",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1886,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The sun expands and swallows up the planet Mercury, then Venus",
+                []
+              ]
+            },
+            {
+              "content": " You had better hope that there was a well funded space program sometime in the last few billion years because Earth is not a fun place right now",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2018,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " You had better hope that there was a well funded space program sometime in the last few billion years because Earth is not a fun place right now",
+                []
+              ]
+            },
+            {
+              "content": " The oceans have boiled away and the surface is a scorched desert, to say the least",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1798,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " The oceans have boiled away and the surface is a scorched desert, to say the least",
+                []
+              ]
+            },
+            {
+              "content": " At noon the giant, red sun fills the entire sky from horizon to horizon",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2084,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " At noon the giant, red sun fills the entire sky from horizon to horizon",
+                []
+              ]
+            },
+            {
+              "content": " Hopefully youve invested in a nice retirement home on Europa",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1834,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " Hopefully you've invested in a nice retirement home on Europa",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 11,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you've"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "(continued)",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "(continued)",
+                []
+              ]
+            },
+            {
+              "content": "12",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": NaN,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "12",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Joined_Today",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "31",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "I assume you refer to this species of jellyfish, although that\\s the only known instance of immortality",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2571,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I assume you refer to this species of jellyfish, although that\\s the only known instance of immortality",
+                []
+              ]
+            },
+            {
+              "content": " Although, the immortality part is only theoretical, eventually they die",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.246,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Although, the immortality part is only theoretical, eventually they die",
+                []
+              ]
+            },
+            {
+              "content": "Humans are far too complex and have far too many cells to do this",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2056,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Humans are far too complex and have far too many cells to do this",
+                []
+              ]
+            },
+            {
+              "content": " Jellyfish are a much larger percentage water than we are",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.204,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " Jellyfish are a much larger percentage water than we are",
+                []
+              ]
+            },
+            {
+              "content": " In order to achieve immortality youd have to revert all the humans cells back to immaturity, and youd also have to put the lost amounts of telomeres back onto the ends of the chromosomes",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2155,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " In order to achieve immortality you'd have to revert all the humans cells back to immaturity, and you'd also have to put the lost amounts of elodeas back onto the ends of the chromosomes",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 33,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'd"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'd"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 9,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "elodeas"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " The problem is that even if you could successfully revert cells back to immaturity, its not like you can just go back to being a baby like the jellyfish can, youd be a grown man with the cells of a baby (by baby I mean fetus)",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1871,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " The problem is that even if you could successfully revert cells back to immaturity, its not like you can just go back to being a baby like the jellyfish can, you'd be a grown man with the cells of a baby (by baby I mean fetus)",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'd"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Youd die very quickly",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.21,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You'd die very quickly",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You'd"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Furthermore, resetting human cells, which are interconnected and work in systems, would be catastrophic",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2401,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Furthermore, resetting human cells, which are interconnected and work in systems, would be catastrophic",
+                []
+              ]
+            },
+            {
+              "content": " Similarly, youd be reversing the life cycle of the cells back to stem cells, which are totipotent",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2165,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                " Similarly, you'd be reversing the life cycle of the cells back to stem cells, which are totipotent",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 12,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'd"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 10,
+                    "message": "Possible spelling mistake found",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Youd have to reverse the entire life cycle to get this to work",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2034,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You'd have to reverse the entire life cycle to get this to work",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You'd"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " In which case youd have to accommodate for the wear and tear on your immune system, which is too complex to just reverse (dont forget youre working in symbiosis with trillions of bacteria)",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2444,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                " In which case you'd have to accommodate for the wear and tear on your immune system, which is too complex to just reverse (don't forget you're working in symbiosis with trillions of bacteria)",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 15,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you'd"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "don't"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "you're"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " Youd die of disease",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2217,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                " You'd die of disease",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 1,
+                    "errorlength": 4,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "You'd"
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,16 +3,42 @@ import json
 import numpy as np
 import pandas as pd
 import language_check
+import subprocess
 tool = language_check.LanguageTool('en-US')
 
 
 
 #### data folder configuration
+raw_data_folder = "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/topic_data/"
 dataset_folder = "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/posts/"
 new_dataset_folder = "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/posts_new/"
 concreteness_labeling_path = "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/AoA_ratings_Kuperman_et_al_BRM.xlsx"
+
+file_list = []
+dir_list = []
+#### move all raw data to dataset folder
+def get_file_path(root_path,file_list,dir_list):
+    dir_or_files = os.listdir(root_path)
+    for dir_file in dir_or_files:
+        dir_file_path = os.path.join(root_path,dir_file)
+        if os.path.isdir(dir_file_path):
+            dir_list.append(dir_file_path)
+            get_file_path(dir_file_path,file_list,dir_list)
+        else:
+            file_list.append(dir_file_path)
+            # print(dir_file_path)
+            filename = dir_file_path.split("/")[-1]
+            if filename.endswith(".json"):
+                with open(dir_file_path, "r") as f:
+                    data = json.load(f)
+                with open(os.path.join(dataset_folder, filename), "w") as f:
+                    json.dump(data, f)
+get_file_path(raw_data_folder, file_list, dir_list)
+
+### load cconcreteness score database
 concreteness_db = pd.read_excel(concreteness_labeling_path)
-print(concreteness_db.head())
+print("--- loaded concreteness database ---")
+# print(concreteness_db.head())
 # print(np.max(concreteness_db["Rating.Mean"]))
 
 concreteness_dict = {}
@@ -59,6 +85,7 @@ def cal_sentence_concreteness(texts):
 
 def get_data(input_dir, outputdir):
     data_lists = os.listdir(input_dir)
+    print(data_lists)
     for data_list in data_lists:
         data_path = os.path.join(input_dir, data_list)
         with open(data_path, "r") as f:
