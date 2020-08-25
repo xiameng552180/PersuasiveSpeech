@@ -14,6 +14,7 @@ class Service {
     this.selectIDarray = [];
     this.selectIDIndex = [];
     this.selectTopic = '';
+    this.selectTopicNum = '';
     this.examplesum = {
       logos: 0,
       pathos: 0,
