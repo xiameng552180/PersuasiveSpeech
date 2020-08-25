@@ -10,10 +10,16 @@ tool = language_check.LanguageTool('en-US')
 
 #### data folder configuration
 dir_path = os.path.dirname(os.path.realpath(__file__))
-raw_data_folder = os.path.join(dir_path, "../dataset/topic_data/")
-dataset_folder = os.path.join(dir_path, "../dataset/posts/")
-new_dataset_folder = os.path.join(dir_path, "../dataset/posts_new/")
-concreteness_labeling_path = os.path.join(dir_path, "../dataset/AoA_ratings_Kuperman_et_al_BRM.xlsx")
+
+raw_data_folder = os.path.join(dir_path, '../dataset/topic_data/')
+# "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/topic_data/"
+dataset_folder = os.path.join(dir_path, '../dataset/posts/')
+# "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/posts/"
+new_dataset_folder = os.path.join(dir_path, '../dataset/posts_new/')
+# "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/posts_new/"
+concreteness_labeling_path = os.path.join(dir_path, '../dataset/AoA_ratings_Kuperman_et_al_BRM.xlsx')
+# "/data2/xingbo/chi2021/meng/PersuasiveSpeech/server/dataset/AoA_ratings_Kuperman_et_al_BRM.xlsx"
+
 
 file_list = []
 dir_list = []
