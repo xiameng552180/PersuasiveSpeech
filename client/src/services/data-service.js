@@ -13,6 +13,7 @@ class Service {
     //this.inputdata = [];
     this.selectIDarray = [];
     this.selectIDIndex = [];
+    this.selectTopic = '';
     this.examplesum = {
       logos: 0,
       pathos: 0,

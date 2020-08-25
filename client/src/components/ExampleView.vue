@@ -174,6 +174,7 @@ export default {
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
       this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
+      //console.log("exampleview:", this.ex_id);
       this.display();
     });
   },
