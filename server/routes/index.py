@@ -118,7 +118,7 @@ def run_models(sentence):
         p_label = p_model.predict(p_f)[0]
         # p_label: [logos, pathos, evidence, relevance, ethos]
         return {
-            "content": sentence,
+            "content": sentence + " .",
             "is_claim": 0,
             "claim_type": "0",
             "logos": int(p_label[0]),
