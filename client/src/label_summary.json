@@ -1,8 +1,8 @@
 { "label_summary":
 [
   {
-    "abortion": [[
-      { "area": "claim", "value": 51 },
+    "Abortion": [[
+          { "area": "claim", "value": 51 },
           { "area": "logos", "value": 180 },
           { "area": "pathos", "value": 14 },
           { "area": "ethos", "value": 2 },
@@ -12,7 +12,7 @@
     ]]
   },
   {
-    "dating": [[
+    "Dating": [[
           { "area": "claim", "value": 28 },
           { "area": "logos", "value": 119 },
           { "area": "pathos", "value": 41 },
@@ -23,7 +23,7 @@
     ]]
   },
   {
-    "eugenics": 
+    "Eugenics": 
       [[
         { "area": "claim", "value": 32 },
         { "area": "logos", "value": 45 },
@@ -35,7 +35,7 @@
   ]]
   },
   {
-    "immortality": 
+    "Immortality": 
       [[
         { "area": "claim", "value": 12 },
         { "area": "logos", "value": 33 },
@@ -47,7 +47,7 @@
   ]]
   },
   {
-    "marriage":[[
+    "Marriage":[[
       { "area": "claim", "value": 27 },
       { "area": "logos", "value":42 },
       { "area": "pathos", "value": 0 },
@@ -57,7 +57,7 @@
       { "area": "others", "value": 3 }  
     ]]
   },
-  {  "parenthood":
+  {  "Parenthood":
       [[
         { "area": "claim", "value": 53 },
         { "area": "logos", "value": 72 },
@@ -68,7 +68,7 @@
         { "area": "others", "value": 13 }  
   ]]
   },
-  {  "pride":
+  {  "Pride":
     [[
       { "area": "claim", "value": 15 },
       { "area": "logos", "value": 15 },
@@ -80,7 +80,7 @@
 ]]
   },
   {
-    "suicide" : 
+    "Suicide" : 
     [[
       { "area": "claim", "value": 14 },
       { "area": "logos", "value": 33 },

@@ -3,13 +3,14 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topic</label>
       <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
-        <option value="abortion">Abortion</option>
-        <option value="dating">Dating</option>
-        <option value="immortality">Immortality</option>
-        <option value="marriage">Marriage</option>
-        <option value="parenthood">Parenthood</option>
-        <option value="pride">Pride</option>
-        <option value="suicide">Suicidce</option>
+        <option value="0">Abortion</option>
+        <option value="1">Dating</option>
+         <option value="2">Eugenics</option>
+        <option value="3">Immortality</option>
+        <option value="4">Marriage</option>
+        <option value="5">Parenthood</option>
+        <option value="6">Pride</option>
+        <option value="7">Suicidce</option>
       </select>
     </div>
 
@@ -74,7 +75,7 @@ export default {
   data() {
     return {
       counter: null,
-      topic_s: null,
+      selectTopicNum: null,
       selectTopic: null,
     };
   },
@@ -85,12 +86,16 @@ export default {
 
   methods: {
     chooseTopic() {
-      this.topic_s = document.getElementById('topicSelect');
-      var index = this.topic_s.selectedIndex;
-      this.selectTopic = this.topic_s.options[index].value;
+      var topic_s = document.getElementById('topicSelect');
+      var index = topic_s.selectedIndex;
+      this.selectTopicNum = topic_s.options[index].value;
+      this.selectTopic = topic_s.options[index].text;
+
+      DataService.selectTopicNum = this.selectTopicNum;
       DataService.selectTopic = this.selectTopic;
+
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-      //console.log("topicSelect:", this.selectTopic);
+      //console.log("topicSelect:", this.selectTopicNum, this.selectTopic);
     },
 
     addExamples() {

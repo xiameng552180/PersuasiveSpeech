@@ -61,10 +61,11 @@ export default {
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
-      labelRadar: labelSum["label_summary"][1]["dating"],
+      labelRadar: labelSum["label_summary"][1]["Dating"],
       selectIDarray: [],
       selectIDIndex: [],
       selectTopic: '',
+      selectTopicNum: '',
       examples: null,
       ex_id: "",
       examplesum: {
@@ -82,7 +83,8 @@ export default {
   mounted() {
     
     this.initialize();
-    this.drawRadar(this.svg2, this.labelRadar);
+
+    
 
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       //console.log("---ok---");
@@ -91,17 +93,28 @@ export default {
       this.selectIDarray = DataService.selectIDarray;
       this.selectIDIndex = DataService.selectIDIndex;
       this.examplesum = DataService.examplesum;
+      //filtering
       this.selectTopic = DataService.selectTopic;
-      //console.log(this.selectTopic);
+      this.selectTopicNum = DataService.selectTopicNum;
+      //console.log("selectview", this.selectTopicNum);
+
+      //draw
+      var numTemp = parseInt(this.selectTopicNum, 10);
+      console.log(numTemp, this.selectTopic);
+      console.log(labelSum["label_summary"][numTemp][this.selectTopic]);
+      //console.log("compare: ", labelSum["label_summary"][1]["Dating"]);
+      this.labelRadar = labelSum["label_summary"][numTemp][this.selectTopic];
+
 
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
+      this.drawRadar(this.svg2, this.labelRadar);
       this.drawBar(this.svg1);
       this.drawRose(this.svg);
       //filtering val
       //console.log($("#strategy").val());
     });
-    //this.labelRadar = labelSum["label_summary"][1][this.selectTopic];
+   
     
   },
   methods: {
@@ -166,6 +179,7 @@ export default {
 
 
     drawRadar(svgNode, d) {
+      
       var cfg = {
         radius: 5,
         w: 160,
@@ -173,7 +187,7 @@ export default {
         factor: 1,
         factorLegend: 0.6,
         levels: 5,
-        maxValue: 150, //hard code
+        maxValue: 180, //hard code
         radians: 2 * Math.PI,
         opacityArea: 0.5,
         ToRight: 5,
@@ -192,7 +206,8 @@ export default {
         }
       }
       var maxValue = Math.max(cfg.maxValue, d3.max(d, function(i){return d3.max(i.map(function(o){return o.value;}))}));
-      //cfg.maxValue = 200; //??
+      //console.log("radarMax:", maxValue);
+      cfg.maxValue = maxValue; //??
 
       var allAxis = d[0].map(function (i, j) {
         return i.area;
