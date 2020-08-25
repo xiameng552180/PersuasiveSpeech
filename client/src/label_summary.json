@@ -1,0 +1,95 @@
+{ "label_summary":
+[
+  {
+    "abortion": [[
+      { "area": "claim", "value": 51 },
+          { "area": "logos", "value": 180 },
+          { "area": "pathos", "value": 14 },
+          { "area": "ethos", "value": 2 },
+          { "area": "evidence", "value": 114 },
+          { "area": "relevance", "value": 41 },
+          { "area": "others", "value": 9 }  
+    ]]
+  },
+  {
+    "dating": [[
+          { "area": "claim", "value": 28 },
+          { "area": "logos", "value": 119 },
+          { "area": "pathos", "value": 41 },
+          { "area": "ethos", "value": 9 },
+          { "area": "evidence", "value": 97 },
+          { "area": "relevance", "value": 25 },
+          { "area": "others", "value": 4 }  
+    ]]
+  },
+  {
+    "eugenics": 
+      [[
+        { "area": "claim", "value": 32 },
+        { "area": "logos", "value": 45 },
+        { "area": "pathos", "value": 23 },
+        { "area": "ethos", "value": 0 },
+        { "area": "evidence", "value": 42 },
+        { "area": "relevance", "value": 9 },
+        { "area": "others", "value": 6 }  
+  ]]
+  },
+  {
+    "immortality": 
+      [[
+        { "area": "claim", "value": 12 },
+        { "area": "logos", "value": 33 },
+        { "area": "pathos", "value": 27 },
+        { "area": "ethos", "value": 0 },
+        { "area": "evidence", "value": 99 },
+        { "area": "relevance", "value": 4 },
+        { "area": "others", "value": 1 }  
+  ]]
+  },
+  {
+    "marriage":[[
+      { "area": "claim", "value": 27 },
+      { "area": "logos", "value":42 },
+      { "area": "pathos", "value": 0 },
+      { "area": "ethos", "value": 8 },
+      { "area": "evidence", "value": 42 },
+      { "area": "relevance", "value": 13 },
+      { "area": "others", "value": 3 }  
+    ]]
+  },
+  {  "parenthood":
+      [[
+        { "area": "claim", "value": 53 },
+        { "area": "logos", "value": 72 },
+        { "area": "pathos", "value": 11 },
+        { "area": "ethos", "value": 13 },
+        { "area": "evidence", "value": 79 },
+        { "area": "relevance", "value": 10 },
+        { "area": "others", "value": 13 }  
+  ]]
+  },
+  {  "pride":
+    [[
+      { "area": "claim", "value": 15 },
+      { "area": "logos", "value": 15 },
+      { "area": "pathos", "value": 18 },
+      { "area": "ethos", "value": 6 },
+      { "area": "evidence", "value": 13 },
+      { "area": "relevance", "value": 0 },
+      { "area": "others", "value": 3 }  
+]]
+  },
+  {
+    "suicide" : 
+    [[
+      { "area": "claim", "value": 14 },
+      { "area": "logos", "value": 33 },
+      { "area": "pathos", "value": 0 },
+      { "area": "ethos", "value": 0 },
+      { "area": "evidence", "value": 5 },
+      { "area": "relevance", "value": 1 },
+      { "area": "others", "value": 10 }  
+]]
+  }
+]
+}

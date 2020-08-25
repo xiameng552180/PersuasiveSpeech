@@ -64,6 +64,7 @@ export default {
       labelRadar: labelSum["label_summary"][1]["dating"],
       selectIDarray: [],
       selectIDIndex: [],
+      selectTopic: '',
       examples: null,
       ex_id: "",
       examplesum: {
@@ -90,6 +91,8 @@ export default {
       this.selectIDarray = DataService.selectIDarray;
       this.selectIDIndex = DataService.selectIDIndex;
       this.examplesum = DataService.examplesum;
+      this.selectTopic = DataService.selectTopic;
+      //console.log(this.selectTopic);
 
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
@@ -98,6 +101,8 @@ export default {
       //filtering val
       //console.log($("#strategy").val());
     });
+    //this.labelRadar = labelSum["label_summary"][1][this.selectTopic];
+    
   },
   methods: {
     initialize() {

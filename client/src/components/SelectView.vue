@@ -2,14 +2,14 @@
   <div>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topic</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Abortion</option>
-        <option>Dating</option>
-        <option>Immortality</option>
-        <option>Marriage</option>
-        <option>Parenthood</option>
-        <option>Pride</option>
-        <option>Suicidce</option>
+      <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
+        <option value="abortion">Abortion</option>
+        <option value="dating">Dating</option>
+        <option value="immortality">Immortality</option>
+        <option value="marriage">Marriage</option>
+        <option value="parenthood">Parenthood</option>
+        <option value="pride">Pride</option>
+        <option value="suicide">Suicidce</option>
       </select>
     </div>
 
@@ -59,28 +59,40 @@ import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
-import json16 from "../../../server/dataset/dating/dating-16.json";
-import json17 from "../../../server/dataset/dating/dating-17.json";
-import json19 from "../../../server/dataset/dating/dating-19.json";
-import json20 from "../../../server/dataset/dating/dating-20.json";
-import json21 from "../../../server/dataset/dating/dating-21.json";
-import json22 from "../../../server/dataset/dating/dating-22.json";
-import json23 from "../../../server/dataset/dating/dating-23.json";
-import json25 from "../../../server/dataset/dating/dating-25.json";
-import json26 from "../../../server/dataset/dating/dating-26.json";
+import json16 from "../../../server/dataset/topic_data/dating/dating-16.json";
+import json17 from "../../../server/dataset/topic_data/dating/dating-17.json";
+import json19 from "../../../server/dataset/topic_data/dating/dating-19.json";
+import json20 from "../../../server/dataset/topic_data/dating/dating-20.json";
+import json21 from "../../../server/dataset/topic_data/dating/dating-21.json";
+import json22 from "../../../server/dataset/topic_data/dating/dating-22.json";
+import json23 from "../../../server/dataset/topic_data/dating/dating-23.json";
+import json25 from "../../../server/dataset/topic_data/dating/dating-25.json";
+import json26 from "../../../server/dataset/topic_data/dating/dating-26.json";
 
 export default {
   name: "SelectView",
   data() {
     return {
       counter: null,
+      topic_s: null,
+      selectTopic: null,
     };
   },
   mounted() {
     this.addExamples();
+    this.chooseTopic();
   },
 
   methods: {
+    chooseTopic() {
+      this.topic_s = document.getElementById('topicSelect');
+      var index = this.topic_s.selectedIndex;
+      this.selectTopic = this.topic_s.options[index].value;
+      DataService.selectTopic = this.selectTopic;
+      PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+      //console.log("topicSelect:", this.selectTopic);
+    },
+
     addExamples() {
       var i = 0;
       json16["dating-16"][0]["reply-info"].forEach((item) => {
@@ -159,7 +171,7 @@ export default {
       // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
     },
     onSubmit: function (event) {
-      // DataService.counter += 1;
+
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
