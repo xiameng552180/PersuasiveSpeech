@@ -20,7 +20,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn import datasets
 from sklearn.metrics import classification_report, f1_score
 from sklearn.multiclass import OneVsRestClassifier
-
+print("Sklearn verion is {}".format(sklearn.__version__))
 # save model
 import joblib
 
