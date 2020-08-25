@@ -150,9 +150,12 @@ def register():
 
 @app.route('/uploadInput', methods=['POST','GET']) 
 def uploadInput():
-    temp = json.dumps(request.data.decode("utf-8"))
-    
-    return temp
+    temp = json.loads(request.data.decode("utf-8"))
+    print("receive: ", temp)
+    sentence = temp["input"]
+    results = run_models(sentence)
+    print("results:", results)
+    return results
 
 
 
