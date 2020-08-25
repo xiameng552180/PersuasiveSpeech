@@ -62,16 +62,79 @@ all_models = load_models()
 def run_models(sentence):
     ## calculate eloquence
     errors = fe.find_sentence_errors(sentence)
-    # argumentation
-    ## non-argument: 0, claim: 1, premise: 2
-    a_model = all_models[0][0]
-    ml_arg = all_models[0][1]
-    a_f = sentenceEmbedder.encode_one(sentence, ml_arg)
-    a_label = a_model.predict(a_f)[0]
+    try:
+        # argumentation
+        ## non-argument: 0, claim: 1, premise: 2
+        a_model = all_models[0][0]
+        ml_arg = all_models[0][1]
+        a_f = sentenceEmbedder.encode_one(sentence, ml_arg)
+        a_label = a_model.predict(a_f)[0]
 
-    if a_label == 0:
+        if a_label == 0:
+            return {
+                "content": sentence,
+                "is_claim": 0,
+                "claim_type": "0",
+                "logos": 0,
+                "pathos": 0,
+                "evidence": 0,
+                "relevance": 0,
+                "ethos": 0,
+                "concreteness": -1,
+                "eloquence": errors[0],
+                "elo_info": errors,
+            }
+        elif a_label == 1:
+            # claim_type model
+            c_model = all_models[1][0]
+            ml_claim = all_models[1][1]
+            c_f = sentenceEmbedder.encode_one(sentence, ml_claim)
+            c_label = c_model.predict(c_f)[0]
+            # interpretation: 1, evaluation: 2, disagreement/agreement: 0
+            # convert to claim_type
+            claim_type = "0"
+            if c_label == 1:
+                claim_type = "interpretation"
+            elif c_label == 2:
+                claim_type = "evaluation"
+            else:
+                claim_type = "disagreement"
+            return {
+                "content": sentence,
+                "is_claim": 1,
+                "claim_type": claim_type,
+                "logos": 0,
+                "pathos": 0,
+                "evidence": 0,
+                "relevance": 0,
+                "ethos": 0,
+                "concreteness": -1,
+                "eloquence": errors[0],
+                "elo_info": errors,
+            }
+        elif a_label == 2:
+            p_model = all_models[2][0]
+            ml_premise = all_models[2][1]
+            p_f = sentenceEmbedder.encode_one(sentence, ml_premise)
+            p_label = p_model.predict(p_f)[0]
+            # p_label: [logos, pathos, evidence, relevance, ethos]
+            return {
+                "content": sentence + " .",
+                "is_claim": 0,
+                "claim_type": "0",
+                "logos": int(p_label[0]),
+                "pathos": int(p_label[1]),
+                "evidence": int(p_label[2]),
+                "relevance": int(p_label[3]),
+                "ethos": int(p_label[4]),
+                "concreteness": -1,
+                "eloquence": int(errors[0]),
+                "elo_info": errors,
+            }
+    
+    except Exception:
         return {
-            "content": sentence,
+            "content": sentence + " .",
             "is_claim": 0,
             "claim_type": "0",
             "logos": 0,
@@ -79,57 +142,11 @@ def run_models(sentence):
             "evidence": 0,
             "relevance": 0,
             "ethos": 0,
-            "concreteness": -1,
-            "eloquence": errors[0],
-            "elo_info": errors,
-        }
-    elif a_label == 1:
-        # claim_type model
-        c_model = all_models[1][0]
-        ml_claim = all_models[1][1]
-        c_f = sentenceEmbedder.encode_one(sentence, ml_claim)
-        c_label = c_model.predict(c_f)[0]
-        # interpretation: 1, evaluation: 2, disagreement/agreement: 0
-        # convert to claim_type
-        claim_type = "0"
-        if c_label == 1:
-            claim_type = "interpretation"
-        elif c_label == 2:
-            claim_type = "evaluation"
-        else:
-            claim_type = "disagreement"
-        return {
-            "content": sentence,
-            "is_claim": 1,
-            "claim_type": claim_type,
-            "logos": 0,
-            "pathos": 0,
-            "evidence": 0,
-            "relevance": 0,
-            "ethos": 0,
-            "concreteness": -1,
-            "eloquence": errors[0],
-            "elo_info": errors,
-        }
-    elif a_label == 2:
-        p_model = all_models[2][0]
-        ml_premise = all_models[2][1]
-        p_f = sentenceEmbedder.encode_one(sentence, ml_premise)
-        p_label = p_model.predict(p_f)[0]
-        # p_label: [logos, pathos, evidence, relevance, ethos]
-        return {
-            "content": sentence,
-            "is_claim": 0,
-            "claim_type": "0",
-            "logos": int(p_label[0]),
-            "pathos": int(p_label[1]),
-            "evidence": int(p_label[2]),
-            "relevance": int(p_label[3]),
-            "ethos": int(p_label[4]),
             "concreteness": -1,
             "eloquence": int(errors[0]),
             "elo_info": errors,
         }
+        
 
 # run_models("hello")
 # exit()
