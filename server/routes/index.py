@@ -158,9 +158,9 @@ def uploadInput():
         results = run_models(sentence)
         all_results.append(results)
     print("results:", all_results)
-    return {
+    return json.dumps({
         "results": all_results
-    }
+    })
 
 
 
