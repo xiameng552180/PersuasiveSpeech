@@ -5,7 +5,7 @@
       <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
         <option value="0">Abortion</option>
         <option value="1">Dating</option>
-         <option value="2">Eugenics</option>
+        <option value="2">Eugenics</option>
         <option value="3">Immortality</option>
         <option value="4">Marriage</option>
         <option value="5">Parenthood</option>

@@ -10,6 +10,8 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
+const webpack = require('webpack')
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -32,6 +34,7 @@ module.exports = {
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
+  plugins: [ new webpack.ProvidePlugin({ $: 'jquery', jQuery:'jquery' }) ],
   module: {
     // preLoaders: [
     //   {

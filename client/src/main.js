@@ -3,7 +3,7 @@
 // import VueMaterial from "vue-material";
 import Vue from "vue";
 import App from "./app";
-
+import $ from 'jquery'
 // import { BootstrapVue } from "bootstrap-vue";
 // Vue.use(BootstrapVue);
 

@@ -27,9 +27,9 @@
         <div id="CircleSVG" style="height: 400px;  overflow-x: hidden;"></div>     
           <div class="row" style="margin:auto;">
             <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
-             <label id="cbTxt">Select is disabled</label>&nbsp;
-             <p id="selectInd"></p>
-             <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
+              <label id="cbTxt">Select is disabled</label>&nbsp;
+              <p id="selectInd"></p>
+              <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
           </div>
         
       </div>
@@ -83,9 +83,6 @@ export default {
   mounted() {
     
     this.initialize();
-
-    
-
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       //console.log("---ok---");
       this.ex_id = DataService.ex_id;
@@ -114,7 +111,7 @@ export default {
       //filtering val
       //console.log($("#strategy").val());
     });
-   
+    
     
   },
   methods: {
