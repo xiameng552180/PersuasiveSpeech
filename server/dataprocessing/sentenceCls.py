@@ -6,6 +6,7 @@ import math
 from scipy import stats
 import torch
 import transformers as ppb # pytorch transformers
+import sklearn
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import train_test_split
@@ -21,7 +22,7 @@ from sklearn import datasets
 from sklearn.metrics import classification_report, f1_score # balanced_accuracy_score
 from sklearn.multiclass import OneVsRestClassifier
 
-# print("Sklearn verion is {}".format(sklearn.__version__))
+print("Sklearn verion is {}".format(sklearn.__version__))
 # # save model
 
 import joblib

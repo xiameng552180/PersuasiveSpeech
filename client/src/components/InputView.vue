@@ -39,9 +39,9 @@ export default {
         //this.backdata = NetService.uploadInput(inputContent);
         NetService.uploadInput(inputContent, (x)=>{
            //console.log("callback", x);
-           this.backdata = x; //input processing result
-           });
-        console.log("from backend: ", this.backdata);
+           this.backdata = x.data.results; //input processing result
+          });
+        console.log("from backend: ", this.backdata["0"]["eloquence"]);
       }
     },
    

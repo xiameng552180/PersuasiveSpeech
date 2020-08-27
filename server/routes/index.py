@@ -133,6 +133,7 @@ def run_models(sentence):
             }
     
     except Exception:
+        print("---model issues---")
         return {
             "content": sentence + " .",
             "is_claim": 0,

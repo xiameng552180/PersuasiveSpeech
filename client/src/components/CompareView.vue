@@ -187,7 +187,7 @@ export default {
         factor: 1,
         factorLegend: 0.6,
         levels: 5,
-        maxValue: 180, //hard code
+        maxValue: 0, //decided later
         radians: 2 * Math.PI,
         opacityArea: 0.5,
         ToRight: 5,
