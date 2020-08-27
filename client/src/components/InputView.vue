@@ -44,7 +44,7 @@ export default {
   mounted() {
     this.initialize();
     $('#userInput').highlightTextarea({
-        words: ['can']
+        words: ['can', 'an']
     });
     
   },

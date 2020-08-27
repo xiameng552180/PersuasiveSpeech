@@ -4,12 +4,13 @@
  * Licensed under MIT (http://opensource.org/licenses/MIT)
  */
 
-function highlightTextarea(){
+(function($){
     "use strict";
 
-    var isNumeric = function( n ) {
+    var mouseOverElement = null;
+    var isNumeric = function(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
-    }
+    };
 
     // Highlighter CLASS DEFINITON
     // ===============================
@@ -45,6 +46,7 @@ function highlightTextarea(){
 
         // run
         this.updateCss();
+        this.bindDocumentEvents();
         this.bindEvents();
         this.highlight();
     };
@@ -69,34 +71,63 @@ function highlightTextarea(){
     Highlighter.prototype.highlight = function() {
         var text = this.$el.val(),
             that = this;
-        that.spacer = '';
-        if (this.settings.wordsOnly ) {
-          that.spacer = '\\b';
+        	that.spacer = '';
+        	if (this.settings.wordsOnly ) {
+        		that.spacer = '\\b';
+        	}
+
+        function htmlDecode(input) {
+          return $('<div/>').text(input).html();
         }
 
+        // Encode text before inserting into <div> so that the textarea and
+        // overlay don't get out if sync when the textarea contains something
+        // HTML (e.g. "&amp;" or <foo>).
+        text = htmlDecode(text);
+
         var matches = [];
-        $.each(this.settings.words, function(color, words) {
-          var regex = new RegExp(that.spacer+'('+ words.join('|') +')'+that.spacer, that.regParam);
-          var wordMatches = text.match(regex);
-          if (wordMatches) {
-            var evaluated = [];
-            $.each(wordMatches, function(index, match) {
-              matches.push(match);
-              if (evaluated.indexOf(match) === -1) {
-                text = text.replace(new RegExp(match, 'g'), '<mark style="background-color:'+ color +';">$&</mark>', 'g');
-                evaluated.push(match);
-              }
-            });
-          }
+
+        var wordColorMap = {}, 
+          allWords = [];
+        $.each(this.settings.words, function (color, words) {
+          $.each(words, function (index, word) {
+            wordColorMap[word] = color;
+            allWords.push(word);
+          });
         });
+
+        var allWordsRe = allWords.map(function (word) {
+          var wordsRe = htmlDecode(word);
+          var re = '(' + that.spacer + wordsRe + that.spacer + ')';
+          return re;
+        }).join('|');
+        var regex = new RegExp(allWordsRe, that.regParam);
+
+        var wordMatches = text.match(regex);
+        if (wordMatches) {
+          text = text.replace(regex, function(innerMatch, start, contents) {
+            matches.push(innerMatch);
+            var encodedMatch = innerMatch
+              .replace(/[&"<>]/g, function (c) {
+                return {
+                  '&': "&amp;",
+                  '"': "&quot;",
+                  '<': "&lt;",
+                  '>': "&gt;"
+                }[c];
+              });
+
+            var color = wordColorMap[innerMatch];
+            return '<mark style="background-color:'+ color +';">' + encodedMatch + '</mark>';
+          });
+        }
 
         $.each(this.settings.ranges, function(i, range) {
             if (range.start < text.length) {
                 text = Utilities.strInsert(text, range.end, '</mark>');
 
                 var mark = '<mark style="background-color:'+ range.color +';"';
-                if (range.class != null)
-                {
+                if (range.class !== null) {
                     mark += 'class="' + range.class + '"';
                 }
                 mark += ">";
@@ -200,6 +231,49 @@ function highlightTextarea(){
     };
 
     /*
+     * Attach event listeners for document-level events.  These should only be bound once, not every time the plugin is used.
+     */
+    Highlighter.prototype.bindDocumentEvents = function() {
+        if(Highlighter.documentEventsBound) {
+            return;
+        }
+
+        //Trigger simulated mouseout and mouseover events on highlightTextarea mark elements.
+        $(document).bind('mousemove', function(e) {
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+            var lastMouseOverElement = mouseOverElement;
+            mouseOverElement = null;
+
+            //Mouse can only be "over" one element at a time; loop through all highlightTextarea mark elements until we find one that is moused over.
+            $('.highlightTextarea mark').each(function(index) {
+                var $this = $(this);
+                var pos = $this.offset();
+                var top = pos.top;
+                var left = pos.left;
+                var height = $this.height();
+                var width = $this.width();
+
+                if (mouseX >= left && mouseY >= top && mouseX <= left + width && mouseY <= top + height) {
+                    mouseOverElement = this;
+                    return;
+                }
+            });
+
+            if(mouseOverElement != lastMouseOverElement) {
+                if(lastMouseOverElement != null) {
+                    $(lastMouseOverElement).trigger('mouseout');
+                }
+                if(mouseOverElement != null) {
+                  $(mouseOverElement).trigger('mouseover');
+                }
+            }
+        });
+
+        Highlighter.documentEventsBound = true;
+    };
+
+    /*
      * Attach event listeners
      */
     Highlighter.prototype.bindEvents = function() {
@@ -284,7 +358,7 @@ function highlightTextarea(){
         this.$container.css({
             'top':        Utilities.toPx(this.$el.css('margin-top')) + Utilities.toPx(this.$el.css('border-top-width')),
             'left':     Utilities.toPx(this.$el.css('margin-left')) + Utilities.toPx(this.$el.css('border-left-width')),
-            'width':    this.$el.width(),
+            'width':    '100%',
             'height': this.$el.height()
         });
 
@@ -518,7 +592,7 @@ function highlightTextarea(){
         return out;
     };
 
-    
+
     /*
      * Formats a list of ranges into a hash of arrays (Color => Ranges list)
      * @param ranges {mixed}
@@ -620,9 +694,4 @@ function highlightTextarea(){
             }
         });
     };
-}
-
-export default highlightTextarea
-
-// module.exports = highlightTextarea
-
+}(window.jQuery || window.Zepto));
