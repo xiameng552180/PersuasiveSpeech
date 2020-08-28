@@ -86,9 +86,10 @@ export default {
               if (this.eloquenceErrorList.length == 0) {
                 $('#errorMess').text("no error");
               }else{
-                $('#errorMess').text("error: ");
+                $('#errorMess').text("ERROR ");
+
                 this.eloquenceErrorList.forEach((er, index) => {
-                  $('#errorMess').append(index + ':' + er + ".");
+                  $('#errorMess').append(this.highlightWords[index] + ": " + er + ". ");
               });
               }
               
