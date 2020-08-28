@@ -12,7 +12,7 @@
         <br />
         <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
         &nbsp;&nbsp;&nbsp;
-        <label id="eloquenceScore">eloquence: 0</label>
+        <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
     </div>
         
     
@@ -36,21 +36,21 @@ export default {
       backdata: null, // origin data from backend processing results
       eloquenceScore: null, // sum of eloquence score of all sentences
       eloquenceErrorList: [], //all error tooltip of input sentences 
-      errorStartIndexList: [],// all input highlight starts
-      errorEndIndexList: [], //all input highlight ends
+      // errorStartIndexList: [],// all input highlight starts
+      // errorEndIndexList: [], //all input highlight ends
       inputSentences: [], //all input sentences
+      lengthSentenList: [],//lenfth of each sentence
+      highlightWords: [], //high light words list
     };
   },
   mounted() {
     this.initialize();
-    $('#userInput').highlightTextarea({
-        words: ['can', 'an']
-    });
+    
     
   },
   methods: {
     initialize() {
-  
+      
     },
     updateInput: function (event) {
         var inputContent = document.getElementById("userInput").value;
@@ -66,75 +66,54 @@ export default {
                 //console.log("each sentence: ", inputSentence['content']);
                 this.eloquenceScore += parseInt(inputSentence['eloquence']);
                 this.inputSentences.push(inputSentence['content']);
-                this.eloquenceErrorList.push(inputSentence['elo_info'][2][0]['message']);
-                this.errorStartIndexList.push(inputSentence['elo_info'][2][0]['contextoffset']);
-                this.errorEndIndexList.push(inputSentence['elo_info'][2][0]['errorlength']);
+                this.lengthSentenList.push(inputSentence['content'].length);
+                
+                this.eloquenceErrorList.push(inputSentence['elo_info'][2][0]['message']); //error message
+                // inpthis.errorStartIndexList.push(inputSentence['elo_info'][2][0]['contextoffset']); //highlight start
+                // this.errorEndIndexList.push(inputSentence['elo_info'][2][0]['errorlength']); //highlight end
+                var startTemp = inputSentence['elo_info'][2][0]['contextoffset'];
+                var endTemp = inputSentence['elo_info'][2][0]['errorlength'];
+                this.highlightWords.push(inputSentence['content'].substring(startTemp, endTemp+1));
+                //console.log("highlight:", inputSentence['content'].substring(startTemp, endTemp+1));
+                //console.log(inputSentence['content'].length);
                 //console.log("error:", inputSentence['elo_info'][2][0]['message']);
               });
               $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
               console.log("inputS: ", this.inputSentences);
               console.log("eloquenceScore:", this.eloquenceScore, this.eloquenceErrorList);
-              console.log("errorlength: ", this.errorStartIndexList, this.errorEndIndexList);
+              console.log("highlight: ", this.highlightWords);
+
+              if (this.eloquenceErrorList.length == 0) {
+                $('#errorMess').text("no error");
+              }else{
+                $('#errorMess').text("error: ");
+                this.eloquenceErrorList.forEach((er, index) => {
+                  $('#errorMess').append(index + ':' + er + ".");
+              });
+              }
+              
+              
+              //highlight
+              var wordList = [];
+              for(var i in this.highlightWords){
+                wordList.push(this.highlightWords[i]);
+              }
+              console.log(wordList);
+              $('#userInput').highlightTextarea({
+                  words: wordList,
+                  color:"yellow",          
+              });
 
           });
-          }
-          else {console.log("NULL input");}       
-      },
-    
+        }
+        else {console.log("NULL input");}  
+        
 
+        
+      },
     },
+
     
   };
 
 </script>
-<style scoped>
-.hwt-container {
-	display: inline-block;
-	position: relative;
-	overflow: hidden !important;
-	-webkit-text-size-adjust: none !important;
-}
-
-.hwt-backdrop {
-	position: absolute !important;
-	top: 0 !important;
-	right: -99px !important;
-	bottom: 0 !important;
-	left: 0 !important;
-	padding-right: 99px !important;
-	overflow-x: hidden !important;
-	overflow-y: auto !important;
-}
-
-.hwt-highlights {
-	width: auto !important;
-	height: auto !important;
-	border-color: transparent !important;
-	white-space: pre-wrap !important;
-	word-wrap: break-word !important;
-	color: transparent !important;
-	overflow: hidden !important;
-}
-
-.hwt-input {
-	display: block !important;
-	position: relative !important;
-	margin: 0;
-	padding: 0;
-	border-radius: 0;
-	font: inherit;
-	overflow-x: hidden !important;
-	overflow-y: auto !important;
-}
-
-.hwt-content {
-	border: 1px solid;
-	background: none transparent !important;
-}
-
-.hwt-content mark {
-	padding: 0 !important;
-	color: inherit;
-}
-
-</style>

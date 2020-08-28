@@ -10,7 +10,7 @@
         <option value="4">Marriage</option>
         <option value="5">Parenthood</option>
         <option value="6">Pride</option>
-        <option value="7">Suicidce</option>
+        <option value="7">Suicide</option>
       </select>
     </div>
 
