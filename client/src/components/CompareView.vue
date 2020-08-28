@@ -19,11 +19,11 @@
 
     <div class="col-lg-11">
       <!--summary view-->
-      <div class="col-lg-4" style="height: 400px;  overflow-x: hidden;">
-        
+      <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
+        <svg id="nodelink" height="400"></svg>
       </div>
       <!--rose chart view-->
-      <div class="col-lg-4">
+      <div class="col-lg-5">
         <div id="CircleSVG" style="height: 400px;  overflow-x: hidden;"></div>     
           <div class="row" style="margin:auto;">
             <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
@@ -51,6 +51,7 @@ import PipeService from "../services/pipe-service";
 import input from "../input.json";
 import labelSum from "../label_summary.json"
 import dating_pos from "../dating-pos.json"
+import dating16 from "../dating-16.json"
 
 export default {
   name: "CompareView",
@@ -61,6 +62,7 @@ export default {
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
+      svg3: null,
       labelRadar: labelSum["label_summary"][1]["Dating"],
       selectIDarray: [],
       selectIDIndex: [],
@@ -68,6 +70,7 @@ export default {
       selectTopicNum: '',
       examples: null,
       ex_id: "",
+      simulation: null,
       examplesum: {
           logos: 0,
           pathos: 0,
@@ -78,11 +81,15 @@ export default {
           eloquence: 0,
       },
       flag: 0,
+      inputLabels: {},
+      node: null,
+      link: null,
     };
   },
   mounted() {
     
     this.initialize();
+    console.log(dating16);
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       //console.log("---ok---");
       this.ex_id = DataService.ex_id;
@@ -102,14 +109,17 @@ export default {
       //console.log("compare: ", labelSum["label_summary"][1]["Dating"]);
       this.labelRadar = labelSum["label_summary"][numTemp][this.selectTopic];
 
-
       this.svg1.selectAll("*").remove();
       // this.svg.selectAll("*").remove();
       this.drawRadar(this.svg2, this.labelRadar);
       this.drawBar(this.svg1);
       this.drawRose(this.svg);
+      this.drawNodeLink(this.svg3);
       //filtering val
       //console.log($("#strategy").val());
+
+      
+
     });
     
     
@@ -154,6 +164,17 @@ export default {
         .attr("class", "d3SVG")
         .attr("width", this.width1)
         .attr("height", this.height1);
+
+      this.inputLabels = DataService.inputLabels;
+
+      this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
+      this.height3 = d3.select("#nodelink").node().getBoundingClientRect().height;
+      this.svg3 = d3.select("#nodelink")
+        .attr("width", this.width3)
+        .attr("height", this.height3);
+
+
+
     },
 
     mulipleSelect: function (event) {
@@ -173,10 +194,147 @@ export default {
       };
     },
 
+    drawNodeLink(svgNode){
+      var arrow = svgNode
+        .append("defs")
+        .append("marker")
+        .attr("id", "arrowhead")
+        .attr("viewBox", "-0 -5 10 10")
+        .attr("refX", 15)
+        .attr("refY", 0)
+        .attr("orient", "auto")
+        .attr("markerWidth", 5)
+        .attr("markerHeight", 5)
+        .attr("xoverflow", "visible")
+        .append("path")
+        .attr("d", "M 0,-5 L 10 ,0 L 0,5")
+        .attr("fill", "black")
+        .style("stroke", "black");
+      
+      this.simulation = d3
+        .forceSimulation()
+        .force(
+          "link",
+          d3
+            .forceLink()
+            .id(function (d) {
+              return d.id;
+            })
+            .distance(100)
+            .strength(1)
+        )
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2));
+      
+      
+        
+      var nodes = [],
+          links = [];
+        nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+          (d, i) => {
+            d.id = i;
+            return d;
+          }
+        );
+        // console.log(nodes);
+        var source = null;
+        nodes.forEach((d, i) => {
+          if (d.is_claim === "1") {
+            source = i;
+          }
+          if (source != null && source !== i) {
+            var newlink = {
+              source: i,
+              target: source,
+            };
+            links.push(newlink);
+          }
+        });
+        console.log(links);
+        this.update(links, nodes);
+    },
 
+    update(links, nodes) {
+      this.link = this.svg3
+        .selectAll(".link")
+        .data(links)
+        .enter()
+        .append("line")
+        .attr("class", "link")
+        .attr("marker-end", "url(#arrowhead)")
+        .attr("stroke", "black")
+        .attr("stroke-width", "2px");
+
+      this.node = this.svg3
+          .selectAll(".node")
+          .data(nodes)
+          .enter()
+          .append("g")
+          .attr("class", "node")
+          .call(
+            d3.drag().on("start", this.dragstarted).on("drag", this.dragged)
+            //.on("end", dragended)
+          );
+
+      this.node
+        .append("circle")
+        .attr("r", 10)
+        .style("fill", function (d, i) {
+          if (d.is_claim === "1") return "#b6034d";
+          else return "#f8cd40";
+        });
+      
+      this.simulation = d3
+        .forceSimulation(nodes) // Force algorithm is applied to data.nodes
+        .force(
+          "link",
+          d3
+            .forceLink() // This force provides links between nodes
+            .id(function (d) {
+              return d.id;
+            }) // This provide  the id of a node
+            .links(links) // and this the list of links
+            .distance(100)
+        )
+        .force(
+          "charge",
+          d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
+        ) // This adds repulsion between nodes.
+        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
+        .on("tick", this.ticked);
+    },
+
+    ticked() {
+      this.link
+        .attr("x1", function (d) {
+          return d.source.x;
+        })
+        .attr("y1", function (d) {
+          return d.source.y;
+        })
+        .attr("x2", function (d) {
+          return d.target.x;
+        })
+        .attr("y2", function (d) {
+          return d.target.y;
+        });
+
+      this.node.attr("transform", function (d) {
+        return "translate(" + d.x + ", " + d.y + ")";
+      });
+    },
+
+    dragstarted(d) {
+      if (!d3.event.active) this.simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    },
+    dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+    },
 
     drawRadar(svgNode, d) {
-      
       var cfg = {
         radius: 5,
         w: 160,
@@ -571,7 +729,7 @@ export default {
         //console.log("barSum", barSum);
       }
 
-      var data = input["input"].map((d) => {
+      var data = this.inputLabels["input"].map((d) => {
           // console.log(examplesum[d.feature] - d.label);
           return {
             feature: d.feature,
@@ -941,4 +1099,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

@@ -24,6 +24,16 @@ class Service {
       concreteness: 0,
       eloquence: 0,
     };
+    this.inputLabels = {
+      "input": [
+        { feature: "logos", label: 0 },
+        { feature: "pathos", label: 0 },
+        { feature: "ethos", label: 0 },
+        { feature: "evidence", label: 0 },
+        { feature: "relevance", label: 0 },
+        { feature: "concreteness", label: 0 },
+        { feature: "eloquence", label: 0 }
+      ]};
 
     return instance;
   }
