@@ -4,7 +4,7 @@
       <label for="exampleFormControlSelect1">Topic</label>
       <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
         <option value="0">Abortion</option>
-        <option value="1">Dating</option>
+        <option value="1" selected = "selected">Dating</option>
         <option value="2">Eugenics</option>
         <option value="3">Immortality</option>
         <option value="4">Marriage</option>
@@ -60,28 +60,40 @@ import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
-import json16 from "../../../server/dataset/topic_data/dating/dating-16.json";
-import json17 from "../../../server/dataset/topic_data/dating/dating-17.json";
-import json19 from "../../../server/dataset/topic_data/dating/dating-19.json";
-import json20 from "../../../server/dataset/topic_data/dating/dating-20.json";
-import json21 from "../../../server/dataset/topic_data/dating/dating-21.json";
-import json22 from "../../../server/dataset/topic_data/dating/dating-22.json";
-import json23 from "../../../server/dataset/topic_data/dating/dating-23.json";
-import json25 from "../../../server/dataset/topic_data/dating/dating-25.json";
-import json26 from "../../../server/dataset/topic_data/dating/dating-26.json";
+//topic
+import abortion from "../topic_file/abortion.json";
+import dating from "../topic_file/dating.json";
+import eugenics from "../topic_file/eugenics.json";
+import immortality from "../topic_file/immortality.json";
+import marriage from "../topic_file/marriage.json";
+import parenthood from "../topic_file/parenthood.json";
+import pride from "../topic_file/pride.json";
+import suicide from "../topic_file/suicide.json";
+
 
 export default {
   name: "SelectView",
   data() {
     return {
-      counter: null,
+      //counter: null,
       selectTopicNum: null,
       selectTopic: null,
+      topicExamples: {
+        'Abortion': abortion, 
+        'Dating': dating, 
+        'Eugenics': eugenics,
+        'Immortality': immortality,
+        'Marriage': marriage,
+        'Parenthood': parenthood,
+        'Pride': pride,
+        'Suicide': suicide
+      },
     };
   },
   mounted() {
-    this.addExamples();
     this.chooseTopic();
+    //this.addExamples();
+
   },
 
   methods: {
@@ -90,78 +102,30 @@ export default {
       var index = topic_s.selectedIndex;
       this.selectTopicNum = topic_s.options[index].value;
       this.selectTopic = topic_s.options[index].text;
-
+      
       DataService.selectTopicNum = this.selectTopicNum;
       DataService.selectTopic = this.selectTopic;
 
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+      this.addExamples();
       //console.log("topicSelect:", this.selectTopicNum, this.selectTopic);
     },
 
     addExamples() {
-      var i = 0;
-      json16["dating-16"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-16-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
+      //console.log("Choosetest2", this.topicExamples[this.selectTopic]);
+      var tempEx = this.topicExamples[this.selectTopic]
+      DataService.examples = [];
+      tempEx.forEach((ele) => {
+        var objKey = Object.keys(ele);
+        var c = 0
+        ele[objKey][0]["reply-info"].forEach((item) => { 
+          var new_item = {id: objKey + "-" + c, content: item};
+          DataService.examples.push(new_item);
+          //console.log("Abortion:", new_item);
+          c++;
+        });     
       });
-
-      var i = 0;
-      json17["dating-17"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-17-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json19["dating-19"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-19-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json20["dating-20"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-20-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json21["dating-21"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-21-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json22["dating-22"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-22-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json23["dating-23"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-23-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json25["dating-25"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-25-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
-      var i = 0;
-      json26["dating-26"][0]["reply-info"].forEach((item) => {
-        var new_item = { id: "dating-26-" + i, content: item };
-        DataService.examples.push(new_item);
-        i++;
-      });
-
+      
       // sort by delta
       DataService.examples = DataService.examples.sort((a, b) =>
         d3.descending(
@@ -170,11 +134,12 @@ export default {
         )
       );
 
-      console.log(DataService.examples);
+      //console.log("testexamples1:", DataService.examples);
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-      // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-      // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+      PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+      PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
     },
+
     onSubmit: function (event) {
 
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
