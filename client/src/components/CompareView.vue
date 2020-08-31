@@ -20,16 +20,16 @@
     <div class="col-lg-11">
       <!--summary view-->
       <div class="col-lg-4" style="height: 400px;  overflow-x: hidden;">
-        
+        <svg id="nodelink" height="400"></svg>
       </div>
       <!--rose chart view-->
       <div class="col-lg-4">
-        <div id="CircleSVG" style="height: 400px;  overflow-x: hidden;"></div>     
+        <div id="CircleSVG" style="height: 400px; width: 420px; overflow-x: hidden;"></div>     
           <div class="row" style="margin:auto;">
             <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
-             <label id="cbTxt">Select is disabled</label>&nbsp;
-             <p id="selectInd"></p>
-             <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
+              <label id="cbTxt">Select is disabled</label>&nbsp;
+              <p id="selectInd"></p>
+              <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
           </div>
         
       </div>
@@ -51,6 +51,16 @@ import PipeService from "../services/pipe-service";
 import input from "../input.json";
 import labelSum from "../label_summary.json"
 import dating_pos from "../dating-pos.json"
+import dating16 from "../dating-16.json" //for nodelink
+//pos test
+import abortionPos from '../pos_data/abortion-pos.json'
+import datingPos from '../pos_data/dating-pos.json'
+import eugenicsPos from '../pos_data/eugenics-pos.json'
+import immortalityPos from '../pos_data/immortality-pos.json'
+import marriagePos from '../pos_data/marriage-pos.json'
+import parenthoodPos from '../pos_data/parenthood-pos.json'
+import pridePos from '../pos_data/pride-pos.json'
+import suicidePos from '../pos_data/suicide-pos.json'
 
 export default {
   name: "CompareView",
@@ -61,6 +71,7 @@ export default {
       pos: {},
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
+      svg3: null,
       labelRadar: labelSum["label_summary"][1]["Dating"],
       selectIDarray: [],
       selectIDIndex: [],
@@ -68,6 +79,7 @@ export default {
       selectTopicNum: '',
       examples: null,
       ex_id: "",
+      simulation: null,
       examplesum: {
           logos: 0,
           pathos: 0,
@@ -78,14 +90,16 @@ export default {
           eloquence: 0,
       },
       flag: 0,
+      inputLabels: {},
+      node: null,
+      link: null,
+      posRose: null,
     };
   },
   mounted() {
     
     this.initialize();
-
-    
-
+    // console.log(dating16);
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
       //console.log("---ok---");
       this.ex_id = DataService.ex_id;
@@ -100,22 +114,32 @@ export default {
 
       //draw
       var numTemp = parseInt(this.selectTopicNum, 10);
-      console.log(numTemp, this.selectTopic);
-      console.log(labelSum["label_summary"][numTemp][this.selectTopic]);
+      console.log("Select topic: ",numTemp, this.selectTopic);
+      //console.log(labelSum["label_summary"][numTemp][this.selectTopic]);
       //console.log("compare: ", labelSum["label_summary"][1]["Dating"]);
       this.labelRadar = labelSum["label_summary"][numTemp][this.selectTopic];
 
-
+      this.svg.selectAll("*").remove();
       this.svg1.selectAll("*").remove();
+      this.posRose = {'Abortion': abortionPos, 
+                      'Dating': datingPos, 
+                      'Eugenics': eugenicsPos,
+                      'Immortality': immortalityPos,
+                      'Marriage': marriagePos,
+                      'Parenthood': parenthoodPos,
+                      'Pride': pridePos,
+                      'Suicide': suicidePos};
+        
       // this.svg.selectAll("*").remove();
+      //console.log("testpos1:", this.posRose[this.selectTopic]);
+      
+      this.drawRose(this.svg, this.posRose[this.selectTopic]);
       this.drawRadar(this.svg2, this.labelRadar);
       this.drawBar(this.svg1);
-      this.drawRose(this.svg);
+      this.drawNodeLink(this.svg3);
       //filtering val
       //console.log($("#strategy").val());
     });
-   
-    
   },
   methods: {
     initialize() {
@@ -157,6 +181,17 @@ export default {
         .attr("class", "d3SVG")
         .attr("width", this.width1)
         .attr("height", this.height1);
+
+      this.inputLabels = DataService.inputLabels;
+
+      this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
+      this.height3 = d3.select("#nodelink").node().getBoundingClientRect().height;
+      this.svg3 = d3.select("#nodelink")
+        .attr("width", this.width3)
+        .attr("height", this.height3);
+
+
+
     },
 
     mulipleSelect: function (event) {
@@ -176,10 +211,149 @@ export default {
       };
     },
 
-
-
-    drawRadar(svgNode, d) {
+    drawNodeLink(svgNode){
+      var arrow = svgNode
+        .append("defs")
+        .append("marker")
+        .attr("id", "arrowhead")
+        .attr("viewBox", "-0 -5 10 10")
+        .attr("refX", 15)
+        .attr("refY", 0)
+        .attr("orient", "auto")
+        .attr("markerWidth", 5)
+        .attr("markerHeight", 5)
+        .attr("xoverflow", "visible")
+        .append("path")
+        .attr("d", "M 0,-5 L 10 ,0 L 0,5")
+        .attr("fill", "black")
+        .style("stroke", "black");
       
+      this.simulation = d3
+        .forceSimulation()
+        .force(
+          "link",
+          d3
+            .forceLink()
+            .id(function (d) {
+              return d.id;
+            })
+            .distance(100)
+            .strength(1)
+        )
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2));
+      
+      
+        
+      var nodes = [],
+          links = [];
+        nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+          (d, i) => {
+            d.id = i;
+            return d;
+          }
+        );
+        // console.log(nodes);
+        var source = null;
+        nodes.forEach((d, i) => {
+          if (d.is_claim === "1") {
+            source = i;
+          }
+          if (source != null && source !== i) {
+            var newlink = {
+              source: i,
+              target: source,
+            };
+            links.push(newlink);
+          }
+        });
+        //console.log(links);
+        this.update(links, nodes);
+    },
+
+    update(links, nodes) {
+      this.link = this.svg3
+        .selectAll(".link")
+        .data(links)
+        .enter()
+        .append("line")
+        .attr("class", "link")
+        .attr("marker-end", "url(#arrowhead)")
+        .attr("stroke", "black")
+        .attr("stroke-width", "2px");
+
+      this.node = this.svg3
+          .selectAll(".node")
+          .data(nodes)
+          .enter()
+          .append("g")
+          .attr("class", "node")
+          .call(
+            d3.drag().on("start", this.dragstarted).on("drag", this.dragged)
+            //.on("end", dragended)
+          );
+
+      this.node
+        .append("circle")
+        .attr("r", 10)
+        .style("fill", function (d, i) {
+          if (d.is_claim === "1") return "#b6034d";
+          else return "#f8cd40";
+        });
+      
+      this.simulation = d3
+        .forceSimulation(nodes) // Force algorithm is applied to data.nodes
+        .force(
+          "link",
+          d3
+            .forceLink() // This force provides links between nodes
+            .id(function (d) {
+              return d.id;
+            }) // This provide  the id of a node
+            .links(links) // and this the list of links
+            .distance(100)
+        )
+        .force(
+          "charge",
+          d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
+        ) // This adds repulsion between nodes.
+        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
+        .on("tick", this.ticked);
+    },
+
+    ticked() {
+      this.link
+        .attr("x1", function (d) {
+          return d.source.x;
+        })
+        .attr("y1", function (d) {
+          return d.source.y;
+        })
+        .attr("x2", function (d) {
+          return d.target.x;
+        })
+        .attr("y2", function (d) {
+          return d.target.y;
+        });
+
+      this.node.attr("transform", function (d) {
+        return "translate(" + d.x + ", " + d.y + ")";
+      });
+    },
+
+    dragstarted(d) {
+      if (!d3.event.active) this.simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    },
+    dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+    },
+    // nodelink end//
+
+    //
+    drawRadar(svgNode, d) {
       var cfg = {
         radius: 5,
         w: 160,
@@ -187,7 +361,7 @@ export default {
         factor: 1,
         factorLegend: 0.6,
         levels: 5,
-        maxValue: 180, //hard code
+        maxValue: 0, //decided later
         radians: 2 * Math.PI,
         opacityArea: 0.5,
         ToRight: 5,
@@ -496,7 +670,7 @@ export default {
       //     concreteness: 0,
       //     eloquence: 0,
       //   };
-      console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
+      //console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
       if (this.ex_id !== "") {
         if (this.selectIDIndex.length == 0) { //draw single data
             this.examplesum = {
@@ -574,7 +748,7 @@ export default {
         //console.log("barSum", barSum);
       }
 
-      var data = input["input"].map((d) => {
+      var data = this.inputLabels["input"].map((d) => {
           // console.log(examplesum[d.feature] - d.label);
           return {
             feature: d.feature,
@@ -652,56 +826,9 @@ export default {
 
     },
 
-    drawRose(svg) {
-      // transform dating_pos
-      var i = 0;
-      dating_pos["16"].forEach((d) => {
-        this.pos["dating-16-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["17"].forEach((d) => {
-        this.pos["dating-17-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["19"].forEach((d) => {
-        this.pos["dating-19-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["20"].forEach((d) => {
-        this.pos["dating-20-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["21"].forEach((d) => {
-        var id = "dating-21-" + i;
-        this.pos["dating-21-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["22"].forEach((d) => {
-        this.pos["dating-22-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["23"].forEach((d) => {
-        this.pos["dating-23-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["25"].forEach((d) => {
-        this.pos["dating-25-" + i] = d;
-        i++;
-      });
-      var i = 0;
-      dating_pos["26"].forEach((d) => {
-        this.pos["dating-26-" + i] = d;
-        i++;
-      });
-      //console.log(this.pos);
-
+    drawRose(svg, currentPos) {
+      this.pos = currentPos;
+      
       // x, y scale
       var xdomain = Object.values(this.pos).map((d) => d[0]),
         ydomain = Object.values(this.pos).map((d) => d[1]),
@@ -710,7 +837,6 @@ export default {
         ),
         height = this.height - this.margin.bottom - this.margin.top,
         width = this.width - this.margin.right - this.margin.left;
-
       var xScale = d3
         .scaleLinear()
         .domain(d3.extent(xdomain))
@@ -725,163 +851,23 @@ export default {
         .scaleLinear()
         .domain(d3.extent(outerRdomain)) // depends on delta
         .range([20, 40]);
-      var examples = this.examples;
-
       // draw rose
-      function drawFrontRose(d, id, pos) {
-        var exampledata = d.content["reply_contents"];
-        // console.log(exampledata);
-        var Rosesum = [
-          { feature: "is_claim", label: 0 },
-          { feature: "logos", label: 0 },
-          { feature: "pathos", label: 0 },
-          { feature: "ethos", label: 0 },
-          { feature: "evidence", label: 0 },
-          { feature: "relevance", label: 0 },
-        ];
-        exampledata.forEach((element) => {
-          Rosesum[0].label += parseInt(element["is_claim"]);
-          Rosesum[1].label += parseInt(element["logos"]);
-          Rosesum[2].label += parseInt(element["pathos"]);
-          Rosesum[3].label += parseInt(element["ethos"]);
-          Rosesum[4].label += parseInt(element["evidence"]);
-          Rosesum[5].label += parseInt(element["relevance"]);
-        });
-        Rosesum = Rosesum.map((d) => {
-          return {
-            feature: d.feature,
-            label: d.label,
-            radius: Math.sqrt(d.label) / Math.PI,
-          };
-        });
 
-        // Rosesum = Rosesum.sort((a, b) => d3.descending(a.label, b.label));
-
-
-        var total_label = 0;
-        Rosesum.forEach((element) => {
-          total_label += element.label;
-        });
-
-        // console.log(Rosesum);
-
-        var total_r = Math.sqrt(total_label) / Math.PI;
-
-        // set inner radius scale:
-        var outerR = outerRScale(d.content["reply_delta_num"]);
-        var innerRdomain = Rosesum.map((d) => d.radius);
-        var innerRScale = d3
-          .scaleLinear()
-          .domain([d3.min(innerRdomain), total_r])
-          .range([0, outerR]);
-
-        // Compute the position of each group on the pie:
-        var pie = d3.pie().value(function (d) {
-          return 1; // equal arc
-        });
-        var data_ready = pie(d3.entries(Rosesum));
-
-        // set color scale:
-        var color = d3
-          .scaleOrdinal()
-          .domain([
-            "logos",
-            "pathos",
-            "ethos",
-            "relevance",
-            "evidence",
-            "is_claim",
-          ])
-          .range([
-            "#7eb6e4",
-            "#8cd390",
-            "#8f91fc",
-            "#e05c5c",
-            "#fa8cad",
-            "#b6034d",
-          ]);
-
-        // set tooltips
-        var div = d3
-          .select("body")
-          .append("div")
-          .attr("class", "tooltip")
-          .style("opacity", 0);
-
-        svg
-          .selectAll("whatever")
-          .data(data_ready)
-          .enter()
-          .append("path")
-          .attr("transform", () => {
-            return (
-              "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
-            );
-          })
-          .attr(
-            "d",
-            d3
-              .arc()
-              .innerRadius(0)
-              .outerRadius((d) => {
-                return innerRScale(d.data.value.radius);
-              })
-          )
-          .attr("fill", (d) => {
-            return color(d.data.value.feature);
-          })
-          .attr("stroke", "black")
-          .style("stroke-width", "1px")
-          .style("opacity", 0.7)
-          .on("mouseover", (d) => {
-            div.transition().duration(200).style("opacity", 0.7);
-            div
-              .html(d.data.value.feature + ":" + d.data.value.label)
-              .style("left", d3.event.pageX + "px")
-              .style("top", d3.event.pageY - 28 + "px");
-          })
-          .on("mouseout", function (d) {
-            div.transition().duration(500).style("opacity", 0);
-            // d3.selectAll(".tooltip").remove();
-          });
-      }
-
-      // background pie
-      function drawBackRose(r, id, pos) {
-        var pie = d3.pie().value(function (d) {
-          return 1; // equal arc
-        });
-        var data_ready = pie(d3.entries(d3.range(6)));
-        svg
-          .selectAll("whatever")
-          .data(data_ready)
-          .enter()
-          .append("path")
-          .attr("transform", () => {
-            return (
-              "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
-            );
-          })
-          .attr("d", d3.arc().innerRadius(0).outerRadius(r))
-          .attr("fill", "lightblue")
-          .attr("stroke", "black")
-          .style("stroke-width", "1px")
-          .style("opacity", 0.7);
-      }
-
+      //var examples = this.examples;
+      console.log("testexamples2:", this.examples);
+      console.log("testpos2: ", this.pos);
       // combine pie and rose
-      //user select
-      // var selectIDarray = []; //select rose chart IDarray
-      // var selectIDIndex = [];
       var circles = svg
         .selectAll("circle")
         .data(this.examples)
         .enter()
         .each((d, i) =>
-          drawBackRose(
+          this.drawBackRose(
             outerRScale(d.content["reply_delta_num"]),
             d.id,
-            this.pos
+            this.pos,
+            xScale,
+            yScale
           )
         )
         .append("circle")
@@ -938,10 +924,154 @@ export default {
           // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         })
-        .each((d) => drawFrontRose(d, d.id, this.pos));
+        .each((d) => this.drawFrontRose(d, d.id, this.pos, xScale, yScale, outerRScale));
     },
+
+    drawFrontRose(d, id, pos, xScale, yScale, outerRScale) {
+      //console.log("testpos3:", pos);
+      var exampledata = d.content["reply_contents"];
+      //console.log("example999:", exampledata);
+      var Rosesum = [
+        { feature: "is_claim", label: 0 },
+        { feature: "logos", label: 0 },
+        { feature: "pathos", label: 0 },
+        { feature: "ethos", label: 0 },
+        { feature: "evidence", label: 0 },
+        { feature: "relevance", label: 0 },
+      ];
+      exampledata.forEach((element) => {
+        Rosesum[0].label += parseInt(element["is_claim"]);
+        Rosesum[1].label += parseInt(element["logos"]);
+        Rosesum[2].label += parseInt(element["pathos"]);
+        Rosesum[3].label += parseInt(element["ethos"]);
+        Rosesum[4].label += parseInt(element["evidence"]);
+        Rosesum[5].label += parseInt(element["relevance"]);
+      });
+      Rosesum = Rosesum.map((d) => {
+        return {
+          feature: d.feature,
+          label: d.label,
+          radius: Math.sqrt(d.label) / Math.PI,
+        };
+      });
+      
+      // Rosesum = Rosesum.sort((a, b) => d3.descending(a.label, b.label));
+
+
+      var total_label = 0;
+      Rosesum.forEach((element) => {
+        total_label += element.label;
+      });
+
+      // console.log(Rosesum);
+
+      var total_r = Math.sqrt(total_label) / Math.PI;
+
+      // set inner radius scale:
+      var outerR = outerRScale(d.content["reply_delta_num"]);
+      var innerRdomain = Rosesum.map((d) => d.radius);
+      var innerRScale = d3
+        .scaleLinear()
+        .domain([d3.min(innerRdomain), total_r])
+        .range([0, outerR]);
+
+      // Compute the position of each group on the pie:
+      var pie = d3.pie().value(function (d) {
+        return 1; // equal arc
+      });
+      var data_ready = pie(d3.entries(Rosesum));
+
+      // set color scale:
+      var color = d3
+        .scaleOrdinal()
+        .domain([
+          "logos",
+          "pathos",
+          "ethos",
+          "relevance",
+          "evidence",
+          "is_claim",
+        ])
+        .range([
+          "#7eb6e4",
+          "#8cd390",
+          "#8f91fc",
+          "#e05c5c",
+          "#fa8cad",
+          "#b6034d",
+        ]);
+      
+      // set tooltips
+      var div = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+      this.svg
+        .selectAll("whatever")
+        .data(data_ready)
+        .enter()
+        .append("path")
+        .attr("transform", () => {
+          return (
+            "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
+          );
+        })
+        .attr(
+          "d",
+          d3
+            .arc()
+            .innerRadius(0)
+            .outerRadius((d) => {
+              return innerRScale(d.data.value.radius);
+            })
+        )
+        .attr("fill", (d) => {
+          return color(d.data.value.feature);
+        })
+        .attr("stroke", "black")
+        .style("stroke-width", "1px")
+        .style("opacity", 0.7)
+        .on("mouseover", (d) => {
+          div.transition().duration(200).style("opacity", 0.7);
+          div
+            .html(d.data.value.feature + ":" + d.data.value.label)
+            .style("left", d3.event.pageX + "px")
+            .style("top", d3.event.pageY - 28 + "px");
+        })
+        .on("mouseout", function (d) {
+          div.transition().duration(500).style("opacity", 0);
+          // d3.selectAll(".tooltip").remove();
+        });
+    },
+    drawBackRose(r, id, pos, xScale, yScale) {
+      var pie = d3.pie().value(function (d) {
+        return 1; // equal arc
+      });
+      var data_ready = pie(d3.entries(d3.range(6)));
+      this.svg
+        .selectAll("whatever")
+        .data(data_ready)
+        .enter()
+        .append("path")
+        .attr("transform", () => {
+          return (
+            "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
+          );
+        })
+        .attr("d", d3.arc().innerRadius(0).outerRadius(r))
+        .attr("fill", "lightblue")
+        .attr("stroke", "black")
+        .style("stroke-width", "1px")
+        .style("opacity", 0.7);
+        //console.log("testtttttt:", xScale(pos[id][0]), yScale(pos[id][1]));
+    },
+
+
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

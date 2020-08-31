@@ -25,7 +25,7 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
-
+import re
 sentenceEmbedder = se()
 
 
@@ -133,7 +133,7 @@ def run_models(sentence):
             }
     
     except Exception:
-        print("--- model issues ---")
+        print("---model issues---")
         return {
             "content": sentence + " .",
             "is_claim": 0,
@@ -170,25 +170,14 @@ def register():
 def uploadInput():
     temp = json.loads(request.data.decode("utf-8"))
     print("receive: ", temp)
-    sentences = temp["input"].split(".")
+    txt = temp["input"]
+    pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
+    sentence_list = re.split(pattern, txt)
     all_results = []
-    for sentence in sentences:
-        results = run_models(sentence)
+    for index_sentence in range(0, len(sentence_list)-1): # split re without the last one
+        results = run_models(sentence_list[index_sentence])
         all_results.append(results)
     print("results:", all_results)
     return json.dumps({
         "results": all_results
     })
-
-
-
-
-
-
- 
-
- 
-
-
-
-
