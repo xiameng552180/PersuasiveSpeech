@@ -25,12 +25,12 @@
       <!--rose chart view-->
       <div class="col-lg-4">
         <div id="CircleSVG" style="height: 400px; width: 420px; overflow-x: hidden;"></div>     
-          <div class="row" style="margin:auto;">
-            <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
-              <label id="cbTxt">Select is disabled</label>&nbsp;
-              <p id="selectInd"></p>
-              <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
-          </div>
+        <div class="row" style="margin:auto;">
+          <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
+            <label id="cbTxt">Select is disabled</label>&nbsp;
+            <p id="selectInd"></p>
+            <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
+        </div>
         
       </div>
       <!--bar view-->
@@ -48,8 +48,8 @@ import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
-import input from "../input.json";
-import labelSum from "../label_summary.json"
+// import input from "../input.json";
+import labelSum from "../label_summary_persent.json"
 import dating_pos from "../dating-pos.json"
 import dating16 from "../dating-16.json" //for nodelink
 //pos test
@@ -81,13 +81,13 @@ export default {
       ex_id: "",
       simulation: null,
       examplesum: {
-          logos: 0,
-          pathos: 0,
-          ethos: 0,
-          evidence: 0,
-          relevance: 0,
-          concreteness: 0,
-          eloquence: 0,
+        logos: 0,
+        pathos: 0,
+        ethos: 0,
+        evidence: 0,
+        relevance: 0,
+        concreteness: 0,
+        eloquence: 0,
       },
       flag: 0,
       inputLabels: {},
@@ -97,7 +97,6 @@ export default {
     };
   },
   mounted() {
-    
     this.initialize();
     // console.log(dating16);
     PipeService.$on(PipeService.UPDATE_COMPAREVIEW, () => {
@@ -114,7 +113,7 @@ export default {
 
       //draw
       var numTemp = parseInt(this.selectTopicNum, 10);
-      console.log("Select topic: ",numTemp, this.selectTopic);
+      //console.log("Select topic: ",numTemp, this.selectTopic);
       //console.log(labelSum["label_summary"][numTemp][this.selectTopic]);
       //console.log("compare: ", labelSum["label_summary"][1]["Dating"]);
       this.labelRadar = labelSum["label_summary"][numTemp][this.selectTopic];
@@ -182,7 +181,7 @@ export default {
         .attr("width", this.width1)
         .attr("height", this.height1);
 
-      this.inputLabels = DataService.inputLabels;
+      this.inputLabels = DataService.inputLabels; //input data labelsSum
 
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
       this.height3 = d3.select("#nodelink").node().getBoundingClientRect().height;
@@ -243,8 +242,6 @@ export default {
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2));
       
-      
-        
       var nodes = [],
           links = [];
         nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
@@ -658,7 +655,6 @@ export default {
       var width = this.width1,
         height = this.height1;
       var svg = svgNode.append("g");
-
       var index = this.examples.map((d) => d.id).indexOf(this.ex_id);
 
       // var examplesum = {
@@ -851,11 +847,27 @@ export default {
         .scaleLinear()
         .domain(d3.extent(outerRdomain)) // depends on delta
         .range([20, 40]);
-      // draw rose
 
-      //var examples = this.examples;
-      console.log("testexamples2:", this.examples);
-      console.log("testpos2: ", this.pos);
+      //console.log("testexamples2:", this.examples);
+      // this.examples.forEach((e) => {
+      //   console.log(this.pos[e.id]);
+      // });
+      // console.log("testpos2: ", this.pos);
+
+      //force layout test3
+      var simulation = d3.forceSimulation()
+          .force("collide", d3.forceCollide().radius(function(d){ 
+            return outerRScale(d.content["reply_delta_num"])
+            }))
+          .force("center", d3.forceCenter(this.width / 2, this.height / 2))
+          .force("x", d3.forceX((d, i) => {
+            return xScale(this.pos[d.id][0]);
+          }).strength(1))
+          .force("y", d3.forceX((d, i) => {
+            return yScale(this.pos[d.id][1]);
+          }));
+
+
       // combine pie and rose
       var circles = svg
         .selectAll("circle")
@@ -872,13 +884,12 @@ export default {
         )
         .append("circle")
         .attr("class", "pie")
-        .attr("cx", (d, i) => {
-          return xScale(this.pos[d.id][0]);
-        })
-        .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
+        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
-        .style("opacity", 0.7)
-        .style("fill", "white")
+        .style("opacity", 0.5)
+        .style("fill", "black")
+        .each((d) => this.drawFrontRose(d, d.id, this.pos, xScale, yScale, outerRScale))
         // .on("mouseover", (d, i) => {
         //   // d3.select(this).style("fill","red");
         //   d3.selectAll(".pie")
@@ -923,14 +934,22 @@ export default {
           // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
           // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-        })
-        .each((d) => this.drawFrontRose(d, d.id, this.pos, xScale, yScale, outerRScale));
+        });
+        var ticked = function() {
+          circles
+            .attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+        }  
+        simulation
+          .nodes(this.examples)
+          .on("tick", ticked);
+        
+        
     },
 
     drawFrontRose(d, id, pos, xScale, yScale, outerRScale) {
       //console.log("testpos3:", pos);
       var exampledata = d.content["reply_contents"];
-      //console.log("example999:", exampledata);
       var Rosesum = [
         { feature: "is_claim", label: 0 },
         { feature: "logos", label: 0 },
@@ -1001,6 +1020,19 @@ export default {
           "#b6034d",
         ]);
       
+      var simulation = d3.forceSimulation()
+          .force("collide",d3.forceCollide(
+            function(d) {
+              return outerRScale(d.content["reply_delta_num"])
+            }
+          ))
+          .force("center", d3.forceCenter(this.width / 2, this.height / 2))
+          .force("y", d3.forceX((d, i) => {
+            return yScale(pos[id][1]);
+          }))
+          .force("x", d3.forceX((d, i) => {
+            return xScale(pos[id][0]);
+          }));
       // set tooltips
       var div = d3
         .select("body")
@@ -1043,11 +1075,22 @@ export default {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
         });
+        // var ticked = function() {
+        //     circles
+        //         .attr("cx", function(d) { return d.x; })
+        //         .attr("cy", function(d) { return d.y; });
+        // }  
+
+        // simulation
+        //     .nodes(d)
+        //     .on("tick", ticked);
+
     },
     drawBackRose(r, id, pos, xScale, yScale) {
       var pie = d3.pie().value(function (d) {
         return 1; // equal arc
       });
+      //console.log("drawbackrose:", id);
       var data_ready = pie(d3.entries(d3.range(6)));
       this.svg
         .selectAll("whatever")
@@ -1064,7 +1107,7 @@ export default {
         .attr("stroke", "black")
         .style("stroke-width", "1px")
         .style("opacity", 0.7);
-        //console.log("testtttttt:", xScale(pos[id][0]), yScale(pos[id][1]));
+        // console.log("testtttttt:", xScale(pos[id][0]), yScale(pos[id][1]));
     },
 
 
