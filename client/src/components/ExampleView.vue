@@ -44,37 +44,16 @@
           data-placement="bottom"
           title="The statement revelant to the parent claim"
         >relevance</button>
+        <button
+          class="btn btn-sm btn-primary m-1"
+          v-on:click="click_clear"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="The statement revelant to the parent claim"
+        >clear</button>
       </div>
     </h5>
     <div class="card-body overflow-auto">
-      <!-- <span>Calim type:</span>
-      <span class="badge badge-claim m-1">interpretation</span>
-      <span class="badge badge-claim m-1">evaluation</span>
-      <span class="badge badge-claim m-1">disagreement</span>
-
-      <span class="badge badge-logos m-1">L</span>
-      <span>Logos</span>
-      <span class="badge badge-pathos m-1">P</span>
-      <span>Pathos</span>
-      <span class="badge badge-ethos m-1">E</span>
-      <span>Ethos</span>
-      <span class="badge badge-evidence m-1">Ev</span>
-      <span>Evidence</span>
-      <span class="badge badge-relevance m-1">R</span>
-      <span>Relevance</span>
-      <br />
-      <br />
-      <span>Concreteness (from low to high)</span>
-      <span class="badge badge-concreteness m-1" style="opacity:0.2">C</span>
-      <span class="badge badge-concreteness m-1" style="opacity:0.5">C</span>
-      <span class="badge badge-concreteness m-1" style="opacity:1">C</span>
-      <span class="ml-4">Eloquence (from low to high)</span>
-      <span class="badge badge-eloquence m-1" style="opacity:0.2">El</span>
-      <span class="badge badge-eloquence m-1" style="opacity:0.5">El</span>
-      <span class="badge badge-eloquence m-1" style="opacity:1">El</span> -->
-
-      <br />
-
       <!--highlight text-->
       <div class="card">
         <div v-for="example in examples" :key="example.id" class="card-body">
@@ -83,8 +62,18 @@
             :id="example.id"
             :ref="example.id"
           >Replyer name: {{example.content["replyer_name"]}}</h5>
-          <p v-if="if_claim==true" class="card-text text-secondary">
-            <span>
+
+          <!-- the selected paragraph -->
+          <!-- <p v-if="select == true && ex_id == example.id">selected</p> -->
+
+          <p v-if="clear==true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >{{item.content+". "}}</span>
+          </p>
+          <p v-else-if="if_claim==true" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
               <mark
                 class="textbg-claim"
                 v-if="item.is_claim!=='0' && if_claim==true"
@@ -137,12 +126,12 @@
               <span v-else>{{item.content+". "}}</span>
             </span>
           </p>
-          <p v-else class="card-text text-secondary">
+          <!-- <p v-else class="card-text text-secondary">
             <span
               v-for="item in example.content.reply_contents"
               :key="item.content"
             >{{item.content+". "}}</span>
-          </p>
+          </p>-->
         </div>
       </div>
     </div>
@@ -167,6 +156,9 @@ export default {
       if_relevance: false,
       examples: null,
       ex_id: "",
+      clear: true,
+      select: null,
+      example_sum: null,
     };
   },
   mounted() {
@@ -174,6 +166,7 @@ export default {
     PipeService.$on(PipeService.UPDATE_EXAMPLEVIEW, () => {
       this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
+      this.examplesum = DataService.examplesum;
       //console.log("exampleview:", this.ex_id);
       this.display();
     });
@@ -182,11 +175,15 @@ export default {
     initialize() {},
     display() {
       if (this.ex_id !== "") {
+        this.select = true;
+        this.clear = true;
         var element = document.getElementById(this.ex_id);
-        console.log(this.ex_id);
-        console.log(document.getElementById(this.ex_id));
-
+        // console.log(this.ex_id);
+        // console.log(document.getElementById(this.ex_id));
         element.scrollIntoView({ behavior: "smooth" });
+        // this.examplesum.sort((a,b)=>d3.descending(a.value))
+        console.log("Example view example_sum:");
+        console.log(this.examplesum);
       }
     },
     click_claim() {
@@ -196,6 +193,7 @@ export default {
       this.if_ethos = false;
       this.if_evidence = false;
       this.if_relevance = false;
+      this.clear = false;
     },
     click_logos() {
       this.if_claim = false;
@@ -204,6 +202,7 @@ export default {
       this.if_ethos = false;
       this.if_evidence = false;
       this.if_relevance = false;
+      this.clear = false;
     },
     click_pathos() {
       this.if_claim = false;
@@ -212,6 +211,7 @@ export default {
       this.if_ethos = false;
       this.if_evidence = false;
       this.if_relevance = false;
+      this.clear = false;
     },
     click_ethos() {
       this.if_claim = false;
@@ -220,6 +220,7 @@ export default {
       this.if_ethos = true;
       this.if_evidence = false;
       this.if_relevance = false;
+      this.clear = false;
     },
     click_evidence() {
       this.if_claim = false;
@@ -228,6 +229,7 @@ export default {
       this.if_ethos = false;
       this.if_evidence = true;
       this.if_relevance = false;
+      this.clear = false;
     },
     click_relevance() {
       this.if_claim = false;
@@ -236,6 +238,16 @@ export default {
       this.if_ethos = false;
       this.if_evidence = false;
       this.if_relevance = true;
+      this.clear = false;
+    },
+    click_clear() {
+      this.if_claim = false;
+      this.if_logos = false;
+      this.if_pathos = false;
+      this.if_ethos = false;
+      this.if_evidence = false;
+      this.if_relevance = false;
+      this.clear = true;
     },
   },
 };

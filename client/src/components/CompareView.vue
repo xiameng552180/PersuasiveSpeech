@@ -20,18 +20,17 @@
     <div class="col-lg-11">
       <!--summary view-->
       <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
-        <svg id="nodelink" height="400"></svg>
+        <svg id="nodelink" height="400" />
       </div>
       <!--rose chart view-->
       <div class="col-lg-5">
-        <div id="CircleSVG" style="height: 400px; width: 420px; overflow-auto;"></div>     
+        <div id="CircleSVG" style="height: 400px; width: 420px; overflow-auto;"></div>
         <div class="row" style="margin:auto;">
-          <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
-            <label id="cbTxt">Select is disabled</label>&nbsp;
-            <p id="selectInd"></p>
-            <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
+          <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle" /> &nbsp;
+          <label id="cbTxt">Select is disabled</label>&nbsp;
+          <p id="selectInd"></p>
+          <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
         </div>
-        
       </div>
       <!--bar view-->
       <div class="col-lg-4">
@@ -49,18 +48,18 @@ import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
 
 // import input from "../input.json";
-import labelSum from "../label_summary_persent.json"
-import dating_pos from "../dating-pos.json"
-import dating16 from "../dating-16.json" //for nodelink
+import labelSum from "../label_summary_persent.json";
+import dating_pos from "../dating-pos.json";
+import dating16 from "../dating-16.json"; //for nodelink
 //pos test
-import abortionPos from '../pos_data/abortion-pos.json'
-import datingPos from '../pos_data/dating-pos.json'
-import eugenicsPos from '../pos_data/eugenics-pos.json'
-import immortalityPos from '../pos_data/immortality-pos.json'
-import marriagePos from '../pos_data/marriage-pos.json'
-import parenthoodPos from '../pos_data/parenthood-pos.json'
-import pridePos from '../pos_data/pride-pos.json'
-import suicidePos from '../pos_data/suicide-pos.json'
+import abortionPos from "../pos_data/abortion-pos.json";
+import datingPos from "../pos_data/dating-pos.json";
+import eugenicsPos from "../pos_data/eugenics-pos.json";
+import immortalityPos from "../pos_data/immortality-pos.json";
+import marriagePos from "../pos_data/marriage-pos.json";
+import parenthoodPos from "../pos_data/parenthood-pos.json";
+import pridePos from "../pos_data/pride-pos.json";
+import suicidePos from "../pos_data/suicide-pos.json";
 
 export default {
   name: "CompareView",
@@ -75,8 +74,8 @@ export default {
       labelRadar: labelSum["label_summary"][1]["Dating"],
       selectIDarray: [],
       selectIDIndex: [],
-      selectTopic: '',
-      selectTopicNum: '',
+      selectTopic: "",
+      selectTopicNum: "",
       examples: null,
       ex_id: "",
       simulation1: null,
@@ -120,18 +119,20 @@ export default {
 
       this.svg.selectAll("*").remove();
       this.svg1.selectAll("*").remove();
-      this.posRose = {'Abortion': abortionPos, 
-                      'Dating': datingPos, 
-                      'Eugenics': eugenicsPos,
-                      'Immortality': immortalityPos,
-                      'Marriage': marriagePos,
-                      'Parenthood': parenthoodPos,
-                      'Pride': pridePos,
-                      'Suicide': suicidePos};
-        
+      this.posRose = {
+        Abortion: abortionPos,
+        Dating: datingPos,
+        Eugenics: eugenicsPos,
+        Immortality: immortalityPos,
+        Marriage: marriagePos,
+        Parenthood: parenthoodPos,
+        Pride: pridePos,
+        Suicide: suicidePos,
+      };
+
       // this.svg.selectAll("*").remove();
       //console.log("testpos1:", this.posRose[this.selectTopic]);
-      
+
       this.drawRose(this.svg, this.posRose[this.selectTopic]);
       this.drawRadar(this.svg2, this.labelRadar);
       this.drawBar(this.svg1);
@@ -184,33 +185,33 @@ export default {
       this.inputLabels = DataService.inputLabels; //input data labelsSum
 
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
-      this.height3 = d3.select("#nodelink").node().getBoundingClientRect().height;
-      this.svg3 = d3.select("#nodelink")
+      this.height3 = d3
+        .select("#nodelink")
+        .node()
+        .getBoundingClientRect().height;
+      this.svg3 = d3
+        .select("#nodelink")
         .attr("width", this.width3)
         .attr("height", this.height3);
-
-
-
     },
 
     mulipleSelect: function (event) {
-      if ($('#cbTxt').text() == 'Select is enabled') { //disable
+      if ($("#cbTxt").text() == "Select is enabled") {
+        //disable
         console.log("close");
-        $('#selectInd').text('');
+        $("#selectInd").text("");
         DataService.selectIDarray = [];
         DataService.selectIDIndex = [];
-        $('#cbTxt').text('Select is disabled');
-        $('#genBar').css('display', 'none');
-      }
-      else {
+        $("#cbTxt").text("Select is disabled");
+        $("#genBar").css("display", "none");
+      } else {
         console.log("open");
-        $('#cbTxt').text('Select is enabled');
-        $('#genBar').css('display', 'block');
-      
-      };
+        $("#cbTxt").text("Select is enabled");
+        $("#genBar").css("display", "block");
+      }
     },
 
-    drawNodeLink(svgNode){
+    drawNodeLink(svgNode) {
       var arrow = svgNode
         .append("defs")
         .append("marker")
@@ -226,7 +227,7 @@ export default {
         .attr("d", "M 0,-5 L 10 ,0 L 0,5")
         .attr("fill", "black")
         .style("stroke", "black");
-      
+
       this.simulation1 = d3
         .forceSimulation()
         .force(
@@ -241,31 +242,31 @@ export default {
         )
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2));
-      
+
       var nodes = [],
-          links = [];
-        nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map( 
-          (d, i) => {
-            d.id = i;
-            return d;
-          }
-        );
-        // console.log(nodes);
-        var source = null;
-        nodes.forEach((d, i) => {
-          if (d.is_claim === "1") {
-            source = i;
-          }
-          if (source != null && source !== i) {
-            var newlink = {
-              source: i,
-              target: source,
-            };
-            links.push(newlink);
-          }
-        });
-        //console.log(links);
-        this.update(links, nodes);
+        links = [];
+      nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+        (d, i) => {
+          d.id = i;
+          return d;
+        }
+      );
+      // console.log(nodes);
+      var source = null;
+      nodes.forEach((d, i) => {
+        if (d.is_claim === "1") {
+          source = i;
+        }
+        if (source != null && source !== i) {
+          var newlink = {
+            source: i,
+            target: source,
+          };
+          links.push(newlink);
+        }
+      });
+      //console.log(links);
+      this.update(links, nodes);
     },
 
     update(links, nodes) {
@@ -280,15 +281,15 @@ export default {
         .attr("stroke-width", "2px");
 
       this.node = this.svg3
-          .selectAll(".node")
-          .data(nodes)
-          .enter()
-          .append("g")
-          .attr("class", "node")
-          .call(
-            d3.drag().on("start", this.dragstarted).on("drag", this.dragged)
-            //.on("end", dragended)
-          );
+        .selectAll(".node")
+        .data(nodes)
+        .enter()
+        .append("g")
+        .attr("class", "node")
+        .call(
+          d3.drag().on("start", this.dragstarted).on("drag", this.dragged)
+          //.on("end", dragended)
+        );
 
       this.node
         .append("circle")
@@ -297,7 +298,7 @@ export default {
           if (d.is_claim === "1") return "#b6034d";
           else return "#f8cd40";
         });
-      
+
       this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
         .force(
@@ -314,14 +315,14 @@ export default {
           "charge",
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
-        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
-        
-        //.on("tick", this.tickedNodelink);
+        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)); // This force attracts nodes to the center of the svg area
 
-        for (let index = 0; index < 500; index++) {
-          this.simulation1.tick()
-        }
-        this.tickedNodelink();
+      // .on("tick", this.tickedNodelink);
+
+      for (let index = 0; index < 500; index++) {
+        this.simulation1.tick();
+      }
+      this.tickedNodelink();
     },
 
     tickedNodelink() {
@@ -369,7 +370,7 @@ export default {
         opacityArea: 0.5,
         ToRight: 5,
         TranslateX: 30, //margin left
-        TranslateY: 30,  //margin top
+        TranslateY: 30, //margin top
         ExtraWidthX: 50,
         ExtraWidthY: 50,
         color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"]),
@@ -382,7 +383,16 @@ export default {
           }
         }
       }
-      var maxValue = Math.max(cfg.maxValue, d3.max(d, function(i){return d3.max(i.map(function(o){return o.value;}))}));
+      var maxValue = Math.max(
+        cfg.maxValue,
+        d3.max(d, function (i) {
+          return d3.max(
+            i.map(function (o) {
+              return o.value;
+            })
+          );
+        })
+      );
       //console.log("radarMax:", maxValue);
       cfg.maxValue = maxValue; //??
 
@@ -390,16 +400,15 @@ export default {
         return i.area;
       });
       var total = allAxis.length; //6
-      
+
       var radius = cfg.factor * Math.min(cfg.w / 2, cfg.h / 2);
       var Format = d3.format("%");
       d3.select("#RadarSVG").select("svg").remove();
 
-
       var g = d3
         .select("#RadarSVG")
         .append("svg")
-        .attr("width", cfg.w +  cfg.ExtraWidthX)
+        .attr("width", cfg.w + cfg.ExtraWidthX)
         .attr("height", cfg.h + cfg.ExtraWidthY)
         .append("g")
         .attr(
@@ -479,7 +488,7 @@ export default {
               ")"
           )
           .attr("fill", "#737373")
-          .text(((j + 1) * cfg.maxValue) / cfg.levels);  //axis  maxValue
+          .text(((j + 1) * cfg.maxValue) / cfg.levels); //axis  maxValue
       }
 
       var series = 0;
@@ -495,11 +504,10 @@ export default {
         .append("line")
         .attr("x1", cfg.w / 2)
         .attr("y1", cfg.h / 2)
-        .attr("x2", function (d, i) {   
+        .attr("x2", function (d, i) {
           return (
             (cfg.w / 2) * (1 - cfg.factor * Math.sin((i * cfg.radians) / total))
           );
-          
         })
         .attr("y2", function (d, i) {
           return (
@@ -510,7 +518,6 @@ export default {
         .style("stroke", "grey")
         .style("stroke-width", "1px");
 
-      
       axis
         .append("text")
         .attr("class", "legend")
@@ -526,7 +533,8 @@ export default {
         })
         .attr("x", function (d, i) {
           return (
-            (cfg.w / 2) *(1 - cfg.factorLegend * Math.sin((i * cfg.radians) / total)) -
+            (cfg.w / 2) *
+              (1 - cfg.factorLegend * Math.sin((i * cfg.radians) / total)) -
             60 * Math.sin((i * cfg.radians) / total)
           );
         })
@@ -674,64 +682,70 @@ export default {
       //   };
       //console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
       if (this.ex_id !== "") {
-        if (this.selectIDIndex.length == 0) { //draw single data
-            this.examplesum = {
-                logos: 0,
-                pathos: 0,
-                ethos: 0,
-                evidence: 0,
-                relevance: 0,
-                concreteness: 0,
-                eloquence: 0,
-              };
-            var exampledata = this.examples.map((d) => d.content)[index].reply_contents;
-            exampledata.forEach((element) => {
-              this.examplesum["logos"] += parseInt(element["logos"]);
-              this.examplesum["pathos"] += parseInt(element["pathos"]);
-              this.examplesum["ethos"] += parseInt(element["ethos"]);
-              this.examplesum["evidence"] += parseInt(element["evidence"]);
-              this.examplesum["relevance"] += parseInt(element["relevance"]);
-              this.examplesum["concreteness"] += element["concreteness"];
-              this.examplesum["eloquence"] += element["eloquence"];
+        if (this.selectIDIndex.length == 0) {
+          //draw single data
+          this.examplesum = {
+            logos: 0,
+            pathos: 0,
+            ethos: 0,
+            evidence: 0,
+            relevance: 0,
+            concreteness: 0,
+            eloquence: 0,
+          };
+          var exampledata = this.examples.map((d) => d.content)[index]
+            .reply_contents;
+          exampledata.forEach((element) => {
+            this.examplesum["logos"] += parseInt(element["logos"]);
+            this.examplesum["pathos"] += parseInt(element["pathos"]);
+            this.examplesum["ethos"] += parseInt(element["ethos"]);
+            this.examplesum["evidence"] += parseInt(element["evidence"]);
+            this.examplesum["relevance"] += parseInt(element["relevance"]);
+            this.examplesum["concreteness"] += element["concreteness"];
+            this.examplesum["eloquence"] += element["eloquence"];
+          });
+          console.log("examplesum:");
+          console.log(this.examplesum);
+          DataService.examplesum = this.examplesum;
+          PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+        } else {
+          //draw group data
+
+          this.examplesum = {
+            logos: 0,
+            pathos: 0,
+            ethos: 0,
+            evidence: 0,
+            relevance: 0,
+            concreteness: 0,
+            eloquence: 0,
+          };
+          this.selectIDIndex.forEach((ind) => {
+            //all replies
+            var exampledata = this.examples.map((d) => d.content)[ind]
+              .reply_contents;
+
+            exampledata.forEach((sentence) => {
+              this.examplesum["logos"] += parseInt(sentence["logos"]);
+              this.examplesum["pathos"] += parseInt(sentence["pathos"]);
+              this.examplesum["ethos"] += parseInt(sentence["ethos"]);
+              this.examplesum["evidence"] += parseInt(sentence["evidence"]);
+              this.examplesum["relevance"] += parseInt(sentence["relevance"]);
+              this.examplesum["concreteness"] += sentence["concreteness"];
+              this.examplesum["eloquence"] += sentence["eloquence"];
             });
-        // console.log(examplesum);
+          });
         }
-        else { //draw group data
-          
-              this.examplesum = {
-                logos: 0,
-                pathos: 0,
-                ethos: 0,
-                evidence: 0,
-                relevance: 0,
-                concreteness: 0,
-                eloquence: 0,
-              };
-              this.selectIDIndex.forEach((ind) =>{ //all replies
-              var exampledata = this.examples.map((d) => d.content)[ind].reply_contents;
-              
-              exampledata.forEach((sentence) =>{
-                  this.examplesum["logos"] += parseInt(sentence['logos']);
-                  this.examplesum["pathos"] += parseInt(sentence["pathos"]);
-                  this.examplesum["ethos"] += parseInt(sentence["ethos"]);
-                  this.examplesum["evidence"] += parseInt(sentence["evidence"]);
-                  this.examplesum["relevance"] += parseInt(sentence["relevance"]);
-                  this.examplesum["concreteness"] += sentence["concreteness"];
-                  this.examplesum["eloquence"] += sentence["eloquence"];
-                });
-            });
-        }
- 
-        
-      }
-      else{ //draw all data
+      } else {
+        //draw all data
 
         // compute eloquenceSum & concretenessSum
         var eloquenceSum = 0;
         var concretenessSum = 0;
-        this.examples.forEach((element) => {    //num of reply
+        this.examples.forEach((element) => {
+          //num of reply
           var tempElement = element.content.reply_contents;
-          tempElement.forEach((d) =>{
+          tempElement.forEach((d) => {
             //console.log("this:", d.eloquence);
             eloquenceSum += parseInt(d.eloquence);
             concretenessSum += parseInt(d.concreteness);
@@ -751,81 +765,80 @@ export default {
       }
 
       var data = this.inputLabels["input"].map((d) => {
-          // console.log(examplesum[d.feature] - d.label);
-          return {
-            feature: d.feature,
-            label: this.examplesum[d.feature] - d.label,
-          };
-        });
-        // console.log(data);
+        // console.log(examplesum[d.feature] - d.label);
+        return {
+          feature: d.feature,
+          label: this.examplesum[d.feature] - d.label,
+        };
+      });
+      // console.log(data);
 
-        data = data.sort((a, b) => d3.descending(a.label, b.label));
-        // set the ranges
-        var y = d3
-          .scaleBand()
-          .range([height - 40, 40])
-          .padding(0.1);
+      data = data.sort((a, b) => d3.descending(a.label, b.label));
+      // set the ranges
+      var y = d3
+        .scaleBand()
+        .range([height - 40, 40])
+        .padding(0.1);
 
-        var x = d3.scaleLinear().range([40, width - 40]);
+      var x = d3.scaleLinear().range([40, width - 40]);
 
-        // Scale the range of the data in the domains
-        x.domain([
-          d3.min(data, function (d) {
-            return d.label;
-          }),
-          d3.max(data, function (d) {
-            return d.label;
-          }),
-        ]);
-        y.domain(
-          data.map(function (d) {
-            return d.feature;
-          })
-        );
+      // Scale the range of the data in the domains
+      x.domain([
+        d3.min(data, function (d) {
+          return d.label;
+        }),
+        d3.max(data, function (d) {
+          return d.label;
+        }),
+      ]);
+      y.domain(
+        data.map(function (d) {
+          return d.feature;
+        })
+      );
 
-        // append the rectangles for the bar chart
-        svg
-          .selectAll(".bar")
-          .data(data)
-          .enter()
-          .append("rect")
-          // .attr("class", (d) => {
-          //   return "bar-" + (d.label < 0 ? "neg" : "pos");
-          // })
-          .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
-          .attr("width", (d) => {
-            return Math.abs(x(d.label) - x(0));
-          })
-          .attr("x", (d) => {
-            return x(Math.min(0, d.label));
-          })
-          .attr("y", function (d) {
-            return y(d.feature);
-          })
-          .attr("height", y.bandwidth());
-        svg
-          .selectAll("text")
-          .data(data)
-          .enter()
-          .append("text")
-          .text((d) => d.label)
-          .attr("x", (d) => x(d.label))
-          .attr("y", function (d) {
-            return y(d.feature) + y.bandwidth() / 2;
-          })
-          .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
-          .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
-        // add the x Axis
-        svg
-          .append("g")
-          .attr("transform", "translate(0," + (height - 40) + ")")
-          .call(d3.axisBottom(x));
-        // add the y Axis
-        svg
-          .append("g")
-          .attr("transform", "translate(" + x(0) + ",0)")
-          .call(d3.axisLeft(y));
-
+      // append the rectangles for the bar chart
+      svg
+        .selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        // .attr("class", (d) => {
+        //   return "bar-" + (d.label < 0 ? "neg" : "pos");
+        // })
+        .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
+        .attr("width", (d) => {
+          return Math.abs(x(d.label) - x(0));
+        })
+        .attr("x", (d) => {
+          return x(Math.min(0, d.label));
+        })
+        .attr("y", function (d) {
+          return y(d.feature);
+        })
+        .attr("height", y.bandwidth());
+      svg
+        .selectAll("text")
+        .data(data)
+        .enter()
+        .append("text")
+        .text((d) => d.label)
+        .attr("x", (d) => x(d.label))
+        .attr("y", function (d) {
+          return y(d.feature) + y.bandwidth() / 2;
+        })
+        .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
+        .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
+      // add the x Axis
+      svg
+        .append("g")
+        .attr("transform", "translate(0," + (height - 40) + ")")
+        .call(d3.axisBottom(x));
+      // add the y Axis
+      svg
+        .append("g")
+        .attr("transform", "translate(" + x(0) + ",0)")
+        .call(d3.axisLeft(y));
     },
 
     drawRose(svg, currentPos) {
@@ -859,20 +872,30 @@ export default {
       //     circles
       //       .attr("cx", function(d) { return d.x; })
       //       .attr("cy", function(d) { return d.y; });
-      //   } 
-      var simulation = d3.forceSimulation()
-          .force("collide", d3.forceCollide().radius(function(d){ 
+      //   }
+      var simulation = d3
+        .forceSimulation()
+        .force(
+          "collide",
+          d3.forceCollide().radius(function (d) {
             return outerRScale(d.content["reply_delta_num"]) + 2;
-          }))
-          .force("center", d3.forceCenter(this.width / 2, this.height / 2))
-          .force("x", d3.forceX((d, i) => {
+          })
+        )
+        .force("center", d3.forceCenter(this.width / 2, this.height / 2))
+        .force(
+          "x",
+          d3.forceX((d, i) => {
             return xScale(this.pos[d.id][0]);
-          }).strength(-10))
-          .force("y", d3.forceX((d, i) => {
+          })
+          // .strength(-10)
+        )
+        .force(
+          "y",
+          d3.forceX((d, i) => {
             return yScale(this.pos[d.id][1]);
-          }));
-          //.force("charge", d3.forceManyBody().strength(-50).distanceMin(1).distanceMax(20));
-
+          })
+        );
+      //.force("charge", d3.forceManyBody().strength(-50).distanceMin(1).distanceMax(20));
 
       // combine pie and rose
       var drawBackRose = this.drawBackRose;
@@ -883,7 +906,7 @@ export default {
         .data(this.examples)
         .enter()
         .append("g")
-        .each(function(d, i) {
+        .each(function (d, i) {
           drawBackRose(
             outerRScale(d.content["reply_delta_num"]),
             d.id,
@@ -891,32 +914,36 @@ export default {
             xScale,
             yScale,
             d3.select(this)
-          )}
+          );
+        })
+        .attr(
+          "transform",
+          (d) =>
+            `translate(${xScale(this.pos[d.id][0])},${yScale(
+              this.pos[d.id][1]
+            )})`
         )
-        .attr("transform", (d) =>`translate(${xScale(this.pos[d.id][0])},${yScale(this.pos[d.id][1])})`)
 
         .attr("class", "pie")
         // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
         // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         // .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         // .style("opacity", 0.5)
-      
+
         // .style("fill", "black")
-        .each(function(d){ 
-          drawFrontRose(d, d.id, xScale, yScale, outerRScale, d3.select(this)
-          )});
+        .each(function (d) {
+          drawFrontRose(d, d.id, xScale, yScale, outerRScale, d3.select(this));
+        });
 
-
-        circles
+      circles
         .append("circle")
         // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
         // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0)
         // .style("fill", "white")
-        .on("mouseover", function() {
-          d3.select(this).style("fill","blue")
-          .style("opacity", 0.5);
+        .on("mouseover", function () {
+          d3.select(this).style("fill", "blue").style("opacity", 0.5);
           // d3.selectAll(".pie")
           //   .filter((circle, index) => {
           //     console.log(d);
@@ -928,57 +955,52 @@ export default {
           //   .attr("class", "highlightCircle");
           // .classed("highlightCircle", true); ???
         })
-        .on("mouseout", function() {
-            d3.select(this).style("fill", "white")
-            .style("opacity", 0);
-
+        .on("mouseout", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0);
         })
         .on("click", (d) => {
           //muliple select: submit and then check enabled
-          if ($('#cbTxt').text() == 'Select is enabled'){
+          if ($("#cbTxt").text() == "Select is enabled") {
             PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
             this.selectIDarray.push(d.id);
-            this.selectIDIndex.push(this.examples.map((d) => d.id).indexOf(d.id)); //d.id is consistent
-            $('#selectInd').text(this.selectIDIndex);
+            this.selectIDIndex.push(
+              this.examples.map((d) => d.id).indexOf(d.id)
+            ); //d.id is consistent
+            $("#selectInd").text(this.selectIDIndex);
             PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
             //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
           }
-          if ($('#cbTxt').text() == 'Select is disabled'){
+          if ($("#cbTxt").text() == "Select is disabled") {
             DataService.ex_id = d.id;
-            DataService.selectIDIndex = [];// clear IDarray
-            DataService.selectIDIndex = [];//clear index
-            
+            DataService.selectIDIndex = []; // clear IDarray
+            DataService.selectIDIndex = []; //clear index
+
             PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
             PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
             PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
           }
           //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
-        
+
           // DataService.ex_id = d.id;
           // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
           // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
-      
-        var tickedRose = function() {
-            circles
-              // .attr("cx", function(d) { return d.x; })
-              // .attr("cy", function(d) { return d.y; });
-              .attr("transform", (d) =>`translate(${d.x},${d.y})`)
-            
-            circles.exit().remove();
-            
-        };     
-        simulation
-          .nodes(this.examples)
-          .alphaDecay(0.1);
 
-        for (let index = 0; index < 2000; index++) {
-          simulation.tick();
-          
-        }
-        tickedRose();
+      var tickedRose = function () {
+        circles
+          // .attr("cx", function(d) { return d.x; })
+          // .attr("cy", function(d) { return d.y; });
+          .attr("transform", (d) => `translate(${d.x},${d.y})`);
 
+        circles.exit().remove();
+      };
+      simulation.nodes(this.examples).alphaDecay(0.1);
+
+      for (let index = 0; index < 2000; index++) {
+        simulation.tick();
+      }
+      tickedRose();
     },
     drawFrontRose(d, id, xScale, yScale, outerRScale, g) {
       //console.log("testpos3:", pos);
@@ -1006,7 +1028,7 @@ export default {
           radius: Math.sqrt(d.label) / Math.PI,
         };
       });
-      
+
       // Rosesum = Rosesum.sort((a, b) => d3.descending(a.label, b.label));
       var total_label = 0;
       Rosesum.forEach((element) => {
@@ -1049,19 +1071,28 @@ export default {
           "#fa8cad",
           "#b6034d",
         ]);
-      
-      var simulation = d3.forceSimulation()
-        .force("collide",d3.forceCollide(
-          function(d) {
-            return outerRScale(d.content["reply_delta_num"])
-          }))
+
+      var simulation = d3
+        .forceSimulation()
+        .force(
+          "collide",
+          d3.forceCollide(function (d) {
+            return outerRScale(d.content["reply_delta_num"]);
+          })
+        )
         .force("center", d3.forceCenter(this.width / 2, this.height / 2))
-        .force("y", d3.forceX((d, i) => {
-          return yScale(pos[id][1]);
-        }))
-        .force("x", d3.forceX((d, i) => {
-          return xScale(pos[id][0]);
-        }));
+        .force(
+          "y",
+          d3.forceX((d, i) => {
+            return yScale(pos[id][1]);
+          })
+        )
+        .force(
+          "x",
+          d3.forceX((d, i) => {
+            return xScale(pos[id][0]);
+          })
+        );
       // set tooltips
       var div = d3
         .select("body")
@@ -1069,7 +1100,7 @@ export default {
         .attr("class", "tooltip")
         .style("opacity", 0);
       //this.svg
-      
+
       g.selectAll("whatever")
         .data(data_ready)
         .enter()
@@ -1105,17 +1136,16 @@ export default {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
         });
-        
-        // var ticked = function() {
-        //     circles
-        //         .attr("cx", function(d) { return d.x; })
-        //         .attr("cy", function(d) { return d.y; });
-        // }  
 
-        // simulation
-        //     .nodes(d)
-        //     .on("tick", ticked);
+      // var ticked = function() {
+      //     circles
+      //         .attr("cx", function(d) { return d.x; })
+      //         .attr("cy", function(d) { return d.y; });
+      // }
 
+      // simulation
+      //     .nodes(d)
+      //     .on("tick", ticked);
     },
     drawBackRose(r, id, xScale, yScale, g) {
       var pie = d3.pie().value(function (d) {
@@ -1124,7 +1154,7 @@ export default {
       //console.log("drawbackrose:", id);
       var data_ready = pie(d3.entries(d3.range(6)));
       // this.svg
-      
+
       //console.log("before", g);
       g.selectAll("whatever")
         .data(data_ready)
@@ -1140,14 +1170,11 @@ export default {
         .attr("stroke", "black")
         .style("stroke-width", "1px")
         .style("opacity", 0.7);
-        // console.log("testtttttt:", xScale(pos[id][0]), yScale(pos[id][1]));
+      // console.log("testtttttt:", xScale(pos[id][0]), yScale(pos[id][1]));
     },
-
-
   },
 };
 </script>
 
 <style scoped>
-
 </style>
