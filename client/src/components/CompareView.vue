@@ -79,7 +79,7 @@ export default {
       selectTopicNum: '',
       examples: null,
       ex_id: "",
-      simulation: null,
+      simulation1: null,
       examplesum: {
         logos: 0,
         pathos: 0,
@@ -227,7 +227,7 @@ export default {
         .attr("fill", "black")
         .style("stroke", "black");
       
-      this.simulation = d3
+      this.simulation1 = d3
         .forceSimulation()
         .force(
           "link",
@@ -244,7 +244,7 @@ export default {
       
       var nodes = [],
           links = [];
-        nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+        nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map( 
           (d, i) => {
             d.id = i;
             return d;
@@ -298,7 +298,7 @@ export default {
           else return "#f8cd40";
         });
       
-      this.simulation = d3
+      this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
         .force(
           "link",
@@ -315,10 +315,10 @@ export default {
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
-        .on("tick", this.ticked);
+        .on("tick", this.tickedNodelink);
     },
 
-    ticked() {
+    tickedNodelink() {
       this.link
         .attr("x1", function (d) {
           return d.source.x;
@@ -339,7 +339,7 @@ export default {
     },
 
     dragstarted(d) {
-      if (!d3.event.active) this.simulation.alphaTarget(0.3).restart();
+      if (!d3.event.active) this.simulation1.alphaTarget(0.3).restart();
       d.fx = d.x;
       d.fy = d.y;
     },
@@ -824,7 +824,7 @@ export default {
 
     drawRose(svg, currentPos) {
       this.pos = currentPos;
-      
+      console.log("rosePos:", this.pos);
       // x, y scale
       var xdomain = Object.values(this.pos).map((d) => d[0]),
         ydomain = Object.values(this.pos).map((d) => d[1]),
@@ -846,15 +846,14 @@ export default {
       var outerRScale = d3
         .scaleLinear()
         .domain(d3.extent(outerRdomain)) // depends on delta
-        .range([20, 40]);
+        .range([12, 40]);
 
-      //console.log("testexamples2:", this.examples);
-      // this.examples.forEach((e) => {
-      //   console.log(this.pos[e.id]);
-      // });
-      // console.log("testpos2: ", this.pos);
-
-      //force layout test3
+      //force layout test
+      // var ticked = function() {
+      //     circles
+      //       .attr("cx", function(d) { return d.x; })
+      //       .attr("cy", function(d) { return d.y; });
+      //   } 
       var simulation = d3.forceSimulation()
           .force("collide", d3.forceCollide().radius(function(d){ 
             return outerRScale(d.content["reply_delta_num"])
@@ -865,9 +864,20 @@ export default {
           }).strength(1))
           .force("y", d3.forceX((d, i) => {
             return yScale(this.pos[d.id][1]);
-          }));
-
-
+          }).strength(1));
+          
+        var forcePos = [];
+        var tickedRose = function() {
+            circles
+              .attr("cx", function(d) { return d.x; })
+              .attr("cy", function(d) { return d.y; });
+            
+            circles.exit().remove();
+            
+        };     
+        simulation
+          .nodes(this.examples)
+          .on("tick", tickedRose);
       // combine pie and rose
       var circles = svg
         .selectAll("circle")
@@ -884,8 +894,8 @@ export default {
         )
         .append("circle")
         .attr("class", "pie")
-        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
-        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
+        .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.5)
         .style("fill", "black")
@@ -912,12 +922,12 @@ export default {
         .on("click", (d) => {
           //muliple select: submit and then check enabled
           if ($('#cbTxt').text() == 'Select is enabled'){
-              PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-              this.selectIDarray.push(d.id);
-              this.selectIDIndex.push(this.examples.map((d) => d.id).indexOf(d.id)); //d.id is consistent
-              $('#selectInd').text(this.selectIDIndex);
-              PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-              //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
+            PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+            this.selectIDarray.push(d.id);
+            this.selectIDIndex.push(this.examples.map((d) => d.id).indexOf(d.id)); //d.id is consistent
+            $('#selectInd').text(this.selectIDIndex);
+            PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+            //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
           }
           if ($('#cbTxt').text() == 'Select is disabled'){
             DataService.ex_id = d.id;
@@ -935,18 +945,8 @@ export default {
           // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
-        var ticked = function() {
-          circles
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; });
-        }  
-        simulation
-          .nodes(this.examples)
-          .on("tick", ticked);
-        
-        
-    },
 
+    },
     drawFrontRose(d, id, pos, xScale, yScale, outerRScale) {
       //console.log("testpos3:", pos);
       var exampledata = d.content["reply_contents"];
@@ -975,13 +975,10 @@ export default {
       });
       
       // Rosesum = Rosesum.sort((a, b) => d3.descending(a.label, b.label));
-
-
       var total_label = 0;
       Rosesum.forEach((element) => {
         total_label += element.label;
       });
-
       // console.log(Rosesum);
 
       var total_r = Math.sqrt(total_label) / Math.PI;
@@ -1021,18 +1018,17 @@ export default {
         ]);
       
       var simulation = d3.forceSimulation()
-          .force("collide",d3.forceCollide(
-            function(d) {
-              return outerRScale(d.content["reply_delta_num"])
-            }
-          ))
-          .force("center", d3.forceCenter(this.width / 2, this.height / 2))
-          .force("y", d3.forceX((d, i) => {
-            return yScale(pos[id][1]);
+        .force("collide",d3.forceCollide(
+          function(d) {
+            return outerRScale(d.content["reply_delta_num"])
           }))
-          .force("x", d3.forceX((d, i) => {
-            return xScale(pos[id][0]);
-          }));
+        .force("center", d3.forceCenter(this.width / 2, this.height / 2))
+        .force("y", d3.forceX((d, i) => {
+          return yScale(pos[id][1]);
+        }))
+        .force("x", d3.forceX((d, i) => {
+          return xScale(pos[id][0]);
+        }));
       // set tooltips
       var div = d3
         .select("body")
