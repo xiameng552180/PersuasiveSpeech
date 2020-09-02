@@ -1,11 +1,6 @@
 <template>
     <div>
-        <!-- <div class="highlighter">
-          <span v-for="item in inputSentences"
-          class="markError">
-          {{ item }}
-          </span> 
-        </div> -->
+        <label>Claim: </label> 
         <textarea class="form-control" id="userInput" style="height:240px" 
             placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!
         </textarea>
@@ -73,13 +68,25 @@ export default {
                 // this.errorEndIndexList.push(inputSentence['elo_info'][2][0]['errorlength']); //highlight end
 
                 // label add
+                var inputLabelAll = 0;
                 this.inputLabels['input'][0]['label'] += parseInt(inputSentence['logos']);
+                inputLabelAll += parseInt(inputSentence['logos']);
                 this.inputLabels['input'][1]['label'] += parseInt(inputSentence['pathos']);
+                inputLabelAll += parseInt(inputSentence['pathos']);
                 this.inputLabels['input'][2]['label'] += parseInt(inputSentence['ethos']);
+                inputLabelAll += parseInt(inputSentence['ethos']);
                 this.inputLabels['input'][3]['label'] += parseInt(inputSentence['evidence']);
+                inputLabelAll += parseInt(inputSentence['evidence']);
                 this.inputLabels['input'][4]['label'] += parseInt(inputSentence['relevance']);
+                inputLabelAll += parseInt(inputSentence['relevance']);
                 this.inputLabels['input'][5]['label'] += parseInt(inputSentence['concreteness']);
                 this.inputLabels['input'][6]['label'] += parseInt(inputSentence['eloquence']);
+                // compute persentage
+                this.inputLabels['input'][0]['label'] /= inputLabelAll;
+                this.inputLabels['input'][1]['label'] /= inputLabelAll;
+                this.inputLabels['input'][2]['label'] /= inputLabelAll;
+                this.inputLabels['input'][3]['label'] /= inputLabelAll;
+                this.inputLabels['input'][4]['label'] /= inputLabelAll;
 
                 if (inputSentence['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");

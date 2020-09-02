@@ -4,7 +4,7 @@
       <label for="exampleFormControlSelect1">Topic</label>
       <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
         <option value="0">Abortion</option>
-        <option value="1" selected = "selected">Dating</option>
+        <option value="1">Dating</option>
         <option value="2">Eugenics</option>
         <option value="3">Immortality</option>
         <option value="4">Marriage</option>
@@ -13,43 +13,28 @@
         <option value="7">Suicide</option>
       </select>
     </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Background</label>
-      <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g. ..." /> -->
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Abortion</option>
-        <option>Dating</option>
-        <option>Immortality</option>
-        <option>Marriage</option>
-        <option>Parenthood</option>
-        <option>Pride</option>
-        <option>Suicidce</option>
-      </select>
+    <br />
+    <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+    <label>Interest topic:</label> <br />
+    <li id="interestTopic">Human Life</li>
+    <li id="interestTopic">Others</li>
+    <li id="interestTopic">...</li>
+    <br /><br />
+    <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+    <label>Persuasive Level:</label>
+    <div class="progress">
+      <div id="persuasiveStyle" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+      </div>
     </div>
-
+    <label id="persuasiveText">ratio:</label>
+    <br /><br />
     <!-- <div class="form-group">
-      <label for="exampleFormControlInput1">Strategies</label>
-      <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
-                <option value="0">Logical</option>
-                <option value="1">Storytelling</option>
-                <option value="2">Authoritative</option>
-                <option value="3">Evidence</option>
-                <option value="4">Relevance</option>
-                <option value="5">New ideas</option>
-                <option value="6">Specific</option>
-                <option value="7">Fluent</option>
-                
-      </select>
-    </div>-->
-
-    <div class="form-group">
       <div class="row">
         <label for="formControlRange" class="col-10">Easygoing</label>
         <label for="formControlRange">Stubborn</label>
       </div>
       <input type="range" class="form-control-range" id="formControlRange" />
-    </div>
+    </div> -->
     <button type="submit" class="btn btn-primary my-1" v-on:click="onSubmit">Submit</button>
     <!-- <p>Count: {{counter}}</p> -->
   </div>
@@ -59,7 +44,7 @@
 import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
-
+import pLevelSum from "../levelSummary.json";
 //topic
 import abortion from "../topic_file/abortion.json";
 import dating from "../topic_file/dating.json";
@@ -88,12 +73,21 @@ export default {
         'Pride': pride,
         'Suicide': suicide
       },
+      persuasiveLevel: {}
     };
   },
   mounted() {
     this.chooseTopic();
     //this.addExamples();
 
+    //persuasive level
+    pLevelSum.forEach((e) => {
+      var key = Object.keys(e);
+      this.persuasiveLevel[key] = e[key]['replyer_num']/e[key]['delta'];
+      this.persuasiveLevel[key] =  Math.round(this.persuasiveLevel[key] * 900);
+    });
+    
+    //console.log("persuasiveLevel: ", this.persuasiveLevel);
   },
 
   methods: {
@@ -105,10 +99,13 @@ export default {
       
       DataService.selectTopicNum = this.selectTopicNum;
       DataService.selectTopic = this.selectTopic;
-
-      PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       this.addExamples();
-      //console.log("topicSelect:", this.selectTopicNum, this.selectTopic);
+      PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+      console.log(this.persuasiveLevel[this.selectTopic]);
+
+      $("#persuasiveStyle").css("width", this.persuasiveLevel[this.selectTopic]+'%');
+      $('#persuasiveText').text("ratio:" + this.persuasiveLevel[this.selectTopic]+'%');
+      console.log("topicSelect:", this.selectTopicNum, this.selectTopic);
     },
 
     addExamples() {
