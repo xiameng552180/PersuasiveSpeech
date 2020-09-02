@@ -856,50 +856,54 @@ export default {
       //   } 
       var simulation = d3.forceSimulation()
           .force("collide", d3.forceCollide().radius(function(d){ 
-            return outerRScale(d.content["reply_delta_num"])
-            }))
+            return outerRScale(d.content["reply_delta_num"]) + 2;
+          }))
           .force("center", d3.forceCenter(this.width / 2, this.height / 2))
           .force("x", d3.forceX((d, i) => {
             return xScale(this.pos[d.id][0]);
           }).strength(1))
           .force("y", d3.forceX((d, i) => {
             return yScale(this.pos[d.id][1]);
-          }).strength(1));
-          
-        var forcePos = [];
-        var tickedRose = function() {
-            circles
-              .attr("cx", function(d) { return d.x; })
-              .attr("cy", function(d) { return d.y; });
-            
-            circles.exit().remove();
-            
-        };     
-        simulation
-          .nodes(this.examples)
-          .on("tick", tickedRose);
+          }));
+
       // combine pie and rose
+      var drawBackRose = this.drawBackRose;
+      var drawFrontRose = this.drawFrontRose;
+      //var posCurrent = this.pos;
       var circles = svg
-        .selectAll("circle")
+        .selectAll("g")
         .data(this.examples)
         .enter()
-        .each((d, i) =>
-          this.drawBackRose(
+        .append("g")
+        .each(function(d, i) {
+          drawBackRose(
             outerRScale(d.content["reply_delta_num"]),
             d.id,
-            this.pos,
+            //this.pos,
             xScale,
-            yScale
-          )
+            yScale,
+            d3.select(this)
+          )}
         )
-        .append("circle")
+        .attr("transform", (d) =>`translate(${xScale(this.pos[d.id][0])},${yScale(this.pos[d.id][1])})`)
         .attr("class", "pie")
-        .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
-        .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
+        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        // .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
+        // .style("opacity", 0.5)
+      
+        // .style("fill", "black")
+        .each(function(d){ 
+          drawFrontRose(d, d.id, xScale, yScale, outerRScale, d3.select(this)
+          )});
+
+        circles
+        .append("circle")
+        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
+        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.5)
-        .style("fill", "black")
-        .each((d) => this.drawFrontRose(d, d.id, this.pos, xScale, yScale, outerRScale))
+        .style("fill", "white")
         // .on("mouseover", (d, i) => {
         //   // d3.select(this).style("fill","red");
         //   d3.selectAll(".pie")
@@ -945,9 +949,28 @@ export default {
           // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
+      
+        var tickedRose = function() {
+            circles
+              // .attr("cx", function(d) { return d.x; })
+              // .attr("cy", function(d) { return d.y; });
+              .attr("transform", (d) =>`translate(${d.x},${d.y})`)
+            
+            circles.exit().remove();
+            
+        };     
+        simulation
+          .nodes(this.examples)
+          .alphaDecay(0.1);
+
+        for (let index = 0; index < 2000; index++) {
+          simulation.tick();
+          
+        }
+        tickedRose();
 
     },
-    drawFrontRose(d, id, pos, xScale, yScale, outerRScale) {
+    drawFrontRose(d, id, xScale, yScale, outerRScale, g) {
       //console.log("testpos3:", pos);
       var exampledata = d.content["reply_contents"];
       var Rosesum = [
@@ -1035,16 +1058,17 @@ export default {
         .append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
-      this.svg
-        .selectAll("whatever")
+      //this.svg
+      
+      g.selectAll("whatever")
         .data(data_ready)
         .enter()
         .append("path")
-        .attr("transform", () => {
-          return (
-            "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
-          );
-        })
+        // .attr("transform", () => {
+        //   return (
+        //     "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
+        //   );
+        // })
         .attr(
           "d",
           d3
@@ -1071,6 +1095,7 @@ export default {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
         });
+        
         // var ticked = function() {
         //     circles
         //         .attr("cx", function(d) { return d.x; })
@@ -1082,22 +1107,24 @@ export default {
         //     .on("tick", ticked);
 
     },
-    drawBackRose(r, id, pos, xScale, yScale) {
+    drawBackRose(r, id, xScale, yScale, g) {
       var pie = d3.pie().value(function (d) {
         return 1; // equal arc
       });
       //console.log("drawbackrose:", id);
       var data_ready = pie(d3.entries(d3.range(6)));
-      this.svg
-        .selectAll("whatever")
+      // this.svg
+      
+      console.log("before", g);
+      g.selectAll("whatever")
         .data(data_ready)
         .enter()
         .append("path")
-        .attr("transform", () => {
-          return (
-            "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
-          );
-        })
+        // .attr("transform", () => {
+        //   return (
+        //     "translate(" + xScale(pos[id][0]) + "," + yScale(pos[id][1]) + ")"
+        //   );
+        // })
         .attr("d", d3.arc().innerRadius(0).outerRadius(r))
         .attr("fill", "lightblue")
         .attr("stroke", "black")

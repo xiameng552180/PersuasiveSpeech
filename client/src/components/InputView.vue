@@ -37,6 +37,7 @@ export default {
       // lengthSentenList: [],//lenfth of each sentence
       highlightWords: [], //high light words list
       inputLabels: {},
+      //inputRelationship: [],
     };
   },
   mounted() {

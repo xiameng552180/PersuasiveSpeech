@@ -34,6 +34,7 @@ class Service {
         { feature: "concreteness", label: 0 },
         { feature: "eloquence", label: 0 }
       ]};
+    //this.inputRelationship = [];
 
     return instance;
   }
