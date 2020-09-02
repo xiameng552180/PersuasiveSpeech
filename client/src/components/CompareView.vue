@@ -866,6 +866,7 @@ export default {
             return yScale(this.pos[d.id][1]);
           }));
 
+
       // combine pie and rose
       var drawBackRose = this.drawBackRose;
       var drawFrontRose = this.drawFrontRose;
@@ -886,6 +887,7 @@ export default {
           )}
         )
         .attr("transform", (d) =>`translate(${xScale(this.pos[d.id][0])},${yScale(this.pos[d.id][1])})`)
+
         .attr("class", "pie")
         // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
         // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
@@ -898,12 +900,14 @@ export default {
           )});
 
         circles
+
         .append("circle")
         // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
         // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.5)
         .style("fill", "white")
+
         // .on("mouseover", (d, i) => {
         //   // d3.select(this).style("fill","red");
         //   d3.selectAll(".pie")
