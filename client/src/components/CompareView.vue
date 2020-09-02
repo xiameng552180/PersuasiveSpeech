@@ -869,8 +869,9 @@ export default {
         var forcePos = [];
         var tickedRose = function() {
             circles
-              .attr("cx", function(d) { return d.x; })
-              .attr("cy", function(d) { return d.y; });
+              // .attr("cx", function(d) { return d.x; })
+              // .attr("cy", function(d) { return d.y; });
+              .attr("transform", `translate(${d.x},${d.y})`)
             
             circles.exit().remove();
             
@@ -880,7 +881,7 @@ export default {
           .on("tick", tickedRose);
       // combine pie and rose
       var circles = svg
-        .selectAll("circle")
+        .selectAll("g")
         .data(this.examples)
         .enter()
         .each((d, i) =>
@@ -892,14 +893,21 @@ export default {
             yScale
           )
         )
-        .append("circle")
+        .append("g")
+        .attr("transform", `translate(${xScale(this.pos[d.id][0])},${yScale(this.pos[d.id][1])})`)
         .attr("class", "pie")
-        .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
-        .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
+        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
+        // .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
+        // .style("opacity", 0.5)
+        // .style("fill", "black")
+        .each((d) => this.drawFrontRose(d, d.id, this.pos, xScale, yScale, outerRScale))
+        .append("circle")
+        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
+        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
         .style("opacity", 0.5)
         .style("fill", "black")
-        .each((d) => this.drawFrontRose(d, d.id, this.pos, xScale, yScale, outerRScale))
         // .on("mouseover", (d, i) => {
         //   // d3.select(this).style("fill","red");
         //   d3.selectAll(".pie")
