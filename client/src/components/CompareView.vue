@@ -19,12 +19,12 @@
 
     <div class="col-lg-11">
       <!--summary view-->
-      <div class="col-lg-4" style="height: 400px;  overflow-x: hidden;">
+      <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
         <svg id="nodelink" height="400"></svg>
       </div>
       <!--rose chart view-->
-      <div class="col-lg-4">
-        <div id="CircleSVG" style="height: 400px; width: 420px; overflow-x: hidden;"></div>     
+      <div class="col-lg-5">
+        <div id="CircleSVG" style="height: 400px; width: 420px; overflow-auto;"></div>     
         <div class="row" style="margin:auto;">
           <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle"> &nbsp;
             <label id="cbTxt">Select is disabled</label>&nbsp;
@@ -137,7 +137,7 @@ export default {
       this.drawBar(this.svg1);
       this.drawNodeLink(this.svg3);
       //filtering val
-      //console.log($("#strategy").val());
+      console.log($("#strategy").val());
     });
   },
   methods: {
@@ -315,7 +315,13 @@ export default {
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
-        .on("tick", this.tickedNodelink);
+        
+        //.on("tick", this.tickedNodelink);
+
+        for (let index = 0; index < 500; index++) {
+          this.simulation1.tick()
+        }
+        this.tickedNodelink();
     },
 
     tickedNodelink() {
@@ -861,10 +867,11 @@ export default {
           .force("center", d3.forceCenter(this.width / 2, this.height / 2))
           .force("x", d3.forceX((d, i) => {
             return xScale(this.pos[d.id][0]);
-          }).strength(1))
+          }).strength(-10))
           .force("y", d3.forceX((d, i) => {
             return yScale(this.pos[d.id][1]);
           }));
+          //.force("charge", d3.forceManyBody().strength(-50).distanceMin(1).distanceMax(20));
 
 
       // combine pie and rose
@@ -899,34 +906,33 @@ export default {
           drawFrontRose(d, d.id, xScale, yScale, outerRScale, d3.select(this)
           )});
 
-        circles
 
+        circles
         .append("circle")
         // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
         // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
         .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
-        .style("opacity", 0.5)
-        .style("fill", "white")
+        .style("opacity", 0)
+        // .style("fill", "white")
+        .on("mouseover", function() {
+          d3.select(this).style("fill","blue")
+          .style("opacity", 0.5);
+          // d3.selectAll(".pie")
+          //   .filter((circle, index) => {
+          //     console.log(d);
+          //     console.log(i);
 
-        // .on("mouseover", (d, i) => {
-        //   // d3.select(this).style("fill","red");
-        //   d3.selectAll(".pie")
-        //     .filter((circle, index) => {
-        //       console.log(d);
-        //       console.log(i);
+          //     return i === index;
+          //   })
+          //   .style("fill", "red")
+          //   .attr("class", "highlightCircle");
+          // .classed("highlightCircle", true); ???
+        })
+        .on("mouseout", function() {
+            d3.select(this).style("fill", "white")
+            .style("opacity", 0);
 
-        //       return i === index;
-        //     })
-        //     .style("fill", "red")
-        //     .attr("class", "highlightCircle");
-        //   // .classed("highlightCircle", true); ???
-        // })
-        // .on("mouseout", (d, i) => {
-        //   d3.selectAll(".highlightCircle")
-        //     .style("fill", "white")
-        //     // .filter((circle, index) => i === index)
-        //     .classed("highlightCircle", false);
-        // })
+        })
         .on("click", (d) => {
           //muliple select: submit and then check enabled
           if ($('#cbTxt').text() == 'Select is enabled'){
@@ -1119,7 +1125,7 @@ export default {
       var data_ready = pie(d3.entries(d3.range(6)));
       // this.svg
       
-      console.log("before", g);
+      //console.log("before", g);
       g.selectAll("whatever")
         .data(data_ready)
         .enter()
