@@ -1,0 +1,568 @@
+{
+  "Suicide-93": [
+    {
+      "op_claim": "I believe that if sentenced to life in jail with no chance of getting out, you should be able to commit suicide instead CMV",
+      "op_premise": "If the idea of a life sentence is to keep you away from society forever wouldn't  suicide just do it faster?",
+      "reply-info": [
+        {
+          "replyer_name": "downfallndirtydeeds",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "14",
+          "reply_votes": "115 points",
+          "reply_contents": [
+            {
+              "content": "This is actually a favourite debate on the UK & US circuit",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2637,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "This is actually a favorite debate on the UK & US circuit",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 19,
+                    "errorlength": 9,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "favorite"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "I don't know where I fall, so here's some things to think about on the opposite side",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1714,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I don't know where I fall, so here's some things to think about on the opposite side",
+                []
+              ]
+            },
+            {
+              "content": "How on earth can we trust that this decision will be made rationally",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2238,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "How on earth can we trust that this decision will be made rationally",
+                []
+              ]
+            },
+            {
+              "content": "Seriously, obviously you can have psyche tests, checks, obs ect",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.265,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Seriously, obviously you can have psyche tests, checks, obs act",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 3,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "act",
+                      "etc",
+                      "eat",
+                      "sect",
+                      "Oct",
+                      "ECG",
+                      "EMT",
+                      "Eco",
+                      "EFT",
+                      "ext",
+                      "pct",
+                      "ecu",
+                      "jct",
+                      "ACT",
+                      "CT",
+                      "Ct",
+                      "EC",
+                      "EDT",
+                      "EST",
+                      "ET",
+                      "ct",
+                      "est",
+                      "e ct"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "but you can be completely rational in thinking pattern but use no rational using data",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2377,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "But you can be completely rational in thinking pattern but use no rational using data",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "But"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "If you've been sentenced to life imprisonment you're not going to know what your life would be like in x amount of years",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2011,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "If you've been sentenced to life imprisonment you're not going to know what your life would be like in x amount of years",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 2,
+                    "message": "\u201cIf\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "You can't know what death is, and you can't know how you'll grow and adapt in Prison",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1983,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You can't know what death is, and you can't know how you'll grow and adapt in Prison",
+                []
+              ]
+            },
+            {
+              "content": "It might be that you can actually carve some kind of pleasurable existence for yourself in prison, but you can't know",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2257,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "It might be that you can actually carve some kind of pleasurable existence for yourself in prison, but you can't know",
+                []
+              ]
+            },
+            {
+              "content": "If the idea of a life sentence is to keep you away from society forever wouldn't suicide just do it faster",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.213,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "If the idea of a life sentence is to keep you away from society forever wouldn't suicide just do it faster",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 2,
+                    "message": "\u201cIf\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "That's not neccessarily the idea, the idea is to do that in a humane way, to protect society whilst also facilitating a meaningful existence on the otherr side, otherwise the punishment is no more just than the crime",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2255,
+              "eloquence": 3,
+              "elo_info": [
+                3,
+                "That's not necessarily the idea, the idea is to do that in a humane way, to protect society whilst also facilitating a meaningful existence on the other side, otherwise the punishment is no more just than the crime",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 11,
+                    "errorlength": 12,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "necessarily"
+                    ]
+                  },
+                  {
+                    "category": "Redundant Phrases",
+                    "contextoffset": 43,
+                    "errorlength": 15,
+                    "message": "Consider replacing \"in a humane way\" with adverb for \"humane\"; eg, \"in a hasty manner\" with \"hastily\".",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "other",
+                      "others",
+                      "other r"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "I would say that facilitating, and actively encouraging suicide through condemnation doesn't do that",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2463,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I would say that facilitating, and actively encouraging suicide through condemnation doesn't do that",
+                []
+              ]
+            },
+            {
+              "content": "I think this makes it much, much tougher to deal out life sentences, seriously",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1803,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I think this makes it much, much tougher to deal out life sentences, seriously",
+                []
+              ]
+            },
+            {
+              "content": "When there's the chance that the prisoner may lose his life, a) there will be tons of appeals and infrastructure, which will cost a shit ton and it will clog up the courts, b) as a judge you know that your sentence might prompt the early curtailment of life and life potential",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.236,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "When there's the chance that the prisoner may lose his life, a) there will be tons of appeals and infrastructure, which will cost a shit ton and it will clog up the courts, b) as a judge you know that your sentence might prompt the early curtailment of life and life potential",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '(' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '(' seems to be missing",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "How can their possibly be rationality here, on an individual level",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2517,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "How can their possibly be rationality here, on an individual level",
+                []
+              ]
+            },
+            {
+              "content": "The people who get life sentences usually are seriously, seriously fucked up",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1545,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The people who get life sentences usually are seriously, seriously fucked up",
+                []
+              ]
+            },
+            {
+              "content": "Even the ones who are 'sane' like Brevik are clearly messed up - they've been failed somewhere down the line, it's our duty to comprehensively rehabilitate them",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2094,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Even the ones who is a are 'sane' like Break are clearly messed up - they've been failed somewhere down the line, it's our duty to comprehensively rehabilitate them",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 14,
+                    "errorlength": 7,
+                    "message": "A noun should not follow \"who\". Try changing to a verb or maybe to 'who is a are'.",
+                    "replacements": [
+                      "who is a are"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 34,
+                    "errorlength": 6,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "Break",
+                      "Brevet",
+                      "Brevity",
+                      "Breve",
+                      "Breves"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Justice is (whether I agree with it or not) also about retribution",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2417,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Justice is (whether I agree with it or not) also about retribution",
+                []
+              ]
+            },
+            {
+              "content": "The cathartic benefits that sentencing has on families is lost when they're able to take control and save themselves of the suffering that their loved ones were denied",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2508,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The cathartic benefits that sentencing has on families is lost when they're able to take control and save themselves of the suffering that their loved ones were denied",
+                []
+              ]
+            },
+            {
+              "content": "I might, might agree with this if you let them do it after about 10 years of their sentence, but even then, I think it's very difficult to know that a rational choice has been made",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1988,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I might, might agree with this if you let them do it after about 10 years of their sentence, but even then, I think it's very difficult to know that a rational choice has been made",
+                []
+              ]
+            },
+            {
+              "content": "Good CMVEDIT: Just thought I'd add that 100% certain life imprisonments are something I strongly, strongly disagree with",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2278,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Good CMVEDIT: Just thought I'd add that 100% certain life imprisonments are something I strongly, strongly disagree with",
+                []
+              ]
+            },
+            {
+              "content": "EDIT: Thanks for all the Deltas",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1682,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "EDIT: Thanks for all the Deltas",
+                []
+              ]
+            },
+            {
+              "content": "I'll try to find time to respond to everyone who offered rebuttal",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2326,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I'll try to find time to respond to everyone who offered rebuttal",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "JustinJamm",
+          "reply_time": "7 years ago",
+          "reply_delta_num": "19",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "Additional point:Allowing this option creates enormous possible incentive to victims (and the public at large) to work as hard as they can to make the convicted want to die",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2208,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Additional point:Allowing this option creates enormous possible incentive to victims (and the public at large) to work as hard as they can to make the convicted want to die",
+                []
+              ]
+            },
+            {
+              "content": "This is an absolute powder keg",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.36,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "This is an absolute powder keg",
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
