@@ -176,10 +176,15 @@ def run_relationship(sentences):
     # claim-support-pairs
     cspairs = []
     final_pairs = []
+    ### HARCODE: if no claim, then 1st sentence will be the claim
+    if len(claim_id) == 0:
+        claim_id = [0]
+    ###
     if len(claim_id) > 0 and len(support_id) > 0:
         for cid in claim_id:
             for sid in support_id:
-                cspairs.append([cid, sid])
+                if cid != sid: # claim != premise/supports
+                    cspairs.append([cid, sid])
         #
         # print(cspairs)
         # if not empty, run relationship
