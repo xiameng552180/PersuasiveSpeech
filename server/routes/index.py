@@ -249,7 +249,7 @@ def uploadInput():
 
     # run relation models
     relationship_pairs = run_relationship(all_results)
-    # print("results:", all_results)
+    print("relationship_pairs:", relationship_pairs)
     return json.dumps({
         "results": all_results,
         "relationships": relationship_pairs
