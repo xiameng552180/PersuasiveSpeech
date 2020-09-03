@@ -84,7 +84,7 @@
             :ref="example.id"
           >Replyer name: {{example.content["replyer_name"]}}</h5>
           <p v-if="if_claim==true" class="card-text text-secondary">
-            <span>
+            <span v-for="item in example.content.reply_contents" :key="item.content">
               <mark
                 class="textbg-claim"
                 v-if="item.is_claim!=='0' && if_claim==true"

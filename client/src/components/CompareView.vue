@@ -182,6 +182,7 @@ export default {
         .attr("height", this.height1);
 
       this.inputLabels = DataService.inputLabels; //input data labelsSum
+      console.log("inputlabel:", this.inputLabels)
 
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
       this.height3 = d3.select("#nodelink").node().getBoundingClientRect().height;
@@ -315,13 +316,12 @@ export default {
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
-        
-        //.on("tick", this.tickedNodelink);
+        .on("tick", this.tickedNodelink);
 
-        for (let index = 0; index < 500; index++) {
-          this.simulation1.tick()
-        }
-        this.tickedNodelink();
+        // for (let index = 0; index < 10; index++) {
+        //   this.simulation1.tick()
+        // }
+        // this.tickedNodelink();
     },
 
     tickedNodelink() {
@@ -721,7 +721,7 @@ export default {
                 });
             });
         }
- 
+
         
       }
       else{ //draw all data
@@ -830,7 +830,7 @@ export default {
 
     drawRose(svg, currentPos) {
       this.pos = currentPos;
-      console.log("rosePos:", this.pos);
+      //console.log("rosePos:", this.pos);
       // x, y scale
       var xdomain = Object.values(this.pos).map((d) => d[0]),
         ydomain = Object.values(this.pos).map((d) => d[1]),
@@ -861,16 +861,16 @@ export default {
       //       .attr("cy", function(d) { return d.y; });
       //   } 
       var simulation = d3.forceSimulation()
-          .force("collide", d3.forceCollide().radius(function(d){ 
-            return outerRScale(d.content["reply_delta_num"]) + 2;
-          }))
-          .force("center", d3.forceCenter(this.width / 2, this.height / 2))
-          .force("x", d3.forceX((d, i) => {
-            return xScale(this.pos[d.id][0]);
-          }).strength(-10))
-          .force("y", d3.forceX((d, i) => {
-            return yScale(this.pos[d.id][1]);
-          }));
+        .force("collide", d3.forceCollide().radius(function(d){ 
+          return outerRScale(d.content["reply_delta_num"]) + 2;
+        }))
+        .force("center", d3.forceCenter(this.width / 2, this.height / 2))
+        .force("x", d3.forceX((d, i) => {
+          return xScale(this.pos[d.id][0]);
+        }))
+        .force("y", d3.forceX((d, i) => {
+          return yScale(this.pos[d.id][1]);
+        }));
           //.force("charge", d3.forceManyBody().strength(-50).distanceMin(1).distanceMax(20));
 
 
@@ -883,6 +883,8 @@ export default {
         .data(this.examples)
         .enter()
         .append("g")
+
+      circles
         .each(function(d, i) {
           drawBackRose(
             outerRScale(d.content["reply_delta_num"]),
@@ -895,17 +897,7 @@ export default {
         )
         .attr("transform", (d) =>`translate(${xScale(this.pos[d.id][0])},${yScale(this.pos[d.id][1])})`)
 
-        .attr("class", "pie")
-        // .attr("cx", (d, i) => xScale(this.pos[d.id][0]))
-        // .attr("cy", (d, i) => yScale(this.pos[d.id][1]))
-        // .attr("r", (d) => outerRScale(d.content["reply_delta_num"]))
-        // .style("opacity", 0.5)
-      
-        // .style("fill", "black")
-        .each(function(d){ 
-          drawFrontRose(d, d.id, xScale, yScale, outerRScale, d3.select(this)
-          )});
-
+        .attr("class", "pie");
 
         circles
         .append("circle")
@@ -915,7 +907,7 @@ export default {
         .style("opacity", 0)
         // .style("fill", "white")
         .on("mouseover", function() {
-          d3.select(this).style("fill","blue")
+          d3.select(this).style("fill","white")
           .style("opacity", 0.5);
           // d3.selectAll(".pie")
           //   .filter((circle, index) => {
@@ -959,14 +951,21 @@ export default {
           // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
+
+      
+
+        circles
+        .each(function(d){ 
+          drawFrontRose(d, d.id, xScale, yScale, outerRScale, d3.select(this)
+        )});
+      
       
         var tickedRose = function() {
             circles
               // .attr("cx", function(d) { return d.x; })
               // .attr("cy", function(d) { return d.y; });
               .attr("transform", (d) =>`translate(${d.x},${d.y})`)
-            
-            circles.exit().remove();
+            //circles.exit().remove();
             
         };     
         simulation
