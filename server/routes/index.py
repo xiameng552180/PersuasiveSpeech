@@ -229,14 +229,24 @@ def uploadInput():
     temp = json.loads(request.data.decode("utf-8"))
     print("receive: ", temp)
     txt = temp["input"]
-    pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
-    # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
-    # sentence_list = re.split(pattern, txt)
+
+    
+
+    ### TODO: add more splitting operations
     sentence_list = txt.split(".")
     all_results = []
-    for index_sentence in range(0, len(sentence_list)-1): # split re without the last one
-        results = run_models(sentence_list[index_sentence])
+    for sentence in sentence_list:
+        results = run_models(sentence)
         all_results.append(results)
+    
+    ### OLD one: have BUG
+    # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
+    # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
+    # sentence_list = re.split(pattern, txt)
+    # for index_sentence in range(0, len(sentence_list)-1): # split re without the last one
+    #     results = run_models(sentence_list[index_sentence])
+    #     all_results.append(results)
+
     # run relation models
     relationship_pairs = run_relationship(all_results)
     # print("results:", all_results)
