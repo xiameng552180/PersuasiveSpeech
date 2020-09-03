@@ -1,0 +1,667 @@
+{
+  "Parenthood-74": [
+    {
+      "op_claim": "I believe that staying together for the kids is more harmful to children than getting a divorce.",
+      "op_premise": "Often people in failing marriages make a decision to stay together simply for the sake of the children, the idea that the two parents in the home is ultimately better for a child than the alternative of divorce.', \"I feel that people are not machines, If you're asking someone to stay unhappy with a spouse for years or a decade. Chances are someone is going to have an affair, children can easily pick up on parents in an unhappy relationship.\", \"Children tend to model their relationships based on the relationship of their parents. Having parents that never hug or kiss or show affection to each other isn't ideal either.\", \"A better solution is to get a divorce, learn to co-parent. You don't have to have sex with someone to raise a kid with them. It shows a better model that your parents were unhappy, they get a divorce, are able to co-parents effectively and maybe find a separate relationship which doesn't affect the love between the parent and child. How is this not more effective than two people forced to compromise and live together and their kids can see right through it.\", 'how many of you knew your parents were simply staying together for the kids, do you think that worked for you?', 'Change my muthafucking view'",
+      "reply-info": [
+        {
+          "replyer_name": "whiteraven4",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "27",
+          "reply_votes": "31 points",
+          "reply_contents": [
+            {
+              "content": "Warning: purely anecdotal",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.4988,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Warning: purely anecdotal",
+                []
+              ]
+            },
+            {
+              "content": "I'm not claiming this as proof or anything, just one example",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "1",
+              "concreteness": 0.2238,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I'm not claiming this as proof or anything, just one example",
+                []
+              ]
+            },
+            {
+              "content": "My parents stayed together because of me",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "1",
+              "concreteness": 0.1822,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "My parents stayed together because of me",
+                []
+              ]
+            },
+            {
+              "content": "I've known this for as long as I can remember",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1925,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I've known this for as long as I can remember",
+                []
+              ]
+            },
+            {
+              "content": "For as long as I can remember they haven't even slept in the same room",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1932,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "For as long as I can remember they haven't even slept in the same room",
+                []
+              ]
+            },
+            {
+              "content": "When I was younger I wished they would have gotten a divorce",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1786,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "When I was younger I wished they would have gotten a divorce",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 0,
+                    "errorlength": 4,
+                    "message": "\u201cWhen\u201d at the beginning of a sentence requires a 2nd clause. Maybe a comma, question or exclamation mark is missing, or the sentence is incomplete and should be joined with the following sentence. ",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "In retrospect I don't know if it would have been better or not",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2149,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "In retrospect I don't know if it had been better or not",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 33,
+                    "errorlength": 15,
+                    "message": "Did you mean 'had been'?",
+                    "replacements": [
+                      "had been"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Even ignoring financial issues, I don't know if I would have been better off",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1976,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Even ignoring financial issues, I don't know if I had been better off",
+                [
+                  {
+                    "category": "Grammar",
+                    "contextoffset": 43,
+                    "errorlength": 15,
+                    "message": "Did you mean 'had been'?",
+                    "replacements": [
+                      "had been"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "My mom is a control freak and my dad can tend to be very oblivious to things and very forgetful",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2168,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "My mom is a control freak and my dad can tend to be very oblivious to things and very forgetful",
+                []
+              ]
+            },
+            {
+              "content": "If I lived just with my mom she would have (and did) tried to control every aspect of my life",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1884,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "If I lived just with my mom she would have (and did) tried to control every aspect of my life",
+                []
+              ]
+            },
+            {
+              "content": "She wants things her way and I'm very independent",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2339,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "She wants things her way and I'm very independent",
+                []
+              ]
+            },
+            {
+              "content": "But she's also very organized and can plan ahead well",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2218,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "But she's also very organized and can plan ahead well",
+                []
+              ]
+            },
+            {
+              "content": "Living with just her I would have gone crazy trying to be myself and deal with her constantly trying to stop me",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1804,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Living with just her I would have gone crazy trying to be myself and deal with her constantly trying to stop me",
+                []
+              ]
+            },
+            {
+              "content": "One simple example is that I don't really care about my hair",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2007,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "One simple example is that I don't really care about my hair",
+                []
+              ]
+            },
+            {
+              "content": "I just prefer to have it medium length, I don't want layers or anything",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1953,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I just prefer to have it medium length, I don't want layers or anything",
+                []
+              ]
+            },
+            {
+              "content": "My mom would constantly get mad at me for not wanting to get my hair cut in any cool/different way",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1558,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "My mom would constantly get mad at me for not wanting to get my hair cut in any cool/different way",
+                []
+              ]
+            },
+            {
+              "content": "Without my dad as a buffer I would have gone crazy",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1941,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Without my dad as a buffer I would have gone crazy",
+                []
+              ]
+            },
+            {
+              "content": "My dad is great",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1526,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "My dad is great",
+                []
+              ]
+            },
+            {
+              "content": "He's willing to support whatever choice I make and is always there if I ask for help, but not in an almost condescending way like my mom can be",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.199,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "He's willing to support whatever choice I make and is always there if I ask for help, but not in an almost condescending way like my mom can be",
+                []
+              ]
+            },
+            {
+              "content": "But I don't think I could deal with living with just him either",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1864,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "But I don't think I could deal with living with just him either",
+                []
+              ]
+            },
+            {
+              "content": "He can very absent minded, doesn't really cook at all, and probably would have given me the independence I wanted when I was too young",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1855,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "He can very absent minded, doesn't really cook at all, and probably would have given me the independence I wanted when I was too young",
+                []
+              ]
+            },
+            {
+              "content": "Even if two parents don't get along at all, sometimes their personalities together are better for the kid than apart",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1987,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Even if two parents don't get along at all, sometimes their personalities together are better for the kid than apart",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "Nepene",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "179",
+          "reply_votes": "38 points",
+          "reply_contents": [
+            {
+              "content": "http://www.divorce.usu.edu/files/uploads/Lesson4.pdf. About two in ten individuals appear to enhance their lives through their divorce, but about three in ten seem to do worseSo divorce isn't statistically an effective route to happiness, unless your partner is abusive",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2323,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "http://www.divorce.usu.edu/files/uploads/Lesson4.pdf. About two in ten individuals appear to enhance their lives through their divorce, but about three in ten seem to do horses divorce isn't statistically an effective route to happiness, unless your partner is abusive",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 7,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "horses",
+                      "worse",
+                      "worsen",
+                      "worsens",
+                      "worsts"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "About four in ten individuals build future romantic relationships but they have mostly the same kinds of problems as they did in their previous marriage",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2107,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "About four in ten individuals build future romantic relationships but they have mostly the same kinds of problems as they did in their previous marriage",
+                []
+              ]
+            },
+            {
+              "content": "Divorce isn't an effective way to solve relationship issues",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2869,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Divorce isn't an effective way to solve relationship issues",
+                []
+              ]
+            },
+            {
+              "content": "You make the point that happier relationships are good for kids",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1745,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You make the point that happier relationships are good for kids",
+                []
+              ]
+            },
+            {
+              "content": "While that's true, divorcing your partner doesn't mean you'll have happier relationships",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1767,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "While that's true, divorcing your partner doesn't mean you'll have happier relationships",
+                []
+              ]
+            },
+            {
+              "content": "I've certainly seen some train wreck people who go from one bad relationship to another",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1937,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I've certainly seen some train wreck people who go from one bad relationship to another",
+                []
+              ]
+            },
+            {
+              "content": "Staying with one person and trying to overcome your issues may well be better than trying to meet a new person who will take year to understand",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1955,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Staying with one person and trying to overcome your issues may well be better than trying to meet a new person who will take year to understand",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "moonflower",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "82",
+          "reply_votes": "3 points",
+          "reply_contents": [
+            {
+              "content": "I think many couples split up at the first feeling of dissatisfaction, as if the marriage has failed just because they are going through a stage where they feel as if they are not 'living the dream'",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1948,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I think many couples split up at the first feeling of dissatisfaction, as if the marriage has failed just because they are going through a stage where they feel as if they are not 'living the dream'",
+                []
+              ]
+            },
+            {
+              "content": "they go off in search of greener grass, and don't always find it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2002,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "They go off in search of greener grass, and don't always find it",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 4,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "They"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "if they have kids, the kids are usually deeply upset and cannot understand why their parents can't live together",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1966,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "If they have kids, the kids are usually deeply upset and cannot understand why their parents can't live together",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 2,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "If"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "but if the couple stay together and devote their efforts to working together for the sake of giving their children a stable home, and if they make the effort to treat each other with consideration, it is possible, in some cases, that they discover a new level of care for each other and come through with a stronger marriage",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2036,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "But if the couple stay together and devote their efforts to working together for the sake of giving their children a stable home, and if they make the effort to treat each other with consideration, it is possible, in some cases, that they discover a new level of care for each other and come through with a stronger marriage",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "But"
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

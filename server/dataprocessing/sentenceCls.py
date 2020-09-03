@@ -22,7 +22,7 @@ from sklearn import datasets
 from sklearn.metrics import classification_report, f1_score # balanced_accuracy_score
 from sklearn.multiclass import OneVsRestClassifier
 
-print("Sklearn verion is {}".format(sklearn.__version__))
+# print("Sklearn verion is {}".format(sklearn.__version__))
 # # save model
 
 import joblib
@@ -215,7 +215,35 @@ class ModelSelector(object):
             self.train_y = np.array([np.array(ele) for ele in self.train_y.to_numpy()])
             self.test_y = np.array([np.array(ele) for ele in self.test_y.to_numpy()])
             
-        for modelid, model in enumerate(self.models): 
+        for modelid, model in enumerate(self.models):
+            print(self.model_names[modelid])
+            # print(modelid, self.model_names[modelid], self.hyperparams[modelid])
+            clf_para = self.hyperparams[modelid]
+            if flag:
+                model = OneVsRestClassifier(model)
+                clf_para = self.hyperparams_[modelid]  
+            try:          
+                clf = GridSearchCV(model, clf_para)
+                clf.fit(self.train_X, self.train_y)
+            except Exception:
+                print("model fails")
+                continue
+            # print("Best parameters set found on development set:")
+            # print()
+            # print(clf.best_params_)
+            print()
+            print("Detailed classification report:")
+            print()
+            print("The model is trained on the full development set.")
+            print("The scores are computed on the full evaluation set.")
+            print()
+            # y_true, y_pred = self.train_y, clf.predict(self.train_X)
+            y_true, y_pred = self.test_y, clf.predict(self.test_X)
+            # print(classification_report(y_true, y_pred))
+            # print(balanced_accuracy_score(y_true, y_pred))
+            clfs.append(clf)
+            clfs_name.append(self.model_names[modelid])
+            clf_acc.append(f1_score(y_true, y_pred, average='weighted'))
             try:
                 print(self.model_names[modelid])
                 # print(modelid, self.model_names[modelid], self.hyperparams[modelid])
@@ -241,7 +269,8 @@ class ModelSelector(object):
                 clfs.append(clf)
                 clfs_name.append(self.model_names[modelid])
                 clf_acc.append(f1_score(y_true, y_pred, average='weighted'))
-            except Exception:
+            except Exception as e:
+                print(e)
                 # print(self.model_names[modelid])
                 # # print(modelid, self.model_names[modelid], self.hyperparams[modelid])
                 # clf_para = self.hyperparams[modelid]

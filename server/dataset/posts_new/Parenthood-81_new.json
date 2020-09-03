@@ -1,0 +1,868 @@
+{
+  "Parenthood-81": [
+    {
+      "op_claim": "We are in our most natural state as children. It is the job of educators, parents, governments, and other authority figures to beat the shit out of your inner child, so they can turn you into a mindless zombie who acts out some absurd idea of \"this is what an adult is supposed to do.\" ",
+      "op_premise": "Why are children so joyful and carefree, while adults are often such miserable sacks of anxiety, depression, or some other form of psychosis? I believe that decades of learned repression are responsible. It all starts in the classroom with \"Sit down Johnny, stop throwing that pencil at Suzy!\" But after being told over and over that acting on your desires is unacceptable, you need to shut up and do your work, you learn to repress those desires. \"Yes, yes, I do really want to do this work. I want to get this A.\" In a sense, you learn to create in your mind a little teacher that is yelling at you to stop being an immature brat and instead be \"responsible.\" \"Growing up\" is the process of fully identifying with that little teacher you\\'ve created, so that you do the \"responsible\" thing without the need for an actual teacher threatening to send you to the Principle\\'s office.', 'Your conception of what it means to be an adult is not purely determined by teachers and parents either - this is bigger than that. It\\'s also your culture (or subculture): how as a man/woman you are \"supposed\" to behave, or what is cool/uncool, for example. I believe that kind of pressure is equally (or more) powerful, and it also serves to repress your natural childlike state. We could say that in addition to the little teacher you created in your mind, you create an equivalent figure for the group of peers you\\'re trying to fit into, and it yells at you whenever you do something uncool.', \"Ground between these two rocks, authority and peer pressure, I believe that little is left of your inner child by age 20 or so. Its kind of still there, but it's been badly abused, shoved into the basement and chained to the wall. Many people have forgotten its even there. They're too busy trying to act out some script that was given to them, that really has nothing to do with who they truly are. Who doesn't want to be accepted? If anything, that's the only part of the inner child still left intact: this desperate desire to fit in. No one represses that desire, because it is so essential for being a zombie.\", \"Yes, you have to learn how to be responsible and how to interact with your peers. You have to learn how to function in the adult world. But is functioning living? I'd argue that you can only truly live by being in touch with your authentic desires, by stubbornly insisting on your right to be a child - that is, to be a natural development of the person you were when you were a child. This is probably one of the most difficult things you can attempt - a zombified adult insists that everyone around him be a zombie as well, so most likely you will have to go around pretending you are a zombie too most of the time. The only way to make this bearable is if you find some non-zombie companions, around whom you are free to be your true, 100% self around.\", 'I welcome any challenge to my viewpoint.",
+      "reply-info": [
+        {
+          "replyer_name": "xiipaoc",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "27",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "I'm sure Suzy would appreciate it if you did not throw pencils at her",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2008,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "I'm sure Suzy would appreciate it if you did not throw pencils at her",
+                []
+              ]
+            },
+            {
+              "content": "Now, yes, the childlike state is \"natural\", but we as humans have evolved to have societies where each person has a role",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1968,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Now, yes, the childlike state is \u201cnatural\u201d, but we as humans have evolved to have societies where each person has a role",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 33,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 43,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "And if you do not act with responsibility over your role, nobody else will do it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2055,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "And if you do not act with responsibility over your role, nobody else will do it",
+                []
+              ]
+            },
+            {
+              "content": "Adult life is centered around meeting those responsibilities, while childhood is centered around exploring and learning",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2404,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Adult life is centered around meeting those responsibilities, while childhood is centered around exploring and learning",
+                []
+              ]
+            },
+            {
+              "content": "But let's evaluate some of these responsibilities",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2493,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "But let's evaluate some of these responsibilities",
+                []
+              ]
+            },
+            {
+              "content": "The first responsibility is maintaining yourself",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2164,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The first responsibility is maintaining yourself",
+                []
+              ]
+            },
+            {
+              "content": "You need food and shelter, as well as medical care, dignity, clothing, respect from others, etc",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2283,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You need food and shelter, as well as medical care, dignity, clothing, respect from others, etc",
+                []
+              ]
+            },
+            {
+              "content": "And to meet this responsibility in society, you need power, which comes in the form of money",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1957,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "And to meet this responsibility in society, you need power, which comes in the form of money",
+                []
+              ]
+            },
+            {
+              "content": "With enough of this power, you can obtain food, shelter, and clothing",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2161,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "With enough of this power, you can obtain food, shelter, and clothing",
+                []
+              ]
+            },
+            {
+              "content": "To get this power, you generally need to have a job",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1598,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "To get this power, you generally need to have a job",
+                []
+              ]
+            },
+            {
+              "content": "Of course, you need to perform your duties for your job, otherwise it will not give you the money to exchange for goods and services",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2067,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Of course, you need to perform your duties for your job, otherwise it will not give you the money to exchange for goods and services",
+                []
+              ]
+            },
+            {
+              "content": "If you shirk any of these responsibilities, your purchasing power will be much diminished, and you will not be able to have food and shelter",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2306,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "If you shirk any of these responsibilities, you're purchasing power will be much diminished, and you will not be able to have food and shelter",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 4,
+                    "message": "Did you mean 'you're' or 'you are'?",
+                    "replacements": [
+                      "you're",
+                      "you are"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "The second responsibility is maintaining your family and your relationships",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1848,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "The second responsibility is maintaining your family and your relationships",
+                []
+              ]
+            },
+            {
+              "content": "These often require additional funds, and of course, to have a job that pays well you need to be skilled",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2165,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "These often require additional funds, and of course, to have a job that pays well you need to be skilled",
+                []
+              ]
+            },
+            {
+              "content": "You might need decades of medical school, or you might be lucky and have a knack for entrepreneurship",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2054,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You might need decades of medical school, or you might be lucky and have a knack for entrepreneurship",
+                []
+              ]
+            },
+            {
+              "content": "But having that, you need to be emotionally stable enough to help your friends and family when you are needed, and you need to act responsibly towards them so that they will be motivated to help you when you need it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1897,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "But having that, you need to be emotionally stable enough to help your friends and family when you are needed, and you need to act responsibly towards them so that they will be motivated to help you when you need it",
+                []
+              ]
+            },
+            {
+              "content": "The \"natural\" state of things, according to you, is allowing others to provide for you",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2188,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "The \u201cnatural\u201d state of things, according to you, is allowing others to provide for you",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 4,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 12,
+                    "errorlength": 1,
+                    "message": "Use a smart closing quote here: '\u201d'.",
+                    "replacements": [
+                      "\u201d"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "This is not sustainable",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.3326,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "This is not sustainable",
+                []
+              ]
+            },
+            {
+              "content": "You need to earn power so that you can spend it on the necessities",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2024,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You need to earn power so that you can spend it on the necessities",
+                []
+              ]
+            },
+            {
+              "content": "Of course, this doesn't mean that you should stop exploring or damp your intellectual curiosity",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2274,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Of course, this doesn't mean that you should stop exploring or damp your intellectual curiosity",
+                []
+              ]
+            },
+            {
+              "content": "Far from it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1768,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Far from it",
+                []
+              ]
+            },
+            {
+              "content": "You should enjoy your childlike pursuits into old age",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2172,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You should enjoy your childlike pursuits into old age",
+                []
+              ]
+            },
+            {
+              "content": "But at the same time, acting like a responsible adult is necessary for most people in order to have the power to enjoy those childlike pursuits",
+              "is_claim": "1",
+              "claim_type": "evaluation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2048,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "But at the same time, acting like a responsible adult is necessary for most people in order to have the power to enjoy those childlike pursuits",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "YossarianWWII",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "41",
+          "reply_votes": "1 point",
+          "reply_contents": [
+            {
+              "content": "Let's just look at basic societal evolution",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.3108,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Let's just look at basic societal evolution",
+                []
+              ]
+            },
+            {
+              "content": "Yes, many of our human behaviors are the product of our societies, not our biological natures",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2125,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Yes, many of our human behaviors are the product of our societies, not our biological natures",
+                []
+              ]
+            },
+            {
+              "content": "However, that is what has made us successful as a species",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2254,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "However, that is what has made us successful as a species",
+                []
+              ]
+            },
+            {
+              "content": "Instead of having to instinctually know how to do something as most animals do, we can pass on that knowledge to our offspring, teaching them something that is not a part of their biological programming so that they can survive",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2103,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "Instead of having to instinctual know how to do something as most animals do, we can pass on that knowledge to our offspring, teaching them something that is not a part of their biological programming so that they can survive",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 21,
+                    "errorlength": 13,
+                    "message": "Possible spelling mistake found",
+                    "replacements": [
+                      "instinctual"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "As human society developed, many of these taught behaviors were adopted not because they directly helped the individual survive, but because they helped a society of people survive as a cohesive unit",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.225,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "As human society developed, many of these taught behaviors were adopted not because they directly helped the individual survive, but because they helped a society of people survive as a cohesive unit",
+                []
+              ]
+            },
+            {
+              "content": "This, of course, indirectly helps the individual thrive",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2558,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "This, of course, indirectly helps the individual thrive",
+                []
+              ]
+            },
+            {
+              "content": "So, yes, there are certain expectations that have been established by society, but they are not some arbitrary constructs",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2416,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "So, yes, there are certain expectations that have been established by society, but they are not some arbitrary constructs",
+                []
+              ]
+            },
+            {
+              "content": "They are the results of tens of thousands of years of learning and teaching",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1829,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "They are the results of tens of thousands of years of learning and teaching",
+                []
+              ]
+            },
+            {
+              "content": "Some of them have not aged well and are becoming outdated in modern society, but they will change as society evolves",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2294,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Some of them have not aged well and are becoming outdated in modern society, but they will change as society evolves",
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "replyer_name": "caw81",
+          "reply_time": "6 years ago",
+          "reply_delta_num": "164",
+          "reply_votes": "7 points",
+          "reply_contents": [
+            {
+              "content": "you create an equivalent figure for the group of peers you're trying to fit into, and it yells at you whenever you do something uncool",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.21,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "You create an equivalent figure for the group of peers you're trying to fit into, and it yells at you whenever you do something uncool",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "You"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "That is yourself creating an imaginary authority figure",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2645,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "That is yourself creating an imaginary authority figure",
+                []
+              ]
+            },
+            {
+              "content": "You are turning yourself into a mindless zombie",
+              "is_claim": "1",
+              "claim_type": "disagreement",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2555,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You are turning yourself into a mindless zombie",
+                []
+              ]
+            },
+            {
+              "content": "You always have a choice, as an adult, to remove yourself from your localized peer group",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2283,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "You always have a choice, as an adult, to remove yourself from your localized peer group",
+                []
+              ]
+            },
+            {
+              "content": "If you are an adult, then do something about your life",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1989,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "If you are an adult, then do something about your life",
+                []
+              ]
+            },
+            {
+              "content": "As you said; \"If anything, that's the only part of the inner child still left intact: this desperate desire to fit in",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2208,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "As you said; \u201cIf anything, that's the only part of the inner child still left intact: this desperate desire to fit in",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 13,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 13,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "\" Don't be that child who wants to fit in, be an adult and look after yourself",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1955,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "\u201c Don't be that child who wants to fit in, be an adult and look after yourself",
+                [
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 0,
+                    "errorlength": 1,
+                    "message": "Unpaired symbol: '\"' seems to be missing",
+                    "replacements": []
+                  },
+                  {
+                    "category": "Miscellaneous",
+                    "contextoffset": 0,
+                    "errorlength": 1,
+                    "message": "Use a smart opening quote here: '\u201c'.",
+                    "replacements": [
+                      "\u201c"
+                    ]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "by stubbornly insisting on your right to be a childThe child who is desperate to fit in",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1888,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "By stubbornly insisting on your right to be a childThe child who is desperate to fit in",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 2,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": [
+                      "By"
+                    ]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 43,
+                    "errorlength": 8,
+                    "message": "Possible spelling mistake found",
+                    "replacements": []
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "Do whatever you want to do as an adult as long as its legal, you accept the consequences and you just can't rely on anyone to house, feed, cloth you as that is being a child",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.205,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Do whatever you want to do as an adult as long as its legal, you accept the consequences and you just can't rely on anyone to house, feed, cloth you as that is being a child",
+                []
+              ]
+            },
+            {
+              "content": "Don't want to be a zombie, so don't",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1701,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Don't want to be a zombie, so don't",
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
