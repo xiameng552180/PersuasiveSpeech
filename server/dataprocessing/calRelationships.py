@@ -181,7 +181,6 @@ with open(os.path.join(models_path, "relations_mnodel.joblib"), 'wb') as f:
 with open(os.path.join(models_path, "relation_len.joblib"), 'wb') as f:
     joblib.dump(max_len, f)
 
-
 # clf = SVC()
 # clf.fit(senEm, senL)
 # print(clf.predict(senEm))

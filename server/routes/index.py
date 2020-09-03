@@ -26,6 +26,7 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import MultinomialNB, GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 import re
+import numpy as np
 sentenceEmbedder = se()
 
 
@@ -155,7 +156,56 @@ def run_models(sentence):
             "eloquence": int(errors[0]),
             "elo_info": errors,
         }
-        
+
+
+def run_relationship(sentences):
+    claims = []
+    claim_id = []
+    supports = []
+    support_id = []
+    for senid, sentence in enumerate(sentences):
+        is_claim = sentence["is_claim"]
+        # add claims
+        if is_claim == 1:
+            claims.append(sentence["content"])
+            claim_id.append(senid)
+        # add premises
+        if sentence["logos"] + sentence["pathos"] + sentence["evidence"] + sentence["relevance"] + sentence["ethos"] >0:
+            supports.append(sentence["content"])
+            support_id.append(senid)
+    # claim-support-pairs
+    cspairs = []
+    final_pairs = []
+    if len(claim_id) > 0 and len(support_id) > 0:
+        for cid in claim_id:
+            for sid in support_id:
+                cspairs.append([cid, sid])
+        #
+        # print(cspairs)
+        # if not empty, run relationship
+        rmodel = all_models[3][0]
+        rmodel_len = all_models[3][1]
+        senEm = []
+        for spair in cspairs:
+            sen0 = sentences[spair[0]]["content"]
+            sen1 = sentences[spair[1]]["content"]
+            em0 = sentenceEmbedder.encode_one(sen0, rmodel_len)
+            em1 = sentenceEmbedder.encode_one(sen1, rmodel_len)
+            em = em0.tolist()[0] + em1.tolist()[0]
+            senEm.append(em)
+        # run pretrained model
+        relation_scores = rmodel.predict(senEm)
+        reidxs = np.where(relation_scores == 0)
+        final_pairs = [cspairs[reidx] for reidx in reidxs[0]]
+
+        # print("relationship score:",relation_scores, np.where(relation_scores == 0))
+    
+    # print("final pairs:", final_pairs)
+    print("relationship pairs", final_pairs)
+    return final_pairs
+
+    
+
 
 # run_models("hello")
 # exit()
@@ -180,12 +230,17 @@ def uploadInput():
     print("receive: ", temp)
     txt = temp["input"]
     pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
-    sentence_list = re.split(pattern, txt)
+    # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
+    # sentence_list = re.split(pattern, txt)
+    sentence_list = txt.split(".")
     all_results = []
     for index_sentence in range(0, len(sentence_list)-1): # split re without the last one
         results = run_models(sentence_list[index_sentence])
         all_results.append(results)
-    print("results:", all_results)
+    # run relation models
+    relationship_pairs = run_relationship(all_results)
+    # print("results:", all_results)
     return json.dumps({
-        "results": all_results
+        "results": all_results,
+        "relationships": relationship_pairs
     })
