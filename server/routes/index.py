@@ -56,7 +56,15 @@ def load_models():
     with open(os.path.join(dir_path, "../models/ml_premises.joblib"), 'rb') as f:
         ml_premise = joblib.load(f)
 
-    return [[arg_model, ml_arg], [claim_model, ml_claim], [premise_model, ml_premise]]
+    # relationship model
+    with open(os.path.join(dir_path, "../models/relations_mnodel.joblib"), 'rb') as f:
+        relation_model = joblib.load(f)
+
+    with open(os.path.join(dir_path, "../models/relation_len.joblib"), 'rb') as f:
+        relation_len = joblib.load(f)
+
+    
+    return [[arg_model, ml_arg], [claim_model, ml_claim], [premise_model, ml_premise], [relation_model, relation_len]]
 all_models = load_models()
 
 def run_models(sentence):

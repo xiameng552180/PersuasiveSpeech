@@ -3,7 +3,8 @@ import json
 import numpy as np
 import pandas as pd
 import itertools
-from random import sample
+from random import sample, seed
+import joblib
 
 
 # configure dataset folder
@@ -35,11 +36,8 @@ def get_pos_traing_data(pos_pairs, contents):
             supports = arr[1:len(arr)]
             claim_text = ". ".join([contents[claim-1]["content"] for claim in claims])
             for support in supports:
-                try:
-                    training_data.append([claim_text, contents[support-1]["content"]])
-                    training_labels.append(1)
-                except Exception:
-                    print(support)
+                training_data.append([claim_text, contents[support-1]["content"]])
+                training_labels.append(1)
                 
     return training_data, training_labels
 
@@ -54,6 +52,7 @@ def get_neg_traing_data(neg_pairs, contents):
 def generate_training_samples(postdata, relations):
     training_data = []
     training_labels = []
+    # seed(0)
     for k in postdata.keys():
         reply_data = postdata[k][0]["reply-info"]
         # print("data length:",len(reply_data))
@@ -108,8 +107,81 @@ def load_relationship_data(inputpath, file_list, dir_list):
             #     print(training_data, training_labels)
             #     exit()
     return
+
+# get filepath
 file_list = []
 dir_list = []
+# get trianing data/labels
+t_data = []
+t_labels = []
 load_relationship_data(relationship_folder, file_list, dir_list)
-print(file_list)
-print(dir_list)
+max_len = 0
+for fpid, fp in enumerate(file_list):
+    # if fpid<4:
+    try:
+        if fp.endswith(".json"):
+            filename = fp.split("/")[-1]
+            # print(filename)
+            with open(fp, "r") as f:
+                relationships = json.load(f)["support_relationship"]
+            posts_path = os.path.join(new_dataset_folder, filename.split(".")[0]+"_new.json")
+            with open(posts_path, "r") as f:
+                posts = json.load(f)
+            training_data, training_labels = generate_training_samples(posts, relationships)
+            for t in training_data:
+                cur_len = np.max([len(t[0].split()), len(t[1].split())])
+                if cur_len >= max_len:
+                    max_len = cur_len
+                    # print(max_len)
+            t_data.extend(training_data)
+            t_labels.extend(training_labels)
+    except Exception:
+        print(filename)
+        continue
+
+from sentenceCls import SentenceEmbedder as se
+from sentenceCls import ModelSelector as MS
+sentenceEmbedder = se()
+senEm = []
+senL = []
+# encode sentences
+for senid, sentences in enumerate(t_data):
+    try:
+        em0 = sentenceEmbedder.encode_one(sentences[0], max_len)
+        em1 = sentenceEmbedder.encode_one(sentences[1], max_len)
+        em = em0.tolist()[0] + em1.tolist()[0]
+        senEm.append(em)
+        senL.append(t_labels[senid])
+        # exit()
+    except Exception as e:
+        # print(e)
+        print("cannot encode:")
+        print(senid, sentences)
+        continue
+    # em0 = sentenceEmbedder.encode_one(sentences[0], max_len+1)
+    # em1 = sentenceEmbedder.encode_one(sentences[1], max_len+1)
+    # em = np.append(em0, em1)
+    # senEm.append(em)
+
+assert len(senEm) == len(senL)
+from sklearn.svm import SVC
+models_path = os.path.join(dir_path, '../models/')
+
+all_data = pd.DataFrame({"X": senEm, "y": senL})
+# nsamples, nx, ny = all_data["X"].shape
+# print(nsamples, nx, ny)
+# exit()
+ms = MS(np.array(senEm), all_data["y"])
+ms.initialization()
+best_relation_model = ms.gridSearches()
+# print(best_relation_model)
+
+with open(os.path.join(models_path, "relations_mnodel.joblib"), 'wb') as f:
+    joblib.dump(best_relation_model, f)
+with open(os.path.join(models_path, "relation_len.joblib"), 'wb') as f:
+    joblib.dump(max_len, f)
+
+
+# clf = SVC()
+# clf.fit(senEm, senL)
+# print(clf.predict(senEm))
