@@ -16,9 +16,9 @@
     <br />
     <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
     <label>Interest topic:</label> <br />
-    <li id="interestTopic">Human Life</li>
+    <li>Human Life</li>
     <li id="interestTopic">Others</li>
-    <li id="interestTopic">...</li>
+    <li>...</li>
     <br /><br />
     <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
     <label>Persuasive Level:</label>
@@ -101,10 +101,11 @@ export default {
       DataService.selectTopic = this.selectTopic;
       this.addExamples();
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
-      console.log(this.persuasiveLevel[this.selectTopic]);
+      //console.log(this.persuasiveLevel[this.selectTopic]);
 
       $("#persuasiveStyle").css("width", this.persuasiveLevel[this.selectTopic]+'%');
       $('#persuasiveText').text("ratio:" + this.persuasiveLevel[this.selectTopic]+'%');
+      $('#interestTopic').text(this.selectTopic);
       console.log("topicSelect:", this.selectTopicNum, this.selectTopic);
     },
 
