@@ -62,14 +62,8 @@
             :id="'h5_'+example.id"
             :ref="example.id"
           >Replyer name: {{example.content["replyer_name"]}}</h5>
-<<<<<<< HEAD
 
           <p v-if="clear==true && ex_id !== example.id" class="card-text text-secondary">
-=======
-          <!-- the selected paragraph -->
-          <!-- <p v-if="select == true && ex_id == example.id">selected</p> -->
-          <p v-if="clear==true" class="card-text text-secondary">
->>>>>>> 85c596c3a156d107d9bd29d290370516ade2b726
             <span
               v-for="item in example.content.reply_contents"
               :key="item.content"
