@@ -25,7 +25,7 @@ export default {
     this.initialize();
     console.log(dating16);
     //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
-    console.log("drawNode!!!");
+    //console.log("drawNode!!!");
     this.drawNodeLink(this.svg3);
     //});
 
