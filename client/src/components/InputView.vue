@@ -12,7 +12,6 @@
 </template>
 
 
-
 <script>
 import NetService from "../services/net-service";
 import DataService from "../services/data-service";
@@ -53,12 +52,14 @@ export default {
         //this.backdata = NetService.uploadInput(inputContent);
         //$('#errorMess').text(" ");
         if (inputContent.length != 0){ 
+          var inputText = $('textarea').text();
+          console.log("Split", inputText.split(".") + "<br />");
           NetService.uploadInput(inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
-            this.inputRelationship = x.data;
+            this.inputRelationship = x.data.relationships;
 
             console.log("from backend: ", this.backdata);
-            console.log("backend relationship:", this.inputRelationship);
+            console.log("backend relationship:", x.data, this.inputRelationship);
             var inputKeys = Object.keys(this.backdata);
             //console.log("sentence number: ", inputKeys.length);
             
@@ -69,7 +70,6 @@ export default {
                 // this.lengthSentenList.push(inputSentence['content'].length);
                 // inpthis.errorStartIndexList.push(inputSentence['elo_info'][2][0]['contextoffset']); //highlight start
                 // this.errorEndIndexList.push(inputSentence['elo_info'][2][0]['errorlength']); //highlight end
-
                 // label add
                 var inputLabelAll = 0;
                 this.inputLabels['input'][0]['label'] += parseInt(inputSentence['logos']);
@@ -99,7 +99,6 @@ export default {
                   this.inputLabels['input'][3]['label'] /= 1;
                   this.inputLabels['input'][4]['label'] /= 1;
                 }
-                
                 
                 if (inputSentence['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");

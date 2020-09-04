@@ -239,6 +239,7 @@ def uploadInput():
 
     ### TODO: add more splitting operations
     sentence_list = txt.split(".")
+    print(sentence_list)
     all_results = []
     for sentence in sentence_list:
         results = run_models(sentence)
