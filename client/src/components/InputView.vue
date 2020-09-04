@@ -1,16 +1,14 @@
 <template>
-    <div>
-        <label>Claim: </label> 
-        <textarea class="form-control" id="userInput" style="height:240px" 
-            placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!
-        </textarea>
-        <br />
-        <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
-        &nbsp;&nbsp;&nbsp;
-        <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
-    </div>
-        
-    
+  <div>
+    <label>Claim: </label> 
+    <textarea class="form-control" id="userInput" style="height:200px;" 
+        placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!
+    </textarea>
+    <br />
+    <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
+      &nbsp;&nbsp;&nbsp;
+  <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
+  </div>
 </template>
 
 
@@ -37,7 +35,7 @@ export default {
       // lengthSentenList: [],//lenfth of each sentence
       highlightWords: [], //high light words list
       inputLabels: {},
-      //inputRelationship: [],
+      inputRelationship: [],
     };
   },
   mounted() {
@@ -53,12 +51,16 @@ export default {
     updateInput: function (event) {
         var inputContent = document.getElementById("userInput").value;
         //this.backdata = NetService.uploadInput(inputContent);
+        //$('#errorMess').text(" ");
         if (inputContent.length != 0){ 
           NetService.uploadInput(inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
+            this.inputRelationship = x.data;
+
             console.log("from backend: ", this.backdata);
+            console.log("backend relationship:", this.inputRelationship);
             var inputKeys = Object.keys(this.backdata);
-            console.log("sentence number: ", inputKeys.length);
+            //console.log("sentence number: ", inputKeys.length);
             
             this.backdata.forEach((inputSentence) => {
                 //console.log("each sentence: ", inputSentence['content']);
@@ -83,12 +85,22 @@ export default {
                 this.inputLabels['input'][5]['label'] += parseInt(inputSentence['concreteness']);
                 this.inputLabels['input'][6]['label'] += parseInt(inputSentence['eloquence']);
                 // compute persentage
-                this.inputLabels['input'][0]['label'] /= inputLabelAll;
-                this.inputLabels['input'][1]['label'] /= inputLabelAll;
-                this.inputLabels['input'][2]['label'] /= inputLabelAll;
-                this.inputLabels['input'][3]['label'] /= inputLabelAll;
-                this.inputLabels['input'][4]['label'] /= inputLabelAll;
-
+                if (inputLabelAll != 0){
+                  this.inputLabels['input'][0]['label'] /= inputLabelAll;
+                  this.inputLabels['input'][1]['label'] /= inputLabelAll;
+                  this.inputLabels['input'][2]['label'] /= inputLabelAll;
+                  this.inputLabels['input'][3]['label'] /= inputLabelAll;
+                  this.inputLabels['input'][4]['label'] /= inputLabelAll;
+                }
+                else {
+                  this.inputLabels['input'][0]['label'] /= 1;
+                  this.inputLabels['input'][1]['label'] /= 1;
+                  this.inputLabels['input'][2]['label'] /= 1;
+                  this.inputLabels['input'][3]['label'] /= 1;
+                  this.inputLabels['input'][4]['label'] /= 1;
+                }
+                
+                
                 if (inputSentence['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");
                 }else{
@@ -98,11 +110,12 @@ export default {
                   this.highlightWords.push(inputSentence['content'].substring(startTemp, endTemp+1));
                 
                 }
-                //console.log("inputLabels:", this.inputLabels);
+                console.log("inputLabels inputview:", this.inputLabels);
                 //update input
                 PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
                 PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
                 PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+                PipeService.$emit(PipeService.UPDATE_NODEVIEW);
                 
               });
               //elo score

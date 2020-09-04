@@ -45,8 +45,21 @@
           </div>
         </div>
       </div>
-
-      <div class="col-lg-10">
+      <div class="col-lg-2">
+        <div 
+          id="NodeView"
+          class="card border-light mr-3 shadow-sm"
+          style="height: 500px;"
+        >
+        <h5 class="card-header">
+            <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Node View
+        </h5>
+        <div class="card-body">
+          <node-view></node-view>
+        </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
         <div
           id="CompareView"
           class="card border-light mr-3 shadow-sm"
@@ -69,6 +82,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import loginView from "./components/loginView";
 import SelectView from "./components/SelectView";
+import NodeView from "./components/NodeView";
 import CompareView from "./components/CompareView";
 import ExampleView from "./components/ExampleView";
 import InputView from "./components/InputView";
@@ -81,6 +95,7 @@ export default {
   components: {
     loginView,
     SelectView,
+    NodeView,
     CompareView,
     ExampleView,
     InputView,

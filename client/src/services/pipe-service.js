@@ -3,6 +3,7 @@ import Vue from "vue";
 const PipeService = new Vue({
   data: {
     UPDATE_EXAMPLEVIEW: "update_exampleview",
+    UPDATE_NODEVIEW: "update_nodeview",
     UPDATE_SELECTVIEW: "update_selectview",
     UPDATE_INPUTVIEW: "update_inputview",
     UPDATE_COMPAREVIEW: "update_compareview",
