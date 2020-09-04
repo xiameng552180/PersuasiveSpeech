@@ -820,7 +820,7 @@ export default {
             DataService.selectIDIndex = []; //clear index
 
             PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-            PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+            // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
             PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
           }
           //console.log("IDARRAY: ", this.selectIDarray, this.selectIDIndex, this.examples.map((d) => d.id));
