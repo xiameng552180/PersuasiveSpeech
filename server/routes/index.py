@@ -247,9 +247,16 @@ def uploadInput():
     sentence_list = txt.split(".")
     print(sentence_list)
     all_results = []
-    for sentence in sentence_list:
-        results = run_models(sentence)
-        all_results.append(results)
+    print("before")
+    if len(sentence_list) == 2:
+      results = run_models(sentence_list[0])
+      print("single sentence:", results)
+      all_results.append(results)
+    else:
+      for sentence in sentence_list:
+          results = run_models(sentence)
+          all_results.append(results)
+
     
     ### OLD one: have BUG
     # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'

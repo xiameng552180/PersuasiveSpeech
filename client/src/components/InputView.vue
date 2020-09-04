@@ -2,13 +2,13 @@
   <div>
     <label>Claim: </label> 
     
-    <!-- <div contenteditable="true" id="userInputDiv" 
+    <div contenteditable="true" id="userInputDiv" 
     @input="changeDivText($event)"
     
-    style="height:200px;">{{ inputContent }}</div> -->
+    style="height:200px;">{{ inputContent }}</div>
     <br />
-    <div contenteditable="true" id="userInputDiv" 
-    style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div>
+    <!-- <div contenteditable="true" id="userInputDiv" 
+    style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
     
     <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
       &nbsp;&nbsp;&nbsp;
@@ -65,19 +65,19 @@ export default {
       //console.log("input:", this.inputLabels['input'][0]['label']);
     },
 
-    // changeDivText(event) {
-    //     this.editText = event.target.innerText;
-    //     //console.log(this.editText);
-    // },
+    changeDivText(event) {
+        this.editText = event.target.innerText;
+        //console.log(this.editText);
+    },
 
 
 
     updateInput: function (event) {
-        this.inputContent = document.getElementById("userInputDiv").innerHTML;
+        //this.inputContent = document.getElementById("userInputDiv").innerHTML;  old version
         //console.log("t1", typeof(document.getElementById("userInput1").value));
-        // this.inputContent = this.editText;
-        // console.log("t2", typeof(this.inputContent));
-        //this.editText = event.target.innerHTML;
+        this.inputContent = this.editText;
+        console.log("t2", typeof(this.inputContent));
+        this.editText = event.target.innerHTML;
         if (this.inputContent.length != 0){ 
           NetService.uploadInput(this.inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
@@ -124,7 +124,7 @@ export default {
                 this.eachSentenceLabel[index] = tempLabelList;
                 
                 
-                //console.log("each sentenceLabel:", index, this.inputLabels['input']);
+                console.log("each sentenceLabel:", index, this.inputLabels['input']);
                 // compute persentage
                 if (inputLabelAll != 0){
                   this.inputLabels['input'][0]['label'] /= inputLabelAll;
@@ -159,6 +159,34 @@ export default {
                 
             }); //end cycle
               
+              // step0 highlight error
+              //elo score
+              $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
+              
+              // console.log("eloquenceScore:", this.eloquenceScore, this.eloquenceErrorList);
+              // console.log("highlight words: ", this.highlightWords);
+              if (this.eloquenceErrorList.length == 0) {
+                $('#errorMess').text("no error");
+              }else{
+                $('#errorMess').text("ERROR ");
+                this.eloquenceErrorList.forEach((er, index) => {
+                  $('#errorMess').append(this.highlightWords[index] + ": " + er + ". ");
+                });
+              }
+
+              console.log("error:", this.highlightWords);
+              //highlight
+              // var wordList = [];
+              // for(var i in this.highlightWords){
+              //   wordList.push(this.highlightWords[i]);
+              // }
+              // console.log(wordList);
+              // $('#userInputDiv').highlightTextarea({
+              //     words: wordList,
+              //     color:"yellow",          
+              // });
+            
+
               //return highlight
               // step 1 process sentences
               var sentenceList = JSON.stringify(this.inputS);
@@ -179,83 +207,126 @@ export default {
               console.log("here");
               resultSentence.forEach((e, ind) => {
                 //console.log("test", e, ind);
+                var eachSentenceHighlight = "";
                 if (e.length > 1){ //is it a sentence?
                   var colorTxt = "";
                   //console.log("inner sentence", ind, e);
                   //console.log("returnLabel: ", ind, this.eachSentenceLabel[ind]);
-                  //logos?
-                  if (this.eachSentenceLabel[ind][0] == 1)
-                  {
-                    var strTemp = "<span style=\"background-color: #7eb6e4;\">(Logos)</span>"; 
-                    allHighlightTxt += strTemp + resultSentence[ind];
-                    //console.log("add logos!", allHighlightTxt);
-                  }
-                  //pathos?
-                  if (this.eachSentenceLabel[ind][1] == 1){
-                    var strTemp = "<span style=\"background-color: #8cd390;\">(Pathos)</span>";
-                    allHighlightTxt += strTemp + resultSentence[ind];
-                    //console.log("add pathos!", allHighlightTxt);
-                  }
-                  //ethos?
-                  if (this.eachSentenceLabel[ind][2] == 1){
-                    var strTemp = "<span style=\"background-color: #8f91fc;\">(Ethos)</span>";
-                    allHighlightTxt += strTemp + resultSentence[ind];
-                    //console.log("add ethos!", allHighlightTxt);
-                  }
-                  //evidence?
-                  if (this.eachSentenceLabel[ind][3] == 1){
-                    var strTemp = "<span style=\"background-color: #fa8cad;\">(Evidence)</span>";
-                    allHighlightTxt += strTemp + resultSentence[ind];
-                    //console.log("add evidence!", allHighlightTxt);
-                  }
-                  //relevance?
-                  if (this.eachSentenceLabel[ind][4] == 1){
-                    var strTemp = "<span style=\"background-color: #e05c5c;\">(Relevance)</span>";
-                    allHighlightTxt += strTemp + resultSentence[ind];
-                    //console.log("add relevance!", allHighlightTxt);
-                  }
+                  
+                  var logoFlag = 0;
+                  var pathoFlag = 0;
+                  var ethoFlag = 0;
+                  var evidenceFlag = 0;
+                  
                   //claim?
-                  if (this.eachSentenceLabel[ind][5] == 1){
-                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">(Claim)</span>";
+                  if (this.eachSentenceLabel[ind][5] != 0){
+                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim </span>";
                     var claimType = this.eachSentenceLabel[ind][6] 
-                    allHighlightTxt += strTemp + claimType + resultSentence[ind];
+                    eachSentenceHighlight = strTemp + claimType + resultSentence[ind];
                     //console.log("add Claim!", allHighlightTxt);
                   }
-                    
+                  else { //premise
+                    //logos?
+                    if (this.eachSentenceLabel[ind][0] == 1)
+                    {
+                      logoFlag = 1; 
+                      var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos </span>"; 
+                      eachSentenceHighlight = strTemp + resultSentence[ind];
+                      //console.log("add logos!", allHighlightTxt);
+                    }
+                    //pathos?
+                    if (this.eachSentenceLabel[ind][1] == 1){
+                      if (logoFlag == 1){
+                        pathoFlag = 1; //multiple label
+                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind]; //
+                      //console.log("add pathos!", allHighlightTxt);
+                      }
+                      else {
+                        pathoFlag = 1; //multiple label
+                        var strTemp = "<span style=\"background-color: #8cd390;\">Pathos </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                    }
+                    //evidence?
+                    if (this.eachSentenceLabel[ind][3] == 1){
+                      if (logoFlag == 0 && pathoFlag == 0){ //single evidence
+                        evidenceFlag = 1;
+                        var strTemp = "<span style=\"background-color: #fa8cad;\">Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        //console.log("add evidence!", allHighlightTxt);
+                      }
+                      else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
+                        evidenceFlag = 1;
+                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
+                        evidenceFlag = 1;
+                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
+                        evidenceFlag = 1;
+                        var strTemp = "<span style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                    }
+                    //ethos?
+                    if (this.eachSentenceLabel[ind][2] == 1){
+                      if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
+                      var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos</span>";
+                      eachSentenceHighlight = strTemp + resultSentence[ind];
+                      //console.log("add ethos!", allHighlightTxt);
+                      }
+                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      // no other situations
+                    }
+                    //relevance?
+                    if (this.eachSentenceLabel[ind][4] == 1){
+                      if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">Relevance </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        //console.log("add relevance!", allHighlightTxt);
+                      }
+                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Rele </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">Rele&Evi </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                      }
+                      //no other situations
+                    }
+                  }
+                  
+                  allHighlightTxt += eachSentenceHighlight; //add each sentence to set
                 }//cycle
               });
-              console.log("error:", this.highlightWords);
+              this.highlightWords.forEach((err) =>{
+                console.log("eachError:", err);
+                allHighlightTxt = allHighlightTxt.replace(err, 
+                  "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
+              })
+              
+              document.getElementById("userInputDiv").innerHTML = "";
               document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
-
-
-              //elo score
-              $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
-              
-              // console.log("eloquenceScore:", this.eloquenceScore, this.eloquenceErrorList);
-              // console.log("highlight words: ", this.highlightWords);
-              if (this.eloquenceErrorList.length == 0) {
-                $('#errorMess').text("no error");
-              }else{
-                $('#errorMess').text("ERROR ");
-                this.eloquenceErrorList.forEach((er, index) => {
-                  $('#errorMess').append(this.highlightWords[index] + ": " + er + ". ");
-                });
-              }
-              
-              //highlight
-              // var wordList = [];
-              // for(var i in this.highlightWords){
-              //   wordList.push(this.highlightWords[i]);
-              // }
-              // console.log(wordList);
-              // $('#userInput').highlightTextarea({
-              //     words: wordList,
-              //     color:"yellow",          
-              // });
-            
-
-            
-
 
           });
         }
