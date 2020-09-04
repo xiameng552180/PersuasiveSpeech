@@ -139,7 +139,7 @@ export default {
       this.drawBar(this.svg1);
       //this.drawNodeLink(this.svg3); //nodelink
       //filtering val
-      console.log($("#strategy").val());
+      //console.log($("#strategy").val());
     });
   },
   methods: {

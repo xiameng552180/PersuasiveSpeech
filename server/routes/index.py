@@ -29,7 +29,8 @@ import re
 import numpy as np
 sentenceEmbedder = se()
 
-
+import sklearn
+print("Sklearn verion is {}".format(sklearn.__version__))
 
 import joblib
 
