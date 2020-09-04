@@ -183,6 +183,13 @@
               <span v-else>{{item.content+". "}}</span>
             </span>
           </p>
+
+          <p v-else class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >{{item.content+". "}}</span>
+          </p>
         </div>
       </div>
     </div>
