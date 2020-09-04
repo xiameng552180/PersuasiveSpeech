@@ -72,12 +72,14 @@ def run_models(sentence):
     ## calculate eloquence
     errors = fe.find_sentence_errors(sentence)
     try:
+        # print("query labels:", all_models)
         # argumentation
         ## non-argument: 0, claim: 1, premise: 2
         a_model = all_models[0][0]
         ml_arg = all_models[0][1]
         a_f = sentenceEmbedder.encode_one(sentence, ml_arg)
         a_label = a_model.predict(a_f)[0]
+        print("prediction results:", a_model.predict(a_f))
 
         if a_label == 0:
             return {
@@ -99,6 +101,7 @@ def run_models(sentence):
             ml_claim = all_models[1][1]
             c_f = sentenceEmbedder.encode_one(sentence, ml_claim)
             c_label = c_model.predict(c_f)[0]
+            print("prediction results claim type:", c_model.predict(c_f))
             # interpretation: 1, evaluation: 2, disagreement/agreement: 0
             # convert to claim_type
             claim_type = "0"
@@ -126,6 +129,7 @@ def run_models(sentence):
             ml_premise = all_models[2][1]
             p_f = sentenceEmbedder.encode_one(sentence, ml_premise)
             p_label = p_model.predict(p_f)[0]
+            print("prediction results premises:", p_model.predict(p_f))
             # p_label: [logos, pathos, evidence, relevance, ethos]
             return {
                 "content": sentence + " .",
@@ -141,8 +145,9 @@ def run_models(sentence):
                 "elo_info": errors,
             }
     
-    except Exception:
+    except Exception as e:
         print("---model issues---")
+        print(e)
         return {
             "content": sentence + " .",
             "is_claim": 0,
@@ -238,7 +243,7 @@ def uploadInput():
     
 
     ### TODO: add more splitting operations
-    sentence_list = txt.split(".")
+    sentence_list = txt.strip().split(".")
     all_results = []
     for sentence in sentence_list:
         results = run_models(sentence)
