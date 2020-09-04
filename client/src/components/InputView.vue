@@ -2,8 +2,7 @@
   <div>
     <label>Claim: </label> 
     <textarea class="form-control" id="userInput" style="height:200px;" 
-        placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!
-    </textarea>
+        placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!</textarea>
     <br />
     <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
       &nbsp;&nbsp;&nbsp;
@@ -52,8 +51,6 @@ export default {
         //this.backdata = NetService.uploadInput(inputContent);
         //$('#errorMess').text(" ");
         if (inputContent.length != 0){ 
-          var inputText = $('textarea').text();
-          console.log("Split", inputText.split(".") + "<br />");
           NetService.uploadInput(inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
@@ -119,7 +116,7 @@ export default {
               });
               //elo score
               $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
-              // console.log("inputS: ", this.inputSentences);
+              
               // console.log("eloquenceScore:", this.eloquenceScore, this.eloquenceErrorList);
               // console.log("highlight words: ", this.highlightWords);
               if (this.eloquenceErrorList.length == 0) {
@@ -132,15 +129,39 @@ export default {
               }
               
               //highlight
-              var wordList = [];
-              for(var i in this.highlightWords){
-                wordList.push(this.highlightWords[i]);
-              }
-              console.log(wordList);
-              $('#userInput').highlightTextarea({
-                  words: wordList,
-                  color:"yellow",          
+              // var wordList = [];
+              // for(var i in this.highlightWords){
+              //   wordList.push(this.highlightWords[i]);
+              // }
+              // console.log(wordList);
+              // $('#userInput').highlightTextarea({
+              //     words: wordList,
+              //     color:"yellow",          
+              // });
+              console.log("inputS: ", this.inputSentences);
+              var sentenceList = JSON.stringify(this.inputSentences);
+              console.log("origin sentence:", this.inputSentences);
+              var items = sentenceList.split(",");
+              sentenceList = items.join("");
+              sentenceList = sentenceList.replace("\\n", "");
+              sentenceList = sentenceList.replace("[", "");
+              sentenceList = sentenceList.replace("]", "");
+              
+              sentenceList = sentenceList.substring(0, sentenceList.length-2)
+              
+              sentenceList = sentenceList.replace(/\"/g, "")
+              //console.log("s", sentenceList);
+
+              var resultSentence = sentenceList.split(/[\.!\?]/);//分句子
+              console.log("sentenceNum:", resultSentence.length);
+              resultSentence.forEach((e) => {
+                if (e.length > 1){
+                  
+                }
               });
+              // $('textarea').text("change!");
+
+
           });
         }
         else {console.log("NULL input");}  

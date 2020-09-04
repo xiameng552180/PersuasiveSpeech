@@ -238,8 +238,8 @@ export default {
         // console.log(element);
         element.scrollIntoView({ behavior: "smooth" });
 
-        console.log("Example view examplesum:");
-        console.log(this.examplesum);
+        //console.log("Example view examplesum:");
+        //console.log(this.examplesum);
 
         var valuearr = Object.values(this.examplesum).map((d) => parseInt(d));
         console.log(valuearr);
