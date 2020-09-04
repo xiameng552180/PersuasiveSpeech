@@ -243,7 +243,8 @@ def uploadInput():
     
 
     ### TODO: add more splitting operations
-    sentence_list = txt.strip().split(".")
+    sentence_list = txt.split(".")
+    print(sentence_list)
     all_results = []
     for sentence in sentence_list:
         results = run_models(sentence)
@@ -259,7 +260,7 @@ def uploadInput():
 
     # run relation models
     relationship_pairs = run_relationship(all_results)
-    # print("results:", all_results)
+    print("relationship_pairs:", relationship_pairs)
     return json.dumps({
         "results": all_results,
         "relationships": relationship_pairs

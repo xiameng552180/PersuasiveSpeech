@@ -133,6 +133,7 @@ export default {
       );
 
       //console.log("testexamples1:", DataService.examples);
+      
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
       PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);

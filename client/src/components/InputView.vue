@@ -1,18 +1,15 @@
 <template>
-    <div>
-        <label>Claim: </label> 
-        <textarea class="form-control" id="userInput" style="height:240px" 
-            placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!
-        </textarea>
-        <br />
-        <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
-        &nbsp;&nbsp;&nbsp;
-        <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
-    </div>
-        
-    
+  <div>
+    <label>Claim: </label> 
+    <textarea class="form-control" id="userInput" style="height:200px;" 
+        placeholder="Input your text here" aria-label="With textarea">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it!
+    </textarea>
+    <br />
+    <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
+      &nbsp;&nbsp;&nbsp;
+  <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
+  </div>
 </template>
-
 
 
 <script>
@@ -37,7 +34,7 @@ export default {
       // lengthSentenList: [],//lenfth of each sentence
       highlightWords: [], //high light words list
       inputLabels: {},
-      //inputRelationship: [],
+      inputRelationship: [],
     };
   },
   mounted() {
@@ -53,12 +50,18 @@ export default {
     updateInput: function (event) {
         var inputContent = document.getElementById("userInput").value;
         //this.backdata = NetService.uploadInput(inputContent);
+        //$('#errorMess').text(" ");
         if (inputContent.length != 0){ 
+          var inputText = $('textarea').text();
+          console.log("Split", inputText.split(".") + "<br />");
           NetService.uploadInput(inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
+            this.inputRelationship = x.data.relationships;
+
             console.log("from backend: ", this.backdata);
+            console.log("backend relationship:", x.data, this.inputRelationship);
             var inputKeys = Object.keys(this.backdata);
-            console.log("sentence number: ", inputKeys.length);
+            //console.log("sentence number: ", inputKeys.length);
             
             this.backdata.forEach((inputSentence) => {
                 //console.log("each sentence: ", inputSentence['content']);
@@ -67,7 +70,6 @@ export default {
                 // this.lengthSentenList.push(inputSentence['content'].length);
                 // inpthis.errorStartIndexList.push(inputSentence['elo_info'][2][0]['contextoffset']); //highlight start
                 // this.errorEndIndexList.push(inputSentence['elo_info'][2][0]['errorlength']); //highlight end
-
                 // label add
                 var inputLabelAll = 0;
                 this.inputLabels['input'][0]['label'] += parseInt(inputSentence['logos']);
@@ -98,7 +100,6 @@ export default {
                   this.inputLabels['input'][4]['label'] /= 1;
                 }
                 
-
                 if (inputSentence['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");
                 }else{
@@ -113,6 +114,7 @@ export default {
                 PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
                 PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
                 PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+                PipeService.$emit(PipeService.UPDATE_NODEVIEW);
                 
               });
               //elo score

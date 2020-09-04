@@ -59,17 +59,76 @@
         <div v-for="example in examples" :key="example.id" class="card-body">
           <h5
             class="card-title"
-            :id="example.id"
+            :id="'h5_'+example.id"
             :ref="example.id"
           >Replyer name: {{example.content["replyer_name"]}}</h5>
-          <!-- the selected paragraph -->
-          <!-- <p v-if="select == true && ex_id == example.id">selected</p> -->
-          <p v-if="clear==true" class="card-text text-secondary">
+
+          <p v-if="clear==true && ex_id !== example.id" class="card-text text-secondary">
             <span
               v-for="item in example.content.reply_contents"
               :key="item.content"
             >{{item.content+". "}}</span>
           </p>
+
+          <!-- the selected post -->
+          <p v-else-if="if_claim==true && ex_id === example.id" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-claim"
+                v-if="item.is_claim!=='0' && if_claim==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_logos==true && ex_id === example.id" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-logos"
+                v-if="item.logos!=='0' && if_logos==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_pathos==true && ex_id === example.id" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-pathos"
+                v-if="item.pathos!=='0' && if_pathos==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_ethos==true && ex_id === example.id" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-ethos"
+                v-if="item.ethos!=='0' && if_ethos==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p v-else-if="if_evidence==true && ex_id === example.id" class="card-text text-secondary">
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-evidence"
+                v-if="item.evidence!=='0' && if_evidence==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+          <p
+            v-else-if="if_relevance==true && ex_id === example.id"
+            class="card-text text-secondary"
+          >
+            <span v-for="item in example.content.reply_contents" :key="item.content">
+              <mark
+                class="textbg-relevance"
+                v-if="item.relevance!=='0' && if_relevance==true"
+              >{{item.content+". "}}</mark>
+              <span v-else>{{item.content+". "}}</span>
+            </span>
+          </p>
+
           <p v-else-if="if_claim==true" class="card-text text-secondary">
             <span v-for="item in example.content.reply_contents" :key="item.content">
               <mark
@@ -124,12 +183,13 @@
               <span v-else>{{item.content+". "}}</span>
             </span>
           </p>
-          <!-- <p v-else class="card-text text-secondary">
+
+          <p v-else class="card-text text-secondary">
             <span
               v-for="item in example.content.reply_contents"
               :key="item.content"
             >{{item.content+". "}}</span>
-          </p>-->
+          </p>
         </div>
       </div>
     </div>
@@ -173,15 +233,28 @@ export default {
     initialize() {},
     display() {
       if (this.ex_id !== "") {
-        this.select = true;
-        this.clear = true;
-        var element = document.getElementById(this.ex_id);
+        var element = document.getElementById("h5_" + this.ex_id);
         // console.log(this.ex_id);
-        // console.log(document.getElementById(this.ex_id));
+        // console.log(element);
         element.scrollIntoView({ behavior: "smooth" });
-        // this.examplesum.sort((a,b)=>d3.descending(a.value))
-        console.log("Example view example_sum:");
+
+        console.log("Example view examplesum:");
         console.log(this.examplesum);
+
+        var valuearr = Object.values(this.examplesum).map((d) => parseInt(d));
+        console.log(valuearr);
+        var maxvalue = Math.max(...valuearr);
+        var maxindex = valuearr.indexOf(maxvalue);
+        var keyarr = Object.keys(this.examplesum);
+        var maxkey = keyarr[maxindex];
+        console.log(maxkey);
+        if (maxkey == "claim") this.click_claim();
+        if (maxkey == "logos") this.click_logos();
+        if (maxkey == "pathos") this.click_pathos();
+        if (maxkey == "ethos") this.click_ethos();
+        if (maxkey == "evidence") this.click_evidence();
+        if (maxkey == "relevance") this.click_relevance();
+        this.clear = true;
       }
     },
     click_claim() {
