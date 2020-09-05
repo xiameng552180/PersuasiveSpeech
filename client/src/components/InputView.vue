@@ -260,18 +260,19 @@ export default {
 
               //return highlight
               // step 1 process sentences
-              // var sentenceList = JSON.stringify(this.inputS);
-              // var items = sentenceList.split(",");
-              // sentenceList = items.join("");
-              // sentenceList = sentenceList.replace(/[\n]/g,"");
-              // sentenceList = sentenceList.replace("[", "");
-              // sentenceList = sentenceList.replace("]", "");             
-              // sentenceList = sentenceList.substring(0, sentenceList.length-2)
-              // sentenceList = sentenceList.replace(/\"/g, "")
-              //console.log("s", sentenceList);
-              // var resultSentence = sentenceList.split(/[\?\!\.]/);//分句子
-              var resultSentence = this.backdata.map(data => data.content)
-              
+              var sentenceList = JSON.stringify(this.inputS);
+              var items = sentenceList.split(",");
+              sentenceList = items.join("");
+              sentenceList = sentenceList.replace(/[\n]/g,"");
+              sentenceList = sentenceList.replace("[", "");
+              sentenceList = sentenceList.replace("]", "");             
+              sentenceList = sentenceList.substring(0, sentenceList.length-2)
+              sentenceList = sentenceList.replace(/\"/g, "")
+              console.log("s", sentenceList);
+              var resultSentence = sentenceList.split(/[\.!?]/);//分句子
+              // console.log("here1", resultSentence);
+              // var resultSentence = this.backdata.map(data => data.content)
+
               // step 2 got label and highlight content
               console.log("sentenceNum:", resultSentence.length);
               //console.log("each sentence label: ", this.eachSentenceLabel);
