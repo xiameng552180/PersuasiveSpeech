@@ -86,7 +86,7 @@ export default {
 
       var nodes = [],
         links = [];
-      nodes = this.nodeData.map( //dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+      nodes = this.nodeData.map( 
         (d, i) => {
           d.id = i;
           return d;
@@ -122,19 +122,15 @@ export default {
         .attr("stroke-width", "2px");
 
        // add tooltip
-      // var tooltip= d3.select('circle')
-      //     .append('div')
-      //     .style('position', 'absoluate')
-      //     .style('z-index', 10)
-      //     .style('color', '#3497db')
-      //     .style('visibility', 'hidden')   // 是否可见（一开始设置为隐藏）
-      //     .style('font-size', '12px')
-      //     .style('font-weight', 'bold')
-      //     .text('');
       var tooltip=d3.select("body")
           .append("div")
           .attr("class","tooltip")
-          .style("opacity",0.0);
+          .style("opacity",0.0)
+          .style('z-index', 10)
+          .style('font-size', '12px')
+          .style('color', "white")
+          .style('background', "#535353")	
+          .style('border-radius', "8px");
 
       this.node = this.svg3
         .selectAll(".node")
