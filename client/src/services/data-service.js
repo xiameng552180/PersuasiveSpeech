@@ -31,7 +31,7 @@ class Service {
         { feature: "ethos", label: 0 },
         { feature: "evidence", label: 0 },
         { feature: "relevance", label: 0 },
-        { feature: "concreteness", label: 0 },
+        { feature: "is_claim", label: 0 },
         { feature: "eloquence", label: 0 }
       ]};
     //this.inputRelationship = [];

@@ -1,15 +1,19 @@
 <template>
   <div>
-    <label>Claim: </label> 
-    
-    <div contenteditable="true" id="userInputDiv" 
-    @input="changeDivText($event)"
-    
-    style="height:200px;">{{ inputContent }}</div>
+    <div class="row">
+      <div class="col-lg-10">
+        <label>Claim: </label> 
+        <div contenteditable="true" id="userInputDiv" 
+        @input="changeDivText($event)"
+        style="height:200px;">{{ inputContent }}</div>
+      </div>
+      <!-- <div contenteditable="true" id="userInputDiv" 
+      style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
+      <div class="col-lg-2">
+        <div class="inputSummary"></div>
+      </div>
+    </div>
     <br />
-    <!-- <div contenteditable="true" id="userInputDiv" 
-    style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
-    
     <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
       &nbsp;&nbsp;&nbsp;
   <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
@@ -52,17 +56,24 @@ export default {
       inputRelationship: [],
       eachSentenceLabel: {},
       editText: null,
+      svgInput: null,
+      widthInput: null,
+      heightInput: null,
     };
   },
   mounted() {
-    this.initialize();
-    
-    
+    this.initialize() 
   },
   methods: {
     initialize() {
       this.inputLabels = DataService.inputLabels;
       //console.log("input:", this.inputLabels['input'][0]['label']);
+      
+        this.svgInput = d3
+          .select(".inputSummary")
+          .append("svg")
+          .attr("width", 100)
+          .attr("height", 200);
     },
 
     changeDivText(event) {
@@ -109,8 +120,9 @@ export default {
                 inputLabelAll += parseInt(inputSentence['evidence']);
                 this.inputLabels['input'][4]['label'] += parseInt(inputSentence['relevance']);
                 inputLabelAll += parseInt(inputSentence['relevance']);
-                this.inputLabels['input'][5]['label'] += parseInt(inputSentence['concreteness']);
+                this.inputLabels['input'][5]['label'] += parseInt(inputSentence['is_claim']);
                 this.inputLabels['input'][6]['label'] += parseInt(inputSentence['eloquence']);
+                
                 
                 // get each sentence lits
                 var tempLabelList = [];
@@ -127,11 +139,11 @@ export default {
                 console.log("each sentenceLabel:", index, this.inputLabels['input']);
                 // compute persentage
                 if (inputLabelAll != 0){
-                  this.inputLabels['input'][0]['label'] /= inputLabelAll;
-                  this.inputLabels['input'][1]['label'] /= inputLabelAll;
-                  this.inputLabels['input'][2]['label'] /= inputLabelAll;
-                  this.inputLabels['input'][3]['label'] /= inputLabelAll;
-                  this.inputLabels['input'][4]['label'] /= inputLabelAll;
+                  this.inputLabels['input'][0]['label'] = Math.round(this.inputLabels['input'][0]['label']/inputLabelAll);
+                  this.inputLabels['input'][1]['label'] = Math.round(this.inputLabels['input'][1]['label']/inputLabelAll);
+                  this.inputLabels['input'][2]['label'] = Math.round(this.inputLabels['input'][2]['label']/inputLabelAll);
+                  this.inputLabels['input'][3]['label'] = Math.round(this.inputLabels['input'][3]['label']/inputLabelAll);
+                  this.inputLabels['input'][4]['label'] = Math.round(this.inputLabels['input'][4]['label']/inputLabelAll);                 
                 }
                 else {
                   this.inputLabels['input'][0]['label'] /= 1;
@@ -148,7 +160,6 @@ export default {
                   var startTemp = inputSentence['elo_info'][2][0]['contextoffset'];
                   var endTemp = inputSentence['elo_info'][2][0]['errorlength'];
                   this.highlightWords.push(inputSentence['content'].substring(startTemp, endTemp+1));
-                
                 }
                 //console.log("inputLabels inputview:", this.inputLabels);
                 //update input
@@ -159,6 +170,37 @@ export default {
                 
             }); //end cycle
               
+              //draw summary
+              console.log("input summary", this.inputLabels);
+              var jsonCircles = [
+                {"x_axis":30,"y_axis":40,"radius":this.inputLabels['input'][0]['label'], "color":"#7eb6e4"},
+                {"x_axis":30,"y_axis":70,"radius":this.inputLabels['input'][1]['label'],"color":"#8cd390"},
+                {"x_axis":30,"y_axis":100,"radius":this.inputLabels['input'][2]['label'],"color":"#8f91fc"},
+                {"x_axis":30,"y_axis":130,"radius":this.inputLabels['input'][3]['label'],"color":"#fa8cad"},
+                {"x_axis":30,"y_axis":160,"radius":this.inputLabels['input'][4]['label'],"color":"#e05c5c"},
+                {"x_axis":30,"y_axis":190,"radius":this.inputLabels['input'][5]['label'],"color":"#b6034d"}
+              ];
+              
+              var circles = this.svgInput
+                  .selectAll("circle")
+                  .data(jsonCircles)
+                  .enter()
+                  .append("circle");
+
+              circles.attr("cx", function(d){return d.x_axis})
+                      .attr("cy", function(d){return d.y_axis})
+                      .attr("r", function(d){return d.radius*5 + 5;})
+                      .style("fill", function(d){return d.color;});
+
+              var circleTxt = this.svgInput
+                  .selectAll("circle")
+                  .append("text")
+                        .attr('x', 60)
+                        .attr('y', function(d){return d.y_axis})
+                        .style('color', "black")
+                        .text(this.inputLabels['input'][5]['feature']);
+                    
+
               // step0 highlight error
               //elo score
               $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
@@ -341,7 +383,8 @@ export default {
 </script>
 
 <style scoped>
-  .div-editable{
+  #userInputDiv{
+    border-style: groove;
     width: 100%;
     height: 100%;
     overflow-y: auto;

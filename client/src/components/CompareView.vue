@@ -145,7 +145,7 @@ export default {
   methods: {
     initialize() {
       this.inputLabels = DataService.inputLabels; //input data labelsSum
-      console.log("inputlabel:", this.inputLabels)
+      console.log("inputlabel-Compareview:", this.inputLabels)
       
       this.width = d3.select("#CircleSVG").node().getBoundingClientRect().width;
       this.height = d3
@@ -561,8 +561,7 @@ export default {
             this.examplesum["concreteness"] += element["concreteness"];
             this.examplesum["eloquence"] += element["eloquence"];
           });
-          console.log("examplesum:");
-          console.log(this.examplesum);
+          console.log("examplesum:", this.examplesum);
           DataService.examplesum = this.examplesum;
           PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
         } else {
