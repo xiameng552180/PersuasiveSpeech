@@ -165,55 +165,59 @@ def run_models(sentence):
 
 
 def run_relationship(sentences):
-    claims = []
-    claim_id = []
-    supports = []
-    support_id = []
-    for senid, sentence in enumerate(sentences):
-        is_claim = sentence["is_claim"]
-        # add claims
-        if is_claim == 1:
-            claims.append(sentence["content"])
-            claim_id.append(senid)
-        # add premises
-        if sentence["logos"] + sentence["pathos"] + sentence["evidence"] + sentence["relevance"] + sentence["ethos"] >0:
-            supports.append(sentence["content"])
-            support_id.append(senid)
-    # claim-support-pairs
-    cspairs = []
-    final_pairs = []
-    ### HARCODE: if no claim, then 1st sentence will be the claim
-    if len(claim_id) == 0:
-        claim_id = [0]
-    ###
-    if len(claim_id) > 0 and len(support_id) > 0:
-        for cid in claim_id:
-            for sid in support_id:
-                if cid != sid: # claim != premise/supports
-                    cspairs.append([cid, sid])
-        #
-        # print(cspairs)
-        # if not empty, run relationship
-        rmodel = all_models[3][0]
-        rmodel_len = all_models[3][1]
-        senEm = []
-        for spair in cspairs:
-            sen0 = sentences[spair[0]]["content"]
-            sen1 = sentences[spair[1]]["content"]
-            em0 = sentenceEmbedder.encode_one(sen0, rmodel_len)
-            em1 = sentenceEmbedder.encode_one(sen1, rmodel_len)
-            em = em0.tolist()[0] + em1.tolist()[0]
-            senEm.append(em)
-        # run pretrained model
-        relation_scores = rmodel.predict(senEm)
-        reidxs = np.where(relation_scores == 0)
-        final_pairs = [cspairs[reidx] for reidx in reidxs[0]]
+    # sentence relationship only computed when there are more than two sentences
+    if len(sentences) >= 2:
+        claims = []
+        claim_id = []
+        supports = []
+        support_id = []
+        for senid, sentence in enumerate(sentences):
+            is_claim = sentence["is_claim"]
+            # add claims
+            if is_claim == 1:
+                claims.append(sentence["content"])
+                claim_id.append(senid)
+            # add premises
+            if sentence["logos"] + sentence["pathos"] + sentence["evidence"] + sentence["relevance"] + sentence["ethos"] >0:
+                supports.append(sentence["content"])
+                support_id.append(senid)
+        # claim-support-pairs
+        cspairs = []
+        final_pairs = []
+        ### HARCODE: if no claim, then 1st sentence will be the claim
+        if len(claim_id) == 0:
+            claim_id = [0]
+        ###
+        if len(claim_id) > 0 and len(support_id) > 0:
+            for cid in claim_id:
+                for sid in support_id:
+                    if cid != sid: # claim != premise/supports
+                        cspairs.append([cid, sid])
+            #
+            # print(cspairs)
+            # if not empty, run relationship
+            rmodel = all_models[3][0]
+            rmodel_len = all_models[3][1]
+            senEm = []
+            for spair in cspairs:
+                sen0 = sentences[spair[0]]["content"]
+                sen1 = sentences[spair[1]]["content"]
+                em0 = sentenceEmbedder.encode_one(sen0, rmodel_len)
+                em1 = sentenceEmbedder.encode_one(sen1, rmodel_len)
+                em = em0.tolist()[0] + em1.tolist()[0]
+                senEm.append(em)
+            # run pretrained model
+            relation_scores = rmodel.predict(senEm)
+            reidxs = np.where(relation_scores == 0)
+            final_pairs = [cspairs[reidx] for reidx in reidxs[0]]
 
-        # print("relationship score:",relation_scores, np.where(relation_scores == 0))
-    
-    # print("final pairs:", final_pairs)
-    print("relationship pairs", final_pairs)
-    return final_pairs
+            # print("relationship score:",relation_scores, np.where(relation_scores == 0))
+        
+        # print("final pairs:", final_pairs)
+        print("relationship pairs", final_pairs)
+        return final_pairs
+    else:
+        return []
 
     
 
@@ -244,20 +248,16 @@ def uploadInput():
     
 
     ### TODO: add more splitting operations
-    sentence_list = txt.split(".")
+    sentence_list = [s.strip() for s in txt.split(".") if len(s.strip()) > 0]
+
     print(sentence_list)
     all_results = []
-    print("before")
-    if len(sentence_list) == 2:
-      results = run_models(sentence_list[0])
-      print("single sentence:", results)
-      all_results.append(results)
-    else:
-      for sentence in sentence_list:
-          results = run_models(sentence)
-          all_results.append(results)
 
-    
+    for senid, sentence in enumerate(sentence_list):
+        print("sentence:", sentence)
+        results = run_models(sentence)
+        all_results.append(results)
+
     ### OLD one: have BUG
     # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
     # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
