@@ -549,7 +549,7 @@ export default {
             this.examplesum["ethos"] += parseInt(element["ethos"]);
             this.examplesum["evidence"] += parseInt(element["evidence"]);
             this.examplesum["relevance"] += parseInt(element["relevance"]);
-            this.examplesum["is_claim"] += element["is_claim"];
+            this.examplesum["is_claim"] += parseInt(element["is_claim"]);
             this.examplesum["eloquence"] += element["eloquence"];
           });
           console.log("examplesum:", this.examplesum);
@@ -578,7 +578,7 @@ export default {
               this.examplesum["ethos"] += parseInt(sentence["ethos"]);
               this.examplesum["evidence"] += parseInt(sentence["evidence"]);
               this.examplesum["relevance"] += parseInt(sentence["relevance"]);
-              this.examplesum["is_claim"] += sentence["is_claim"];
+              this.examplesum["is_claim"] += parseInt(sentence["is_claim"]);
               this.examplesum["eloquence"] += sentence["eloquence"];
             });
           });

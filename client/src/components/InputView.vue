@@ -415,9 +415,9 @@ export default {
         console.log("node data2:", this.nodeData);
 
         //update to node view
-        //DataService.nodeData = this.nodeData;
+        DataService.nodeData = this.nodeData;
         PipeService.$emit(PipeService.UPDATE_NODEVIEW);
-        PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
+        //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
       },
 
     },//all methods
