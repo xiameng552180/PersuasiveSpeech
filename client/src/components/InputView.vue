@@ -5,12 +5,12 @@
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
-        style="height:240px;">{{ inputContent }}</div>
+        style="height:260px;">{{ inputContent }}</div>
       </div>
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
       <div class="col-lg-2">
-        <div class="inputSummary"></div>
+        <div class="inputSummary" style="height:260px;"></div>
       </div>
     </div>
     <br />
@@ -65,7 +65,7 @@ export default {
           .select(".inputSummary")
           .append("svg")
           .attr("width", 180)
-          .attr("height", 220);
+          .attr("height", 250);
     },
 
     changeDivText(event) {
@@ -132,6 +132,7 @@ export default {
                 inputLabelAll += parseInt(i['relevance']);
                 this.inputLabels['input'][5]['label'] += parseInt(i['is_claim']);
                 inputLabelAll += parseInt(i['is_claim']);
+
                 this.inputLabels['input'][6]['label'] += parseInt(i['eloquence']);
                 
                 
@@ -198,7 +199,7 @@ export default {
                 {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
                 {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
                 {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
-                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color":"#b6034d"}
+                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color": "#b6034d"}
               ];
               
               var circles = this.svgInput
@@ -395,9 +396,8 @@ export default {
               document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
               
               //call relationship
-              setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
-              
-            
+              this.callRelationship(this.backdata, this.inputRelationship);
+              //setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
           });
         }
         else {console.log("NULL input");}  
