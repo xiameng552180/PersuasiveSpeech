@@ -107,6 +107,13 @@ export default {
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
+
+            /////////////////(Xingbo's try)//////////
+            this.callRelationship(this.backdata, this.inputRelationship)
+            console.log("I have run callrelatinship");
+
+            /////////////////(Xingbo's try)//////////
+
             //console.log("sentence number: ", inputKeys.length);
             
             this.backdata.forEach((i, index) => {
@@ -395,7 +402,7 @@ export default {
               document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
               
               //call relationship
-              setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
+              // setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
               
             
           });
@@ -408,7 +415,7 @@ export default {
         data.forEach((es) => {
           this.nodeData.push(es);
         });
-        //console.log("node data1:", this.nodeData);
+        console.log("node data1:", this.nodeData);
         this.nodeData[0]['is_claim'] = "1";
         this.nodeData[0]['logos'] = "0";
         this.nodeData[0]['evidence'] = "0";
