@@ -19,19 +19,28 @@ export default {
       simulation1: null,
       node: null,
       link: null,
+      nodeData: [],
     }
   },
   mounted() {
     this.initialize();
-    //console.log(dating16);
-    //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
-    //console.log("drawNode!!!");
-    this.drawNodeLink(this.svg3);
+    PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
+      this.nodeData = DataService.nodeData;
+      console.log("nodeview1: ", this.nodeData);
+    //   //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
+    //   //console.log("drawNode!!!");
+      this.drawNodeLink(this.svg3);
+    });
+    //this.drawNodeLink(this.svg3);
+    // console.log("Node:", this.node);
+    // console.log("Link:", this.link);
     //});
 
   },
   methods: {
     initialize() {
+      this.nodeData = DataService.nodeData;
+      console.log("nodeview12: ", this.nodeData);
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
       this.height3 = d3
         .select("#nodelink")
@@ -43,6 +52,7 @@ export default {
         .attr("height", this.height3);
     },
     drawNodeLink(svgNode) {
+      console.log("nodeview2:", this.nodeData);
       var arrow = svgNode
         .append("defs")
         .append("marker")
@@ -76,7 +86,7 @@ export default {
 
       var nodes = [],
         links = [];
-      nodes = dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+      nodes = this.nodeData.map( //dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
         (d, i) => {
           d.id = i;
           return d;
@@ -96,7 +106,7 @@ export default {
           links.push(newlink);
         }
       });
-      //console.log(links);
+      
       this.update(links, nodes);
     },
 

@@ -21,9 +21,10 @@ class Service {
       ethos: 0,
       evidence: 0,
       relevance: 0,
-      concreteness: 0,
+      is_claim: 0,
       eloquence: 0,
     };
+    this.nodeData= [],
     this.inputLabels = {
       "input": [
         { feature: "logos", label: 0 },

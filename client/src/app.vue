@@ -5,7 +5,7 @@
         <div
           id="InputView"
           class="card border-light ml-3 shadow-sm"
-          style="height: 400px;"
+          style="height: 500px;"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
@@ -20,7 +20,7 @@
         <div
           id="ExampleView"
           class="card border-light mr-3 shadow-sm"
-          style="height: 400px;"
+          style="height: 500px;"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View

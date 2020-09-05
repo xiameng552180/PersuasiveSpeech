@@ -86,7 +86,7 @@ export default {
         ethos: 0,
         evidence: 0,
         relevance: 0,
-        concreteness: 0,
+        is_claim: 0,
         eloquence: 0,
       },
       flag: 0,
@@ -528,15 +528,6 @@ export default {
       var svg = svgNode.append("g");
       var index = this.examples.map((d) => d.id).indexOf(this.ex_id);
 
-      // var examplesum = {
-      //     logos: 0,
-      //     pathos: 0,
-      //     ethos: 0,
-      //     evidence: 0,
-      //     relevance: 0,
-      //     concreteness: 0,
-      //     eloquence: 0,
-      //   };
       //console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
       if (this.ex_id !== "") {
         if (this.selectIDIndex.length == 0) {
@@ -547,7 +538,7 @@ export default {
             ethos: 0,
             evidence: 0,
             relevance: 0,
-            concreteness: 0,
+            is_claim: 0,
             eloquence: 0,
           };
           var exampledata = this.examples.map((d) => d.content)[index]
@@ -558,7 +549,7 @@ export default {
             this.examplesum["ethos"] += parseInt(element["ethos"]);
             this.examplesum["evidence"] += parseInt(element["evidence"]);
             this.examplesum["relevance"] += parseInt(element["relevance"]);
-            this.examplesum["concreteness"] += element["concreteness"];
+            this.examplesum["is_claim"] += element["is_claim"];
             this.examplesum["eloquence"] += element["eloquence"];
           });
           console.log("examplesum:", this.examplesum);
@@ -573,7 +564,7 @@ export default {
             ethos: 0,
             evidence: 0,
             relevance: 0,
-            concreteness: 0,
+            is_claim: 0,
             eloquence: 0,
           };
           this.selectIDIndex.forEach((ind) => {
@@ -587,7 +578,7 @@ export default {
               this.examplesum["ethos"] += parseInt(sentence["ethos"]);
               this.examplesum["evidence"] += parseInt(sentence["evidence"]);
               this.examplesum["relevance"] += parseInt(sentence["relevance"]);
-              this.examplesum["concreteness"] += sentence["concreteness"];
+              this.examplesum["is_claim"] += sentence["is_claim"];
               this.examplesum["eloquence"] += sentence["eloquence"];
             });
           });
@@ -596,16 +587,16 @@ export default {
       } else {
         //draw all data
 
-        // compute eloquenceSum & concretenessSum
+        // compute eloquenceSum & is_claimSum
         var eloquenceSum = 0;
-        var concretenessSum = 0;
+        var is_claimSum = 0;
         this.examples.forEach((element) => {
           //num of reply
           var tempElement = element.content.reply_contents;
           tempElement.forEach((d) => {
             //console.log("this:", d.eloquence);
             eloquenceSum += parseInt(d.eloquence);
-            concretenessSum += parseInt(d.concreteness);
+            is_claimSum += parseInt(d.is_claim);
           });
         });
 
@@ -615,7 +606,7 @@ export default {
           ethos: this.labelRadar[0][3]["value"],
           evidence: this.labelRadar[0][4]["value"],
           relevance: this.labelRadar[0][5]["value"],
-          concreteness: concretenessSum,
+          is_claim: is_claimSum,
           eloquence: eloquenceSum,
         };
         //console.log("barSum", barSum);

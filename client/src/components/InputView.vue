@@ -5,7 +5,7 @@
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
-        style="height:200px;">{{ inputContent }}</div>
+        style="height:240px;">{{ inputContent }}</div>
       </div>
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
@@ -43,17 +43,9 @@ export default {
       inputS: [], //all input sentences
       // lengthSentenList: [],//lenfth of each sentence
       highlightWords: [], //high light words list
-      inputLabels: {
-      "input": [
-        { feature: "logos", label: 0 },
-        { feature: "pathos", label: 0 },
-        { feature: "ethos", label: 0 },
-        { feature: "evidence", label: 0 },
-        { feature: "relevance", label: 0 },
-        { feature: "concreteness", label: 0 },
-        { feature: "eloquence", label: 0 }
-      ]},
+      inputLabels: {},
       inputRelationship: [],
+      nodeData: [],
       eachSentenceLabel: {},
       editText: null,
       svgInput: null,
@@ -72,8 +64,8 @@ export default {
         this.svgInput = d3
           .select(".inputSummary")
           .append("svg")
-          .attr("width", 100)
-          .attr("height", 200);
+          .attr("width", 180)
+          .attr("height", 220);
     },
 
     changeDivText(event) {
@@ -81,62 +73,81 @@ export default {
         //console.log(this.editText);
     },
 
-
-
     updateInput: function (event) {
         //this.inputContent = document.getElementById("userInputDiv").innerHTML;  old version
         //console.log("t1", typeof(document.getElementById("userInput1").value));
         this.inputContent = this.editText;
-        console.log("t2", typeof(this.inputContent));
+        //console.log("t2", typeof(this.inputContent));
         this.editText = event.target.innerHTML;
         if (this.inputContent.length != 0){ 
           NetService.uploadInput(this.inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
 
+            /////////////////Node view call//////////
+            //call relationship
+            //this.callRelationship(this.backdata, this.inputRelationship);
+            //console.log("call node, relationship function:", data, relationship);
+            // this.backdata.forEach((es) => {
+            //   this.nodeData.push(es);
+            // });
+            // //console.log("node data1:", this.nodeData);
+            // this.nodeData[0]['is_claim'] = "1";
+            // this.nodeData[0]['logos'] = "0";
+            // this.nodeData[0]['evidence'] = "0";
+            // this.nodeData[0]['claim_type'] = "none";
+            // console.log("node data2:", this.nodeData);
+
+            // //update to node view
+            // //DataService.nodeData = this.nodeData;
+            // PipeService.$emit(PipeService.UPDATE_NODEVIEW);
+            // //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
+             /////////////////Node view call//////////
+            //
             console.log("from backend: ", this.backdata);
-            console.log("backend relationship:", this.inputRelationship);
+            console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
             //console.log("sentence number: ", inputKeys.length);
             
-            this.backdata.forEach((inputSentence, index) => {
-                //console.log("each sentence: ", inputSentence['content']);
-                this.eloquenceScore += parseInt(inputSentence['eloquence']);
-                this.inputS.push(inputSentence['content']);
+            this.backdata.forEach((i, index) => {
+                //console.log("each sentence: ", i['content']);
+                this.eloquenceScore += parseInt(i['eloquence']);
+                this.inputS.push(i['content']);
                 
-                //console.log("eachS: ", inputSentence);
-                //this.lengthSentenList.push(inputSentence['content'].length);
-                // inpthis.errorStartIndexList.push(inputSentence['elo_info'][2][0]['contextoffset']); //highlight start
-                // this.errorEndIndexList.push(inputSentence['elo_info'][2][0]['errorlength']); //highlight end
+                //console.log("eachS: ", i);
+                //this.lengthSentenList.push(i['content'].length);
+                // inpthis.errorStartIndexList.push(i['elo_info'][2][0]['contextoffset']); //highlight start
+                // this.errorEndIndexList.push(i['elo_info'][2][0]['errorlength']); //highlight end
                 // label add
                 var inputLabelAll = 0;
-                this.inputLabels['input'][0]['label'] += parseInt(inputSentence['logos']);
-                inputLabelAll += parseInt(inputSentence['logos']);
-                this.inputLabels['input'][1]['label'] += parseInt(inputSentence['pathos']);
-                inputLabelAll += parseInt(inputSentence['pathos']);
-                this.inputLabels['input'][2]['label'] += parseInt(inputSentence['ethos']);
-                inputLabelAll += parseInt(inputSentence['ethos']);
-                this.inputLabels['input'][3]['label'] += parseInt(inputSentence['evidence']);
-                inputLabelAll += parseInt(inputSentence['evidence']);
-                this.inputLabels['input'][4]['label'] += parseInt(inputSentence['relevance']);
-                inputLabelAll += parseInt(inputSentence['relevance']);
-                this.inputLabels['input'][5]['label'] += parseInt(inputSentence['is_claim']);
-                this.inputLabels['input'][6]['label'] += parseInt(inputSentence['eloquence']);
+                this.inputLabels['input'][0]['label'] += parseInt(i['logos']);
+                inputLabelAll += parseInt(i['logos']);
+                this.inputLabels['input'][1]['label'] += parseInt(i['pathos']);
+                inputLabelAll += parseInt(i['pathos']);
+                this.inputLabels['input'][2]['label'] += parseInt(i['ethos']);
+                inputLabelAll += parseInt(i['ethos']);
+                this.inputLabels['input'][3]['label'] += parseInt(i['evidence']);
+                inputLabelAll += parseInt(i['evidence']);
+                this.inputLabels['input'][4]['label'] += parseInt(i['relevance']);
+                inputLabelAll += parseInt(i['relevance']);
+                this.inputLabels['input'][5]['label'] += parseInt(i['is_claim']);
+                inputLabelAll += parseInt(i['is_claim']);
+                this.inputLabels['input'][6]['label'] += parseInt(i['eloquence']);
                 
                 
                 // get each sentence lits
                 var tempLabelList = [];
-                tempLabelList.push(parseInt(inputSentence['logos']));
-                tempLabelList.push(parseInt(inputSentence['pathos']));
-                tempLabelList.push(parseInt(inputSentence['ethos']));
-                tempLabelList.push(parseInt(inputSentence['evidence']));
-                tempLabelList.push(parseInt(inputSentence['relevance']));
-                tempLabelList.push(parseInt(inputSentence['is_claim']));
-                tempLabelList.push(parseInt(inputSentence['claim_type']));
+                tempLabelList.push(parseInt(i['logos']));
+                tempLabelList.push(parseInt(i['pathos']));
+                tempLabelList.push(parseInt(i['ethos']));
+                tempLabelList.push(parseInt(i['evidence']));
+                tempLabelList.push(parseInt(i['relevance']));
+                tempLabelList.push(parseInt(i['is_claim']));
+                tempLabelList.push(parseInt(i['claim_type']));
                 this.eachSentenceLabel[index] = tempLabelList;
                 
                 
-                console.log("each sentenceLabel:", index, this.inputLabels['input']);
+                //console.log("each sentenceLabel:", index, this.inputLabels['input']);
                 // compute persentage
                 if (inputLabelAll != 0){
                   this.inputLabels['input'][0]['label'] = Math.round(this.inputLabels['input'][0]['label']/inputLabelAll);
@@ -153,13 +164,13 @@ export default {
                   this.inputLabels['input'][4]['label'] /= 1;
                 }
                 
-                if (inputSentence['elo_info'][2].length == 0) {
+                if (i['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");
                 }else{
-                  this.eloquenceErrorList.push(inputSentence['elo_info'][2][0]['message']); //error message
-                  var startTemp = inputSentence['elo_info'][2][0]['contextoffset'];
-                  var endTemp = inputSentence['elo_info'][2][0]['errorlength'];
-                  this.highlightWords.push(inputSentence['content'].substring(startTemp, endTemp+1));
+                  this.eloquenceErrorList.push(i['elo_info'][2][0]['message']); //error message
+                  var startTemp = i['elo_info'][2][0]['contextoffset'];
+                  var endTemp = i['elo_info'][2][0]['errorlength'];
+                  this.highlightWords.push(i['content'].substring(startTemp, endTemp+1));
                 }
                 //console.log("inputLabels inputview:", this.inputLabels);
                 //update input
@@ -171,14 +182,23 @@ export default {
             }); //end cycle
               
               //draw summary
-              console.log("input summary", this.inputLabels);
+              //console.log("input summary1", this.eachSentenceLabel, this.inputS.length);
+              var labelSum = new Array(6).fill(0);
+              for(var i = 0; i < this.inputS.length; i++){
+                //console.log(this.eachSentenceLabel[i.toString()]);
+                labelSum.forEach((e, ind)=>{
+                  labelSum[ind] += parseInt(this.eachSentenceLabel[i.toString()][ind]);
+                })
+                
+              }
+              //console.log("input summary2", labelSum);
               var jsonCircles = [
-                {"x_axis":30,"y_axis":40,"radius":this.inputLabels['input'][0]['label'], "color":"#7eb6e4"},
-                {"x_axis":30,"y_axis":70,"radius":this.inputLabels['input'][1]['label'],"color":"#8cd390"},
-                {"x_axis":30,"y_axis":100,"radius":this.inputLabels['input'][2]['label'],"color":"#8f91fc"},
-                {"x_axis":30,"y_axis":130,"radius":this.inputLabels['input'][3]['label'],"color":"#fa8cad"},
-                {"x_axis":30,"y_axis":160,"radius":this.inputLabels['input'][4]['label'],"color":"#e05c5c"},
-                {"x_axis":30,"y_axis":190,"radius":this.inputLabels['input'][5]['label'],"color":"#b6034d"}
+                {"x_axis":20,"y_axis":40,"radius":labelSum[0], "name": "logos", "color":"#7eb6e4"},
+                {"x_axis":20,"y_axis":80,"radius":labelSum[1], "name": "pathos","color":"#8cd390"},
+                {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
+                {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
+                {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
+                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color":"#b6034d"}
               ];
               
               var circles = this.svgInput
@@ -189,16 +209,20 @@ export default {
 
               circles.attr("cx", function(d){return d.x_axis})
                       .attr("cy", function(d){return d.y_axis})
-                      .attr("r", function(d){return d.radius*5 + 5;})
+                      .attr("r", function(d){return d.radius*3 + 5;})
                       .style("fill", function(d){return d.color;});
 
               var circleTxt = this.svgInput
-                  .selectAll("circle")
-                  .append("text")
-                        .attr('x', 60)
-                        .attr('y', function(d){return d.y_axis})
-                        .style('color', "black")
-                        .text(this.inputLabels['input'][5]['feature']);
+                  .selectAll("text")
+                  .data(jsonCircles)
+                  .enter()
+                  .append("text");
+
+              circleTxt.attr('x', 50)
+                      .attr('y', function(d){return d.y_axis})
+                      .style('color', "black")
+                      .style('font-size', "15px")
+                      .text(function(d){return d.name + ":" +d.radius});
                     
 
               // step0 highlight error
@@ -216,7 +240,7 @@ export default {
                 });
               }
 
-              console.log("error:", this.highlightWords);
+              //console.log("error:", this.highlightWords);
               //highlight
               // var wordList = [];
               // for(var i in this.highlightWords){
@@ -243,8 +267,8 @@ export default {
               var resultSentence = sentenceList.split(/[\.!\?]/);//分句子
               
               // step 2 got label and highlight content
-              console.log("sentenceNum:", resultSentence.length);
-              console.log("each sentence label: ", this.eachSentenceLabel);
+              //console.log("sentenceNum:", resultSentence.length);
+              //console.log("each sentence label: ", this.eachSentenceLabel);
               var allHighlightTxt = "";
               console.log("here");
               resultSentence.forEach((e, ind) => {
@@ -262,9 +286,9 @@ export default {
                   
                   //claim?
                   if (this.eachSentenceLabel[ind][5] != 0){
-                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim </span>";
+                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim" + claimType + "</span>";
                     var claimType = this.eachSentenceLabel[ind][6] 
-                    eachSentenceHighlight = strTemp + claimType + resultSentence[ind];
+                    eachSentenceHighlight = strTemp + resultSentence[ind];
                     //console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
@@ -369,13 +393,36 @@ export default {
               
               document.getElementById("userInputDiv").innerHTML = "";
               document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
-
+              
+              //call relationship
+              setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
+              
+            
           });
         }
         else {console.log("NULL input");}  
         
       },
-    },
+      callRelationship(data, relationship) {
+        //console.log("call node, relationship function:", data, relationship);
+        data.forEach((es) => {
+          this.nodeData.push(es);
+        });
+        //console.log("node data1:", this.nodeData);
+        this.nodeData[0]['is_claim'] = "1";
+        this.nodeData[0]['logos'] = "0";
+        this.nodeData[0]['evidence'] = "0";
+        console.log("node data2:", this.nodeData);
+
+        //update to node view
+        //DataService.nodeData = this.nodeData;
+        PipeService.$emit(PipeService.UPDATE_NODEVIEW);
+        PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
+      },
+
+    },//all methods
+
+    
 
     
   };
