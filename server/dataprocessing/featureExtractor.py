@@ -34,7 +34,7 @@ def get_file_path(root_path,file_list,dir_list):
         else:
             file_list.append(dir_file_path)
             # print(dir_file_path)
-            filename = dir_file_path.split("/")[-1]
+            filename = dir_file_path.split("\\")[-1]
             if filename.endswith(".json"):
                 with open(dir_file_path, "r") as f:
                     data = json.load(f)

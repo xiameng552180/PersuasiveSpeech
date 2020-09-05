@@ -110,7 +110,7 @@ export default {
             //console.log("sentence number: ", inputKeys.length);
             
             this.backdata.forEach((i, index) => {
-                //console.log("each sentence: ", i['content']);
+                console.log("each sentence: ", i['content']);
                 this.eloquenceScore += parseInt(i['eloquence']);
                 this.inputS.push(i['content']);
                 
@@ -256,16 +256,17 @@ export default {
 
               //return highlight
               // step 1 process sentences
-              var sentenceList = JSON.stringify(this.inputS);
-              var items = sentenceList.split(",");
-              sentenceList = items.join("");
-              sentenceList = sentenceList.replace(/[\n]/g,"");
-              sentenceList = sentenceList.replace("[", "");
-              sentenceList = sentenceList.replace("]", "");             
-              sentenceList = sentenceList.substring(0, sentenceList.length-2)
-              sentenceList = sentenceList.replace(/\"/g, "")
+              // var sentenceList = JSON.stringify(this.inputS);
+              // var items = sentenceList.split(",");
+              // sentenceList = items.join("");
+              // sentenceList = sentenceList.replace(/[\n]/g,"");
+              // sentenceList = sentenceList.replace("[", "");
+              // sentenceList = sentenceList.replace("]", "");             
+              // sentenceList = sentenceList.substring(0, sentenceList.length-2)
+              // sentenceList = sentenceList.replace(/\"/g, "")
               //console.log("s", sentenceList);
-              var resultSentence = sentenceList.split(/[\.!\?]/);//分句子
+              // var resultSentence = sentenceList.split(/[\?\!\.]/);//分句子
+              var resultSentence = this.backdata.map(data => data.content)
               
               // step 2 got label and highlight content
               //console.log("sentenceNum:", resultSentence.length);
@@ -290,7 +291,7 @@ export default {
                     var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim" + claimType + "</span>";
                     var claimType = this.eachSentenceLabel[ind][6] 
                     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //console.log("add Claim!", allHighlightTxt);
+                    // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
                     //logos?
