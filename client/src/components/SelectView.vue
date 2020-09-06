@@ -3,7 +3,7 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Topic</label>
       <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
-        <option value="0">Abortion</option>
+        <option value="0"  selected = "selected" >Abortion</option>
         <option value="1">Dating</option>
         <option value="2">Eugenics</option>
         <option value="3">Immortality</option>
@@ -73,7 +73,7 @@ export default {
         'Pride': pride,
         'Suicide': suicide
       },
-      persuasiveLevel: {}
+      persuasiveLevel: {'Abortion': 52}
     };
   },
   mounted() {
@@ -103,10 +103,10 @@ export default {
       this.addExamples();
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       //console.log(this.persuasiveLevel[this.selectTopic]);
-      // if (this.persuasiveLevel[this.selectTopic] == 'undefinded'){
-      //   $('#persuasiveText').text("ratio:" + this.persuasiveLevel[this.selectTopic]+'%');
+      // if (this.persuasiveLevel[this.selectTopic].length > 3){
+      //   $('#persuasiveText').text("ratio:0%");
       // }
-      // else{}
+      console.log("tttt", this.persuasiveLevel[this.selectTopic]);
       $("#persuasiveStyle").css("width", this.persuasiveLevel[this.selectTopic]+'%');
       $('#persuasiveText').text("ratio:" + this.persuasiveLevel[this.selectTopic]+'%');
       $('#interestTopic').text(this.selectTopic);

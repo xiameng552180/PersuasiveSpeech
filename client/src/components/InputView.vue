@@ -10,7 +10,7 @@
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
       <div class="col-lg-2">
-        <div class="inputSummary" style="height:260px;"></div>
+        <!-- <div class="inputSummary" style="height:260px;"></div> -->
       </div>
     </div>
     <br />
@@ -69,15 +69,19 @@ export default {
 
     changeDivText(event) {
         this.editText = event.target.innerText;
-        //console.log(this.editText);
+        console.log("changeTxt:", this.editText);
     },
 
     updateInput: function (event) {
         //this.inputContent = document.getElementById("userInputDiv").innerHTML;  old version
         //console.log("t1", typeof(document.getElementById("userInput1").value));
+        //remove label tag
+        // var obj = document.getElementsByClassName("addLabelTag");
+        // obj.innerHTML = "";//删除div内容
+
         this.inputContent = this.editText;
-        //console.log("t2", typeof(this.inputContent));
-        this.editText = event.target.innerHTML;
+        console.log("changeTxt2:", this.inputContent);
+        // this.editText = event.target.innerHTML;
         if (this.inputContent.length != 0){ 
           NetService.uploadInput(this.inputContent, (x)=>{
             this.backdata = x.data.results; //processing result
@@ -178,6 +182,7 @@ export default {
                 }
                 //console.log("inputLabels inputview:", this.inputLabels);
                 //update input
+
                 PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
                 PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
                 PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
@@ -185,50 +190,50 @@ export default {
                 
             }); //end cycle
               
-              //draw summary
+              ////////////draw summary/////
               //console.log("input summary1", this.eachSentenceLabel, this.inputS.length);
-              var labelSum = new Array(6).fill(0);
-              for(var i = 0; i < this.inputS.length; i++){
-                //console.log(this.eachSentenceLabel[i.toString()]);
-                labelSum.forEach((e, ind)=>{
-                  labelSum[ind] += parseInt(this.eachSentenceLabel[i.toString()][ind]);
-                })
+              // var labelSum = new Array(6).fill(0);
+              // for(var i = 0; i < this.inputS.length; i++){
+              //   //console.log(this.eachSentenceLabel[i.toString()]);
+              //   labelSum.forEach((e, ind)=>{
+              //     labelSum[ind] += parseInt(this.eachSentenceLabel[i.toString()][ind]);
+              //   })
                 
-              }
-              //console.log("input summary2", labelSum);
-              //console.log("error of 5", labelSum[5]);
-              var jsonCircles = [
-                {"x_axis":20,"y_axis":40,"radius":labelSum[0], "name": "logos", "color":"#7eb6e4"},
-                {"x_axis":20,"y_axis":80,"radius":labelSum[1], "name": "pathos","color":"#8cd390"},
-                {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
-                {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
-                {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
-                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color": "#b6034d"}
-              ];
+              // }
+              // //console.log("input summary2", labelSum);
+              // //console.log("error of 5", labelSum[5]);
+              // var jsonCircles = [
+              //   {"x_axis":20,"y_axis":40,"radius":labelSum[0], "name": "logos", "color":"#7eb6e4"},
+              //   {"x_axis":20,"y_axis":80,"radius":labelSum[1], "name": "pathos","color":"#8cd390"},
+              //   {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
+              //   {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
+              //   {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
+              //   {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color": "#b6034d"}
+              // ];
               
-              var circles = this.svgInput
-                  .selectAll("circle")
-                  .data(jsonCircles)
-                  .enter()
-                  .append("circle");
+              // var circles = this.svgInput
+              //     .selectAll("circle")
+              //     .data(jsonCircles)
+              //     .enter()
+              //     .append("circle");
 
-              circles.attr("cx", function(d){return d.x_axis})
-                      .attr("cy", function(d){return d.y_axis})
-                      .attr("r", function(d){return d.radius*3 + 5;})
-                      .style("fill", function(d){return d.color;});
+              // circles.attr("cx", function(d){return d.x_axis})
+              //         .attr("cy", function(d){return d.y_axis})
+              //         .attr("r", function(d){return d.radius*3 + 5;})
+              //         .style("fill", function(d){return d.color;});
 
-              var circleTxt = this.svgInput
-                  .selectAll("text")
-                  .data(jsonCircles)
-                  .enter()
-                  .append("text");
+              // var circleTxt = this.svgInput
+              //     .selectAll("text")
+              //     .data(jsonCircles)
+              //     .enter()
+              //     .append("text");
 
-              circleTxt.attr('x', 50)
-                      .attr('y', function(d){return d.y_axis})
-                      .style('color', "black")
-                      .style('font-size', "15px")
-                      .text(function(d){return d.name + ":" +d.radius});
-                    
+              // circleTxt.attr('x', 50)
+              //         .attr('y', function(d){return d.y_axis})
+              //         .style('color', "black")
+              //         .style('font-size', "15px")
+              //         .text(function(d){return d.name + ":" +d.radius});
+               ////////////draw summary/////      
 
               // step0 highlight error
               //elo score
@@ -263,13 +268,16 @@ export default {
               var sentenceList = JSON.stringify(this.inputS);
               var items = sentenceList.split(",");
               sentenceList = items.join("");
+              
               sentenceList = sentenceList.replace(/[\n]/g,"");
               sentenceList = sentenceList.replace("[", "");
-              sentenceList = sentenceList.replace("]", "");             
-              sentenceList = sentenceList.substring(0, sentenceList.length-2)
+              sentenceList = sentenceList.replace("]", "");   
+              //sentenceList.pop();          
+              sentenceList = sentenceList.substring(0, sentenceList.length-1)
+              
               sentenceList = sentenceList.replace(/\"/g, "")
-              console.log("s", sentenceList);
-              var resultSentence = sentenceList.split(/[\.!?]/);//分句子
+              console.log("s", sentenceList, typeof(sentenceList));
+              var resultSentence = sentenceList.split(/[\.]/);
               // console.log("here1", resultSentence);
               // var resultSentence = this.backdata.map(data => data.content)
 
@@ -294,9 +302,9 @@ export default {
                   //claim?
                   console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim</span>";
+                    var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #b6034d; color: white\">Claim</span>";
                     //var claimType = this.eachSentenceLabel[ind][5] 
-                    eachSentenceHighlight = strTemp + resultSentence[ind];
+                    eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
@@ -304,87 +312,87 @@ export default {
                     if (this.eachSentenceLabel[ind][0] == 1)
                     {
                       logoFlag = 1; 
-                      var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos </span>"; 
-                      eachSentenceHighlight = strTemp + resultSentence[ind];
+                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Logos </span>"; 
+                      eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       //console.log("add logos!", allHighlightTxt);
                     }
                     //pathos?
                     if (this.eachSentenceLabel[ind][1] == 1){
                       if (logoFlag == 1){
                         pathoFlag = 1; //multiple label
-                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind]; //
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + "."; //
                       //console.log("add pathos!", allHighlightTxt);
                       }
                       else {
                         pathoFlag = 1; //multiple label
-                        var strTemp = "<span style=\"background-color: #8cd390;\">Pathos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">Pathos </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                     }
                     //evidence?
                     if (this.eachSentenceLabel[ind][3] == 1){
                       if (logoFlag == 0 && pathoFlag == 0){ //single evidence
                         evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #fa8cad;\">Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #fa8cad;\">Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                         //console.log("add evidence!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                     }
                     //ethos?
                     if (this.eachSentenceLabel[ind][2] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
-                      var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos</span>";
-                      eachSentenceHighlight = strTemp + resultSentence[ind];
+                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos</span>";
+                      eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       //console.log("add ethos!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
-                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       // no other situations
                     }
                     //relevance?
                     if (this.eachSentenceLabel[ind][4] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Relevance </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Relevance </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                         //console.log("add relevance!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Rele </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Logos&Rele </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Rele&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Rele&Evi </span>";
+                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
                       }
                       //no other situations
                     }
@@ -401,7 +409,7 @@ export default {
               
               document.getElementById("userInputDiv").innerHTML = "";
               document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
-              
+              PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
               //call relationship
               //this.callRelationship(this.backdata, this.inputRelationship);
               //setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
@@ -436,6 +444,7 @@ export default {
         DataService.nodeData = this.nodeData;
         PipeService.$emit(PipeService.UPDATE_NODEVIEW);
       },
+
 
     },//all methods
 
