@@ -1,8 +1,8 @@
 <template>
   <div class="row">
     <!--select strategies-->
-    <div class="col-lg-2">
-      <div class="form-group">
+    <div class="col-lg-1">
+      <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
         <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
           <option value="0">Logical</option>
@@ -14,11 +14,11 @@
           <option value="6">Specific</option>
           <option value="7">Fluent</option>
         </select>
-      </div>
+      </div> -->
       <div class="inputRoseChart"></div>
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-lg-11">
       <!--summary view-->
       <!-- <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
         <svg id="nodelink" height="400"/>
