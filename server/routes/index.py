@@ -243,12 +243,11 @@ def register():
 @app.route('/uploadInput', methods=['POST','GET']) 
 def uploadInput():
     # userid and texts
-    # usid = ""
-    # temp = ""
-    temp = json.loads(request.data.decode("utf-8"))
-    print("receive: ", temp)
-    txt = temp["input"]
-
+    # # usid = ""
+    # # temp = ""
+    response = json.loads(request.data.decode("utf-8"))
+    txt = response["input"]["content"]
+    userid = response["input"]["userid"]
     
 
     ### TODO: add more splitting operations

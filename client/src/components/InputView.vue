@@ -79,7 +79,7 @@ export default {
         //console.log("t2", typeof(this.inputContent));
         this.editText = event.target.innerHTML;
         if (this.inputContent.length != 0){ 
-          NetService.uploadInput(this.inputContent, (x)=>{
+          NetService.uploadInput({"content": this.inputContent, "userid": this.userid}, (x)=>{
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
 
