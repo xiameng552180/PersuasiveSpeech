@@ -5,12 +5,12 @@
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
-        style="height:240px;">{{ inputContent }}</div>
+        style="height:260px;">{{ inputContent }}</div>
       </div>
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
       <div class="col-lg-2">
-        <div class="inputSummary"></div>
+        <div class="inputSummary" style="height:260px;"></div>
       </div>
     </div>
     <br />
@@ -59,13 +59,12 @@ export default {
   methods: {
     initialize() {
       this.inputLabels = DataService.inputLabels;
-      //console.log("input:", this.inputLabels['input'][0]['label']);
       
         this.svgInput = d3
           .select(".inputSummary")
           .append("svg")
           .attr("width", 180)
-          .attr("height", 220);
+          .attr("height", 250);
     },
 
     changeDivText(event) {
@@ -115,9 +114,12 @@ export default {
             /////////////////(Xingbo's try)//////////
 
             //console.log("sentence number: ", inputKeys.length);
-            
+            /////////////////(Xingbo's try)//////////
+            this.callRelationship(this.backdata, this.inputRelationship)
+            console.log("I have run callrelatinship");
+            /////////////////(Xingbo's try)//////////
             this.backdata.forEach((i, index) => {
-                //console.log("each sentence: ", i['content']);
+                console.log("each sentence: ", index, i['content']);
                 this.eloquenceScore += parseInt(i['eloquence']);
                 this.inputS.push(i['content']);
                 
@@ -138,7 +140,9 @@ export default {
                 this.inputLabels['input'][4]['label'] += parseInt(i['relevance']);
                 inputLabelAll += parseInt(i['relevance']);
                 this.inputLabels['input'][5]['label'] += parseInt(i['is_claim']);
+                //console.log("error of [5]", this.inputLabels['input'][5]['label'])
                 inputLabelAll += parseInt(i['is_claim']);
+
                 this.inputLabels['input'][6]['label'] += parseInt(i['eloquence']);
                 
                 
@@ -199,13 +203,14 @@ export default {
                 
               }
               //console.log("input summary2", labelSum);
+              //console.log("error of 5", labelSum[5]);
               var jsonCircles = [
                 {"x_axis":20,"y_axis":40,"radius":labelSum[0], "name": "logos", "color":"#7eb6e4"},
                 {"x_axis":20,"y_axis":80,"radius":labelSum[1], "name": "pathos","color":"#8cd390"},
                 {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
                 {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
                 {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
-                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color":"#b6034d"}
+                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color": "#b6034d"}
               ];
               
               var circles = this.svgInput
@@ -270,14 +275,16 @@ export default {
               sentenceList = sentenceList.replace("]", "");             
               sentenceList = sentenceList.substring(0, sentenceList.length-2)
               sentenceList = sentenceList.replace(/\"/g, "")
-              //console.log("s", sentenceList);
-              var resultSentence = sentenceList.split(/[\.!\?]/);//分句子
-              
+              console.log("s", sentenceList);
+              var resultSentence = sentenceList.split(/[\.!?]/);//分句子
+              // console.log("here1", resultSentence);
+              // var resultSentence = this.backdata.map(data => data.content)
+
               // step 2 got label and highlight content
-              //console.log("sentenceNum:", resultSentence.length);
+              console.log("sentenceNum:", resultSentence.length);
               //console.log("each sentence label: ", this.eachSentenceLabel);
               var allHighlightTxt = "";
-              console.log("here");
+              console.log("here2", resultSentence);
               resultSentence.forEach((e, ind) => {
                 //console.log("test", e, ind);
                 var eachSentenceHighlight = "";
@@ -292,11 +299,12 @@ export default {
                   var evidenceFlag = 0;
                   
                   //claim?
-                  if (this.eachSentenceLabel[ind][5] != 0){
-                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim" + claimType + "</span>";
-                    var claimType = this.eachSentenceLabel[ind][6] 
+                  console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
+                  if (this.eachSentenceLabel[ind][5] != 0){ //claim
+                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim</span>";
+                    //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //console.log("add Claim!", allHighlightTxt);
+                    // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
                     //logos?
@@ -402,16 +410,15 @@ export default {
               document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
               
               //call relationship
-              // setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
-              
-            
+              //this.callRelationship(this.backdata, this.inputRelationship);
+              //setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
           });
         }
         else {console.log("NULL input");}  
         
       },
       callRelationship(data, relationship) {
-        //console.log("call node, relationship function:", data, relationship);
+        console.log("call node, relationship function:", data, relationship.length);
         data.forEach((es) => {
           this.nodeData.push(es);
         });
@@ -419,12 +426,22 @@ export default {
         this.nodeData[0]['is_claim'] = "1";
         this.nodeData[0]['logos'] = "0";
         this.nodeData[0]['evidence'] = "0";
-        console.log("node data2:", this.nodeData);
+        // var claimNum = relationship[0][0]; //the first is claim/ default
+        // console.log("claimN:", claimNum);
+        // console.log("node data1:", this.nodeData);
+        // console.log(this.nodeData[claimNum]);
+        // this.nodeData[claimNum]['is_claim'] = 1;
+        // //this.nodeData[claimNum]['claim_type'] = "disagreement";
+        // this.nodeData[0]['logos'] = 0;
+        // this.nodeData[0]['evidence'] = 0;
+        // this.nodeData[0]['ethos'] = 0;
+        // this.nodeData[0]['pathos'] = 0;
+        // this.nodeData[0]['relevance'] = 0;
+        // console.log("node data2:", this.nodeData);
 
         //update to node view
         DataService.nodeData = this.nodeData;
         PipeService.$emit(PipeService.UPDATE_NODEVIEW);
-        //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
       },
 
     },//all methods

@@ -86,7 +86,7 @@ export default {
 
       var nodes = [],
         links = [];
-      nodes = this.nodeData.map( //dating16["dating-16"][0]["reply-info"][0]["reply_contents"].map(
+      nodes = this.nodeData.map( 
         (d, i) => {
           d.id = i;
           return d;
@@ -121,6 +121,17 @@ export default {
         .attr("stroke", "black")
         .attr("stroke-width", "2px");
 
+       // add tooltip
+      var tooltip=d3.select("body")
+          .append("div")
+          .attr("class","tooltip")
+          .style("opacity",0.0)
+          .style('z-index', 10)
+          .style('font-size', '12px')
+          .style('color', "white")
+          .style('background', "#535353")	
+          .style('border-radius', "8px");
+
       this.node = this.svg3
         .selectAll(".node")
         .data(nodes)
@@ -136,9 +147,39 @@ export default {
         .append("circle")
         .attr("r", 10)
         .style("fill", function (d, i) {
-          if (d.is_claim === "1") return "#b6034d";
+          if (d.is_claim === "1") return "white";
+          else if(d.logos == "1") return "#7eb6e4";
+          else if(d.pathos == "1") return "#8cd390";
+          else if(d.evidence == "1") return "#fa8cad";
+          else if(d.ethos == "1") return "#8f91fc";
+          else if (d.relevance == "1") return "#e05c5c";
           else return "#f8cd40";
+        })
+        .style("stroke", function (d, i){
+          if (d.is_claim == "1") return "#b6034d";
+        })
+        .style("stroke-width", function (d, i){
+          if (d.is_claim == "1") return "5";
+        })
+        // .append("title")
+        // .text(function(d){return d.content});
+        .on("mouseover", function(d){
+          tooltip
+              .html(d.content+"<br/>")
+              .style("left",(d3.event.pageX) +"px")
+              .style("top",(d3.event.pageY +20)+"px")
+              .style("opacity",1.0)
+        })
+        // .on('mousemove', function (d, i) {
+        //   console.log("mousemove");
+        //   return tooltip.style('top', (event.pageY-10)+'px').style('left',(event.pageX+10)+'px');
+        // })
+        .on('mouseout', function (d) {
+          tooltip.style("opacity",0.0);
+          //return tooltip.style('visibility', 'hidden');
         });
+
+
 
       this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
@@ -156,13 +197,13 @@ export default {
           "charge",
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
-        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)) // This force attracts nodes to the center of the svg area
-        .on("tick", this.tickedNodelink);
+        .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)); // This force attracts nodes to the center of the svg area
+        //.on("tick", this.tickedNodelink);
 
-        // for (let index = 0; index < 10; index++) {
-        //   this.simulation1.tick()
-        // }
-        // this.tickedNodelink();
+        for (let index = 0; index < 50; index++) {
+          this.simulation1.tick()
+        }
+        this.tickedNodelink();
 
     },
 
@@ -202,4 +243,30 @@ export default {
 </script>
 
 <style scoped>
+.tooltip{
+    position:absolute;
+    padding:5px;
+    width:120;
+    height:auto;
+    font-family:simsun;
+    font-size:14px;
+    color:black;
+    background-color: rgb(255,255,255);
+    border-width: 2px solid rgb(255,255,255);
+    border-radius:5px;
+}  
+
+.tooltip:after{
+    content: '';
+    position:absolute;
+    bottom:100%;
+    left:20%;
+    margin-left: -8px;
+    width:0;
+    height:0;
+    border-bottom:12px solid rgb(255,255,255);
+    border-right:12px solid transparent;
+    border-left:12px solid transparent;
+}
+
 </style>
