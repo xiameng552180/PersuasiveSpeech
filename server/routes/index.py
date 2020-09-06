@@ -278,7 +278,7 @@ def uploadInput():
     # save results
     dir_path = os.path.dirname(os.path.realpath(__file__))
     user_results_name = str(time.time()) + ".json"
-    with open(os.path.join(dir_path, "../user_inputs/"+user_results_name), "w") as f:
+    with open(os.path.join(dir_path, "../dataset/user_inputs/"+user_results_name), "w") as f:
         json.dump({
         "results": all_results,
         "relationships": relationship_pairs}, f)
