@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="row">
+      
       <div class="col-lg-10">
+        <input v-model="userid" placeholder="input user id"/>
+        </br>
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
@@ -51,6 +54,7 @@ export default {
       svgInput: null,
       widthInput: null,
       heightInput: null,
+      userid: "",
     };
   },
   mounted() {
@@ -83,7 +87,7 @@ export default {
         console.log("changeTxt2:", this.inputContent);
         // this.editText = event.target.innerHTML;
         if (this.inputContent.length != 0){ 
-          NetService.uploadInput(this.inputContent, (x)=>{
+          NetService.uploadInput({"content": this.inputContent, "userid": this.userid}, (x)=>{
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
 
@@ -110,6 +114,13 @@ export default {
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
+
+            /////////////////(Xingbo's try)//////////
+            this.callRelationship(this.backdata, this.inputRelationship)
+            console.log("I have run callrelatinship");
+
+            /////////////////(Xingbo's try)//////////
+
             //console.log("sentence number: ", inputKeys.length);
             /////////////////(Xingbo's try)//////////
             this.callRelationship(this.backdata, this.inputRelationship)
@@ -423,7 +434,7 @@ export default {
         data.forEach((es) => {
           this.nodeData.push(es);
         });
-        //console.log("node data1:", this.nodeData);
+        console.log("node data1:", this.nodeData);
         this.nodeData[0]['is_claim'] = "1";
         this.nodeData[0]['logos'] = "0";
         this.nodeData[0]['evidence'] = "0";
