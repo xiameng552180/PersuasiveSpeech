@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="row">
+      
       <div class="col-lg-10">
+        <input v-model="userid" placeholder="input user id"/>
+        </br>
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
@@ -51,6 +54,7 @@ export default {
       svgInput: null,
       widthInput: null,
       heightInput: null,
+      userid: "",
     };
   },
   mounted() {
