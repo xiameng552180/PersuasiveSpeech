@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
@@ -9,9 +9,9 @@
       </div>
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
-      <div class="col-lg-2">
+      <!-- <div class="col-lg-2">
         <div class="inputSummary" style="height:260px;"></div>
-      </div>
+      </div> -->
     </div>
     <br />
     <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
@@ -294,100 +294,103 @@ export default {
                   //claim?
                   console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim</span>";
+                    var strTemp = "<span style=\"background-color: #90ee8f; \">" + resultSentence[ind] + "</span>";
                     //var claimType = this.eachSentenceLabel[ind][5] 
-                    eachSentenceHighlight = strTemp + resultSentence[ind];
+                    eachSentenceHighlight = strTemp;
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
-                    //logos?
-                    if (this.eachSentenceLabel[ind][0] == 1)
-                    {
-                      logoFlag = 1; 
-                      var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos </span>"; 
-                      eachSentenceHighlight = strTemp + resultSentence[ind];
-                      //console.log("add logos!", allHighlightTxt);
-                    }
-                    //pathos?
-                    if (this.eachSentenceLabel[ind][1] == 1){
-                      if (logoFlag == 1){
-                        pathoFlag = 1; //multiple label
-                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind]; //
-                      //console.log("add pathos!", allHighlightTxt);
-                      }
-                      else {
-                        pathoFlag = 1; //multiple label
-                        var strTemp = "<span style=\"background-color: #8cd390;\">Pathos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                    }
-                    //evidence?
-                    if (this.eachSentenceLabel[ind][3] == 1){
-                      if (logoFlag == 0 && pathoFlag == 0){ //single evidence
-                        evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #fa8cad;\">Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                        //console.log("add evidence!", allHighlightTxt);
-                      }
-                      else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
-                        evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
-                        evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
-                        evidenceFlag = 1;
-                        var strTemp = "<span style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                    }
-                    //ethos?
-                    if (this.eachSentenceLabel[ind][2] == 1){
-                      if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
-                      var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos</span>";
-                      eachSentenceHighlight = strTemp + resultSentence[ind];
-                      //console.log("add ethos!", allHighlightTxt);
-                      }
-                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
-                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      // no other situations
-                    }
-                    //relevance?
-                    if (this.eachSentenceLabel[ind][4] == 1){
-                      if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Relevance </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                        //console.log("add relevance!", allHighlightTxt);
-                      }
-                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Rele </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span style=\"background-color: #e05c5c;\">Rele&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind];
-                      }
-                      //no other situations
-                    }
+                    var strTemp = "<span style=\"background-color: #ffd701;\">" + resultSentence[ind] + "</span>";
+                    //var claimType = this.eachSentenceLabel[ind][5] 
+                    eachSentenceHighlight = strTemp;
+                    // //logos?
+                    // if (this.eachSentenceLabel[ind][0] == 1)
+                    // {
+                    //   logoFlag = 1; 
+                    //   var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos </span>"; 
+                    //   eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   //console.log("add logos!", allHighlightTxt);
+                    // }
+                    // //pathos?
+                    // if (this.eachSentenceLabel[ind][1] == 1){
+                    //   if (logoFlag == 1){
+                    //     pathoFlag = 1; //multiple label
+                    //     var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind]; //
+                    //   //console.log("add pathos!", allHighlightTxt);
+                    //   }
+                    //   else {
+                    //     pathoFlag = 1; //multiple label
+                    //     var strTemp = "<span style=\"background-color: #8cd390;\">Pathos </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    // }
+                    // //evidence?
+                    // if (this.eachSentenceLabel[ind][3] == 1){
+                    //   if (logoFlag == 0 && pathoFlag == 0){ //single evidence
+                    //     evidenceFlag = 1;
+                    //     var strTemp = "<span style=\"background-color: #fa8cad;\">Evidence</span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //     //console.log("add evidence!", allHighlightTxt);
+                    //   }
+                    //   else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
+                    //     evidenceFlag = 1;
+                    //     var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
+                    //     evidenceFlag = 1;
+                    //     var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
+                    //     evidenceFlag = 1;
+                    //     var strTemp = "<span style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    // }
+                    // //ethos?
+                    // if (this.eachSentenceLabel[ind][2] == 1){
+                    //   if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
+                    //   var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos</span>";
+                    //   eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   //console.log("add ethos!", allHighlightTxt);
+                    //   }
+                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
+                    //     var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
+                    //     var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
+                    //     var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   // no other situations
+                    // }
+                    // //relevance?
+                    // if (this.eachSentenceLabel[ind][4] == 1){
+                    //   if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
+                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Relevance </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //     //console.log("add relevance!", allHighlightTxt);
+                    //   }
+                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
+                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
+                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Rele </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
+                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Rele&Evi </span>";
+                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
+                    //   }
+                    //   //no other situations
+                    // }
                   }
                   
                   allHighlightTxt += eachSentenceHighlight; //add each sentence to set

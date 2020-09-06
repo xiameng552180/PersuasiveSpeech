@@ -147,20 +147,20 @@ export default {
         .append("circle")
         .attr("r", 10)
         .style("fill", function (d, i) {
-          if (d.is_claim === "1") return "white";
-          else if(d.logos == "1") return "#7eb6e4";
-          else if(d.pathos == "1") return "#8cd390";
-          else if(d.evidence == "1") return "#fa8cad";
-          else if(d.ethos == "1") return "#8f91fc";
-          else if (d.relevance == "1") return "#e05c5c";
-          else return "#f8cd40";
+          if (d.is_claim === "1") return "#90ee8f";
+          // else if(d.logos == "1") return "#7eb6e4";
+          // else if(d.pathos == "1") return "#8cd390";
+          // else if(d.evidence == "1") return "#fa8cad";
+          // else if(d.ethos == "1") return "#8f91fc";
+          // else if (d.relevance == "1") return "#e05c5c";
+          else return "#ffd701";
         })
-        .style("stroke", function (d, i){
-          if (d.is_claim == "1") return "#b6034d";
-        })
-        .style("stroke-width", function (d, i){
-          if (d.is_claim == "1") return "5";
-        })
+        // .style("stroke", function (d, i){
+        //   if (d.is_claim == "1") return "#b6034d";
+        // })
+        // .style("stroke-width", function (d, i){
+        //   if (d.is_claim == "1") return "5";
+        // })
         // .append("title")
         // .text(function(d){return d.content});
         .on("mouseover", function(d){
