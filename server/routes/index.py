@@ -270,6 +270,15 @@ def uploadInput():
     relationship_pairs = run_relationship(all_results)
     print("all_results:", all_results)
     print("relationship_pairs:", relationship_pairs)
+
+    # save results
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    user_results_name = str(time.time()) + ".json"
+    with open(os.path.join(dir_path, "../dataset/user_inputs/"+user_results_name), "w") as f:
+        json.dump({
+        "results": all_results,
+        "relationships": relationship_pairs}, f)
+        
     return json.dumps({
         "results": all_results,
         "relationships": relationship_pairs
