@@ -249,6 +249,7 @@ def uploadInput():
 
     ### TODO: add more splitting operations
     sentence_list = [s.strip() for s in re.split(r'[\.\?\!]+', txt) if len(s.strip()) > 0]
+
     print(sentence_list)
     all_results = []
 

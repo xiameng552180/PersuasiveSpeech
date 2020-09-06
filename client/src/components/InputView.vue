@@ -271,6 +271,8 @@ export default {
               console.log("s", sentenceList);
               var resultSentence = sentenceList.split(/[\.!?]/);//分句子
               // console.log("here1", resultSentence);
+              // var resultSentence = this.backdata.map(data => data.content)
+
               // step 2 got label and highlight content
               console.log("sentenceNum:", resultSentence.length);
               //console.log("each sentence label: ", this.eachSentenceLabel);
@@ -295,7 +297,7 @@ export default {
                     var strTemp = "<span style=\"background-color: #b6034d; color: white\">Claim</span>";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //console.log("add Claim!", allHighlightTxt);
+                    // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
                     //logos?
