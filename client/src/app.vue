@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-3">
         <div 
           id="NodeView"
           class="card border-light mr-3 shadow-sm"
@@ -59,7 +59,7 @@
         </div>
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-7">
         <div
           id="CompareView"
           class="card border-light mr-3 shadow-sm"

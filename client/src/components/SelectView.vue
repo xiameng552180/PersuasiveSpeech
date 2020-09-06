@@ -77,6 +77,7 @@ export default {
     };
   },
   mounted() {
+    //$('#persuasiveText').text("ratio:" + '0%');
     this.chooseTopic();
     //this.addExamples();
 
@@ -102,7 +103,10 @@ export default {
       this.addExamples();
       PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
       //console.log(this.persuasiveLevel[this.selectTopic]);
-
+      // if (this.persuasiveLevel[this.selectTopic] == 'undefinded'){
+      //   $('#persuasiveText').text("ratio:" + this.persuasiveLevel[this.selectTopic]+'%');
+      // }
+      // else{}
       $("#persuasiveStyle").css("width", this.persuasiveLevel[this.selectTopic]+'%');
       $('#persuasiveText').text("ratio:" + this.persuasiveLevel[this.selectTopic]+'%');
       $('#interestTopic').text(this.selectTopic);
