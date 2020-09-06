@@ -1,6 +1,6 @@
 <template>
-<div class="row" style="height: 400px; width: 400px;">
-  <svg id="nodelink" height="400"/>
+<div class="row" style="height: 400px;">
+  <svg id="nodelink" height="400px"/>
 </div>
 </template>
 
