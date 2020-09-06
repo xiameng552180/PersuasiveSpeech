@@ -165,7 +165,7 @@ export default {
         // .text(function(d){return d.content});
         .on("mouseover", function(d){
           tooltip
-              .html(d.content+"<br/>")
+              .html(d.id +": "+ d.content+"<br/>")
               .style("left",(d3.event.pageX) +"px")
               .style("top",(d3.event.pageY +20)+"px")
               .style("opacity",1.0)
