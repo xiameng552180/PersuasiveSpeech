@@ -241,10 +241,10 @@ def register():
 
 @app.route('/uploadInput', methods=['POST','GET']) 
 def uploadInput():
-    temp = json.loads(request.data.decode("utf-8"))
-    print("receive: ", temp)
-    txt = temp["input"]
 
+    response = json.loads(request.data.decode("utf-8"))
+    txt = response["input"]["content"]
+    userid = response["input"]["userid"]
     
 
     ### TODO: add more splitting operations
@@ -273,7 +273,7 @@ def uploadInput():
 
     # save results
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    user_results_name = str(time.time()) + ".json"
+    user_results_name = userid + str(time.time()) + ".json"
     with open(os.path.join(dir_path, "../dataset/user_inputs/"+user_results_name), "w") as f:
         json.dump({
         "results": all_results,
