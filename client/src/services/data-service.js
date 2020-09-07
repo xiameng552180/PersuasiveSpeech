@@ -24,6 +24,7 @@ class Service {
       is_claim: 0,
       eloquence: 0,
     };
+    this.linkData= [],
     this.nodeData= [],
     this.inputLabels = {
       "input": [

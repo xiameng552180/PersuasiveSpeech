@@ -47,6 +47,7 @@ export default {
       inputLabels: {},
       inputRelationship: [],
       nodeData: [],
+      linkData: [],
       eachSentenceLabel: {},
       editText: null,
       svgInput: null,
@@ -89,7 +90,7 @@ export default {
           NetService.uploadInput({"content": this.inputContent, "userid": this.userid}, (x)=>{
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
-            //
+            //this.oriDataEdit = this.backdata;
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
@@ -97,14 +98,23 @@ export default {
             this.highlightWords = {}; //clear
             var currentErrWords = "";
             //console.log("sentence number: ", inputKeys.length);
-            /////////////////(Xingbo's try)//////////
             this.callRelationship(this.backdata, this.inputRelationship)
             console.log("I have run callrelatinship");
-            /////////////////(Xingbo's try)//////////
+            
+
+
             this.backdata.forEach((i, index) => {
                 console.log("each sentence: ", index, i['content']);
                 this.eloquenceScore += parseInt(i['eloquence']);
+                // if (i['content'].length > 2){
+                //   console.log("null???", i);
+                //   this.inputS.push(i['content']);
+                //   this.oriDataEdit.push(i);
+                // }else{
+                //   console.log("bad sentence.");
+                // }
                 this.inputS.push(i['content']);
+
                 
                 //console.log("eachS: ", i);
                 //this.lengthSentenList.push(i['content'].length);
@@ -179,7 +189,7 @@ export default {
             }); //end cycle
               
             
-              
+
               // step0 highlight error
               //elo score
               $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
@@ -210,16 +220,18 @@ export default {
 
               //return highlight
               // step 1 process sentences
-              var sentenceList = JSON.stringify(this.inputS);
-              var items = sentenceList.split(",");
-              sentenceList = items.join("");
-              sentenceList = sentenceList.replace(/[\n]/g,"");
-              sentenceList = sentenceList.replace("[", "");
-              sentenceList = sentenceList.replace("]", "");             
-              sentenceList = sentenceList.substring(0, sentenceList.length-2)
-              sentenceList = sentenceList.replace(/\"/g, "")
-              console.log("s", sentenceList);
-              this.resultSentence = sentenceList.split(/[\.]/);//分句子
+              //console.log("1111111",this.inputS);
+              // var sentenceList = JSON.stringify(this.inputS);
+              // var items = sentenceList.split(",");
+              // sentenceList = items.join("");
+              // sentenceList = sentenceList.replace(/[\n]/g,"");
+              // sentenceList = sentenceList.replace("[", "");
+              // sentenceList = sentenceList.replace("]", "");             
+              // sentenceList = sentenceList.substring(0, sentenceList.length-2)
+              // sentenceList = sentenceList.replace(/\"/g, "");
+              // console.log("s", sentenceList);
+              // this.resultSentence = sentenceList.split(/[\.]/);//分句子
+              this.resultSentence = this.inputS;
               // console.log("here1", resultSentence);
               // var resultSentence = this.backdata.map(data => data.content)
 
@@ -229,138 +241,54 @@ export default {
               this.allHighlightTxt = ""; //clear
               this.inputContent = this.inputContent.replace();
               console.log("here2", this.resultSentence);
-              console.log("here3 inputContent:", this.inputContent);
+              //console.log("here3 inputContent:", this.inputContent);
               this.resultSentence.forEach((e, ind) => {
                 //console.log("test", e, ind);
                 var eachSentenceHighlight = "";
                 if (e.length > 1){ //is it a sentence?
-                  var colorTxt = "";
-                  //console.log("inner sentence", ind, e);
-                  //console.log("returnLabel: ", ind, this.eachSentenceLabel[ind]);
-                  
-                  // var logoFlag = 0;
-                  // var pathoFlag = 0;
-                  // var ethoFlag = 0;
-                  // var evidenceFlag = 0;
-                  
                   //claim?
-                  console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span style =\'background-color: #90ee8f\'>" + e + "</span>" + ".";
+                    var strTemp = "<span style =\'background-color: #90ee8f\'>" + e + "</span>" + "  ";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp;
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
-                    var strTemp = "<span style = \'background-color: #ffd701\'>";
+                    var strTemp = "<span style = \'background-color: #ffd701\'>" + e + "</span>" + "  ";
                     //var claimType = this.eachSentenceLabel[ind][5] 
-                    eachSentenceHighlight = strTemp + e + "</span>"  + ".";
-                    // //logos?
-                    // if (this.eachSentenceLabel[ind][0] == 1)
-                    // {
-                    //   logoFlag = 1; 
-                    //   var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos </span>"; 
-                    //   eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   //console.log("add logos!", allHighlightTxt);
-                    // }
-                    // //pathos?
-                    // if (this.eachSentenceLabel[ind][1] == 1){
-                    //   if (logoFlag == 1){
-                    //     pathoFlag = 1; //multiple label
-                    //     var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind]; //
-                    //   //console.log("add pathos!", allHighlightTxt);
-                    //   }
-                    //   else {
-                    //     pathoFlag = 1; //multiple label
-                    //     var strTemp = "<span style=\"background-color: #8cd390;\">Pathos </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    // }
-                    // //evidence?
-                    // if (this.eachSentenceLabel[ind][3] == 1){
-                    //   if (logoFlag == 0 && pathoFlag == 0){ //single evidence
-                    //     evidenceFlag = 1;
-                    //     var strTemp = "<span style=\"background-color: #fa8cad;\">Evidence</span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //     //console.log("add evidence!", allHighlightTxt);
-                    //   }
-                    //   else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
-                    //     evidenceFlag = 1;
-                    //     var strTemp = "<span style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
-                    //     evidenceFlag = 1;
-                    //     var strTemp = "<span style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
-                    //     evidenceFlag = 1;
-                    //     var strTemp = "<span style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    // }
-                    // //ethos?
-                    // if (this.eachSentenceLabel[ind][2] == 1){
-                    //   if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
-                    //   var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos</span>";
-                    //   eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   //console.log("add ethos!", allHighlightTxt);
-                    //   }
-                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
-                    //     var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                    //     var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                    //     var strTemp = "<span style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   // no other situations
-                    // }
-                    // //relevance?
-                    // if (this.eachSentenceLabel[ind][4] == 1){
-                    //   if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Relevance </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //     //console.log("add relevance!", allHighlightTxt);
-                    //   }
-                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Logos&Rele </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                    //     var strTemp = "<span style=\"background-color: #e05c5c;\">Rele&Evi </span>";
-                    //     eachSentenceHighlight = strTemp + resultSentence[ind];
-                    //   }
-                    //   //no other situations
-                    // }
+                    eachSentenceHighlight = strTemp;
+            
                   }
-                  if (ind in this.errSentenceIndex) {
+
+                }//cycle
+                else{// length<1
+                  eachSentenceHighlight = e;
+                }
+
+                ///
+                if (ind in this.errSentenceIndex) {
                       //console.log("found err!");
                       eachSentenceHighlight = eachSentenceHighlight.replace(this.highlightWords[ind], 
                       "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + this.highlightWords[ind] + "</u>");
                   }
-                  this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
-                }//cycle
+                this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
               });
           
               
               document.getElementById("userInputDiv").innerHTML = "";
               this.inputContent = "";
               document.getElementById("userInputDiv").innerHTML = this.allHighlightTxt;
+
+
+
               PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
               //call relationship
               //this.callRelationship(this.backdata, this.inputRelationship);
               //setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
+
+
+              
+            
           });
         }
         else {console.log("NULL input");}  
@@ -369,10 +297,15 @@ export default {
       callRelationship(data, relationship) {
         console.log("call node, relationship function:", data, relationship.length);
         this.nodeData = [];
+        this.linkData = [];
         data.forEach((es) => {
           this.nodeData.push(es);
         });
-        //console.log("node data1:", this.nodeData);
+        relationship.forEach((re) => {
+          var tmpLink = {"source": data[re[1]], "target": data[re[0]]};
+          this.linkData.push(tmpLink);
+        })
+        
 
         var claimNum = relationship[0][0]; //the first is claim/ default
         if (claimNum != 0){
@@ -388,18 +321,13 @@ export default {
         }
         
         console.log("node data1:", this.nodeData);
-        // console.log(this.nodeData[claimNum]);
-        
-        // //this.nodeData[claimNum]['claim_type'] = "disagreement";
-        // this.nodeData[0]['logos'] = 0;
-        // this.nodeData[0]['evidence'] = 0;
-        // this.nodeData[0]['ethos'] = 0;
-        // this.nodeData[0]['pathos'] = 0;
-        // this.nodeData[0]['relevance'] = 0;
-        // console.log("node data2:", this.nodeData);
+        console.log("link data1:", this.linkData);
+
+
 
         //update to node view
         DataService.nodeData = this.nodeData;
+        DataService.linkData = this.linkData;
         PipeService.$emit(PipeService.UPDATE_NODEVIEW);
       },
 
