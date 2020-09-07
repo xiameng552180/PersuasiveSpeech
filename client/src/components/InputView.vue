@@ -43,7 +43,7 @@ export default {
       // errorEndIndexList: [], //all input highlight ends
       inputS: [], //all input sentences
       // lengthSentenList: [],//lenfth of each sentence
-      highlightWords: [], //high light words list
+      highlightWords: {}, //high light words list
       inputLabels: {},
       inputRelationship: [],
       nodeData: [],
@@ -55,6 +55,9 @@ export default {
       userid: "",
       allHighlightTxt: "",
       resultSentence: null,
+      startErrIndex: null,
+      endErrIndex: null,
+      errSentenceIndex: [],
     };
   },
   mounted() {
@@ -90,7 +93,9 @@ export default {
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
-             this.inputS = []; //clear
+            this.inputS = []; //clear
+            this.highlightWords = {}; //clear
+            var currentErrWords = "";
             //console.log("sentence number: ", inputKeys.length);
             /////////////////(Xingbo's try)//////////
             this.callRelationship(this.backdata, this.inputRelationship)
@@ -156,10 +161,12 @@ export default {
                 if (i['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");
                 }else{
+                  this.errSentenceIndex.push(index);
                   this.eloquenceErrorList.push(i['elo_info'][2][0]['message']); //error message
-                  var startTemp = i['elo_info'][2][0]['contextoffset'];
-                  var endTemp = i['elo_info'][2][0]['errorlength'];
-                  this.highlightWords.push(i['content'].substring(startTemp, endTemp+1));
+                  this.startErrIndex = i['elo_info'][2][0]['contextoffset'];
+                  this.endErrIndex = i['elo_info'][2][0]['errorlength'];
+                  currentErrWords = i['content'].substring(this.startErrIndex, this.endErrIndex + 1);
+                  this.highlightWords[index] = i['content'].substring(this.startErrIndex, this.endErrIndex+1);
                 }
                 //console.log("inputLabels inputview:", this.inputLabels);
                 //update input
@@ -167,54 +174,12 @@ export default {
                 PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
                 PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
                 PipeService.$emit(PipeService.UPDATE_NODEVIEW);
-                
+                //console.log("current Err Words:", currentErrWords);
+
             }); //end cycle
               
-              //draw summary
-              //console.log("input summary1", this.eachSentenceLabel, this.inputS.length);
-              var labelSum = new Array(6).fill(0);
-              for(var i = 0; i < this.inputS.length; i++){
-                //console.log(this.eachSentenceLabel[i.toString()]);
-                labelSum.forEach((e, ind)=>{
-                  labelSum[ind] += parseInt(this.eachSentenceLabel[i.toString()][ind]);
-                })
-                
-              }
-              //console.log("input summary2", labelSum);
-              //console.log("error of 5", labelSum[5]);
-              var jsonCircles = [
-                {"x_axis":20,"y_axis":40,"radius":labelSum[0], "name": "logos", "color":"#7eb6e4"},
-                {"x_axis":20,"y_axis":80,"radius":labelSum[1], "name": "pathos","color":"#8cd390"},
-                {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
-                {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
-                {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
-                {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color": "#b6034d"}
-              ];
+            
               
-              var circles = this.svgInput
-                  .selectAll("circle")
-                  .data(jsonCircles)
-                  .enter()
-                  .append("circle");
-
-              circles.attr("cx", function(d){return d.x_axis})
-                      .attr("cy", function(d){return d.y_axis})
-                      .attr("r", function(d){return d.radius*3 + 5;})
-                      .style("fill", function(d){return d.color;});
-
-              var circleTxt = this.svgInput
-                  .selectAll("text")
-                  .data(jsonCircles)
-                  .enter()
-                  .append("text");
-
-              circleTxt.attr('x', 50)
-                      .attr('y', function(d){return d.y_axis})
-                      .style('color', "black")
-                      .style('font-size', "15px")
-                      .text(function(d){return d.name + ":" +d.radius});
-                    
-
               // step0 highlight error
               //elo score
               $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
@@ -379,15 +344,19 @@ export default {
                     //   //no other situations
                     // }
                   }
-                  
+                  if (ind in this.errSentenceIndex) {
+                      console.log("found err!");
+                      eachSentenceHighlight = eachSentenceHighlight.replace(this.highlightWords[ind], 
+                      "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + this.highlightWords[ind] + "</u>");
+                  }
                   this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
                 }//cycle
               });
-              this.highlightWords.forEach((err) =>{
-                console.log("eachError:", err);
-                this.allHighlightTxt = this.allHighlightTxt.replace(err, 
-                  "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
-              })
+              // this.highlightWords.forEach((err) =>{
+              //   console.log("eachError:", err);
+              //   this.allHighlightTxt = this.allHighlightTxt.replace(err, 
+              //     "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
+              // })
               
               document.getElementById("userInputDiv").innerHTML = "";
               this.inputContent = "";
