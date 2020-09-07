@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       
-      <div class="col-lg-10" >
+      <div class="col-lg-10" style="overflow:scroll;">
         <input v-model="userid" placeholder="input user id"/>
         </br>
         <label>Claim: </label> 
@@ -19,7 +19,8 @@
     <br />
     <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
       &nbsp;&nbsp;&nbsp;
-  <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess" overflow:scroll></p>
+  <label id="eloquenceScore">eloquence: 0</label> 
+  <p id="errorMess" style="overflow:scroll;"></p>
 
   </div>
 </template>
