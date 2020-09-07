@@ -55,6 +55,8 @@ export default {
       widthInput: null,
       heightInput: null,
       userid: "",
+      allHighlightTxt: "",
+      resultSentence: null,
     };
   },
   mounted() {
@@ -73,7 +75,30 @@ export default {
 
     changeDivText(event) {
         this.editText = event.target.innerText;
-        console.log("changeTxt:", this.editText);
+        //console.log("changeTxt:", this.editText);
+        //多次upload 去掉label hard processing
+        // if (this.editText.search("Claim") != -1){
+        //   this.editText = this.editText.replace("[Claim]", "");
+        // }
+        if (this.editText.search("[Claim]") != -1){
+          this.editText = this.editText.replace(/\[Claim[[\d]*\]/g, "");
+        }
+        if (this.editText.search("[Logos]") != -1){
+          this.editText = this.editText.replace(/\[Logos[[\d]*\]/g, "");
+        }
+        if (this.editText.search("[Pathos]") != -1){
+          this.editText = this.editText.replace(/\[Pathos[[\d]*\]/g, "");
+        }
+        if (this.editText.search("Ethos") != -1){
+          this.editText = this.editText.replace(/\[Ethos[[\d]*\]/g, "");
+        }
+        if (this.editText.search("Evidence") != -1){
+          this.editText = this.editText.replace(/\[Evidence[[\d]*\]/g, "");
+        }
+        if (this.editText.search("Relevance") != -1){
+          this.editText = this.editText.replace(/\[Relevance[[\d]*\]/g, "");
+        }
+
     },
 
     updateInput: function (event) {
@@ -83,7 +108,8 @@ export default {
         // var obj = document.getElementsByClassName("addLabelTag");
         // obj.innerHTML = "";//删除div内容
 
-        this.inputContent = this.editText;
+        this.inputContent = this.editText; 
+        //console.log("jiequ1", this.inputContent.match(\span(\S*)span>\)[1]);
         console.log("changeTxt2:", this.inputContent);
         // this.editText = event.target.innerHTML;
         if (this.inputContent.length != 0){ 
@@ -91,26 +117,6 @@ export default {
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
 
-            /////////////////Node view call//////////
-            //call relationship
-            //this.callRelationship(this.backdata, this.inputRelationship);
-            //console.log("call node, relationship function:", data, relationship);
-            // this.backdata.forEach((es) => {
-            //   this.nodeData.push(es);
-            // });
-            // //console.log("node data1:", this.nodeData);
-            // this.nodeData[0]['is_claim'] = "1";
-            // this.nodeData[0]['logos'] = "0";
-            // this.nodeData[0]['evidence'] = "0";
-            // this.nodeData[0]['claim_type'] = "none";
-            // console.log("node data2:", this.nodeData);
-
-            // //update to node view
-            // //DataService.nodeData = this.nodeData;
-            // PipeService.$emit(PipeService.UPDATE_NODEVIEW);
-            // //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
-             /////////////////Node view call//////////
-            //
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
@@ -120,12 +126,8 @@ export default {
             console.log("I have run callrelatinship");
 
             /////////////////(Xingbo's try)//////////
-
+            this.inputS = []; //clear
             //console.log("sentence number: ", inputKeys.length);
-            /////////////////(Xingbo's try)//////////
-            this.callRelationship(this.backdata, this.inputRelationship)
-            console.log("I have run callrelatinship");
-            /////////////////(Xingbo's try)//////////
             this.backdata.forEach((i, index) => {
                 console.log("each sentence: ", index, i['content']);
                 this.eloquenceScore += parseInt(i['eloquence']);
@@ -202,6 +204,138 @@ export default {
             }); //end cycle
               
               ////////////draw summary/////
+              // var width = 180, height = 250 // width and height of svgInput
+              // // draw back rose
+              // var pie = d3.pie().value(function (d) {
+              //   return 1; // equal arc
+              // });
+              // var data_ready1 = pie(d3.entries(d3.range(6)));
+
+              // this.svgInput
+              //   .selectAll("whatever")
+              //   .data(data_ready1)
+              //   .enter()
+              //   .append("path")
+              //   .attr("transform", () => {
+              //     return "translate(" + width / 2 + "," + height / 2 + ")";
+              //   })
+              //   .attr("d", d3.arc().innerRadius(0).outerRadius(40))
+              //   .attr("fill", "lightblue")
+              //   .attr("stroke", "black")
+              //   .style("stroke-width", "1px")
+              //   .style("opacity", 0.7);
+
+              // // draw front rose
+              // var Rosesum = [
+              //   { feature: "is_claim", label: 0 },
+              //   { feature: "logos", label: 0 },
+              //   { feature: "pathos", label: 0 },
+              //   { feature: "ethos", label: 0 },
+              //   { feature: "evidence", label: 0 },
+              //   { feature: "relevance", label: 0 },
+              // ];
+
+              // Rosesum[0].label += this.inputLabels[5].label;
+              // Rosesum[1].label += this.inputLabels[0].label;
+              // Rosesum[2].label += this.inputLabels[1].label;
+              // Rosesum[3].label += this.inputLabels[2].label;
+              // Rosesum[4].label += this.inputLabels[3].label;
+              // Rosesum[5].label += this.inputLabels[4].label;
+
+              // Rosesum = Rosesum.map((d) => {
+              //   return {
+              //     feature: d.feature,
+              //     label: d.label,
+              //     radius: Math.sqrt(d.label) / Math.PI,
+              //   };
+              // });
+
+              // var total_label = 0;
+              // Rosesum.forEach((element) => {
+              //   total_label += element.label;
+              // });
+              // // console.log(Rosesum);
+
+              // var total_r = Math.sqrt(total_label) / Math.PI;
+
+              // // set inner radius scale:
+              // var outerR = 40;
+              // var innerRdomain = Rosesum.map((d) => d.radius);
+              // var innerRScale = d3
+              //   .scaleLinear()
+              //   .domain([d3.min(innerRdomain), total_r])
+              //   .range([0, outerR]);
+
+              // // Compute the position of each group on the pie:
+              // var pie = d3.pie().value(function (d) {
+              //   return 1; // equal arc
+              // });
+              // var data_ready2 = pie(d3.entries(Rosesum));
+
+              // // set color scale:
+              // var color = d3
+              //   .scaleOrdinal()
+              //   .domain([
+              //     "logos",
+              //     "pathos",
+              //     "ethos",
+              //     "relevance",
+              //     "evidence",
+              //     "is_claim",
+              //   ])
+              //   .range([
+              //     "#7eb6e4",
+              //     "#8cd390",
+              //     "#8f91fc",
+              //     "#e05c5c",
+              //     "#fa8cad",
+              //     "#b6034d",
+              //   ]);
+
+              // // set tooltips
+              // var div = d3
+              //   .select("body")
+              //   .append("div")
+              //   .attr("class", "tooltip")
+              //   .style("opacity", 0);
+
+              // this.svgInput
+              //   .selectAll("whatever")
+              //   .data(data_ready2)
+              //   .enter()
+              //   .append("path")
+              //   .attr("transform", () => {
+              //     return "translate(" + width / 2 + "," + height / 2 + ")";
+              //   })
+              //   .attr(
+              //     "d",
+              //     d3
+              //       .arc()
+              //       .innerRadius(0)
+              //       .outerRadius((d) => {
+              //         // console.log(d);
+              //         return innerRScale(d.data.value.radius);
+              //       })
+              //   )
+              //   .attr("fill", (d) => {
+              //     return color(d.data.value.feature);
+              //   })
+              //   .attr("stroke", "black")
+              //   .style("stroke-width", "1px")
+              //   .style("opacity", 0.7)
+              //   .on("mouseover", (d) => {
+              //     div.transition().duration(200).style("opacity", 0.7);
+              //     div
+              //       .html(d.data.value.feature + ":" + d.data.value.label)
+              //       .style("left", d3.event.pageX + "px")
+              //       .style("top", d3.event.pageY - 28 + "px");
+              //   })
+              //   .on("mouseout", function (d) {
+              //     div.transition().duration(500).style("opacity", 0);
+              //     // d3.selectAll(".tooltip").remove();
+              //   });
+                ////////////draw summary/////
+
               //console.log("input summary1", this.eachSentenceLabel, this.inputS.length);
               // var labelSum = new Array(6).fill(0);
               // for(var i = 0; i < this.inputS.length; i++){
@@ -288,16 +422,22 @@ export default {
               
               sentenceList = sentenceList.replace(/\"/g, "")
               console.log("s", sentenceList, typeof(sentenceList));
-              var resultSentence = sentenceList.split(/[\.]/);
+              this.resultSentence = sentenceList.split(/[\.]/);
               // console.log("here1", resultSentence);
               // var resultSentence = this.backdata.map(data => data.content)
 
               // step 2 got label and highlight content
-              console.log("sentenceNum:", resultSentence.length);
+              console.log("sentenceNum:", this.resultSentence.length);
               //console.log("each sentence label: ", this.eachSentenceLabel);
-              var allHighlightTxt = "";
-              console.log("here2", resultSentence);
-              resultSentence.forEach((e, ind) => {
+
+              //clear
+              this.allHighlightTxt = "";//clear
+              //this.inputContent = this.inputContent.replace();
+              
+              
+              console.log("here2", this.resultSentence);
+              console.log("here3 inputContent:", this.inputContent);
+              this.resultSentence.forEach((e, ind) => {
                 //console.log("test", e, ind);
                 var eachSentenceHighlight = "";
                 if (e.length > 1){ //is it a sentence?
@@ -313,9 +453,9 @@ export default {
                   //claim?
                   console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #b6034d; color: white\">Claim</span>";
+                    var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #b6034d; color: white\">[Claim]</span>";
                     //var claimType = this.eachSentenceLabel[ind][5] 
-                    eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                    eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
@@ -323,104 +463,105 @@ export default {
                     if (this.eachSentenceLabel[ind][0] == 1)
                     {
                       logoFlag = 1; 
-                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Logos </span>"; 
-                      eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Logos]</span>"; 
+                      eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       //console.log("add logos!", allHighlightTxt);
                     }
                     //pathos?
                     if (this.eachSentenceLabel[ind][1] == 1){
                       if (logoFlag == 1){
                         pathoFlag = 1; //multiple label
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Pathos&Logos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + "."; //
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Pathos&Logos]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + "."; //
                       //console.log("add pathos!", allHighlightTxt);
                       }
                       else {
                         pathoFlag = 1; //multiple label
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">Pathos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">[Pathos]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                     }
                     //evidence?
                     if (this.eachSentenceLabel[ind][3] == 1){
                       if (logoFlag == 0 && pathoFlag == 0){ //single evidence
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #fa8cad;\">Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #fa8cad;\">[Evidence]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                         //console.log("add evidence!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Pathos&Logos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Pathos&Logos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">Logos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Logos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">Pathos&Evidence</span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">[Pathos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                     }
                     //ethos?
                     if (this.eachSentenceLabel[ind][2] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
-                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos</span>";
-                      eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos]</span>";
+                      eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       //console.log("add ethos!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos&Logos </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos&Logos]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos&Logos&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos&Logos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">Ethos&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       // no other situations
                     }
                     //relevance?
                     if (this.eachSentenceLabel[ind][4] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Relevance </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Relevance]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                         //console.log("add relevance!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Logos&Evi&Rele </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Logos&Evi.&Rele.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Logos&Rele </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Logos&Rele.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">Rele&Evi </span>";
-                        eachSentenceHighlight = strTemp + resultSentence[ind] + ".";
+                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Relevance&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       //no other situations
                     }
                   }
                   
-                  allHighlightTxt += eachSentenceHighlight; //add each sentence to set
+                  this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
                 }//cycle
               });
               this.highlightWords.forEach((err) =>{
                 console.log("eachError:", err);
-                allHighlightTxt = allHighlightTxt.replace(err, 
+                this.allHighlightTxt = this.allHighlightTxt.replace(err, 
                   "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
               })
               
               document.getElementById("userInputDiv").innerHTML = "";
-              document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
-              PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
+              this.inputContent = "";
+              document.getElementById("userInputDiv").innerHTML = this.allHighlightTxt;
+              //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
               //call relationship
               //this.callRelationship(this.backdata, this.inputRelationship);
               //setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
@@ -431,6 +572,7 @@ export default {
       },
       callRelationship(data, relationship) {
         console.log("call node, relationship function:", data, relationship.length);
+        this.nodeData = [];
         data.forEach((es) => {
           this.nodeData.push(es);
         });

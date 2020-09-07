@@ -616,7 +616,7 @@ export default {
         // console.log(examplesum[d.feature] - d.label);
         return {
           feature: d.feature,
-          label: this.examplesum[d.feature] - d.label,
+          label: d.label - this.examplesum[d.feature] ,
         };
       });
       // console.log(data);
@@ -670,7 +670,7 @@ export default {
         .data(data)
         .enter()
         .append("text")
-        .text((d) => d.label)
+        .text((d) => d.label + "%")
         .attr("x", (d) => x(d.label))
         .attr("y", function (d) {
           return y(d.feature) + y.bandwidth() / 2;

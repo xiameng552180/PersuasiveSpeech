@@ -245,6 +245,9 @@ def uploadInput():
     # userid and texts
     # # usid = ""
     # # temp = ""
+    # reg = re.compile('<[^>]*')
+    # content = reg.sub('', request)
+
     response = json.loads(request.data.decode("utf-8"))
     print("response in the backend",response)
     txt = response["input"]["content"]

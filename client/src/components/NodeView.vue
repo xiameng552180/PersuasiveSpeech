@@ -25,8 +25,9 @@ export default {
   mounted() {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
+      this.svg3.selectAll("*").remove();
       this.nodeData = DataService.nodeData;
-      console.log("nodeview1: ", this.nodeData);
+      //console.log("nodeview1: ", this.nodeData);
     //   //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
     //   //console.log("drawNode!!!");
       this.drawNodeLink(this.svg3);
@@ -40,7 +41,7 @@ export default {
   methods: {
     initialize() {
       this.nodeData = DataService.nodeData;
-      console.log("nodeview12: ", this.nodeData);
+      //console.log("nodeview12: ", this.nodeData);
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
       this.height3 = d3
         .select("#nodelink")
