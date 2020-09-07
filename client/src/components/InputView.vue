@@ -246,15 +246,15 @@ export default {
                   //claim?
                   console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span style=\"background-color: #90ee8f; \">" + this.resultSentence[ind] + "</span>" + ".";
+                    var strTemp = "<span style =\'background-color: #90ee8f\'>" + e + "</span>" + ".";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp;
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
-                    var strTemp = "<span style=\"background-color: #ffd701;\">" + this.resultSentence[ind] + "</span>"  + ".";
+                    var strTemp = "<span style = \'background-color: #ffd701\'>";
                     //var claimType = this.eachSentenceLabel[ind][5] 
-                    eachSentenceHighlight = strTemp;
+                    eachSentenceHighlight = strTemp + e + "</span>"  + ".";
                     // //logos?
                     // if (this.eachSentenceLabel[ind][0] == 1)
                     // {
@@ -345,18 +345,14 @@ export default {
                     // }
                   }
                   if (ind in this.errSentenceIndex) {
-                      console.log("found err!");
+                      //console.log("found err!");
                       eachSentenceHighlight = eachSentenceHighlight.replace(this.highlightWords[ind], 
                       "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + this.highlightWords[ind] + "</u>");
                   }
                   this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
                 }//cycle
               });
-              // this.highlightWords.forEach((err) =>{
-              //   console.log("eachError:", err);
-              //   this.allHighlightTxt = this.allHighlightTxt.replace(err, 
-              //     "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
-              // })
+          
               
               document.getElementById("userInputDiv").innerHTML = "";
               this.inputContent = "";
@@ -377,14 +373,23 @@ export default {
           this.nodeData.push(es);
         });
         //console.log("node data1:", this.nodeData);
-        this.nodeData[0]['is_claim'] = "1";
-        this.nodeData[0]['logos'] = "0";
-        this.nodeData[0]['evidence'] = "0";
-        // var claimNum = relationship[0][0]; //the first is claim/ default
-        // console.log("claimN:", claimNum);
-        // console.log("node data1:", this.nodeData);
+
+        var claimNum = relationship[0][0]; //the first is claim/ default
+        if (claimNum != 0){
+          console.log("claimN:", claimNum);
+          this.nodeData[claimNum]['is_claim'] = "1";
+          this.nodeData[claimNum]['logos'] = 0;
+          this.nodeData[claimNum]['evidence'] = 0;
+        }
+        else{
+          this.nodeData[0]['is_claim'] = "1";
+          this.nodeData[0]['logos'] = 0;
+          this.nodeData[0]['evidence'] = 0;
+        }
+        
+        console.log("node data1:", this.nodeData);
         // console.log(this.nodeData[claimNum]);
-        // this.nodeData[claimNum]['is_claim'] = 1;
+        
         // //this.nodeData[claimNum]['claim_type'] = "disagreement";
         // this.nodeData[0]['logos'] = 0;
         // this.nodeData[0]['evidence'] = 0;

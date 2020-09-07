@@ -9,7 +9,7 @@ import * as d3 from "d3";
 import NetService from "../services/net-service";
 import DataService from "../services/data-service";
 import PipeService from "../services/pipe-service";
-import dating16 from "../dating-16.json"; //for nodelink
+
 
 export default {
   name: "NodeView",
@@ -44,7 +44,7 @@ export default {
   methods: {
     initialize() {
       this.nodeData = DataService.nodeData;
-      console.log("nodeview12: ", this.nodeData);
+      console.log("nodeview2: ", this.nodeData);
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
       this.height3 = d3
         .select("#nodelink")
@@ -187,6 +187,7 @@ export default {
 
       this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
+        .force('collide', d3.forceCollide().radius(15))
         .force(
           "link",
           d3
