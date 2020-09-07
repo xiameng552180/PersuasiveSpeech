@@ -50,6 +50,7 @@ export default {
       inputLabels: {},
       inputRelationship: [],
       nodeData: [],
+      linkData: [],
       eachSentenceLabel: {},
       editText: null,
       svgInput: null,
@@ -61,6 +62,7 @@ export default {
       startErrIndex: null,
       endErrIndex: null,
       errSentenceIndex: [],
+      
     };
   },
   mounted() {
@@ -124,12 +126,11 @@ export default {
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
-
-            /////////////////(Xingbo's try)//////////
+            //call relationship
             this.callRelationship(this.backdata, this.inputRelationship)
             console.log("I have run callrelatinship");
 
-            /////////////////(Xingbo's try)//////////
+
             this.inputS = []; //clear
             this.highlightWords = {}; //clear
             var currentErrWords = "";
@@ -425,7 +426,7 @@ export default {
                     {
                       logoFlag = 1; 
                       var strTemp = "<span style=\"background-color: #7eb6e4;\">[Logos]</span>"; 
-                      eachSentenceHighlight = strTemp + e + ".";
+                      eachSentenceHighlight = strTemp + e + ". ";
                         
                       //console.log("add logos!", allHighlightTxt);
                     }
@@ -434,7 +435,7 @@ export default {
                       if (logoFlag == 1){
                         pathoFlag = 1; //multiple label
                         var strTemp = "<span style=\"background-color: #7eb6e4;\">[Pathos&Logos]</span>";
-                        eachSentenceHighlight = strTemp + e + "."; //
+                        eachSentenceHighlight = strTemp + e + ". "; //
                         
                       //console.log("add pathos!", allHighlightTxt);
                       }
@@ -442,7 +443,7 @@ export default {
                         pathoFlag = 1; //multiple label
                         var strTemp = "<span style=\"background-color: #8cd390;\">[Pathos]</span>";
                         
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                         
                       }
                     }
@@ -452,14 +453,14 @@ export default {
                         evidenceFlag = 1;
                         var strTemp = "<span style=\"background-color: #fa8cad;\">[Evidence]</span>";
                         
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                         
                         //console.log("add evidence!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
                         evidenceFlag = 1;
                         var strTemp = "<span style=\"background-color: #7eb6e4;\">[Pathos&Logos&Evi.]</span>";
-                          eachSentenceHighlight = strTemp + e + ".";
+                          eachSentenceHighlight = strTemp + e + ". ";
                         
                       }
                       else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
@@ -467,13 +468,13 @@ export default {
                         var strTemp = "<span style=\"background-color: #7eb6e4;\">[Logos&Evi.]</span>";
                         
     
-                          eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                          eachSentenceHighlight = strTemp + this.resultSentence[ind] + ". ";
                         
                       }
                       else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
                         evidenceFlag = 1;
                         var strTemp = "<span style=\"background-color: #8cd390;\">[Pathos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                         
                       }
                     }
@@ -481,21 +482,21 @@ export default {
                     if (this.eachSentenceLabel[ind][2] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
                         var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos]</span>";
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                         
                       //console.log("add ethos!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
                         var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos&Logos]</span>";
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
                         var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos&Logos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
                         var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + e + ".";
+                        eachSentenceHighlight = strTemp + e + ". ";
                       }
                       // no other situations
                     }
@@ -503,7 +504,7 @@ export default {
                     if (this.eachSentenceLabel[ind][4] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
                         var strTemp = "<span style=\"background-color: #e05c5c;\">[Relevance]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ". ";
                         //console.log("add relevance!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
@@ -512,11 +513,11 @@ export default {
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
                         var strTemp = "<span style=\"background-color: #e05c5c;\">[Logos&Rele.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ". ";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
                         var strTemp = "<span style=\"background-color: #e05c5c;\">[Relevance&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ". ";
                       }
                       //no other situations
                     }// relevance
@@ -525,14 +526,18 @@ export default {
                     
                   }//is premise
 
-                  //error underline for each sentence
-                  if (ind in this.errSentenceIndex) {
-                      console.log("found err!");
-                      eachSentenceHighlight = eachSentenceHighlight.replace(this.highlightWords[ind], 
-                      "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + this.highlightWords[ind] + "</u>");
-                  }
-                  this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
+                  
                 }//cycle
+                else{// length<1
+                  eachSentenceHighlight = e;
+                }
+                //error underline for each sentence
+                if (ind in this.errSentenceIndex) {
+                    console.log("found err!");
+                    eachSentenceHighlight = eachSentenceHighlight.replace(this.highlightWords[ind], 
+                    "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + this.highlightWords[ind] + "</u>");
+                }
+                this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
               });
               
               
@@ -557,28 +562,34 @@ export default {
       callRelationship(data, relationship) {
         console.log("call node, relationship function:", data, relationship.length);
         this.nodeData = [];
+        this.linkData = [];
         data.forEach((es) => {
           this.nodeData.push(es);
         });
+        relationship.forEach((re) => {
+          var tmpLink = {"source": data[re[1]], "target": data[re[0]]};
+          this.linkData.push(tmpLink);
+        })
+
+        //the first is claim/ default
+        var claimNum = relationship[0][0]; 
+        if (claimNum != 0){
+          console.log("claimN:", claimNum);
+          this.nodeData[claimNum]['is_claim'] = "1";
+          this.nodeData[claimNum]['logos'] = 0;
+          this.nodeData[claimNum]['evidence'] = 0;
+        }
+        else{
+          this.nodeData[0]['is_claim'] = "1";
+          this.nodeData[0]['logos'] = 0;
+          this.nodeData[0]['evidence'] = 0;
+        }
         console.log("node data1:", this.nodeData);
-        this.nodeData[0]['is_claim'] = "1";
-        this.nodeData[0]['logos'] = "0";
-        this.nodeData[0]['evidence'] = "0";
-        // var claimNum = relationship[0][0]; //the first is claim/ default
-        // console.log("claimN:", claimNum);
-        // console.log("node data1:", this.nodeData);
-        // console.log(this.nodeData[claimNum]);
-        // this.nodeData[claimNum]['is_claim'] = 1;
-        // //this.nodeData[claimNum]['claim_type'] = "disagreement";
-        // this.nodeData[0]['logos'] = 0;
-        // this.nodeData[0]['evidence'] = 0;
-        // this.nodeData[0]['ethos'] = 0;
-        // this.nodeData[0]['pathos'] = 0;
-        // this.nodeData[0]['relevance'] = 0;
-        // console.log("node data2:", this.nodeData);
+        console.log("link data1:", this.linkData);
 
         //update to node view
         DataService.nodeData = this.nodeData;
+        DataService.linkData = this.linkData;
         PipeService.$emit(PipeService.UPDATE_NODEVIEW);
       },
 

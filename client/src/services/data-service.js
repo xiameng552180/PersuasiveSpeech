@@ -25,6 +25,7 @@ class Service {
       eloquence: 0,
     };
     this.nodeData= [],
+    this.linkData= [],
     this.inputLabels = {
       "input": [
         { feature: "logos", label: 0 },
