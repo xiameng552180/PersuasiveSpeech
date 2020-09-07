@@ -184,6 +184,7 @@ export default {
 
       this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
+        .force('collide', d3.forceCollide().radius(15))
         .force(
           "link",
           d3
@@ -198,10 +199,11 @@ export default {
           "charge",
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
+        
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)); // This force attracts nodes to the center of the svg area
         //.on("tick", this.tickedNodelink);
 
-        for (let index = 0; index < 50; index++) {
+        for (let index = 0; index < 200; index++) {
           this.simulation1.tick()
         }
         this.tickedNodelink();
