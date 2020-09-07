@@ -6,7 +6,7 @@
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
-        style="height:260px;">{{ inputContent }}</div>
+        style="height:260px; font-size: 20px">{{ inputContent }}</div>
       </div>
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
