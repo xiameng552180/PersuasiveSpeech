@@ -13,7 +13,7 @@
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
       <div class="col-lg-2">
-        <!-- <div class="inputSummary" style="height:260px;"></div> -->
+        <div class="inputSummary" style="height:260px;"></div>
       </div>
     </div>
     <br />
@@ -70,11 +70,11 @@ export default {
     initialize() {
       this.inputLabels = DataService.inputLabels;
       
-        this.svgInput = d3
-          .select(".inputSummary")
-          .append("svg")
-          .attr("width", 180)
-          .attr("height", 250);
+      this.svgInput = d3
+        .select(".inputSummary")
+        .append("svg")
+        .attr("width", 180)
+        .attr("height", 250);
     },
 
     changeDivText(event) {
@@ -213,7 +213,142 @@ export default {
                 console.log("current Err Words:", currentErrWords);
             }); //end cycle
               
-            
+              //draw summary
+              ////////////draw summary/////
+
+              var width = 180, height = 250; // width and height of svgInput
+              // draw back rose
+              var pie = d3.pie().value(function (d) {
+                  return 1; // equal arc
+              });
+              var data_ready1 = pie(d3.entries(d3.range(6)));
+
+              this.svgInput
+                .selectAll("whatever")
+                .data(data_ready1)
+                .enter()
+                .append("path")
+                .attr("transform", () => {
+                  return "translate(" + width / 2 + "," + height / 2 + ")";
+                })
+                .attr("d", d3.arc().innerRadius(0).outerRadius(40))
+                .attr("fill", "lightblue")
+                .attr("stroke", "black")
+                .style("stroke-width", "1px")
+                .style("opacity", 0.7);
+
+              // draw front rose
+              var Rosesum = [
+                { feature: "is_claim", label: 0 },
+                { feature: "logos", label: 0 },
+                { feature: "pathos", label: 0 },
+                { feature: "ethos", label: 0 },
+                { feature: "evidence", label: 0 },
+                { feature: "relevance", label: 0 },
+              ];
+
+              Rosesum[0].label += this.inputLabels['input'][5]['label'];
+              Rosesum[1].label += this.inputLabels['input'][0]['label'];
+              Rosesum[2].label += this.inputLabels['input'][1]['label'];
+              Rosesum[3].label += this.inputLabels['input'][2]['label'];
+              Rosesum[4].label += this.inputLabels['input'][3]['label'];
+              Rosesum[5].label += this.inputLabels['input'][4]['label'];
+
+              Rosesum = Rosesum.map((d) => {
+                return {
+                  feature: d.feature,
+                  label: d.label,
+                  radius: Math.sqrt(d.label) / Math.PI,
+                };
+              });
+
+              var total_label = 0;
+              Rosesum.forEach((element) => {
+                total_label += element.label;
+              });
+              // console.log(Rosesum);
+
+              var total_r = Math.sqrt(total_label) / Math.PI;
+
+              // set inner radius scale:
+              var outerR = 40;
+              var innerRdomain = Rosesum.map((d) => d.radius);
+              var innerRScale = d3
+                .scaleLinear()
+                .domain([d3.min(innerRdomain), total_r])
+                .range([0, outerR]);
+
+              // Compute the position of each group on the pie:
+              var pie = d3.pie().value(function (d) {
+                return 1; // equal arc
+              });
+              var data_ready2 = pie(d3.entries(Rosesum));
+
+              // set color scale:
+              var color = d3
+                .scaleOrdinal()
+                .domain([
+                  "logos",
+                  "pathos",
+                  "ethos",
+                  "relevance",
+                  "evidence",
+                  "is_claim",
+                ])
+                .range([
+                  "#7eb6e4",
+                  "#8cd390",
+                  "#8f91fc",
+                  "#e05c5c",
+                  "#fa8cad",
+                  "#b6034d",
+                ]);
+
+              // set tooltips
+              var div = d3
+                .select("body")
+                .append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+              this.svgInput
+                .selectAll("whatever")
+                .data(data_ready2)
+                .enter()
+                .append("path")
+                .attr("transform", () => {
+                  return "translate(" + width / 2 + "," + height / 2 + ")";
+                })
+                .attr(
+                  "d",
+                  d3
+                    .arc()
+                    .innerRadius(0)
+                    .outerRadius((d) => {
+                      // console.log(d);
+                      return innerRScale(d.data.value.radius);
+                    })
+                )
+                .attr("fill", (d) => {
+                  return color(d.data.value.feature);
+                })
+                .attr("stroke", "black")
+                .style("stroke-width", "1px")
+                .style("opacity", 0.7)
+                .on("mouseover", (d) => {
+                  div.transition().duration(200).style("opacity", 0.7);
+                  div
+                    .html(d.data.value.feature + ":" + d.data.value.label)
+                    .style("left", d3.event.pageX + "px")
+                    .style("top", d3.event.pageY - 28 + "px");
+                })
+                .on("mouseout", function (d) {
+                  div.transition().duration(500).style("opacity", 0);
+                  // d3.selectAll(".tooltip").remove();
+                });
+
+
+              //draw summary end
             
               // step0 highlight error
               //elo score
