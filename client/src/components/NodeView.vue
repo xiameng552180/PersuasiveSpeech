@@ -53,7 +53,7 @@ export default {
         .attr("height", this.height3);
     },
     drawNodeLink(svgNode) {
-      console.log("nodeview2:", this.nodeData);
+      //console.log("nodeview2:", this.nodeData);
       var arrow = svgNode
         .append("defs")
         .append("marker")

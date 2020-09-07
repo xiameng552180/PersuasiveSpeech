@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       
-      <div class="col-lg-10">
+      <div class="col-lg-10" >
         <input v-model="userid" placeholder="input user id"/>
         </br>
         <label>Claim: </label> 
@@ -19,7 +19,7 @@
     <br />
     <button type="button" class="btn btn-primary" v-on:click="updateInput">Upload</button>
       &nbsp;&nbsp;&nbsp;
-  <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess"></p>
+  <label id="eloquenceScore">eloquence: 0</label> <p id="errorMess" overflow:scroll></p>
 
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
       // errorEndIndexList: [], //all input highlight ends
       inputS: [], //all input sentences
       // lengthSentenList: [],//lenfth of each sentence
-      highlightWords: [], //high light words list
+      highlightWords: {}, //high light words list
       inputLabels: {},
       inputRelationship: [],
       nodeData: [],
@@ -57,6 +57,9 @@ export default {
       userid: "",
       allHighlightTxt: "",
       resultSentence: null,
+      startErrIndex: null,
+      endErrIndex: null,
+      errSentenceIndex: [],
     };
   },
   mounted() {
@@ -127,8 +130,11 @@ export default {
 
             /////////////////(Xingbo's try)//////////
             this.inputS = []; //clear
+            this.highlightWords = {}; //clear
+            var currentErrWords = "";
             //console.log("sentence number: ", inputKeys.length);
             this.backdata.forEach((i, index) => {
+                
                 console.log("each sentence: ", index, i['content']);
                 this.eloquenceScore += parseInt(i['eloquence']);
                 this.inputS.push(i['content']);
@@ -188,10 +194,13 @@ export default {
                 if (i['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");
                 }else{
+                  this.errSentenceIndex.push(index);
                   this.eloquenceErrorList.push(i['elo_info'][2][0]['message']); //error message
-                  var startTemp = i['elo_info'][2][0]['contextoffset'];
-                  var endTemp = i['elo_info'][2][0]['errorlength'];
-                  this.highlightWords.push(i['content'].substring(startTemp, endTemp+1));
+                  this.startErrIndex = i['elo_info'][2][0]['contextoffset'];
+                  this.endErrIndex = i['elo_info'][2][0]['errorlength'];
+                  //highlight words of all sentence
+                  currentErrWords = i['content'].substring(this.startErrIndex, this.endErrIndex + 1);
+                  this.highlightWords[index] = i['content'].substring(this.startErrIndex, this.endErrIndex + 1); 
                 }
                 //console.log("inputLabels inputview:", this.inputLabels);
                 //update input
@@ -200,217 +209,30 @@ export default {
                 PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
                 PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
                 PipeService.$emit(PipeService.UPDATE_NODEVIEW);
-                
+                console.log("current Err Words:", currentErrWords);
             }); //end cycle
               
-              ////////////draw summary/////
-              // var width = 180, height = 250 // width and height of svgInput
-              // // draw back rose
-              // var pie = d3.pie().value(function (d) {
-              //   return 1; // equal arc
-              // });
-              // var data_ready1 = pie(d3.entries(d3.range(6)));
-
-              // this.svgInput
-              //   .selectAll("whatever")
-              //   .data(data_ready1)
-              //   .enter()
-              //   .append("path")
-              //   .attr("transform", () => {
-              //     return "translate(" + width / 2 + "," + height / 2 + ")";
-              //   })
-              //   .attr("d", d3.arc().innerRadius(0).outerRadius(40))
-              //   .attr("fill", "lightblue")
-              //   .attr("stroke", "black")
-              //   .style("stroke-width", "1px")
-              //   .style("opacity", 0.7);
-
-              // // draw front rose
-              // var Rosesum = [
-              //   { feature: "is_claim", label: 0 },
-              //   { feature: "logos", label: 0 },
-              //   { feature: "pathos", label: 0 },
-              //   { feature: "ethos", label: 0 },
-              //   { feature: "evidence", label: 0 },
-              //   { feature: "relevance", label: 0 },
-              // ];
-
-              // Rosesum[0].label += this.inputLabels[5].label;
-              // Rosesum[1].label += this.inputLabels[0].label;
-              // Rosesum[2].label += this.inputLabels[1].label;
-              // Rosesum[3].label += this.inputLabels[2].label;
-              // Rosesum[4].label += this.inputLabels[3].label;
-              // Rosesum[5].label += this.inputLabels[4].label;
-
-              // Rosesum = Rosesum.map((d) => {
-              //   return {
-              //     feature: d.feature,
-              //     label: d.label,
-              //     radius: Math.sqrt(d.label) / Math.PI,
-              //   };
-              // });
-
-              // var total_label = 0;
-              // Rosesum.forEach((element) => {
-              //   total_label += element.label;
-              // });
-              // // console.log(Rosesum);
-
-              // var total_r = Math.sqrt(total_label) / Math.PI;
-
-              // // set inner radius scale:
-              // var outerR = 40;
-              // var innerRdomain = Rosesum.map((d) => d.radius);
-              // var innerRScale = d3
-              //   .scaleLinear()
-              //   .domain([d3.min(innerRdomain), total_r])
-              //   .range([0, outerR]);
-
-              // // Compute the position of each group on the pie:
-              // var pie = d3.pie().value(function (d) {
-              //   return 1; // equal arc
-              // });
-              // var data_ready2 = pie(d3.entries(Rosesum));
-
-              // // set color scale:
-              // var color = d3
-              //   .scaleOrdinal()
-              //   .domain([
-              //     "logos",
-              //     "pathos",
-              //     "ethos",
-              //     "relevance",
-              //     "evidence",
-              //     "is_claim",
-              //   ])
-              //   .range([
-              //     "#7eb6e4",
-              //     "#8cd390",
-              //     "#8f91fc",
-              //     "#e05c5c",
-              //     "#fa8cad",
-              //     "#b6034d",
-              //   ]);
-
-              // // set tooltips
-              // var div = d3
-              //   .select("body")
-              //   .append("div")
-              //   .attr("class", "tooltip")
-              //   .style("opacity", 0);
-
-              // this.svgInput
-              //   .selectAll("whatever")
-              //   .data(data_ready2)
-              //   .enter()
-              //   .append("path")
-              //   .attr("transform", () => {
-              //     return "translate(" + width / 2 + "," + height / 2 + ")";
-              //   })
-              //   .attr(
-              //     "d",
-              //     d3
-              //       .arc()
-              //       .innerRadius(0)
-              //       .outerRadius((d) => {
-              //         // console.log(d);
-              //         return innerRScale(d.data.value.radius);
-              //       })
-              //   )
-              //   .attr("fill", (d) => {
-              //     return color(d.data.value.feature);
-              //   })
-              //   .attr("stroke", "black")
-              //   .style("stroke-width", "1px")
-              //   .style("opacity", 0.7)
-              //   .on("mouseover", (d) => {
-              //     div.transition().duration(200).style("opacity", 0.7);
-              //     div
-              //       .html(d.data.value.feature + ":" + d.data.value.label)
-              //       .style("left", d3.event.pageX + "px")
-              //       .style("top", d3.event.pageY - 28 + "px");
-              //   })
-              //   .on("mouseout", function (d) {
-              //     div.transition().duration(500).style("opacity", 0);
-              //     // d3.selectAll(".tooltip").remove();
-              //   });
-                ////////////draw summary/////
-
-              //console.log("input summary1", this.eachSentenceLabel, this.inputS.length);
-              // var labelSum = new Array(6).fill(0);
-              // for(var i = 0; i < this.inputS.length; i++){
-              //   //console.log(this.eachSentenceLabel[i.toString()]);
-              //   labelSum.forEach((e, ind)=>{
-              //     labelSum[ind] += parseInt(this.eachSentenceLabel[i.toString()][ind]);
-              //   })
-                
-              // }
-              // //console.log("input summary2", labelSum);
-              // //console.log("error of 5", labelSum[5]);
-              // var jsonCircles = [
-              //   {"x_axis":20,"y_axis":40,"radius":labelSum[0], "name": "logos", "color":"#7eb6e4"},
-              //   {"x_axis":20,"y_axis":80,"radius":labelSum[1], "name": "pathos","color":"#8cd390"},
-              //   {"x_axis":20,"y_axis":120,"radius":labelSum[2], "name": "ethos","color":"#8f91fc"},
-              //   {"x_axis":20,"y_axis":160,"radius":labelSum[3], "name": "evi.","color":"#fa8cad"},
-              //   {"x_axis":20,"y_axis":200,"radius":labelSum[4], "name": "relev.","color":"#e05c5c"},
-              //   {"x_axis":20,"y_axis":240,"radius":labelSum[5], "name": "claim","color": "#b6034d"}
-              // ];
-              
-              // var circles = this.svgInput
-              //     .selectAll("circle")
-              //     .data(jsonCircles)
-              //     .enter()
-              //     .append("circle");
-
-              // circles.attr("cx", function(d){return d.x_axis})
-              //         .attr("cy", function(d){return d.y_axis})
-              //         .attr("r", function(d){return d.radius*3 + 5;})
-              //         .style("fill", function(d){return d.color;});
-
-              // var circleTxt = this.svgInput
-              //     .selectAll("text")
-              //     .data(jsonCircles)
-              //     .enter()
-              //     .append("text");
-
-              // circleTxt.attr('x', 50)
-              //         .attr('y', function(d){return d.y_axis})
-              //         .style('color', "black")
-              //         .style('font-size', "15px")
-              //         .text(function(d){return d.name + ":" +d.radius});
-               ////////////draw summary/////      
-
+            
+            
               // step0 highlight error
               //elo score
               $('#eloquenceScore').text("eloquence:" + this.eloquenceScore);
               
               // console.log("eloquenceScore:", this.eloquenceScore, this.eloquenceErrorList);
-              // console.log("highlight words: ", this.highlightWords);
+              
               if (this.eloquenceErrorList.length == 0) {
                 $('#errorMess').text("no error");
               }else{
                 $('#errorMess').text("ERROR ");
                 this.eloquenceErrorList.forEach((er, index) => {
-                  $('#errorMess').append(this.highlightWords[index] + ": " + er + ". ");
+                  $('#errorMess').append(this.highlightWords[index] + ": " + er + ". "+ " ");
                 });
               }
-
-              //console.log("error:", this.highlightWords);
-              //highlight
-              // var wordList = [];
-              // for(var i in this.highlightWords){
-              //   wordList.push(this.highlightWords[i]);
-              // }
-              // console.log(wordList);
-              // $('#userInputDiv').highlightTextarea({
-              //     words: wordList,
-              //     color:"yellow",          
-              // });
             
-
               //return highlight
               // step 1 process sentences
               var sentenceList = JSON.stringify(this.inputS);
+              console.log("errorsentenceInd:", this.errSentenceIndex, this.highlightWords);
               var items = sentenceList.split(",");
               sentenceList = items.join("");
               
@@ -421,13 +243,14 @@ export default {
               sentenceList = sentenceList.substring(0, sentenceList.length-1)
               
               sentenceList = sentenceList.replace(/\"/g, "")
-              console.log("s", sentenceList, typeof(sentenceList));
+              //console.log("s", sentenceList, typeof(sentenceList));
               this.resultSentence = sentenceList.split(/[\.]/);
               // console.log("here1", resultSentence);
               // var resultSentence = this.backdata.map(data => data.content)
 
               // step 2 got label and highlight content
-              console.log("sentenceNum:", this.resultSentence.length);
+              
+              //console.log("sentenceNum:", this.resultSentence.length);
               //console.log("each sentence label: ", this.eachSentenceLabel);
 
               //clear
@@ -435,10 +258,11 @@ export default {
               //this.inputContent = this.inputContent.replace();
               
               
-              console.log("here2", this.resultSentence);
-              console.log("here3 inputContent:", this.inputContent);
+              //console.log("here2", this.resultSentence);
+              //console.log("here3 inputContent:", this.inputContent);
               this.resultSentence.forEach((e, ind) => {
                 //console.log("test", e, ind);
+                
                 var eachSentenceHighlight = "";
                 if (e.length > 1){ //is it a sentence?
                   var colorTxt = "";
@@ -449,114 +273,138 @@ export default {
                   var pathoFlag = 0;
                   var ethoFlag = 0;
                   var evidenceFlag = 0;
-                  
+                  var errFlag = 0;
+                  var errEndInd = null;
+                  var newStr = "";
                   //claim?
-                  console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
+                  //console.log("typeof Sentence", typeof(e), e); //string
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #b6034d; color: white\">[Claim]</span>";
-                    //var claimType = this.eachSentenceLabel[ind][5] 
-                    eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
-                    // console.log("add Claim!", allHighlightTxt);
+                    var strTemp = "<span style=\"background-color: #b6034d; color: white\">[Claim]</span>";
+                    eachSentenceHighlight = strTemp + e + ".";
+                    
                   }
                   else { //premise
                     //logos?
                     if (this.eachSentenceLabel[ind][0] == 1)
                     {
                       logoFlag = 1; 
-                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Logos]</span>"; 
-                      eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                      var strTemp = "<span style=\"background-color: #7eb6e4;\">[Logos]</span>"; 
+                      eachSentenceHighlight = strTemp + e + ".";
+                        
                       //console.log("add logos!", allHighlightTxt);
                     }
                     //pathos?
                     if (this.eachSentenceLabel[ind][1] == 1){
                       if (logoFlag == 1){
                         pathoFlag = 1; //multiple label
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Pathos&Logos]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + "."; //
+                        var strTemp = "<span style=\"background-color: #7eb6e4;\">[Pathos&Logos]</span>";
+                        eachSentenceHighlight = strTemp + e + "."; //
+                        
                       //console.log("add pathos!", allHighlightTxt);
                       }
                       else {
                         pathoFlag = 1; //multiple label
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">[Pathos]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #8cd390;\">[Pathos]</span>";
+                        
+                        eachSentenceHighlight = strTemp + e + ".";
+                        
                       }
                     }
                     //evidence?
                     if (this.eachSentenceLabel[ind][3] == 1){
                       if (logoFlag == 0 && pathoFlag == 0){ //single evidence
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #fa8cad;\">[Evidence]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #fa8cad;\">[Evidence]</span>";
+                        
+                        eachSentenceHighlight = strTemp + e + ".";
+                        
                         //console.log("add evidence!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 1){ //3 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Pathos&Logos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #7eb6e4;\">[Pathos&Logos&Evi.]</span>";
+                          eachSentenceHighlight = strTemp + e + ".";
+                        
                       }
                       else if(logoFlag == 1 && pathoFlag == 0){ //2 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #7eb6e4;\">[Logos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #7eb6e4;\">[Logos&Evi.]</span>";
+                        
+    
+                          eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        
                       }
                       else if(logoFlag == 0 && pathoFlag == 1){ //2 labels
                         evidenceFlag = 1;
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8cd390;\">[Pathos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #8cd390;\">[Pathos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + e + ".";
+                        
                       }
                     }
                     //ethos?
                     if (this.eachSentenceLabel[ind][2] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0){
-                      var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos]</span>";
-                      eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos]</span>";
+                        eachSentenceHighlight = strTemp + e + ".";
+                        
                       //console.log("add ethos!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0){ //logo+etho
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos&Logos]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos&Logos]</span>";
+                        eachSentenceHighlight = strTemp + e + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos&Logos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos&Logos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + e + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1){ //logo+etho
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #8f91fc;\">[Ethos&Evi.]</span>";
-                        eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
+                        var strTemp = "<span style=\"background-color: #8f91fc;\">[Ethos&Evi.]</span>";
+                        eachSentenceHighlight = strTemp + e + ".";
                       }
                       // no other situations
                     }
                     //relevance?
                     if (this.eachSentenceLabel[ind][4] == 1){
                       if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Relevance]</span>";
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">[Relevance]</span>";
                         eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                         //console.log("add relevance!", allHighlightTxt);
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Logos&Evi.&Rele.]</span>";
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">[Logos&Evi.&Rele.]</span>";
                         eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 1 && pathoFlag == 0 && evidenceFlag == 0 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Logos&Rele.]</span>";
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">[Logos&Rele.]</span>";
                         eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       else if(logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 1 && ethoFlag == 0){
-                        var strTemp = "<span class=\"addLabelTag\" style=\"background-color: #e05c5c;\">[Relevance&Evi.]</span>";
+                        var strTemp = "<span style=\"background-color: #e05c5c;\">[Relevance&Evi.]</span>";
                         eachSentenceHighlight = strTemp + this.resultSentence[ind] + ".";
                       }
                       //no other situations
-                    }
+                    }// relevance
+
+                    
+                    
+                  }//is premise
+
+                  //error underline for each sentence
+                  if (ind in this.errSentenceIndex) {
+                      console.log("found err!");
+                      eachSentenceHighlight = eachSentenceHighlight.replace(this.highlightWords[ind], 
+                      "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + this.highlightWords[ind] + "</u>");
                   }
-                  
                   this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
                 }//cycle
               });
-              this.highlightWords.forEach((err) =>{
-                console.log("eachError:", err);
-                this.allHighlightTxt = this.allHighlightTxt.replace(err, 
-                  "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
-              })
+              
+              
+              // this.highlightWords.forEach((err) =>{
+              //   console.log("eachError:", err, typeof(err));
+              //   this.allHighlightTxt = this.allHighlightTxt.replace(err, 
+              //     "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
+              // });
               
               document.getElementById("userInputDiv").innerHTML = "";
               this.inputContent = "";
