@@ -23,12 +23,16 @@ export default {
     }
   },
   mounted() {
+    
     this.initialize();
     PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
+      
       this.nodeData = DataService.nodeData;
       console.log("nodeview1: ", this.nodeData);
     //   //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
     //   //console.log("drawNode!!!");
+      // this.svg3.selectAll("*").remove();
+      $('#nodelink').html("");
       this.drawNodeLink(this.svg3);
     });
     //this.drawNodeLink(this.svg3);
