@@ -3,7 +3,7 @@ import qs from 'qs'
 // import GlobalConfig from './global-config';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-const devApiUrl = 'http://localhost:5000'; // for local testing
+const devApiUrl = 'http://albaselinebc.ust.weihuan.tech'; // for local testing
 
 const GET_REQUEST = 'get';
 const POST_REQUEST = 'post';
