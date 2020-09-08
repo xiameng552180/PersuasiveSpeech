@@ -2,7 +2,7 @@
   <div class="row">
     <!--select strategies-->
     <div class="col-lg-2">
-      <div id="RadarSVG" style="width:100px;margin:auto;"></div>
+      <div id="RadarSVG" style="width:100px;margin-left:10px;"></div>
       <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
         <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
@@ -37,7 +37,7 @@
       <!--bar view-->
       <div class="col-lg-5">
         
-        <div id="BarChartSVG" style="height: 240px; overflow-x: hidden;"></div>
+        <div id="BarChartSVG"></div>
       </div>
     </div>
   </div>
@@ -160,14 +160,16 @@ export default {
         .attr("width", this.width)
         .attr("height", this.height);
 
-      this.width1 = d3
-        .select("#BarChartSVG")
-        .node()
-        .getBoundingClientRect().width;
-      this.height1 = d3
-        .select("#BarChartSVG")
-        .node()
-        .getBoundingClientRect().height;
+      this.width1 = 500;
+        //d3
+        // .select("#BarChartSVG")
+        // .node()
+        // .getBoundingClientRect().width;
+      this.height1 = 400;
+        // d3
+        // .select("#BarChartSVG")
+        // .node()
+        // .getBoundingClientRect().height;
       this.svg1 = d3
         .select("#BarChartSVG")
         .append("svg")
@@ -175,11 +177,13 @@ export default {
         .attr("width", this.width1)
         .attr("height", this.height1);
 
-      this.width2 = d3.select("#RadarSVG").node().getBoundingClientRect().width;
-      this.height2 = d3
-        .select("#RadarSVG")
-        .node()
-        .getBoundingClientRect().height;
+      this.width2 = 100;
+      //d3.select("#RadarSVG").node().getBoundingClientRect().width;
+      this.height2 = 200;
+        // d3
+        // .select("#RadarSVG")
+        // .node()
+        // .getBoundingClientRect().height;
       this.svg2 = d3
         .select("#RadarSVG")
         .append("svg")
@@ -215,8 +219,8 @@ export default {
     },
 
     drawRadarRose(svg, d) {
-      var height = this.height - this.margin.bottom - this.margin.top,
-        width = this.width - this.margin.right - this.margin.left;
+      var height = 200,
+        width = 100;
 
       // draw back rose
       var pie = d3.pie().value(function (d) {
@@ -785,9 +789,6 @@ export default {
         .data(data)
         .enter()
         .append("rect")
-        // .attr("class", (d) => {
-        //   return "bar-" + (d.label < 0 ? "neg" : "pos");
-        // })
         .style("fill", (d) => (d.label > 0 ? "lightblue" : "#f0a2a2"))
         .attr("width", (d) => {
           return Math.abs(x(d.label) - x(0));
@@ -810,7 +811,8 @@ export default {
           return y(d.feature) + y.bandwidth() / 2;
         })
         .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
-        .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"));
+        .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"))
+        .style("font-size", 15);
       // add the x Axis
       svg
         .append("g")
