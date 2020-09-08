@@ -1,7 +1,8 @@
 <template>
   <div class="row">
     <!--select strategies-->
-    <div class="col-lg-1">
+    <div class="col-lg-2">
+      <div id="RadarSVG" style="width:100px;margin:auto;"></div>
       <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
         <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
@@ -15,10 +16,10 @@
           <option value="7">Fluent</option>
         </select>
       </div>-->
-      <div class="inputRoseChart"></div>
+      
     </div>
 
-    <div class="col-lg-11">
+    <div class="col-lg-10">
       <!--summary view-->
       <!-- <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
         <svg id="nodelink" height="400"/>
@@ -26,7 +27,7 @@
       <!--rose chart view-->
       <div class="col-lg-5">
         <div id="CircleSVG" style="height: 400px; width: 420px; overflow-auto;"></div>
-        <div class="row" style="margin:auto;">
+        <div class="row" id="multiSelectDiv">
           <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle" /> &nbsp;
           <label id="cbTxt">Select is disabled</label>&nbsp;
           <p id="selectInd"></p>
@@ -35,7 +36,7 @@
       </div>
       <!--bar view-->
       <div class="col-lg-5">
-        <div id="RadarSVG" style="height: 220px; width: 220px; margin:auto;"></div>
+        
         <div id="BarChartSVG" style="height: 240px; overflow-x: hidden;"></div>
       </div>
     </div>
@@ -72,7 +73,7 @@ export default {
       margin: { top: 30, right: 0, bottom: 0, left: 30 },
       svg2: null,
       //svg3: null, nodelink
-      labelRadar: labelSum["label_summary"][1]["Dating"],
+      labelRadar: labelSum["label_summary"][0]["Abortion"],
       selectIDarray: [],
       selectIDIndex: [],
       selectTopic: "",
@@ -722,14 +723,14 @@ export default {
 
         // compute eloquenceSum & is_claimSum
         var eloquenceSum = 0;
-        var is_claimSum = 0;
+        //var is_claimSum = 0;
         this.examples.forEach((element) => {
           //num of reply
           var tempElement = element.content.reply_contents;
           tempElement.forEach((d) => {
             //console.log("this:", d.eloquence);
             eloquenceSum += parseInt(d.eloquence);
-            is_claimSum += parseInt(d.is_claim);
+            //is_claimSum += parseInt(d.is_claim);
           });
         });
 
@@ -739,7 +740,7 @@ export default {
           ethos: this.labelRadar[0][3]["value"],
           evidence: this.labelRadar[0][4]["value"],
           relevance: this.labelRadar[0][5]["value"],
-          is_claim: is_claimSum,
+          is_claim: this.labelRadar[0][0]["value"],
           eloquence: eloquenceSum,
         };
         //console.log("barSum", barSum);
@@ -1160,4 +1161,8 @@ export default {
 </script>
 
 <style scoped>
+  #multiSelectDiv{
+    align-items: center;
+    justify-content:center
+  } 
 </style>
