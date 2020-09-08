@@ -751,10 +751,11 @@ export default {
       }
 
       var data = this.inputLabels["input"].map((d) => {
-        // console.log(examplesum[d.feature] - d.label);
+        console.log("barview-input:", d.label);
+        console.log("barview-data:", this.examplesum[d.feature]);
         return {
           feature: d.feature,
-          label: d.label - this.examplesum[d.feature] ,
+          label: Math.round(d.label - this.examplesum[d.feature]),
         };
       });
       // console.log(data);

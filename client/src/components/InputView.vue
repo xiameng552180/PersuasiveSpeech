@@ -62,6 +62,7 @@ export default {
       startErrIndex: null,
       endErrIndex: null,
       errSentenceIndex: [],
+      inputLabelAll: null,
       
     };
   },
@@ -134,6 +135,7 @@ export default {
             this.inputS = []; //clear
             this.highlightWords = {}; //clear
             var currentErrWords = "";
+            this.inputLabelAll = 0;
             //console.log("sentence number: ", inputKeys.length);
             this.backdata.forEach((i, index) => {
                 
@@ -146,22 +148,23 @@ export default {
                 // inpthis.errorStartIndexList.push(i['elo_info'][2][0]['contextoffset']); //highlight start
                 // this.errorEndIndexList.push(i['elo_info'][2][0]['errorlength']); //highlight end
                 // label add
-                var inputLabelAll = 0;
+                
                 this.inputLabels['input'][0]['label'] += parseInt(i['logos']);
-                inputLabelAll += parseInt(i['logos']);
+                this.inputLabelAll += parseInt(i['logos']);
                 this.inputLabels['input'][1]['label'] += parseInt(i['pathos']);
-                inputLabelAll += parseInt(i['pathos']);
+                this.inputLabelAll += parseInt(i['pathos']);
                 this.inputLabels['input'][2]['label'] += parseInt(i['ethos']);
-                inputLabelAll += parseInt(i['ethos']);
+                this.inputLabelAll += parseInt(i['ethos']);
                 this.inputLabels['input'][3]['label'] += parseInt(i['evidence']);
-                inputLabelAll += parseInt(i['evidence']);
+                this.inputLabelAll += parseInt(i['evidence']);
                 this.inputLabels['input'][4]['label'] += parseInt(i['relevance']);
-                inputLabelAll += parseInt(i['relevance']);
+                this.inputLabelAll += parseInt(i['relevance']);
                 this.inputLabels['input'][5]['label'] += parseInt(i['is_claim']);
                 //console.log("error of [5]", this.inputLabels['input'][5]['label'])
-                inputLabelAll += parseInt(i['is_claim']);
+                this.inputLabelAll += parseInt(i['is_claim']);
 
                 this.inputLabels['input'][6]['label'] += parseInt(i['eloquence']);
+                
                 
                 
                 // get each sentence lits
@@ -176,22 +179,7 @@ export default {
                 this.eachSentenceLabel[index] = tempLabelList;
                 
                 
-                //console.log("each sentenceLabel:", index, this.inputLabels['input']);
-                // compute persentage
-                if (inputLabelAll != 0){
-                  this.inputLabels['input'][0]['label'] = Math.round(this.inputLabels['input'][0]['label']/inputLabelAll);
-                  this.inputLabels['input'][1]['label'] = Math.round(this.inputLabels['input'][1]['label']/inputLabelAll);
-                  this.inputLabels['input'][2]['label'] = Math.round(this.inputLabels['input'][2]['label']/inputLabelAll);
-                  this.inputLabels['input'][3]['label'] = Math.round(this.inputLabels['input'][3]['label']/inputLabelAll);
-                  this.inputLabels['input'][4]['label'] = Math.round(this.inputLabels['input'][4]['label']/inputLabelAll);                 
-                }
-                else {
-                  this.inputLabels['input'][0]['label'] /= 1;
-                  this.inputLabels['input'][1]['label'] /= 1;
-                  this.inputLabels['input'][2]['label'] /= 1;
-                  this.inputLabels['input'][3]['label'] /= 1;
-                  this.inputLabels['input'][4]['label'] /= 1;
-                }
+                
                 
                 if (i['elo_info'][2].length == 0) {
                   $('#errorMess').text("ERROR ");
@@ -213,7 +201,32 @@ export default {
                 PipeService.$emit(PipeService.UPDATE_NODEVIEW);
                 console.log("current Err Words:", currentErrWords);
             }); //end cycle
-              
+            console.log("inputLabelAll Num:", this.inputLabelAll);
+
+
+            // compute persentage
+            if (this.inputLabels['input'][5]['label'] == 0){
+              this.inputLabels['input'][5]['label'] += 1
+            }
+            if (this.inputLabelAll != 0){
+              this.inputLabels['input'][0]['label'] = (this.inputLabels['input'][0]['label']/this.inputLabelAll) * 100;
+              this.inputLabels['input'][1]['label'] = (this.inputLabels['input'][1]['label']/this.inputLabelAll) * 100;
+              this.inputLabels['input'][2]['label'] = (this.inputLabels['input'][2]['label']/this.inputLabelAll) * 100;
+              this.inputLabels['input'][3]['label'] = (this.inputLabels['input'][3]['label']/this.inputLabelAll) * 100;
+              this.inputLabels['input'][4]['label'] = (this.inputLabels['input'][4]['label']/this.inputLabelAll) * 100;  
+              this.inputLabels['input'][5]['label'] = (this.inputLabels['input'][5]['label']/this.inputLabelAll) * 100;                                
+            }
+            else {
+              this.inputLabels['input'][0]['label'] = 0;
+              this.inputLabels['input'][1]['label'] = 0;
+              this.inputLabels['input'][2]['label'] = 0;
+              this.inputLabels['input'][3]['label'] = 0;
+              this.inputLabels['input'][4]['label'] = 0;
+              this.inputLabels['input'][5]['label'] = 0;
+            }
+            console.log("eachLabel percentage:", this.inputLabels['input']);
+            DataService.inputLabels = this.inputLabels;
+            PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
               //draw summary
               ////////////draw summary/////
 

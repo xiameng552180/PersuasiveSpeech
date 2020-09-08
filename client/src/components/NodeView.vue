@@ -56,8 +56,8 @@ export default {
     },
     drawNodeLink(svgNode) {
       //console.log("nodeview2:", this.nodeData);
-      console.log("nodeview-node: ", this.nodeData);
-      console.log("nodeview-link: ", this.linkData);
+      //console.log("nodeview-node: ", this.nodeData);
+      //console.log("nodeview-link: ", this.linkData);
       var arrow = svgNode
         .append("defs")
         .append("marker")
