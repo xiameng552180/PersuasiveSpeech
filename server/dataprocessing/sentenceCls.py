@@ -419,16 +419,19 @@ if __name__ == '__main__':
     arguments_df = pd.DataFrame(arguments)
     argument_sentences = arguments_df["X"]
     argument_labels = arguments_df["y"]
+    print("argument data in total:", len(argument_labels))
     
     # 2. claim type data
     claim_df = pd.DataFrame(claims)
     claims_sentences = claim_df["X"]
     claims_labels = claim_df["y"]
+    print("claim type data in total:", len(claims_labels))
     
     # 3. premises type data
     premises_df = pd.DataFrame(premises)
     premises_sentences = premises_df['X']
     premises_labels = premises_df["y"]
+    print("premise type data in total:", len(premises_labels))
     
     # ## select argument models
     # sentenceEmbedder = SentenceEmbedder()
@@ -465,11 +468,11 @@ if __name__ == '__main__':
     # print("--- save claim model ---")
 
     # select premise_type models
-    sentenceEmbedder = SentenceEmbedder()
-    features, ml_premises = sentenceEmbedder.encode(premises_sentences, premises_labels)
-    MS = ModelSelector(features, premises_labels)
-    MS.initialization()
-    best_premise_model = MS.gridSearches()
+    # sentenceEmbedder = SentenceEmbedder()
+    # features, ml_premises = sentenceEmbedder.encode(premises_sentences, premises_labels)
+    # MS = ModelSelector(features, premises_labels)
+    # MS.initialization()
+    # best_premise_model = MS.gridSearches()
 
     # with open(os.path.join(models_path, "premise_model.joblib"), 'wb') as f:
     #     joblib.dump(best_premise_model, f)
