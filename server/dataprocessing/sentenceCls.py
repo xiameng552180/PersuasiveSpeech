@@ -471,10 +471,10 @@ if __name__ == '__main__':
     MS.initialization()
     best_premise_model = MS.gridSearches()
 
-    with open(os.path.join(models_path, "premise_model.joblib"), 'wb') as f:
-        joblib.dump(best_premise_model, f)
-    with open(os.path.join(models_path, "ml_premises.joblib"), 'wb') as f:
-        joblib.dump(ml_premises, f)
-    print("--- save premise model ---")
+    # with open(os.path.join(models_path, "premise_model.joblib"), 'wb') as f:
+    #     joblib.dump(best_premise_model, f)
+    # with open(os.path.join(models_path, "ml_premises.joblib"), 'wb') as f:
+    #     joblib.dump(ml_premises, f)
+    # print("--- save premise model ---")
     
     
