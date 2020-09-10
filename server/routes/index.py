@@ -194,7 +194,7 @@ def run_relationship(sentences):
                     if cid != sid: # claim != premise/supports
                         cspairs.append([cid, sid])
             #
-            # print(cspairs)
+            print(cspairs)
             # if not empty, run relationship
             rmodel = all_models[3][0]
             rmodel_len = all_models[3][1]
