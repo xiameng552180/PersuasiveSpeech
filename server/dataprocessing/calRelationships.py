@@ -168,6 +168,9 @@ from sklearn.svm import SVC
 models_path = os.path.join(dir_path, '../models/')
 
 all_data = pd.DataFrame({"X": senEm, "y": senL})
+
+print(all_data["y"][all_data["y"] == 0].describe(), all_data["y"][all_data["y"] == 1].describe())
+exit()
 # nsamples, nx, ny = all_data["X"].shape
 # print(nsamples, nx, ny)
 # exit()
@@ -176,10 +179,10 @@ ms.initialization()
 best_relation_model = ms.gridSearches()
 # print(best_relation_model)
 
-with open(os.path.join(models_path, "relations_mnodel.joblib"), 'wb') as f:
-    joblib.dump(best_relation_model, f)
-with open(os.path.join(models_path, "relation_len.joblib"), 'wb') as f:
-    joblib.dump(max_len, f)
+# with open(os.path.join(models_path, "relations_mnodel.joblib"), 'wb') as f:
+#     joblib.dump(best_relation_model, f)
+# with open(os.path.join(models_path, "relation_len.joblib"), 'wb') as f:
+#     joblib.dump(max_len, f)
 
 # clf = SVC()
 # clf.fit(senEm, senL)

@@ -419,19 +419,39 @@ if __name__ == '__main__':
     arguments_df = pd.DataFrame(arguments)
     argument_sentences = arguments_df["X"]
     argument_labels = arguments_df["y"]
-    print("argument data in total:", len(argument_labels))
+    print("argument data in total:", len(argument_labels), argument_labels[argument_labels==2].describe())
     
     # 2. claim type data
     claim_df = pd.DataFrame(claims)
     claims_sentences = claim_df["X"]
     claims_labels = claim_df["y"]
-    print("claim type data in total:", len(claims_labels))
+    print("claim type data in total:", len(claims_labels), claims_labels.describe())
     
     # 3. premises type data
     premises_df = pd.DataFrame(premises)
     premises_sentences = premises_df['X']
     premises_labels = premises_df["y"]
-    print("premise type data in total:", len(premises_labels))
+    print("premise type data in total:", len(premises_labels), premises_labels.describe())
+
+    p_np = premises_labels.to_numpy()
+
+    p_logos = 0
+    p_pathos = 0
+    p_evidence = 0
+    p_ethos = 0
+
+    for p in p_np:
+        if p[0] == 1:
+            p_logos += 1
+        if p[1] == 1:
+            p_pathos += 1
+        if p[2] == 1:
+            p_evidence += 1
+        if p[4] == 1:
+            p_ethos += 1
+    
+    print("logos:", p_logos, "pathos:", p_pathos, "evidence:",p_evidence, "ethos:", p_ethos)
+
     
     # ## select argument models
     # sentenceEmbedder = SentenceEmbedder()
