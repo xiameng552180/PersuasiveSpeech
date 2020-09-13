@@ -76,7 +76,8 @@ def load_dataset(input_folder):
                 ## non-argument: 0, claim: 1, premise: 2
                 argument_data.append(debate_data[dkey][0]["op_claim"])
                 argument_label.append(1)
-                
+                # print(debate_file, dkey)
+                # print(debate_data[dkey])
                 replys = debate_data[dkey][0]["reply-info"]
                 for reply in replys:
                     contents = reply["reply_contents"]
@@ -126,6 +127,11 @@ def load_dataset(input_folder):
     return {"X": argument_data, "y": argument_label}, {"X": claim_type_data, "y": claim_type_label}, {"X": premise_type_data, "y": premise_type_label}
 arguments, claims, premises = load_dataset(new_dataset_folder)
 # print("total # of data:", len(premises["X"]))
+# e_count = 0
+# for e in premises["y"]:
+#     if e[4] == 1:
+#         e_count += 1
+# print("total ethos:", e_count)
 # exit()
 
 ### model selector
@@ -216,40 +222,42 @@ class ModelSelector(object):
             self.test_y = np.array([np.array(ele) for ele in self.test_y.to_numpy()])
             
         for modelid, model in enumerate(self.models):
-            print(self.model_names[modelid])
+            # print(self.model_names[modelid])
             # print(modelid, self.model_names[modelid], self.hyperparams[modelid])
-            clf_para = self.hyperparams[modelid]
-            if flag:
-                model = OneVsRestClassifier(model)
-                clf_para = self.hyperparams_[modelid]  
-            try:          
-                clf = GridSearchCV(model, clf_para)
-                clf.fit(self.train_X, self.train_y)
-            except Exception:
-                print("model fails")
-                continue
-            # print("Best parameters set found on development set:")
+            an = self.hyperparams[modelid]
+            # if flag:
+            #     model = OneVsRestClassifier(model)
+            #     clf_para = self.hyperparams_[modelid]  
+            # try:          
+            #     clf = GridSearchCV(model, clf_para)
+            #     clf.fit(self.train_X, self.train_y)
+            # except Exception:
+            #     print("model fails")
+            #     continue
+            # # print("Best parameters set found on development set:")
+            # # print()
+            # # print(clf.best_params_)
             # print()
-            # print(clf.best_params_)
-            print()
-            print("Detailed classification report:")
-            print()
-            print("The model is trained on the full development set.")
-            print("The scores are computed on the full evaluation set.")
-            print()
-            # y_true, y_pred = self.train_y, clf.predict(self.train_X)
-            y_true, y_pred = self.test_y, clf.predict(self.test_X)
-            # print(classification_report(y_true, y_pred))
-            # print(balanced_accuracy_score(y_true, y_pred))
-            clfs.append(clf)
-            clfs_name.append(self.model_names[modelid])
-            clf_acc.append(f1_score(y_true, y_pred, average='weighted'))
+            # print("Detailed classification report:")
+            # print()
+            # print("The model is trained on the full development set.")
+            # print("The scores are computed on the full evaluation set.")
+            # print()
+            # # y_true, y_pred = self.train_y, clf.predict(self.train_X)
+            # y_true, y_pred = self.test_y, clf.predict(self.test_X)
+            # # print(classification_report(y_true, y_pred))
+            # # print(balanced_accuracy_score(y_true, y_pred))
+            # clfs.append(clf)
+            # clfs_name.append(self.model_names[modelid])
+            # clf_acc.append(f1_score(y_true, y_pred, average='weighted'))
             try:
                 print(self.model_names[modelid])
                 # print(modelid, self.model_names[modelid], self.hyperparams[modelid])
                 clf_para = self.hyperparams[modelid]
                 if flag:
                     model = OneVsRestClassifier(model)
+                    # print(model.get_params().keys())
+                    # exit()
                     clf_para = self.hyperparams_[modelid]            
                 clf = GridSearchCV(model, clf_para)
                 clf.fit(self.train_X, self.train_y)
@@ -264,7 +272,7 @@ class ModelSelector(object):
                 print()
                 # y_true, y_pred = self.train_y, clf.predict(self.train_X)
                 y_true, y_pred = self.test_y, clf.predict(self.test_X)
-                # print(classification_report(y_true, y_pred))
+                print(classification_report(y_true, y_pred))
                 # print(balanced_accuracy_score(y_true, y_pred))
                 clfs.append(clf)
                 clfs_name.append(self.model_names[modelid])
@@ -419,19 +427,19 @@ if __name__ == '__main__':
     arguments_df = pd.DataFrame(arguments)
     argument_sentences = arguments_df["X"]
     argument_labels = arguments_df["y"]
-    print("argument data in total:", len(argument_labels), argument_labels[argument_labels==2].describe())
+    # print("argument data in total:", len(argument_labels), argument_labels[argument_labels==2].describe())
     
     # 2. claim type data
     claim_df = pd.DataFrame(claims)
     claims_sentences = claim_df["X"]
     claims_labels = claim_df["y"]
-    print("claim type data in total:", len(claims_labels), claims_labels.describe())
+    # print("claim type data in total:", len(claims_labels), claims_labels.describe())
     
     # 3. premises type data
     premises_df = pd.DataFrame(premises)
     premises_sentences = premises_df['X']
     premises_labels = premises_df["y"]
-    print("premise type data in total:", len(premises_labels), premises_labels.describe())
+    # print("premise type data in total:", len(premises_labels), premises_labels.describe())
 
     p_np = premises_labels.to_numpy()
 
@@ -451,6 +459,7 @@ if __name__ == '__main__':
             p_ethos += 1
     
     print("logos:", p_logos, "pathos:", p_pathos, "evidence:",p_evidence, "ethos:", p_ethos)
+    # exit()
 
     
     # ## select argument models
@@ -488,11 +497,11 @@ if __name__ == '__main__':
     # print("--- save claim model ---")
 
     # select premise_type models
-    # sentenceEmbedder = SentenceEmbedder()
-    # features, ml_premises = sentenceEmbedder.encode(premises_sentences, premises_labels)
-    # MS = ModelSelector(features, premises_labels)
-    # MS.initialization()
-    # best_premise_model = MS.gridSearches()
+    sentenceEmbedder = SentenceEmbedder()
+    features, ml_premises = sentenceEmbedder.encode(premises_sentences, premises_labels)
+    MS = ModelSelector(features, premises_labels)
+    MS.initialization()
+    best_premise_model = MS.gridSearches()
 
     # with open(os.path.join(models_path, "premise_model.joblib"), 'wb') as f:
     #     joblib.dump(best_premise_model, f)
