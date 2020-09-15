@@ -418,4 +418,8 @@ export default {
   background-color: rgb(1, 13, 83);
   color: white;
 }
+
+.btn {
+  font-size: 14px;
+}
 </style>
