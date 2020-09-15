@@ -474,7 +474,7 @@ export default {
           })
           .attr("class", "legend")
           .style("font-family", "sans-serif")
-          .style("font-size", "10px")
+          .style("font-size", "12px")
           .attr(
             "transform",
             "translate(" +
@@ -521,7 +521,7 @@ export default {
           return d;
         })
         .style("font-family", "sans-serif")
-        .style("font-size", "11px")
+        .style("font-size", "141px")
         .attr("text-anchor", "middle")
         .attr("dy", "1.2em")
         .attr("transform", function (d, i) {

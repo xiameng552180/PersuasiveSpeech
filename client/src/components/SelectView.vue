@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Topic</label>
-      <select class="form-control" id="topicSelect" v-on:change="chooseTopic">
-        <option value="0"  selected = "selected" >Abortion</option>
+      <label for="exampleFormControlSelect1" style="font-size:18px">Topic</label>
+      <select class="form-control" id="topicSelect" v-on:change="chooseTopic" style="height:40px; font-size:20px">
+        <option value="0"  selected = "selected"  >Abortion</option>
         <option value="1">Dating</option>
         <option value="2">Eugenics</option>
         <option value="3">Immortality</option>
@@ -18,7 +18,7 @@
     <label>Interest topic:</label> <br />
     <li>Human Life</li>
     <li id="interestTopic">Others</li>
-    <li>...</li>
+    <!-- <li>...</li> -->
     <br /><br />
     <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
     <label>Persuasive Level:</label>
