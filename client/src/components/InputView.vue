@@ -629,4 +629,8 @@ export default {
     text-align: left;
     
   }
+
+  .btn {
+    font-size: 14px;
+  }
 </style>

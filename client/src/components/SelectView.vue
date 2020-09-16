@@ -154,3 +154,9 @@ export default {
   },
 };
 </script>
+<style>
+.btn {
+  font-size: 14px;
+}
+
+</style>
