@@ -7,10 +7,10 @@
           class="card border-light ml-3 shadow-sm"
           style="height: 500px;"
         >
-          <h5 class="card-header">
+          <h5 class="card-header" style="font-size:14px;">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
           </h5>
-          <div class="card-body">
+          <div class="card-body" style="font-size:14px;">
             <input-view></input-view>
           </div>
         </div>
@@ -51,7 +51,7 @@
           class="card border-light mr-3 shadow-sm"
           style="height: 500px;"
         >
-        <h5 class="card-header">
+        <h5 class="card-header" style="font-size:14px;">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Node View
         </h5>
         <div class="card-body">
@@ -127,4 +127,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.btn {
+  font-size: 14px;
+}
+</style>

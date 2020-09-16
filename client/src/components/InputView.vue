@@ -353,4 +353,20 @@ export default {
     text-align: left;
     
   }
+
+.card-header {
+  font-size: 14px;
+}
+
+.card-body {
+  font-size: 14px;
+}
+
+.row {
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+}
 </style>
