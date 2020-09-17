@@ -3,8 +3,21 @@
     <div class="row">
       
       <div class="col-lg-10" style="overflow:scroll;">
-        <input v-model="userid" placeholder="input user id"/>
-        </br>
+        <!-- <input v-model="userid" placeholder="input user id"/>
+        </br> -->
+        <div class="form-group">
+        <label style="font-size:18px">Topic</label>
+        <select class="form-control" style="height:40px; font-size:18px">
+          <option value="0">Abortion</option>
+          <option value="1">Dating</option>
+          <option value="2">Eugenics</option>
+          <option value="3">Immortality</option>
+          <option value="4">Marriage</option>
+          <option value="5" selected = "selected">Parenthood</option>
+          <option value="6">Pride</option>
+          <option value="7">Suicide</option>
+        </select>
+      </div>
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"

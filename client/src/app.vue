@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid">
     <div class="row mt-5">
-      <div class="col-lg-6">
+      <div class="col-lg-4">
         <div
           id="InputView"
           class="card border-light ml-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 580px;"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
@@ -20,7 +20,7 @@
         <div
           id="ExampleView"
           class="card border-light mr-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 580px;"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
@@ -30,8 +30,8 @@
       </div>
     </div>
 
-    <div class="row mt-5 mb-5">
-      <div class="col-lg-2">
+    <div class="row mt-5">
+      <div class="col-lg-2" style="display:none;">
         <div
           id="SelectView"
           class="card border-light ml-3 shadow-sm"
@@ -44,7 +44,7 @@
             <select-view></select-view>
           </div>
         </div>
-      </div>
+      </div> 
       <div class="col-lg-3">
         <div 
           id="NodeView"

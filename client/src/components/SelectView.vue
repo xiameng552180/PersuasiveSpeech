@@ -3,12 +3,12 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1" style="font-size:18px">Topic</label>
       <select class="form-control" id="topicSelect" v-on:change="chooseTopic" style="height:40px; font-size:20px">
-        <option value="0"  selected = "selected"  >Abortion</option>
+        <option value="0">Abortion</option>
         <option value="1">Dating</option>
         <option value="2">Eugenics</option>
         <option value="3">Immortality</option>
         <option value="4">Marriage</option>
-        <option value="5">Parenthood</option>
+        <option value="5" selected = "selected">Parenthood</option>
         <option value="6">Pride</option>
         <option value="7">Suicide</option>
       </select>

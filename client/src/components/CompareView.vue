@@ -28,9 +28,9 @@
       <div class="col-lg-5">
         <div id="CircleSVG" style="height: 400px; width: 420px; overflow-auto;"></div>
         <div class="row" id="multiSelectDiv">
-          <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle" /> &nbsp;
+          <!--<input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle" /> &nbsp;
           <label id="cbTxt">Select is disabled</label>&nbsp;
-          <p id="selectInd"></p>
+          <p id="selectInd"></p>-->
           <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
         </div>
       </div>
@@ -813,7 +813,7 @@ export default {
         })
         .attr("text-anchor", (d) => (d.label < 0 ? "end" : "start"))
         .style("fill", (d) => (d.label < 0 ? "darkred" : "darkblue"))
-        .style("font-size", 15);
+        .attr("font-size", 14);
       // add the x Axis
       svg
         .append("g")
@@ -998,7 +998,7 @@ export default {
         { feature: "pathos", label: 0 },
         { feature: "ethos", label: 0 },
         { feature: "evidence", label: 0 },
-        { feature: "relevance", label: 0 },
+        // { feature: "relevance", label: 0 },
       ];
       exampledata.forEach((element) => {
         Rosesum[0].label += parseInt(element["is_claim"]);
@@ -1006,7 +1006,7 @@ export default {
         Rosesum[2].label += parseInt(element["pathos"]);
         Rosesum[3].label += parseInt(element["ethos"]);
         Rosesum[4].label += parseInt(element["evidence"]);
-        Rosesum[5].label += parseInt(element["relevance"]);
+        // Rosesum[5].label += parseInt(element["relevance"]);
       });
       Rosesum = Rosesum.map((d) => {
         return {
@@ -1168,4 +1168,8 @@ export default {
     align-items: center;
     justify-content:center
   } 
+
+  .tick text{
+    font-size: 14px;
+  }
 </style>

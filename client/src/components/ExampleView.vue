@@ -37,13 +37,13 @@
           data-placement="bottom"
           title="The statement decribe a concrete example"
         >evidence</button>
-        <button
+       <!--  <button
           class="btn btn-sm btn-relevance m-1"
           v-on:click="click_relevance"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The statement revelant to the parent claim"
-        >relevance</button>
+        >relevance</button> -->
         <button
           class="btn btn-sm btn-primary m-1"
           v-on:click="click_clear"
