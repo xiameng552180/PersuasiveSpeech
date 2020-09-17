@@ -62,6 +62,7 @@ import marriagePos from "../pos_data/marriage-pos.json";
 import parenthoodPos from "../pos_data/parenthood-pos.json";
 import pridePos from "../pos_data/pride-pos.json";
 import suicidePos from "../pos_data/suicide-pos.json";
+// import { delete } from 'vue/types/umd';
 
 export default {
   name: "CompareView",
@@ -86,7 +87,7 @@ export default {
         pathos: 0,
         ethos: 0,
         evidence: 0,
-        relevance: 0,
+        // relevance: 0,
         is_claim: 0,
         eloquence: 0,
       },
@@ -107,6 +108,11 @@ export default {
       this.selectIDarray = DataService.selectIDarray;
       this.selectIDIndex = DataService.selectIDIndex;
       this.examplesum = DataService.examplesum;
+      if(this.examplesum.hasOwnProperty("relevance")){
+        this.examplesum["relevance"] = undefined;
+        this.examplesum = JSON.parse(JSON.stringify(this.examplesum ));
+        // _.omit(this.examplesum, "relevance");
+      }
       //filtering
       this.selectTopic = DataService.selectTopic;
       this.selectTopicNum = DataService.selectTopicNum;
@@ -226,7 +232,7 @@ export default {
       var pie = d3.pie().value(function (d) {
         return 1; // equal arc
       });
-      var data_ready1 = pie(d3.entries(d3.range(6)));
+      var data_ready1 = pie(d3.entries(d3.range(5)));
 
       svg
         .selectAll("whatever")
@@ -249,7 +255,7 @@ export default {
         { feature: "pathos", label: 0 },
         { feature: "ethos", label: 0 },
         { feature: "evidence", label: 0 },
-        { feature: "relevance", label: 0 },
+        //{ feature: "relevance", label: 0 },
       ];
 
       Rosesum[0].label += d[0][0].value;
@@ -257,7 +263,7 @@ export default {
       Rosesum[2].label += d[0][2].value;
       Rosesum[3].label += d[0][3].value;
       Rosesum[4].label += d[0][4].value;
-      Rosesum[5].label += d[0][5].value;
+      //Rosesum[5].label += d[0][5].value;
 
       Rosesum = Rosesum.map((d) => {
         return {
@@ -676,7 +682,7 @@ export default {
             pathos: 0,
             ethos: 0,
             evidence: 0,
-            relevance: 0,
+            //relevance: 0,
             is_claim: 0,
             eloquence: 0,
           };
@@ -687,7 +693,7 @@ export default {
             this.examplesum["pathos"] += parseInt(element["pathos"]);
             this.examplesum["ethos"] += parseInt(element["ethos"]);
             this.examplesum["evidence"] += parseInt(element["evidence"]);
-            this.examplesum["relevance"] += parseInt(element["relevance"]);
+            //this.examplesum["relevance"] += parseInt(element["relevance"]);
             this.examplesum["is_claim"] += parseInt(element["is_claim"]);
             this.examplesum["eloquence"] += element["eloquence"];
           });
@@ -702,7 +708,7 @@ export default {
             pathos: 0,
             ethos: 0,
             evidence: 0,
-            relevance: 0,
+            //relevance: 0,
             is_claim: 0,
             eloquence: 0,
           };
@@ -716,7 +722,7 @@ export default {
               this.examplesum["pathos"] += parseInt(sentence["pathos"]);
               this.examplesum["ethos"] += parseInt(sentence["ethos"]);
               this.examplesum["evidence"] += parseInt(sentence["evidence"]);
-              this.examplesum["relevance"] += parseInt(sentence["relevance"]);
+              //this.examplesum["relevance"] += parseInt(sentence["relevance"]);
               this.examplesum["is_claim"] += parseInt(sentence["is_claim"]);
               this.examplesum["eloquence"] += sentence["eloquence"];
             });
@@ -743,20 +749,23 @@ export default {
           pathos: this.labelRadar[0][2]["value"],
           ethos: this.labelRadar[0][3]["value"],
           evidence: this.labelRadar[0][4]["value"],
-          relevance: this.labelRadar[0][5]["value"],
+          //relevance: this.labelRadar[0][5]["value"],
           is_claim: this.labelRadar[0][0]["value"],
           eloquence: eloquenceSum,
         };
         //console.log("barSum", barSum);
       }
 
-      var data = this.inputLabels["input"].map((d) => {
+      let data = [];
+      this.inputLabels["input"].map((d) => {
+        if(d.feature!="relevance"){
         console.log("barview-input:", d.label);
         console.log("barview-data:", this.examplesum[d.feature]);
-        return {
+        data.push( {
           feature: d.feature,
           label: Math.round(d.label - this.examplesum[d.feature]),
-        };
+        });
+        }
       });
       // console.log(data);
 
@@ -823,6 +832,7 @@ export default {
       svg
         .append("g")
         .attr("transform", "translate(" + x(0) + ",0)")
+        
         .call(d3.axisLeft(y));
     },
 
@@ -1139,7 +1149,7 @@ export default {
         return 1; // equal arc
       });
       //console.log("drawbackrose:", id);
-      var data_ready = pie(d3.entries(d3.range(6)));
+      var data_ready = pie(d3.entries(d3.range(5)));
       // this.svg
 
       //console.log("before", g);

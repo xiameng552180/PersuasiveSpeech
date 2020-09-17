@@ -248,7 +248,7 @@ export default {
               var pie = d3.pie().value(function (d) {
                   return 1; // equal arc
               });
-              var data_ready1 = pie(d3.entries(d3.range(6)));
+              var data_ready1 = pie(d3.entries(d3.range(5)));
 
               this.svgInput
                 .selectAll("whatever")
@@ -271,7 +271,7 @@ export default {
                 { feature: "pathos", label: 0 },
                 { feature: "ethos", label: 0 },
                 { feature: "evidence", label: 0 },
-                { feature: "relevance", label: 0 },
+                //{ feature: "relevance", label: 0 },
               ];
 
               Rosesum[0].label += this.inputLabels['input'][5]['label'];
@@ -279,7 +279,7 @@ export default {
               Rosesum[2].label += this.inputLabels['input'][1]['label'];
               Rosesum[3].label += this.inputLabels['input'][2]['label'];
               Rosesum[4].label += this.inputLabels['input'][3]['label'];
-              Rosesum[5].label += this.inputLabels['input'][4]['label'];
+              //Rosesum[5].label += this.inputLabels['input'][4]['label'];
 
               Rosesum = Rosesum.map((d) => {
                 return {
