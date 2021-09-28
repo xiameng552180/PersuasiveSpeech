@@ -5,7 +5,7 @@
         <div
           id="InputView"
           class="card border-light ml-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 500px"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Input Text
@@ -20,7 +20,7 @@
         <div
           id="ExampleView"
           class="card border-light mr-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 500px"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Example View
@@ -31,11 +31,11 @@
     </div>
 
     <div class="row mt-5 mb-5">
-      <div class="col-lg-2">
+      <!-- <div class="col-lg-2">
         <div
           id="SelectView"
           class="card border-light ml-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 500px"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Select View
@@ -44,26 +44,26 @@
             <select-view></select-view>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div 
+      </div> -->
+      <div class="col-lg-4">
+        <div
           id="NodeView"
           class="card border-light mr-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 500px"
         >
-        <h5 class="card-header">
+          <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Node View
-        </h5>
-        <div class="card-body">
-          <node-view></node-view>
-        </div>
+          </h5>
+          <div class="card-body">
+            <node-view></node-view>
+          </div>
         </div>
       </div>
-      <div class="col-lg-7">
+      <div class="col-lg-8">
         <div
           id="CompareView"
           class="card border-light mr-3 shadow-sm"
-          style="height: 500px;"
+          style="height: 500px"
         >
           <h5 class="card-header">
             <i class="fa fa-filter" aria-hidden="true"></i>&nbsp;Compare View

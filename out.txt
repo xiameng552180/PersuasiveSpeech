@@ -1,0 +1,11 @@
+Using pip 21.2.4 from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pip (python 3.7)
+Collecting language-check
+  Using cached language-check-1.1.tar.gz (33 kB)
+Building wheels for collected packages: language-check
+  Building wheel for language-check (setup.py): started
+  Building wheel for language-check (setup.py): finished with status 'error'
+  Running setup.py clean for language-check
+Failed to build language-check
+Installing collected packages: language-check
+    Running setup.py install for language-check: started
+    Running setup.py install for language-check: finished with status 'error'
