@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <!--select strategies-->
-    <div class="col-lg-2">
+    <div class="col-lg-1">
       <div id="RadarSVG" style="width: 100px; margin-left: 10px"></div>
       <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
@@ -18,7 +18,7 @@
       </div>-->
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-lg-11">
       <!--summary view-->
       <!-- <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
         <svg id="nodelink" height="400"/>
@@ -27,7 +27,7 @@
       <div class="col-lg-5">
         <div
           id="CircleSVG"
-          style="height: 400px; width: 420px; overflow-auto;"
+          style="height: 400px; width: 600px; overflow-auto;"
         ></div>
         <div class="row" id="multiSelectDiv">
           <input
@@ -35,8 +35,10 @@
             id="multipleS"
             v-on:click="mulipleSelect"
             data-toggle="toggle"
+            style="opacity: 0"
           />
-          &nbsp; <label id="cbTxt">Select is disabled</label>&nbsp;
+          &nbsp;
+          <label id="cbTxt" style="opacity: 0">Select is disabled</label>&nbsp;
           <p id="selectInd"></p>
           <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
         </div>
@@ -76,7 +78,7 @@ export default {
       svg: null,
       svg1: null,
       pos: {},
-      margin: { top: 30, right: 0, bottom: 0, left: 30 },
+      margin: { top: 30, right: 0, bottom: 0, left: 120 },
       svg2: null,
       //svg3: null, nodelink
       labelRadar: labelSum["label_summary"][0]["Abortion"],
@@ -142,7 +144,7 @@ export default {
       //console.log("testpos1:", this.posRose[this.selectTopic]);
 
       this.drawRose(this.svg, this.posRose[this.selectTopic]);
-      this.drawRadarRose(this.svg2, this.labelRadar);
+      this.drawRadarRose(this.svg2, this.labelRadar); // the average rose
       this.drawBar(this.svg1);
       //this.drawNodeLink(this.svg3); //nodelink
       //filtering val
@@ -356,6 +358,32 @@ export default {
         .on("mouseout", function (d) {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
+        });
+
+      // for selecting use
+      svg
+        .append("circle")
+        // .attr("transform", () => {
+        //   return "translate(" + width / 2 + "," + height / 2 + ")";
+        // })
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", 40)
+        .style("opacity", 0)
+        .on("mouseover", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0.5);
+        })
+        .on("mouseout", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0);
+        })
+        .on("click", function (d) {
+          DataService.ex_id = "";
+          DataService.selectIDIndex = []; // clear IDarray
+          DataService.selectIDIndex = []; //clear index
+
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
     },
 
@@ -675,6 +703,8 @@ export default {
 
       //console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
       if (this.ex_id !== "") {
+        console.log("ex_id", this.ex_id);
+        console.log("selectIDIndex", this.selectIDIndex);
         if (this.selectIDIndex.length == 0) {
           //draw single data
           this.examplesum = {
@@ -729,6 +759,7 @@ export default {
           });
         }
       } else {
+        console.log("ex_id", this.ex_id);
         //draw all data
 
         // compute eloquenceSum & is_claimSum
@@ -777,7 +808,7 @@ export default {
         .range([height - 100, 40])
         .padding(0.1);
 
-      var x = d3.scaleLinear().range([40, width - 40]);
+      var x = d3.scaleLinear().range([120, width - 30]);
 
       // Scale the range of the data in the domains
       x.domain([

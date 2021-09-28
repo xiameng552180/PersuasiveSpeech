@@ -5,14 +5,14 @@
         <!-- <input v-model="userid" placeholder="input user id" /> -->
         <!-- <br /> -->
         <div class="form-group">
-          <label for="exampleFormControlSelect1" style="font-size: 18px"
+          <label for="exampleFormControlSelect1" style="font-size: 16px"
             >Topic</label
           >
           <select
             class="form-control"
             id="topicSelect"
             v-on:change="chooseTopic"
-            style="height: 40px; font-size: 20px"
+            style="height: 40px; font-size: 18px"
           >
             <option value="0" selected="selected">Abortion</option>
             <option value="1">Dating</option>
@@ -30,7 +30,7 @@
           contenteditable="true"
           id="userInputDiv"
           @input="changeDivText($event)"
-          style="height: 260px; font-size: 20px"
+          style="height: 240px; font-size: 18px"
         >
           {{ inputContent }}
         </div>
@@ -122,7 +122,7 @@ export default {
       this.svgInput = d3
         .select(".inputSummary")
         .append("svg")
-        .attr("width", 180)
+        .attr("width", 100)
         .attr("height", 250);
     },
 
@@ -354,7 +354,7 @@ export default {
             //draw summary
             ////////////draw summary/////
 
-            var width = 180,
+            var width = 80,
               height = 250; // width and height of svgInput
             // draw back rose
             var pie = d3.pie().value(function (d) {

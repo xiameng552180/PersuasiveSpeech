@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row mt-5">
-      <div class="col-lg-6">
+      <div class="col-lg-5">
         <div
           id="InputView"
           class="card border-light ml-3 shadow-sm"
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <div
           id="ExampleView"
           class="card border-light mr-3 shadow-sm"
@@ -45,7 +45,7 @@
           </div>
         </div>
       </div> -->
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <div
           id="NodeView"
           class="card border-light mr-3 shadow-sm"
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-9">
         <div
           id="CompareView"
           class="card border-light mr-3 shadow-sm"
