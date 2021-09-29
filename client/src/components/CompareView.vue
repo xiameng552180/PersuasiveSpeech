@@ -1,8 +1,8 @@
 <template>
   <div class="row">
     <!--select strategies-->
-    <div class="col-lg-2">
-      <div id="RadarSVG" style="width:100px;margin-left:10px;"></div>
+    <div class="col-lg-1">
+      <div id="RadarSVG" style="width: 100px; margin-left: 10px"></div>
       <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
         <select id="strategy" class="selectpicker show-menu-arrow form-control" multiple>
@@ -16,27 +16,35 @@
           <option value="7">Fluent</option>
         </select>
       </div>-->
-      
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-lg-11">
       <!--summary view-->
       <!-- <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
         <svg id="nodelink" height="400"/>
       </div>-->
       <!--rose chart view-->
       <div class="col-lg-5">
-        <div id="CircleSVG" style="height: 400px; width: 420px; overflow-auto;"></div>
+        <div
+          id="CircleSVG"
+          style="height: 400px; width: 600px; overflow-auto;"
+        ></div>
         <div class="row" id="multiSelectDiv">
-          <input type="checkbox" id="multipleS" v-on:click="mulipleSelect" data-toggle="toggle" /> &nbsp;
-          <label id="cbTxt">Select is disabled</label>&nbsp;
+          <input
+            type="checkbox"
+            id="multipleS"
+            v-on:click="mulipleSelect"
+            data-toggle="toggle"
+            style="opacity: 0"
+          />
+          &nbsp;
+          <label id="cbTxt" style="opacity: 0">Select is disabled</label>&nbsp;
           <p id="selectInd"></p>
           <!-- <button class="btn btn-primary" id = "genBar" v-on:click="sumbitArray" style="display:none;">yes</button> -->
         </div>
       </div>
       <!--bar view-->
       <div class="col-lg-5">
-        
         <div id="BarChartSVG"></div>
       </div>
     </div>
@@ -70,7 +78,7 @@ export default {
       svg: null,
       svg1: null,
       pos: {},
-      margin: { top: 30, right: 0, bottom: 0, left: 30 },
+      margin: { top: 30, right: 0, bottom: 0, left: 120 },
       svg2: null,
       //svg3: null, nodelink
       labelRadar: labelSum["label_summary"][0]["Abortion"],
@@ -86,9 +94,9 @@ export default {
         pathos: 0,
         ethos: 0,
         evidence: 0,
-        relevance: 0,
+        // relevance: 0,
         is_claim: 0,
-        eloquence: 0,
+        // eloquence: 0,
       },
       flag: 0,
       inputLabels: {},
@@ -136,7 +144,7 @@ export default {
       //console.log("testpos1:", this.posRose[this.selectTopic]);
 
       this.drawRose(this.svg, this.posRose[this.selectTopic]);
-      this.drawRadarRose(this.svg2, this.labelRadar);
+      this.drawRadarRose(this.svg2, this.labelRadar); // the average rose
       this.drawBar(this.svg1);
       //this.drawNodeLink(this.svg3); //nodelink
       //filtering val
@@ -161,15 +169,15 @@ export default {
         .attr("height", this.height);
 
       this.width1 = 500;
-        //d3
-        // .select("#BarChartSVG")
-        // .node()
-        // .getBoundingClientRect().width;
+      //d3
+      // .select("#BarChartSVG")
+      // .node()
+      // .getBoundingClientRect().width;
       this.height1 = 400;
-        // d3
-        // .select("#BarChartSVG")
-        // .node()
-        // .getBoundingClientRect().height;
+      // d3
+      // .select("#BarChartSVG")
+      // .node()
+      // .getBoundingClientRect().height;
       this.svg1 = d3
         .select("#BarChartSVG")
         .append("svg")
@@ -180,10 +188,10 @@ export default {
       this.width2 = 100;
       //d3.select("#RadarSVG").node().getBoundingClientRect().width;
       this.height2 = 200;
-        // d3
-        // .select("#RadarSVG")
-        // .node()
-        // .getBoundingClientRect().height;
+      // d3
+      // .select("#RadarSVG")
+      // .node()
+      // .getBoundingClientRect().height;
       this.svg2 = d3
         .select("#RadarSVG")
         .append("svg")
@@ -226,7 +234,7 @@ export default {
       var pie = d3.pie().value(function (d) {
         return 1; // equal arc
       });
-      var data_ready1 = pie(d3.entries(d3.range(6)));
+      var data_ready1 = pie(d3.entries(d3.range(5)));
 
       svg
         .selectAll("whatever")
@@ -249,7 +257,7 @@ export default {
         { feature: "pathos", label: 0 },
         { feature: "ethos", label: 0 },
         { feature: "evidence", label: 0 },
-        { feature: "relevance", label: 0 },
+        // { feature: "relevance", label: 0 },
       ];
 
       Rosesum[0].label += d[0][0].value;
@@ -257,7 +265,7 @@ export default {
       Rosesum[2].label += d[0][2].value;
       Rosesum[3].label += d[0][3].value;
       Rosesum[4].label += d[0][4].value;
-      Rosesum[5].label += d[0][5].value;
+      // Rosesum[5].label += d[0][5].value;
 
       Rosesum = Rosesum.map((d) => {
         return {
@@ -296,7 +304,7 @@ export default {
           "logos",
           "pathos",
           "ethos",
-          "relevance",
+          // "relevance",
           "evidence",
           "is_claim",
         ])
@@ -304,7 +312,7 @@ export default {
           "#7eb6e4",
           "#8cd390",
           "#8f91fc",
-          "#e05c5c",
+          // "#e05c5c",
           "#fa8cad",
           "#b6034d",
         ]);
@@ -350,6 +358,32 @@ export default {
         .on("mouseout", function (d) {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
+        });
+
+      // for selecting use
+      svg
+        .append("circle")
+        // .attr("transform", () => {
+        //   return "translate(" + width / 2 + "," + height / 2 + ")";
+        // })
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", 40)
+        .style("opacity", 0)
+        .on("mouseover", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0.5);
+        })
+        .on("mouseout", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0);
+        })
+        .on("click", function (d) {
+          DataService.ex_id = "";
+          DataService.selectIDIndex = []; // clear IDarray
+          DataService.selectIDIndex = []; //clear index
+
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
     },
 
@@ -474,7 +508,7 @@ export default {
           })
           .attr("class", "legend")
           .style("font-family", "sans-serif")
-          .style("font-size", "10px")
+          .style("font-size", "12px")
           .attr(
             "transform",
             "translate(" +
@@ -521,7 +555,7 @@ export default {
           return d;
         })
         .style("font-family", "sans-serif")
-        .style("font-size", "11px")
+        .style("font-size", "141px")
         .attr("text-anchor", "middle")
         .attr("dy", "1.2em")
         .attr("transform", function (d, i) {
@@ -669,6 +703,8 @@ export default {
 
       //console.log("EX.ID:", this.ex_id, this.selectIDIndex, this.flag);
       if (this.ex_id !== "") {
+        console.log("ex_id", this.ex_id);
+        console.log("selectIDIndex", this.selectIDIndex);
         if (this.selectIDIndex.length == 0) {
           //draw single data
           this.examplesum = {
@@ -676,9 +712,9 @@ export default {
             pathos: 0,
             ethos: 0,
             evidence: 0,
-            relevance: 0,
+            // relevance: 0,
             is_claim: 0,
-            eloquence: 0,
+            // eloquence: 0,
           };
           var exampledata = this.examples.map((d) => d.content)[index]
             .reply_contents;
@@ -687,9 +723,9 @@ export default {
             this.examplesum["pathos"] += parseInt(element["pathos"]);
             this.examplesum["ethos"] += parseInt(element["ethos"]);
             this.examplesum["evidence"] += parseInt(element["evidence"]);
-            this.examplesum["relevance"] += parseInt(element["relevance"]);
+            // this.examplesum["relevance"] += parseInt(element["relevance"]);
             this.examplesum["is_claim"] += parseInt(element["is_claim"]);
-            this.examplesum["eloquence"] += element["eloquence"];
+            // this.examplesum["eloquence"] += element["eloquence"];
           });
           console.log("examplesum:", this.examplesum);
           DataService.examplesum = this.examplesum;
@@ -702,9 +738,9 @@ export default {
             pathos: 0,
             ethos: 0,
             evidence: 0,
-            relevance: 0,
+            // relevance: 0,
             is_claim: 0,
-            eloquence: 0,
+            // eloquence: 0,
           };
           this.selectIDIndex.forEach((ind) => {
             //all replies
@@ -716,41 +752,43 @@ export default {
               this.examplesum["pathos"] += parseInt(sentence["pathos"]);
               this.examplesum["ethos"] += parseInt(sentence["ethos"]);
               this.examplesum["evidence"] += parseInt(sentence["evidence"]);
-              this.examplesum["relevance"] += parseInt(sentence["relevance"]);
+              // this.examplesum["relevance"] += parseInt(sentence["relevance"]);
               this.examplesum["is_claim"] += parseInt(sentence["is_claim"]);
-              this.examplesum["eloquence"] += sentence["eloquence"];
+              // this.examplesum["eloquence"] += sentence["eloquence"];
             });
           });
         }
       } else {
+        console.log("ex_id", this.ex_id);
         //draw all data
 
         // compute eloquenceSum & is_claimSum
-        var eloquenceSum = 0;
-        //var is_claimSum = 0;
-        this.examples.forEach((element) => {
-          //num of reply
-          var tempElement = element.content.reply_contents;
-          tempElement.forEach((d) => {
-            //console.log("this:", d.eloquence);
-            eloquenceSum += parseInt(d.eloquence);
-            //is_claimSum += parseInt(d.is_claim);
-          });
-        });
+        // var eloquenceSum = 0;
+        // //var is_claimSum = 0;
+        // this.examples.forEach((element) => {
+        //   //num of reply
+        //   var tempElement = element.content.reply_contents;
+        //   tempElement.forEach((d) => {
+        //     //console.log("this:", d.eloquence);
+        //     eloquenceSum += parseInt(d.eloquence);
+        //     //is_claimSum += parseInt(d.is_claim);
+        //   });
+        // });
 
         this.examplesum = {
           logos: this.labelRadar[0][1]["value"],
           pathos: this.labelRadar[0][2]["value"],
           ethos: this.labelRadar[0][3]["value"],
           evidence: this.labelRadar[0][4]["value"],
-          relevance: this.labelRadar[0][5]["value"],
+          // relevance: this.labelRadar[0][5]["value"],
           is_claim: this.labelRadar[0][0]["value"],
-          eloquence: eloquenceSum,
+          // eloquence: eloquenceSum,
         };
         //console.log("barSum", barSum);
       }
 
       var data = this.inputLabels["input"].map((d) => {
+        console.log("barview-d", d);
         console.log("barview-input:", d.label);
         console.log("barview-data:", this.examplesum[d.feature]);
         return {
@@ -758,16 +796,19 @@ export default {
           label: Math.round(d.label - this.examplesum[d.feature]),
         };
       });
-      // console.log(data);
+      data = data.filter(
+        (d) => d.feature !== "relevance" && d.feature !== "eloquence"
+      );
+      console.log("data in bar", data);
 
       data = data.sort((a, b) => d3.descending(a.label, b.label));
       // set the ranges
       var y = d3
         .scaleBand()
-        .range([height - 40, 40])
+        .range([height - 100, 40])
         .padding(0.1);
 
-      var x = d3.scaleLinear().range([40, width - 40]);
+      var x = d3.scaleLinear().range([120, width - 30]);
 
       // Scale the range of the data in the domains
       x.domain([
@@ -817,7 +858,7 @@ export default {
       // add the x Axis
       svg
         .append("g")
-        .attr("transform", "translate(0," + (height - 40) + ")")
+        .attr("transform", "translate(0," + (height - 100) + ")")
         .call(d3.axisBottom(x));
       // add the y Axis
       svg
@@ -998,7 +1039,7 @@ export default {
         { feature: "pathos", label: 0 },
         { feature: "ethos", label: 0 },
         { feature: "evidence", label: 0 },
-        { feature: "relevance", label: 0 },
+        // { feature: "relevance", label: 0 },
       ];
       exampledata.forEach((element) => {
         Rosesum[0].label += parseInt(element["is_claim"]);
@@ -1006,7 +1047,7 @@ export default {
         Rosesum[2].label += parseInt(element["pathos"]);
         Rosesum[3].label += parseInt(element["ethos"]);
         Rosesum[4].label += parseInt(element["evidence"]);
-        Rosesum[5].label += parseInt(element["relevance"]);
+        // Rosesum[5].label += parseInt(element["relevance"]);
       });
       Rosesum = Rosesum.map((d) => {
         return {
@@ -1046,7 +1087,7 @@ export default {
           "logos",
           "pathos",
           "ethos",
-          "relevance",
+          // "relevance",
           "evidence",
           "is_claim",
         ])
@@ -1054,7 +1095,7 @@ export default {
           "#7eb6e4",
           "#8cd390",
           "#8f91fc",
-          "#e05c5c",
+          // "#e05c5c",
           "#fa8cad",
           "#b6034d",
         ]);
@@ -1139,7 +1180,8 @@ export default {
         return 1; // equal arc
       });
       //console.log("drawbackrose:", id);
-      var data_ready = pie(d3.entries(d3.range(6)));
+      // var data_ready = pie(d3.entries(d3.range(6)));
+      var data_ready = pie(d3.entries(d3.range(5)));
       // this.svg
 
       //console.log("before", g);
@@ -1164,8 +1206,8 @@ export default {
 </script>
 
 <style scoped>
-  #multiSelectDiv{
-    align-items: center;
-    justify-content:center
-  } 
+#multiSelectDiv {
+  align-items: center;
+  justify-content: center;
+}
 </style>

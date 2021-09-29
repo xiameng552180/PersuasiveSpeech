@@ -168,6 +168,9 @@ from sklearn.svm import SVC
 models_path = os.path.join(dir_path, '../models/')
 
 all_data = pd.DataFrame({"X": senEm, "y": senL})
+
+print(all_data["y"][all_data["y"] == 0].describe(), all_data["y"][all_data["y"] == 1].describe())
+exit()
 # nsamples, nx, ny = all_data["X"].shape
 # print(nsamples, nx, ny)
 # exit()

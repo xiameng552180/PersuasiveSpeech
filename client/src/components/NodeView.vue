@@ -110,7 +110,7 @@ export default {
           .attr("class","tooltip")
           .style("opacity",0.0)
           .style('z-index', 10)
-          .style('font-size', '12px')
+          .style('font-size', '13px')
           .style('color', "white")
           .style('background', "#535353")	
           .style('border-radius', "8px");
