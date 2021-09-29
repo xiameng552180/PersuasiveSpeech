@@ -239,7 +239,7 @@ class ModelSelector(object):
             print()
             # y_true, y_pred = self.train_y, clf.predict(self.train_X)
             y_true, y_pred = self.test_y, clf.predict(self.test_X)
-            # print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred))
             # print(balanced_accuracy_score(y_true, y_pred))
             clfs.append(clf)
             clfs_name.append(self.model_names[modelid])
@@ -465,16 +465,16 @@ if __name__ == '__main__':
     # print("--- save claim model ---")
 
     # select premise_type models
-    sentenceEmbedder = SentenceEmbedder()
-    features, ml_premises = sentenceEmbedder.encode(premises_sentences, premises_labels)
-    MS = ModelSelector(features, premises_labels)
-    MS.initialization()
-    best_premise_model = MS.gridSearches()
+    # sentenceEmbedder = SentenceEmbedder()
+    # features, ml_premises = sentenceEmbedder.encode(premises_sentences, premises_labels)
+    # MS = ModelSelector(features, premises_labels)
+    # MS.initialization()
+    # best_premise_model = MS.gridSearches()
 
-    with open(os.path.join(models_path, "premise_model.joblib"), 'wb') as f:
-        joblib.dump(best_premise_model, f)
-    with open(os.path.join(models_path, "ml_premises.joblib"), 'wb') as f:
-        joblib.dump(ml_premises, f)
-    print("--- save premise model ---")
+    # with open(os.path.join(models_path, "premise_model.joblib"), 'wb') as f:
+    #     joblib.dump(best_premise_model, f)
+    # with open(os.path.join(models_path, "ml_premises.joblib"), 'wb') as f:
+    #     joblib.dump(ml_premises, f)
+    # print("--- save premise model ---")
     
     

@@ -176,10 +176,10 @@ ms.initialization()
 best_relation_model = ms.gridSearches()
 # print(best_relation_model)
 
-with open(os.path.join(models_path, "relations_mnodel.joblib"), 'wb') as f:
-    joblib.dump(best_relation_model, f)
-with open(os.path.join(models_path, "relation_len.joblib"), 'wb') as f:
-    joblib.dump(max_len, f)
+# with open(os.path.join(models_path, "relations_mnodel.joblib"), 'wb') as f:
+#     joblib.dump(best_relation_model, f)
+# with open(os.path.join(models_path, "relation_len.joblib"), 'wb') as f:
+#     joblib.dump(max_len, f)
 
 # clf = SVC()
 # clf.fit(senEm, senL)
