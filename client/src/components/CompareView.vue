@@ -252,6 +252,32 @@ export default {
         .style("stroke-width", "1px")
         .style("opacity", 0.7);
 
+      // for selecting use
+      svg
+        .append("circle")
+        // .attr("transform", () => {
+        //   return "translate(" + width / 2 + "," + height / 2 + ")";
+        // })
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", 40)
+        .style("opacity", 0)
+        .on("mouseover", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0.5);
+        })
+        .on("mouseout", function () {
+          d3.select(this).style("fill", "white").style("opacity", 0);
+        })
+        .on("click", function (d) {
+          DataService.ex_id = "";
+          DataService.selectIDIndex = []; // clear IDarray
+          DataService.selectIDIndex = []; //clear index
+
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+        });
+
       // draw front rose
       var Rosesum = [
         { feature: "is_claim", label: 0 },
@@ -360,32 +386,6 @@ export default {
         .on("mouseout", function (d) {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
-        });
-
-      // for selecting use
-      svg
-        .append("circle")
-        // .attr("transform", () => {
-        //   return "translate(" + width / 2 + "," + height / 2 + ")";
-        // })
-        .attr("cx", width / 2)
-        .attr("cy", height / 2)
-        .attr("r", 40)
-        .style("opacity", 0)
-        .on("mouseover", function () {
-          d3.select(this).style("fill", "white").style("opacity", 0.5);
-        })
-        .on("mouseout", function () {
-          d3.select(this).style("fill", "white").style("opacity", 0);
-        })
-        .on("click", function (d) {
-          DataService.ex_id = "";
-          DataService.selectIDIndex = []; // clear IDarray
-          DataService.selectIDIndex = []; //clear index
-
-          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
-          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
     },
 

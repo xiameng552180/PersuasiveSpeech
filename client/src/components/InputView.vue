@@ -616,6 +616,8 @@ export default {
 
               var eachSentenceHighlight = "";
               if (e.length > 1) {
+                // start with space?
+                if (e[0] == " ") e = e.substring(1);
                 //is it a sentence?
                 var colorTxt = "";
                 //console.log("inner sentence", ind, e);
