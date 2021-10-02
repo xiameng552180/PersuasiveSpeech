@@ -2,7 +2,7 @@
   <div class="row">
     <!--select strategies-->
     <div class="col-lg-2">
-      <p>average</p>
+      <p style="margin-left: 30px">Average</p>
       <div id="RadarSVG" style="width: 100px; margin-left: 10px"></div>
       <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
@@ -130,6 +130,7 @@ export default {
 
       this.svg.selectAll("*").remove();
       this.svg1.selectAll("*").remove();
+      this.svg2.selectAll("*").remove();
       this.posRose = {
         Abortion: abortionPos,
         Dating: datingPos,
