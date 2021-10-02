@@ -14,7 +14,10 @@
             v-on:change="chooseTopic"
             style="height: 40px; font-size: 18px"
           >
-            <option value="0" selected="selected">Abortion</option>
+            <option value="none" selected disabled hidden style="color: gray">
+              -- Select a topic --
+            </option>
+            <option value="0">Abortion</option>
             <option value="1">Dating</option>
             <option value="2">Eugenics</option>
             <option value="3">Immortality</option>
@@ -46,7 +49,7 @@
       Upload
     </button>
     &nbsp;&nbsp;&nbsp;
-    <label id="eloquenceScore">eloquence: 0</label>
+    <label id="eloquenceScore" style="opacity: 0"></label>
     <p id="errorMess" style="overflow: scroll"></p>
   </div>
 </template>
@@ -192,7 +195,7 @@ export default {
 
     changeDivText(event) {
       this.editText = event.target.innerText;
-      //console.log("changeTxt:", this.editText);
+      console.log("changeTxt:", this.editText);
       //多次upload 去掉label hard processing
       // if (this.editText.search("Claim") != -1){
       //   this.editText = this.editText.replace("[Claim]", "");

@@ -1,7 +1,8 @@
 <template>
   <div class="row">
     <!--select strategies-->
-    <div class="col-lg-1">
+    <div class="col-lg-2">
+      <p>average</p>
       <div id="RadarSVG" style="width: 100px; margin-left: 10px"></div>
       <!-- <div class="form-group">
         <label for="exampleFormControlInput1">Strategies</label>
@@ -18,7 +19,7 @@
       </div>-->
     </div>
 
-    <div class="col-lg-11">
+    <div class="col-lg-10">
       <!--summary view-->
       <!-- <div class="col-lg-3" style="height: 400px;  overflow-x: hidden;">
         <svg id="nodelink" height="400"/>
@@ -27,7 +28,7 @@
       <div class="col-lg-5">
         <div
           id="CircleSVG"
-          style="height: 400px; width: 600px; overflow-auto;"
+          style="height: 400px; width: 400px; overflow-auto;"
         ></div>
         <div class="row" id="multiSelectDiv">
           <input
@@ -168,7 +169,7 @@ export default {
         .attr("width", this.width)
         .attr("height", this.height);
 
-      this.width1 = 500;
+      this.width1 = 450;
       //d3
       // .select("#BarChartSVG")
       // .node()
