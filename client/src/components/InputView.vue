@@ -510,25 +510,33 @@ export default {
 
             //return highlight
             // step 1 process sentences
-            var sentenceList = JSON.stringify(this.inputS);
+            var sentenceList = this.inputS;
+            // JSON.stringify(this.inputS);
+            console.log("****************************")
+            console.log("sentenceList: ", sentenceList)
+            console.log("****************************")
             console.log(
               "errorsentenceInd:",
               this.errSentenceIndex,
               this.highlightWords
             );
-            var items = sentenceList.split(",");
-            sentenceList = items.join("");
+            this.resultSentence = sentenceList;
 
-            sentenceList = sentenceList.replace(/[\n]/g, "");
-            sentenceList = sentenceList.replace("[", "");
-            sentenceList = sentenceList.replace("]", "");
-            //sentenceList.pop();
-            sentenceList = sentenceList.substring(0, sentenceList.length - 1);
+            // var items = sentenceList.split(",");
+            // sentenceList = items.join("");
 
-            sentenceList = sentenceList.replace(/\"/g, "");
-            //console.log("s", sentenceList, typeof(sentenceList));
-            this.resultSentence = sentenceList.split(/[\.]/);
+            // sentenceList = sentenceList.replace(/[\n]/g, "");
+            // sentenceList = sentenceList.replace("[", "");
+            // sentenceList = sentenceList.replace("]", "");
+            // //sentenceList.pop();
+            // sentenceList = sentenceList.substring(0, sentenceList.length - 1);
+
+            // sentenceList = sentenceList.replace(/\"/g, "");
+            // console.log("s", sentenceList, typeof(sentenceList));
+            // console.log("****************************");
+            // this.resultSentence = sentenceList.split(/[\.]/);
             // console.log("here1", resultSentence);
+
             // var resultSentence = this.backdata.map(data => data.content)
 
             // step 2 got label and highlight content
@@ -565,7 +573,7 @@ export default {
                   //claim
                   var strTemp =
                     '<span style="background-color: #b6034d; color: white">[Claim]</span>';
-                  eachSentenceHighlight = strTemp + e + ".";
+                  eachSentenceHighlight = strTemp + e // + ".";
                 } else {
                   //premise
                   //logos?
@@ -573,7 +581,7 @@ export default {
                     logoFlag = 1;
                     var strTemp =
                       '<span style="background-color: #7eb6e4;">[Logos]</span>';
-                    eachSentenceHighlight = strTemp + e + ". ";
+                    eachSentenceHighlight = strTemp + e // + ". ";
 
                     //console.log("add logos!", allHighlightTxt);
                   }
@@ -583,7 +591,7 @@ export default {
                       pathoFlag = 1; //multiple label
                       var strTemp =
                         '<span style="background-color: #7eb6e4;">[Pathos&Logos]</span>';
-                      eachSentenceHighlight = strTemp + e + ". "; //
+                      eachSentenceHighlight = strTemp + e //+ ". "; //
 
                       //console.log("add pathos!", allHighlightTxt);
                     } else {
@@ -591,7 +599,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #8cd390;">[Pathos]</span>';
 
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
                     }
                   }
                   //evidence?
@@ -602,7 +610,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #fa8cad;">[Evidence]</span>';
 
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e // + ". ";
 
                       //console.log("add evidence!", allHighlightTxt);
                     } else if (logoFlag == 1 && pathoFlag == 1) {
@@ -610,7 +618,7 @@ export default {
                       evidenceFlag = 1;
                       var strTemp =
                         '<span style="background-color: #7eb6e4;">[Pathos&Logos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
                     } else if (logoFlag == 1 && pathoFlag == 0) {
                       //2 labels
                       evidenceFlag = 1;
@@ -618,13 +626,13 @@ export default {
                         '<span style="background-color: #7eb6e4;">[Logos&Evi.]</span>';
 
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + ". ";
+                        strTemp + this.resultSentence[ind] //+ ". ";
                     } else if (logoFlag == 0 && pathoFlag == 1) {
                       //2 labels
                       evidenceFlag = 1;
                       var strTemp =
                         '<span style="background-color: #8cd390;">[Pathos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
                     }
                   }
                   //ethos?
@@ -632,7 +640,7 @@ export default {
                     if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0) {
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos]</span>';
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
 
                       //console.log("add ethos!", allHighlightTxt);
                     } else if (
@@ -643,7 +651,7 @@ export default {
                       //logo+etho
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos&Logos]</span>';
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
                     } else if (
                       logoFlag == 1 &&
                       pathoFlag == 0 &&
@@ -652,7 +660,7 @@ export default {
                       //logo+etho
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos&Logos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
                     } else if (
                       logoFlag == 0 &&
                       pathoFlag == 0 &&
@@ -661,7 +669,7 @@ export default {
                       //logo+etho
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + ". ";
+                      eachSentenceHighlight = strTemp + e //+ ". ";
                     }
                     // no other situations
                   }
@@ -676,7 +684,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Relevance]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + ". ";
+                        strTemp + this.resultSentence[ind] //+ ". ";
                       //console.log("add relevance!", allHighlightTxt);
                     } else if (
                       logoFlag == 1 &&
@@ -687,7 +695,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Logos&Evi.&Rele.]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + ".";
+                        strTemp + this.resultSentence[ind] //+ ".";
                     } else if (
                       logoFlag == 1 &&
                       pathoFlag == 0 &&
@@ -697,7 +705,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Logos&Rele.]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + ". ";
+                        strTemp + this.resultSentence[ind] //+ ". ";
                     } else if (
                       logoFlag == 0 &&
                       pathoFlag == 0 &&
@@ -707,7 +715,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Relevance&Evi.]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + ". ";
+                        strTemp + this.resultSentence[ind] //+ ". ";
                     }
                     //no other situations
                   } // relevance
