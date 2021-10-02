@@ -45,6 +45,7 @@
     <button type="button" class="btn btn-primary" v-on:click="updateInput">
       Upload
     </button>
+    <input id="arglabel" type="checkbox" checked data-toggle="toggle" data-size="lg"> <span style="color:gray">Argument Labels</span>
     &nbsp;&nbsp;&nbsp;
     <label id="eloquenceScore">eloquence: 0</label>
     <p id="errorMess" style="overflow: scroll"></p>
@@ -67,6 +68,7 @@ import marriage from "../topic_file/marriage.json";
 import parenthood from "../topic_file/parenthood.json";
 import pride from "../topic_file/pride.json";
 import suicide from "../topic_file/suicide.json";
+
 
 export default {
   name: "InputView",
@@ -109,11 +111,22 @@ export default {
         Pride: pride,
         Suicide: suicide,
       },
+      //label toggle
+      labelTag:true,
     };
   },
   mounted() {
     this.initialize();
     // this.chooseTopic();
+    const _this = this;
+    $("#arglabel").click(function(){
+      _this.labelTag = !_this.labelTag;
+      if(_this.labelTag==false){
+        // hide labels
+      }else{
+        // add labels
+      }
+    })
   },
   methods: {
     initialize() {

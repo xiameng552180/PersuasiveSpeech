@@ -16,6 +16,7 @@
         "axios": "^0.15.3",
         "bootstrap": "^4.5.2",
         "bootstrap-vue": "^2.16.0",
+        "bootstrap4-toggle": "^3.6.1",
         "d3": "^4.9.1",
         "d3-scale-chromatic": "^1.1.1",
         "d3-tip": "^0.7.1",
@@ -33,6 +34,7 @@
         "vue": "^2.6.11",
         "vue-awesome": "^2.1.0",
         "vue-material": "^0.5.2",
+        "vue-toggles": "^1.1.4",
         "worker": "^0.2.1",
         "worker-loader": "^0.7.1"
     },
