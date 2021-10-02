@@ -231,23 +231,43 @@ export default {
       //   this.editText = this.editText.replace("[Claim]", "");
       // }
       if (this.editText.search("[Claim]") != -1) {
-        this.editText = this.editText.replace(/\[Claim[[\d]*\]/g, "");
+        this.editText = this.editText.replace(
+          /\[Claim[[\d]*&*\w*\.*&*\w*\.*\]/g,
+          ""
+        );
       }
       if (this.editText.search("[Logos]") != -1) {
-        this.editText = this.editText.replace(/\[Logos[[\d]*\]/g, "");
+        this.editText = this.editText.replace(
+          /\[Logos[[\d]*&*\w*\.*&*\w*\.*\]/g,
+          ""
+        );
       }
       if (this.editText.search("[Pathos]") != -1) {
-        this.editText = this.editText.replace(/\[Pathos[[\d]*\]/g, "");
+        this.editText = this.editText.replace(
+          /\[Pathos[[\d]*&*\w*\.*&*\w*\.*\]/g,
+          ""
+        );
       }
       if (this.editText.search("Ethos") != -1) {
-        this.editText = this.editText.replace(/\[Ethos[[\d]*\]/g, "");
+        this.editText = this.editText.replace(
+          /\[Ethos[[\d]*&*\w*\.*&*\w*\.*\]/g,
+          ""
+        );
       }
       if (this.editText.search("Evidence") != -1) {
-        this.editText = this.editText.replace(/\[Evidence[[\d]*\]/g, "");
+        this.editText = this.editText.replace(
+          /\[Evidence[[\d]*&*\w*\.*&*\w*\.*\]/g,
+          ""
+        );
       }
       if (this.editText.search("Relevance") != -1) {
-        this.editText = this.editText.replace(/\[Relevance[[\d]*\]/g, "");
+        this.editText = this.editText.replace(
+          /\[Relevance[[\d]*&*\w*\.*&*\w*\.*\]/g,
+          ""
+        );
       }
+
+      console.log("changeTxt after:", this.editText);
     },
 
     updateInput: function (event) {
@@ -627,7 +647,7 @@ export default {
                     //console.log("add logos!", allHighlightTxt);
                   }
                   //pathos?
-                  if (this.eachSentenceLabel[ind][1] == 1) {
+                  else if (this.eachSentenceLabel[ind][1] == 1) {
                     if (logoFlag == 1) {
                       pathoFlag = 1; //multiple label
                       var strTemp =
@@ -644,7 +664,7 @@ export default {
                     }
                   }
                   //evidence?
-                  if (this.eachSentenceLabel[ind][3] == 1) {
+                  else if (this.eachSentenceLabel[ind][3] == 1) {
                     if (logoFlag == 0 && pathoFlag == 0) {
                       //single evidence
                       evidenceFlag = 1;
@@ -677,7 +697,7 @@ export default {
                     }
                   }
                   //ethos?
-                  if (this.eachSentenceLabel[ind][2] == 1) {
+                  else if (this.eachSentenceLabel[ind][2] == 1) {
                     if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0) {
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos]</span>';
@@ -715,7 +735,7 @@ export default {
                     // no other situations
                   }
                   //relevance?
-                  if (this.eachSentenceLabel[ind][4] == 1) {
+                  else if (this.eachSentenceLabel[ind][4] == 1) {
                     if (
                       logoFlag == 0 &&
                       pathoFlag == 0 &&
@@ -760,6 +780,10 @@ export default {
                     }
                     //no other situations
                   } // relevance
+                  // nothing?
+                  else {
+                    eachSentenceHighlight = this.resultSentence[ind] + " ";
+                  }
                 } //is premise
               } //cycle
               else {

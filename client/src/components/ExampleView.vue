@@ -54,7 +54,7 @@
           data-placement="bottom"
           title="The statement revelant to the parent claim"
         >relevance</button> -->
-        <button
+        <!-- <button
           class="btn btn-sm btn-primary m-1"
           v-on:click="click_clear"
           data-toggle="tooltip"
@@ -62,7 +62,7 @@
           title="The statement revelant to the parent claim"
         >
           clear
-        </button>
+        </button> -->
       </div>
     </h5>
     <div class="card-body overflow-auto">
