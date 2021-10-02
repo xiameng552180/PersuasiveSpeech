@@ -48,7 +48,14 @@
     <button type="button" class="btn btn-primary" v-on:click="updateInput">
       Upload
     </button>
-    <input id="arglabel" type="checkbox" checked data-toggle="toggle" data-size="lg"> <span style="color:gray">Argument Labels</span>
+    <input
+      id="arglabel"
+      type="checkbox"
+      checked
+      data-toggle="toggle"
+      data-size="lg"
+    />
+    <span style="color: gray">Argument Labels</span>
     &nbsp;&nbsp;&nbsp;
     <label id="eloquenceScore" style="opacity: 0"></label>
     <p id="errorMess" style="overflow: scroll"></p>
@@ -71,7 +78,6 @@ import marriage from "../topic_file/marriage.json";
 import parenthood from "../topic_file/parenthood.json";
 import pride from "../topic_file/pride.json";
 import suicide from "../topic_file/suicide.json";
-
 
 export default {
   name: "InputView",
@@ -115,21 +121,32 @@ export default {
         Suicide: suicide,
       },
       //label toggle
-      labelTag:true,
+      labelTag: true,
     };
   },
   mounted() {
     this.initialize();
     // this.chooseTopic();
     const _this = this;
-    $("#arglabel").click(function(){
+    $("#arglabel").click(function () {
       _this.labelTag = !_this.labelTag;
-      if(_this.labelTag==false){
+      if (_this.labelTag == false) {
         // hide labels
-      }else{
+        console.log("------label tag == false---------");
+        console.log("input html: ", _this.editText);
+        document.getElementById("userInputDiv").innerHTML = "";
+        this.inputContent = "";
+        document.getElementById("userInputDiv").innerHTML = _this.editText;
+      } else {
         // add labels
+        console.log("------label tag == true---------");
+        console.log("input html: ", _this.allHighlightTxt);
+        document.getElementById("userInputDiv").innerHTML = "";
+        this.inputContent = "";
+        document.getElementById("userInputDiv").innerHTML =
+          _this.allHighlightTxt;
       }
-    })
+    });
   },
   methods: {
     initialize() {
@@ -653,7 +670,7 @@ export default {
                     if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0) {
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos]</span>';
-                      eachSentenceHighlight = strTemp + e; //+ ". ";
+                      eachSentenceHighlight = strTemp + e + " ";
 
                       //console.log("add ethos!", allHighlightTxt);
                     } else if (
@@ -664,7 +681,7 @@ export default {
                       //logo+etho
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos&Logos]</span>';
-                      eachSentenceHighlight = strTemp + e; //+ ". ";
+                      eachSentenceHighlight = strTemp + e + " ";
                     } else if (
                       logoFlag == 1 &&
                       pathoFlag == 0 &&
@@ -673,7 +690,7 @@ export default {
                       //logo+etho
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos&Logos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e; //+ ". ";
+                      eachSentenceHighlight = strTemp + e + " ";
                     } else if (
                       logoFlag == 0 &&
                       pathoFlag == 0 &&
@@ -682,7 +699,7 @@ export default {
                       //logo+etho
                       var strTemp =
                         '<span style="background-color: #8f91fc;">[Ethos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e; //+ ". ";
+                      eachSentenceHighlight = strTemp + e + " ";
                     }
                     // no other situations
                   }
@@ -697,7 +714,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Relevance]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind]; //+ ". ";
+                        strTemp + this.resultSentence[ind] + " ";
                       //console.log("add relevance!", allHighlightTxt);
                     } else if (
                       logoFlag == 1 &&
@@ -708,7 +725,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Logos&Evi.&Rele.]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind]; //+ ".";
+                        strTemp + this.resultSentence[ind] + " ";
                     } else if (
                       logoFlag == 1 &&
                       pathoFlag == 0 &&
@@ -718,7 +735,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Logos&Rele.]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind]; //+ ". ";
+                        strTemp + this.resultSentence[ind] + " ";
                     } else if (
                       logoFlag == 0 &&
                       pathoFlag == 0 &&
@@ -728,7 +745,7 @@ export default {
                       var strTemp =
                         '<span style="background-color: #e05c5c;">[Relevance&Evi.]</span>';
                       eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind]; //+ ". ";
+                        strTemp + this.resultSentence[ind] + " ";
                     }
                     //no other situations
                   } // relevance
@@ -761,6 +778,14 @@ export default {
             this.inputContent = "";
             document.getElementById("userInputDiv").innerHTML =
               this.allHighlightTxt;
+
+            // check label button
+            console.log("----check label button after click update----");
+            console.log("label:", $("#arglabel")[0].checked);
+            if (!this.labelTag) {
+              $("#arglabel")[0].checked = true;
+              this.labelTag = !this.labelTag;
+            }
             //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
             //call relationship
             //this.callRelationship(this.backdata, this.inputRelationship);
