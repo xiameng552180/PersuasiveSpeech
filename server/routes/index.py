@@ -134,7 +134,7 @@ def run_models(sentence):
             print("prediction results premises:", p_model.predict(p_f))
             # p_label: [logos, pathos, evidence, relevance, ethos]
             return {
-                "content": sentence + " .",
+                "content": sentence, #+ " .",
                 "is_claim": 0,
                 "claim_type": "0",
                 "logos": int(p_label[0]),
@@ -151,7 +151,7 @@ def run_models(sentence):
         print("---model issues---")
         print(e)
         return {
-            "content": sentence + " .",
+            "content": sentence, # + " .",
             "is_claim": 0,
             "claim_type": "0",
             "logos": 0,
@@ -255,15 +255,26 @@ def uploadInput():
     
 
     ### TODO: add more splitting operations
-    sentence_list = [s.strip() for s in re.split(r'[\.\?\!]+', txt) if len(s.strip()) > 0]
-
-    print(sentence_list)
+    sen_idxs = [m.start() for m in re.finditer(r'[\.\?\!]+', txt)]
+    ini_idx = 0
     all_results = []
 
-    for senid, sentence in enumerate(sentence_list):
-        print("sentence:", sentence)
-        results = run_models(sentence)
-        all_results.append(results)
+    for idx in sen_idxs:
+        sen_txt = txt[ini_idx: idx+1]
+        ini_idx = idx + 1
+        if len(sen_txt.strip()) > 0:
+            results = run_models(sen_txt)
+            all_results.append(results)
+
+    # --- OLD version
+    # sentence_list = [s.strip() for s in re.split(r'[\.\?\!]+', txt) if len(s.strip()) > 0]
+    # print(sentence_list)
+    # all_results = []
+
+    # for senid, sentence in enumerate(sentence_list):
+    #     print("sentence:", sentence)
+    #     results = run_models(sentence)
+    #     all_results.append(results)
 
     ### OLD one: have BUG
     # pattern = r'\.|/|\'|`|\[|\]|<|>|\?|:|\{|\}|\~|!||\(|\)|-|=|\_|、|；|‘|’|【|】|·|…'
