@@ -789,6 +789,7 @@ export default {
         //console.log("barSum", barSum);
       }
 
+      console.log("inputLabels: ", this.inputLabels);
       var data = this.inputLabels["input"].map((d) => {
         console.log("barview-d", d);
         console.log("barview-input:", d.label);

@@ -259,6 +259,11 @@ export default {
 
       this.inputContent = this.editText;
       this.eloquenceErrorList = [];
+      this.inputLabels["input"][0]["label"] = 0;
+      this.inputLabels["input"][1]["label"] = 0;
+      this.inputLabels["input"][2]["label"] = 0;
+      this.inputLabels["input"][3]["label"] = 0;
+      this.inputLabels["input"][4]["label"] = 0;
       //console.log("jiequ1", this.inputContent.match(\span(\S*)span>\)[1]);
       console.log("changeTxt2:", this.inputContent);
       // this.editText = event.target.innerHTML;
@@ -284,6 +289,7 @@ export default {
             this.highlightWords = {}; //clear
             var currentErrWords = "";
             this.inputLabelAll = 0;
+            console.log("inputlabels", this.inputLabels);
             //console.log("sentence number: ", inputKeys.length);
             this.backdata.forEach((i, index) => {
               console.log("each sentence: ", index, i["content"]);
