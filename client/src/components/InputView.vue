@@ -258,6 +258,7 @@ export default {
       // obj.innerHTML = "";//删除div内容
 
       this.inputContent = this.editText;
+      this.eloquenceErrorList = [];
       //console.log("jiequ1", this.inputContent.match(\span(\S*)span>\)[1]);
       console.log("changeTxt2:", this.inputContent);
       // this.editText = event.target.innerHTML;
@@ -525,7 +526,11 @@ export default {
             //elo score
             $("#eloquenceScore").text("eloquence:" + this.eloquenceScore);
 
-            // console.log("eloquenceScore:", this.eloquenceScore, this.eloquenceErrorList);
+            console.log(
+              "eloquenceScore:",
+              this.eloquenceScore,
+              this.eloquenceErrorList
+            );
 
             if (this.eloquenceErrorList.length == 0) {
               $("#errorMess").text("no error");
