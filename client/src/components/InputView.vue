@@ -41,7 +41,7 @@
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
       <div class="col-lg-2">
-        <div class="inputSummary" style="height: 260px"></div>
+        <div id="inputSummary" style="height: 260px"></div>
       </div>
     </div>
     <br />
@@ -127,6 +127,8 @@ export default {
   mounted() {
     this.initialize();
     // this.chooseTopic();
+    this.svgInput.selectAll("*").remove();
+
     const _this = this;
     $("#arglabel").click(function () {
       _this.labelTag = !_this.labelTag;
@@ -153,7 +155,7 @@ export default {
       this.inputLabels = DataService.inputLabels;
 
       this.svgInput = d3
-        .select(".inputSummary")
+        .select("#inputSummary")
         .append("svg")
         .attr("width", 100)
         .attr("height", 250);
@@ -230,19 +232,19 @@ export default {
       // if (this.editText.search("Claim") != -1){
       //   this.editText = this.editText.replace("[Claim]", "");
       // }
-      if (this.editText.search("[Claim]") != -1) {
+      if (this.editText.search("Claim") != -1) {
         this.editText = this.editText.replace(
           /\[Claim[[\d]*&*\w*\.*&*\w*\.*\]/g,
           ""
         );
       }
-      if (this.editText.search("[Logos]") != -1) {
+      if (this.editText.search("Logos") != -1) {
         this.editText = this.editText.replace(
           /\[Logos[[\d]*&*\w*\.*&*\w*\.*\]/g,
           ""
         );
       }
-      if (this.editText.search("[Pathos]") != -1) {
+      if (this.editText.search("Pathos") != -1) {
         this.editText = this.editText.replace(
           /\[Pathos[[\d]*&*\w*\.*&*\w*\.*\]/g,
           ""
@@ -260,17 +262,19 @@ export default {
           ""
         );
       }
-      if (this.editText.search("Relevance") != -1) {
-        this.editText = this.editText.replace(
-          /\[Relevance[[\d]*&*\w*\.*&*\w*\.*\]/g,
-          ""
-        );
-      }
+      // if (this.editText.search("Relevance") != -1) {
+      //   this.editText = this.editText.replace(
+      //     /\[Relevance[[\d]*&*\w*\.*&*\w*\.*\]/g,
+      //     ""
+      //   );
+      // }
 
       console.log("changeTxt after:", this.editText);
     },
 
     updateInput: function (event) {
+      this.svgInput.selectAll("*").remove();
+
       //this.inputContent = document.getElementById("userInputDiv").innerHTML;  old version
       //console.log("t1", typeof(document.getElementById("userInput1").value));
       //remove label tag
@@ -737,51 +741,51 @@ export default {
                     // no other situations
                   }
                   //relevance?
-                  else if (this.eachSentenceLabel[ind][4] == 1) {
-                    if (
-                      logoFlag == 0 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 0 &&
-                      ethoFlag == 0
-                    ) {
-                      var strTemp =
-                        '<span style="background-color: #e05c5c;">[Relevance]</span>';
-                      eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + " ";
-                      //console.log("add relevance!", allHighlightTxt);
-                    } else if (
-                      logoFlag == 1 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 1 &&
-                      ethoFlag == 0
-                    ) {
-                      var strTemp =
-                        '<span style="background-color: #e05c5c;">[Logos&Evi.&Rele.]</span>';
-                      eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + " ";
-                    } else if (
-                      logoFlag == 1 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 0 &&
-                      ethoFlag == 0
-                    ) {
-                      var strTemp =
-                        '<span style="background-color: #e05c5c;">[Logos&Rele.]</span>';
-                      eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + " ";
-                    } else if (
-                      logoFlag == 0 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 1 &&
-                      ethoFlag == 0
-                    ) {
-                      var strTemp =
-                        '<span style="background-color: #e05c5c;">[Relevance&Evi.]</span>';
-                      eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + " ";
-                    }
-                    //no other situations
-                  } // relevance
+                  // else if (this.eachSentenceLabel[ind][4] == 1) {
+                  //   if (
+                  //     logoFlag == 0 &&
+                  //     pathoFlag == 0 &&
+                  //     evidenceFlag == 0 &&
+                  //     ethoFlag == 0
+                  //   ) {
+                  //     var strTemp =
+                  //       '<span style="background-color: #e05c5c;">[Relevance]</span>';
+                  //     eachSentenceHighlight =
+                  //       strTemp + this.resultSentence[ind] + " ";
+                  //     //console.log("add relevance!", allHighlightTxt);
+                  //   } else if (
+                  //     logoFlag == 1 &&
+                  //     pathoFlag == 0 &&
+                  //     evidenceFlag == 1 &&
+                  //     ethoFlag == 0
+                  //   ) {
+                  //     var strTemp =
+                  //       '<span style="background-color: #e05c5c;">[Logos&Evi.&Rele.]</span>';
+                  //     eachSentenceHighlight =
+                  //       strTemp + this.resultSentence[ind] + " ";
+                  //   } else if (
+                  //     logoFlag == 1 &&
+                  //     pathoFlag == 0 &&
+                  //     evidenceFlag == 0 &&
+                  //     ethoFlag == 0
+                  //   ) {
+                  //     var strTemp =
+                  //       '<span style="background-color: #e05c5c;">[Logos&Rele.]</span>';
+                  //     eachSentenceHighlight =
+                  //       strTemp + this.resultSentence[ind] + " ";
+                  //   } else if (
+                  //     logoFlag == 0 &&
+                  //     pathoFlag == 0 &&
+                  //     evidenceFlag == 1 &&
+                  //     ethoFlag == 0
+                  //   ) {
+                  //     var strTemp =
+                  //       '<span style="background-color: #e05c5c;">[Relevance&Evi.]</span>';
+                  //     eachSentenceHighlight =
+                  //       strTemp + this.resultSentence[ind] + " ";
+                  //   }
+                  //   //no other situations
+                  // } // relevance
                   // nothing?
                   else {
                     eachSentenceHighlight = this.resultSentence[ind] + " ";
