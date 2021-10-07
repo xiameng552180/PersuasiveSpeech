@@ -47,18 +47,14 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -125,11 +121,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "2",
-                []
-              ]
+              "elo_info": [0, "2", []]
             }
           ]
         },
@@ -159,24 +151,20 @@
                     "contextoffset": 30,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 39,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
             },
             {
-              "content": " Do you think that people ought to be allowed to choose whether to have/keep children based on genes, or do you think that the government should be allowed to compel those choices",
+              "content": " Do you think that people ought to be allowed to choose whether to have/keep children based on genes",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "0",
@@ -188,7 +176,24 @@
               "eloquence": 0,
               "elo_info": [
                 0,
-                " Do you think that people ought to be allowed to choose whether to have/keep children based on genes, or do you think that the government should be allowed to compel those choices",
+                " Do you think that people ought to be allowed to choose whether to have/keep children based on genes",
+                []
+              ]
+            },
+            {
+              "content": " or do you think that the government should be allowed to compel those choices",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "1",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2103,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " or do you think that the government should be allowed to compel those choices",
                 []
               ]
             }

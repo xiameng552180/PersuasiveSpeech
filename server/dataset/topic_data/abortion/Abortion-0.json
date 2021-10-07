@@ -339,7 +339,19 @@
               "eloquence": "0"
             },
             {
-              "content": "Theres an argument that consenting to sex constitutes an agreement to commit to providing ones body to a fetus, but I dont see any way you can justify that a woman who is raped has an obligation to provide her body for the survival of another person\"",
+              "content": "Theres an argument that consenting to sex constitutes an agreement to commit to providing ones body to a fetus, ",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": " but I dont see any way you can justify that a woman who is raped has an obligation to provide her body for the survival of another person\"",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "0",
@@ -383,7 +395,7 @@
           "reply_votes": "1 point",
           "reply_contents": [
             {
-              "content": "Is it okay to kill a fetus because it is smaller than you",
+              "content": "Is it okay to kill a fetus because it is smaller than you? No.",
               "is_claim": "1",
               "claim_type": "evaluation",
               "logos": "0",
@@ -395,31 +407,7 @@
               "eloquence": "0"
             },
             {
-              "content": " No",
-              "is_claim": "1",
-              "claim_type": "evaluation",
-              "logos": "0",
-              "pathos": "0",
-              "evidence": "0",
-              "relevance": "0",
-              "ethos": "0",
-              "concreteness": "0",
-              "eloquence": "0"
-            },
-            {
-              "content": " Is it okay to kill a fetus because it has none of the mental capabilities that we can call upon to justify humanities importance and entitlement to individual rights, including life",
-              "is_claim": "1",
-              "claim_type": "evaluation",
-              "logos": "0",
-              "pathos": "0",
-              "evidence": "0",
-              "relevance": "0",
-              "ethos": "0",
-              "concreteness": "0",
-              "eloquence": "0"
-            },
-            {
-              "content": " Completely",
+              "content": " Is it okay to kill a fetus because it has none of the mental capabilities that we can call upon to justify humanities importance and entitlement to individual rights, including life? Completely.",
               "is_claim": "1",
               "claim_type": "evaluation",
               "logos": "0",

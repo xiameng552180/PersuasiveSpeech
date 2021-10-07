@@ -2,8 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // import VueMaterial from "vue-material";
 import Vue from "vue";
+// import VueToggles from 'vue-toggles';
 import App from "./app";
-import $ from 'jquery'
+import $ from 'jquery';
+
+
 // import { BootstrapVue } from "bootstrap-vue";
 // Vue.use(BootstrapVue);
 

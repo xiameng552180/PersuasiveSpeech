@@ -45,7 +45,7 @@
               ]
             },
             {
-              "content": "I mean it\\s basically like I\\d date you, except I found out one piece of information about your personal history that will in no way affect you or me today, and now I won\\t, even though I find you super attractive and otherwise worth dating yeah, I find it a little bigoted",
+              "content": "I mean it\\s basically like I\\d date you, except I found out one piece of information about your personal history that will in no way affect you or me today, and now I won\\t, even though I find you super attractive and otherwise worth dating",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -57,9 +57,22 @@
               "eloquence": 0,
               "elo_info": [
                 0,
-                "I mean it\\s basically like I\\d date you, except I found out one piece of information about your personal history that will in no way affect you or me today, and now I won\\t, even though I find you super attractive and otherwise worth dating yeah, I find it a little bigoted",
+                "I mean it\\s basically like I\\d date you, except I found out one piece of information about your personal history that will in no way affect you or me today, and now I won\\t, even though I find you super attractive and otherwise worth dating",
                 []
               ]
+            },
+            {
+              "content": " yeah, I find it a little bigoted",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2085,
+              "eloquence": 0,
+              "elo_info": [0, " yeah, I find it a little bigoted", []]
             },
             {
               "content": "Im not saying you dont have a right to your personal preference, because you do (as does the person who wont date anyone with a drop of Mexican blood) but it does come off as prejudiced",
@@ -81,18 +94,14 @@
                     "contextoffset": 0,
                     "errorlength": 2,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "I'm"
-                    ]
+                    "replacements": ["I'm"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 18,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   }
                 ]
               ]
@@ -117,9 +126,7 @@
                     "contextoffset": 18,
                     "errorlength": 7,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "wouldn't"
-                    ]
+                    "replacements": ["wouldn't"]
                   }
                 ]
               ]
@@ -152,9 +159,7 @@
                     "contextoffset": 8,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   }
                 ]
               ]
@@ -179,19 +184,14 @@
                     "contextoffset": 1,
                     "errorlength": 3,
                     "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "It's",
-                      "It is"
-                    ]
+                    "replacements": ["It's", "It is"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 26,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "aren't"
-                    ]
+                    "replacements": ["aren't"]
                   }
                 ]
               ]

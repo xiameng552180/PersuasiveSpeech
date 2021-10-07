@@ -1,6 +1,6 @@
 <template>
-<div class="row" style="height: 400px;">
-  <svg id="nodelink" height="400px"/>
+<div class="row" style="height: 400px">
+  <svg id="nodelink"/>
 </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
     this.initialize();
     PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
       this.svg3.selectAll("*").remove();
+      this.linkData = DataService.linkData;
       this.nodeData = DataService.nodeData;
       //console.log("nodeview1: ", this.nodeData);
     //   //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
@@ -41,6 +42,7 @@ export default {
   methods: {
     initialize() {
       this.nodeData = DataService.nodeData;
+      this.linkData = DataService.linkData;
       //console.log("nodeview12: ", this.nodeData);
       this.width3 = d3.select("#nodelink").node().getBoundingClientRect().width;
       this.height3 = d3
@@ -53,7 +55,9 @@ export default {
         .attr("height", this.height3);
     },
     drawNodeLink(svgNode) {
-      console.log("nodeview2:", this.nodeData);
+      //console.log("nodeview2:", this.nodeData);
+      //console.log("nodeview-node: ", this.nodeData);
+      //console.log("nodeview-link: ", this.linkData);
       var arrow = svgNode
         .append("defs")
         .append("marker")
@@ -72,6 +76,7 @@ export default {
 
       this.simulation1 = d3
         .forceSimulation()
+        .force('collide', d3.forceCollide().radius(15))
         .force(
           "link",
           d3
@@ -85,30 +90,7 @@ export default {
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2));
 
-      var nodes = [],
-        links = [];
-      nodes = this.nodeData.map( 
-        (d, i) => {
-          d.id = i;
-          return d;
-        }
-      );
-      // console.log(nodes);
-      var source = null;
-      nodes.forEach((d, i) => {
-        if (d.is_claim === "1") {
-          source = i;
-        }
-        if (source != null && source !== i) {
-          var newlink = {
-            source: i,
-            target: source,
-          };
-          links.push(newlink);
-        }
-      });
-      
-      this.update(links, nodes);
+      this.update(this.linkData, this.nodeData);
     },
 
     update(links, nodes) {
@@ -128,7 +110,7 @@ export default {
           .attr("class","tooltip")
           .style("opacity",0.0)
           .style('z-index', 10)
-          .style('font-size', '12px')
+          .style('font-size', '13px')
           .style('color', "white")
           .style('background', "#535353")	
           .style('border-radius', "8px");
@@ -148,7 +130,7 @@ export default {
         .append("circle")
         .attr("r", 10)
         .style("fill", function (d, i) {
-          if (d.is_claim === "1") return "white";
+          if (d.is_claim == "1") return "white";
           else if(d.logos == "1") return "#7eb6e4";
           else if(d.pathos == "1") return "#8cd390";
           else if(d.evidence == "1") return "#fa8cad";
@@ -166,7 +148,7 @@ export default {
         // .text(function(d){return d.content});
         .on("mouseover", function(d){
           tooltip
-              .html(d.content+"<br/>")
+              .html(d.index +": "+ d.content+"<br/>")
               .style("left",(d3.event.pageX) +"px")
               .style("top",(d3.event.pageY +20)+"px")
               .style("opacity",1.0)
@@ -184,6 +166,7 @@ export default {
 
       this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
+        .force('collide', d3.forceCollide().radius(10))
         .force(
           "link",
           d3
@@ -196,12 +179,13 @@ export default {
         )
         .force(
           "charge",
-          d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
+          d3.forceManyBody().strength(-5).distanceMin(30).distanceMax(130)
         ) // This adds repulsion between nodes.
+        
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)); // This force attracts nodes to the center of the svg area
         //.on("tick", this.tickedNodelink);
 
-        for (let index = 0; index < 50; index++) {
+        for (let index = 0; index < 2000; index++) {
           this.simulation1.tick()
         }
         this.tickedNodelink();

@@ -36,7 +36,24 @@
               ]
             },
             {
-              "content": " It\\'s like pointing the microphone to the speaker and getting a squeal; eugenics leads to an escalating exaggeration of any trait that we subjectively think is \"good\", so it reflects our increasingly exaggerated tastes and prejudices, not what\\'s necessary for survival",
+              "content": " It\\'s like pointing the microphone to the speaker and getting a squeal;",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "1",
+              "ethos": "0",
+              "concreteness": 0.2392,
+              "eloquence": 2,
+              "elo_info": [
+                0,
+                " It\\'s like pointing the microphone to the speaker and getting a squeal;",
+                []
+              ]
+            },
+            {
+              "content": " eugenics leads to an escalating exaggeration of any trait that we subjectively think is \"good\", so it reflects our increasingly exaggerated tastes and prejudices, not what\\'s necessary for survival",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -48,25 +65,21 @@
               "eloquence": 2,
               "elo_info": [
                 2,
-                " It\\'s like pointing the microphone to the speaker and getting a squeal; eugenics leads to an escalating exaggeration of any trait that we subjectively think is \u201cgood\u201d, so it reflects our increasingly exaggerated tastes and prejudices, not what\\'s necessary for survival",
+                " eugenics leads to an escalating exaggeration of any trait that we subjectively think is \u201cgood\u201d, so it reflects our increasingly exaggerated tastes and prejudices, not what\\'s necessary for survival",
                 [
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -108,15 +121,13 @@
                     "contextoffset": 1,
                     "errorlength": 9,
                     "message": "Did you forget a comma after a conjunctive/linking adverb?",
-                    "replacements": [
-                      "Therefore,"
-                    ]
+                    "replacements": ["Therefore,"]
                   }
                 ]
               ]
             },
             {
-              "content": "But intelligence is not really a linear thing, and I\\'m not talking about \"emotional intelligence\" or \"kinesthetic intelligence\" and other buzzwords, I mean it\\'s a subjective illusion created by many specialized components in your head",
+              "content": "But intelligence is not really a linear thing, and I\\'m not talking about \"emotional intelligence\" or \"kinesthetic intelligence\" and other buzzwords",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -128,54 +139,61 @@
               "eloquence": 5,
               "elo_info": [
                 5,
-                "But intelligence is not really a linear thing, and I\\'m not talking about \u201cemotional intelligence\u201d or \u201canesthetic intelligence\u201d and other buzzwords, I mean it\\'s a subjective illusion created by many specialized components in your head",
+                "But intelligence is not really a linear thing, and I\\'m not talking about \u201cemotional intelligence\u201d or \u201canesthetic intelligence\u201d and other buzzwords",
                 [
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 11,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "anesthetic"
-                    ]
+                    "replacements": ["anesthetic"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
+              ]
+            },
+            {
+              "content": " I mean it\\'s a subjective illusion created by many specialized components in your head",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2143,
+              "eloquence": 5,
+              "elo_info": [
+                0,
+                " I mean it\\'s a subjective illusion created by many specialized components in your head",
+                []
               ]
             },
             {
@@ -198,51 +216,35 @@
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "Dial",
-                      "Dias",
-                      "Ditz",
-                      "Diam"
-                    ]
+                    "replacements": ["Dial", "Dias", "Ditz", "Diam"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 8,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "uniform"
-                    ]
+                    "replacements": ["uniform"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "Cyrus",
-                      "gurus",
-                      "gyros",
-                      "Grus"
-                    ]
+                    "replacements": ["Cyrus", "gurus", "gyros", "Grus"]
                   }
                 ]
               ]
@@ -304,9 +306,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -365,18 +365,14 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -464,11 +460,7 @@
               "ethos": "0",
               "concreteness": 0.21,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "Eugenics won't get you a superior race",
-                []
-              ]
+              "elo_info": [0, "Eugenics won't get you a superior race", []]
             },
             {
               "content": "It'll get you a damn stupid one",
@@ -481,11 +473,7 @@
               "ethos": "0",
               "concreteness": 0.1756,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "It'll get you a damn stupid one",
-                []
-              ]
+              "elo_info": [0, "It'll get you a damn stupid one", []]
             },
             {
               "content": "14",
@@ -498,11 +486,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "14",
-                []
-              ]
+              "elo_info": [0, "14", []]
             }
           ]
         },
@@ -532,9 +516,7 @@
                     "contextoffset": 43,
                     "errorlength": 9,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "survive In"
-                    ]
+                    "replacements": ["survive In"]
                   },
                   {
                     "category": "Possible Typo",
@@ -634,18 +616,14 @@
                     "contextoffset": 9,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 21,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -661,11 +639,7 @@
               "ethos": "0",
               "concreteness": 0.4,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "It is fundamentally evolution",
-                []
-              ]
+              "elo_info": [0, "It is fundamentally evolution", []]
             },
             {
               "content": "What does this mean",
@@ -678,11 +652,7 @@
               "ethos": "0",
               "concreteness": 0.1786,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "What does this mean",
-                []
-              ]
+              "elo_info": [0, "What does this mean", []]
             },
             {
               "content": " Evolution is directionless",
@@ -695,11 +665,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Evolution is directionless",
-                []
-              ]
+              "elo_info": [0, " Evolution is directionless", []]
             },
             {
               "content": " \"Superior\" is a loaded term that has no connection to evolution",
@@ -721,18 +687,14 @@
                     "contextoffset": 1,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 10,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -765,11 +727,7 @@
               "ethos": "0",
               "concreteness": 0.2376,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "You've got absolutely no evidence for this",
-                []
-              ]
+              "elo_info": [0, "You've got absolutely no evidence for this", []]
             },
             {
               "content": "Eventually I think that the world would only exist of superior beings capable of solving many crisis' and protecting our race",
@@ -841,11 +799,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "5",
-                []
-              ]
+              "elo_info": [0, "5", []]
             }
           ]
         },
@@ -866,11 +820,7 @@
               "ethos": "0",
               "concreteness": 0.2463,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "Genetics is quite limited at the moment",
-                []
-              ]
+              "elo_info": [0, "Genetics is quite limited at the moment", []]
             },
             {
               "content": " We are a long way from being able to tell how certain characteristics like intelligence are inherited since there's a lot of environmental factors and a lot of genes control it",
@@ -959,11 +909,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "5",
-                []
-              ]
+              "elo_info": [0, "5", []]
             }
           ]
         },
@@ -984,11 +930,7 @@
               "ethos": "0",
               "concreteness": 0.4,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "It is fundamentally evolution",
-                []
-              ]
+              "elo_info": [0, "It is fundamentally evolution", []]
             },
             {
               "content": "Evolution is natural selection, where beings survive and procreate based on how well they fare in their environments",
@@ -1052,11 +994,7 @@
               "ethos": "0",
               "concreteness": 0.4224,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Skin color, sexual orientation, sex",
-                []
-              ]
+              "elo_info": [0, " Skin color, sexual orientation, sex", []]
             }
           ]
         }

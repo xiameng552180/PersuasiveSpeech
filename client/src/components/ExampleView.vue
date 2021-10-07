@@ -8,179 +8,256 @@
           data-placement="bottom"
           title="The category of what is being claimed"
           v-on:click="click_claim"
-        >claim</button>
+        >
+          claim
+        </button>
         <button
           class="btn btn-sm btn-logos m-1"
           v-on:click="click_logos"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The use of logic, rationality, and critical reasoning to persuade"
-        >logos</button>
+        >
+          logos
+        </button>
         <button
           class="btn btn-sm btn-pathos m-1"
           v-on:click="click_pathos"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The use of emotion and affect to persuade"
-        >pathos</button>
+        >
+          pathos
+        </button>
         <button
           class="btn btn-sm btn-ethos m-1"
           v-on:click="click_ethos"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The use of authority or credibility of the presenter to persuade"
-        >ethos</button>
+        >
+          ethos
+        </button>
         <button
           class="btn btn-sm btn-evidence m-1"
           v-on:click="click_evidence"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The statement decribe a concrete example"
-        >evidence</button>
-        <button
+        >
+          evidence
+        </button>
+        <!-- <button
           class="btn btn-sm btn-relevance m-1"
           v-on:click="click_relevance"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The statement revelant to the parent claim"
-        >relevance</button>
-        <button
+        >relevance</button> -->
+        <!-- <button
           class="btn btn-sm btn-primary m-1"
           v-on:click="click_clear"
           data-toggle="tooltip"
           data-placement="bottom"
           title="The statement revelant to the parent claim"
-        >clear</button>
+        >
+          clear
+        </button> -->
       </div>
     </h5>
     <div class="card-body overflow-auto">
       <!--highlight text-->
       <div class="card">
         <div v-for="example in examples" :key="example.id" class="card-body">
-          <h5
-            class="card-title"
-            :id="'h5_'+example.id"
-            :ref="example.id"
-          >Replyer name: {{example.content["replyer_name"]}}</h5>
+          <h5 class="card-title" :id="'h5_' + example.id" :ref="example.id">
+            Replyer name: {{ example.content["replyer_name"] }}
+          </h5>
 
-          <p v-if="clear==true && ex_id !== example.id" class="card-text text-secondary">
+          <p
+            v-if="clear == true && ex_id !== example.id"
+            class="card-text text-secondary"
+          >
             <span
               v-for="item in example.content.reply_contents"
               :key="item.content"
-            >{{item.content+". "}}</span>
+              >{{ item.content + ". " }}</span
+            >
           </p>
 
           <!-- the selected post -->
-          <p v-else-if="if_claim==true && ex_id === example.id" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p
+            v-else-if="if_claim == true && ex_id === example.id"
+            class="card-text text-secondary"
+          >
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-claim"
-                v-if="item.is_claim!=='0' && if_claim==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
-            </span>
-          </p>
-          <p v-else-if="if_logos==true && ex_id === example.id" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
-              <mark
-                class="textbg-logos"
-                v-if="item.logos!=='0' && if_logos==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
-            </span>
-          </p>
-          <p v-else-if="if_pathos==true && ex_id === example.id" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
-              <mark
-                class="textbg-pathos"
-                v-if="item.pathos!=='0' && if_pathos==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
-            </span>
-          </p>
-          <p v-else-if="if_ethos==true && ex_id === example.id" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
-              <mark
-                class="textbg-ethos"
-                v-if="item.ethos!=='0' && if_ethos==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
-            </span>
-          </p>
-          <p v-else-if="if_evidence==true && ex_id === example.id" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
-              <mark
-                class="textbg-evidence"
-                v-if="item.evidence!=='0' && if_evidence==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.is_claim !== '0' && if_claim == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
           <p
-            v-else-if="if_relevance==true && ex_id === example.id"
+            v-else-if="if_logos == true && ex_id === example.id"
             class="card-text text-secondary"
           >
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
+              <mark
+                class="textbg-logos"
+                v-if="item.logos !== '0' && if_logos == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
+            </span>
+          </p>
+          <p
+            v-else-if="if_pathos == true && ex_id === example.id"
+            class="card-text text-secondary"
+          >
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
+              <mark
+                class="textbg-pathos"
+                v-if="item.pathos !== '0' && if_pathos == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
+            </span>
+          </p>
+          <p
+            v-else-if="if_ethos == true && ex_id === example.id"
+            class="card-text text-secondary"
+          >
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
+              <mark
+                class="textbg-ethos"
+                v-if="item.ethos !== '0' && if_ethos == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
+            </span>
+          </p>
+          <p
+            v-else-if="if_evidence == true && ex_id === example.id"
+            class="card-text text-secondary"
+          >
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
+              <mark
+                class="textbg-evidence"
+                v-if="item.evidence !== '0' && if_evidence == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
+            </span>
+          </p>
+          <p
+            v-else-if="if_relevance == true && ex_id === example.id"
+            class="card-text text-secondary"
+          >
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-relevance"
-                v-if="item.relevance!=='0' && if_relevance==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.relevance !== '0' && if_relevance == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
 
-          <p v-else-if="if_claim==true" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p v-else-if="if_claim == true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-claim"
-                v-if="item.is_claim!=='0' && if_claim==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.is_claim !== '0' && if_claim == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
-          <p v-else-if="if_logos==true" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p v-else-if="if_logos == true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-logos"
-                v-if="item.logos!=='0' && if_logos==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.logos !== '0' && if_logos == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
-          <p v-else-if="if_pathos==true" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p v-else-if="if_pathos == true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-pathos"
-                v-if="item.pathos!=='0' && if_pathos==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.pathos !== '0' && if_pathos == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
-          <p v-else-if="if_ethos==true" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p v-else-if="if_ethos == true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-ethos"
-                v-if="item.ethos!=='0' && if_ethos==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.ethos !== '0' && if_ethos == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
-          <p v-else-if="if_evidence==true" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p v-else-if="if_evidence == true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-evidence"
-                v-if="item.evidence!=='0' && if_evidence==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.evidence !== '0' && if_evidence == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
-          <p v-else-if="if_relevance==true" class="card-text text-secondary">
-            <span v-for="item in example.content.reply_contents" :key="item.content">
+          <p v-else-if="if_relevance == true" class="card-text text-secondary">
+            <span
+              v-for="item in example.content.reply_contents"
+              :key="item.content"
+            >
               <mark
                 class="textbg-relevance"
-                v-if="item.relevance!=='0' && if_relevance==true"
-              >{{item.content+". "}}</mark>
-              <span v-else>{{item.content+". "}}</span>
+                v-if="item.relevance !== '0' && if_relevance == true"
+                >{{ item.content + ". " }}</mark
+              >
+              <span v-else>{{ item.content + ". " }}</span>
             </span>
           </p>
 
@@ -188,7 +265,8 @@
             <span
               v-for="item in example.content.reply_contents"
               :key="item.content"
-            >{{item.content+". "}}</span>
+              >{{ item.content + ". " }}</span
+            >
           </p>
         </div>
       </div>
@@ -417,5 +495,9 @@ export default {
 .badge-eloquence {
   background-color: rgb(1, 13, 83);
   color: white;
+}
+
+.btn {
+  font-size: 14px;
 }
 </style>

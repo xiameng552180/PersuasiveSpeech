@@ -21,11 +21,7 @@
               "ethos": "0",
               "concreteness": 0.4988,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "Warning: purely anecdotal",
-                []
-              ]
+              "elo_info": [0, "Warning: purely anecdotal", []]
             },
             {
               "content": "I'm not claiming this as proof or anything, just one example",
@@ -55,11 +51,7 @@
               "ethos": "1",
               "concreteness": 0.1822,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "My parents stayed together because of me",
-                []
-              ]
+              "elo_info": [0, "My parents stayed together because of me", []]
             },
             {
               "content": "I've known this for as long as I can remember",
@@ -140,9 +132,7 @@
                     "contextoffset": 33,
                     "errorlength": 15,
                     "message": "Did you mean 'had been'?",
-                    "replacements": [
-                      "had been"
-                    ]
+                    "replacements": ["had been"]
                   }
                 ]
               ]
@@ -167,9 +157,7 @@
                     "contextoffset": 43,
                     "errorlength": 15,
                     "message": "Did you mean 'had been'?",
-                    "replacements": [
-                      "had been"
-                    ]
+                    "replacements": ["had been"]
                   }
                 ]
               ]
@@ -338,11 +326,7 @@
               "ethos": "0",
               "concreteness": 0.1526,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "My dad is great",
-                []
-              ]
+              "elo_info": [0, "My dad is great", []]
             },
             {
               "content": "He's willing to support whatever choice I make and is always there if I ask for help, but not in an almost condescending way like my mom can be",
@@ -421,7 +405,7 @@
           "reply_votes": "38 points",
           "reply_contents": [
             {
-              "content": "http://www.divorce.usu.edu/files/uploads/Lesson4.pdf. About two in ten individuals appear to enhance their lives through their divorce, but about three in ten seem to do worseSo divorce isn't statistically an effective route to happiness, unless your partner is abusive",
+              "content": "http://www.divorce.usu.edu/files/uploads/Lesson4.pdf. About two in ten individuals appear to enhance their lives through their divorce, but about three in ten seem to do worse",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -430,25 +414,28 @@
               "relevance": "0",
               "ethos": "0",
               "concreteness": 0.2323,
-              "eloquence": 1,
+              "eloquence": 0,
               "elo_info": [
-                1,
-                "http://www.divorce.usu.edu/files/uploads/Lesson4.pdf. About two in ten individuals appear to enhance their lives through their divorce, but about three in ten seem to do horses divorce isn't statistically an effective route to happiness, unless your partner is abusive",
-                [
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 43,
-                    "errorlength": 7,
-                    "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "horses",
-                      "worse",
-                      "worsen",
-                      "worsens",
-                      "worsts"
-                    ]
-                  }
-                ]
+                0,
+                "http://www.divorce.usu.edu/files/uploads/Lesson4.pdf. About two in ten individuals appear to enhance their lives through their divorce, but about three in ten seem to do worse",
+                []
+              ]
+            },
+            {
+              "content": "So divorce isn't statistically an effective route to happiness, unless your partner is abusive",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2323,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "So divorce isn't statistically an effective route to happiness, unless your partner is abusive",
+                []
               ]
             },
             {
@@ -598,9 +585,7 @@
                     "contextoffset": 0,
                     "errorlength": 4,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "They"
-                    ]
+                    "replacements": ["They"]
                   }
                 ]
               ]
@@ -625,9 +610,7 @@
                     "contextoffset": 0,
                     "errorlength": 2,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "If"
-                    ]
+                    "replacements": ["If"]
                   }
                 ]
               ]
@@ -652,9 +635,7 @@
                     "contextoffset": 0,
                     "errorlength": 3,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "But"
-                    ]
+                    "replacements": ["But"]
                   }
                 ]
               ]
