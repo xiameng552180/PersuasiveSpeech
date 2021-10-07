@@ -30,15 +30,13 @@
                     "contextoffset": 14,
                     "errorlength": 14,
                     "message": "Perhaps you can shorten this phrase to just 'whether'. It is correct though if you mean 'regardless of whether'.",
-                    "replacements": [
-                      "whether"
-                    ]
+                    "replacements": ["whether"]
                   }
                 ]
               ]
             },
             {
-              "content": " If we get right down to it we can\\t know that we\\re not, say, living in some sort of computer simulation; if that\\s the case the real world could be anything you could imagine with any sort of arbitrary physics and rules",
+              "content": " If we get right down to it we can\\t know that we\\re not, say, living in some sort of computer simulation",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -50,7 +48,24 @@
               "eloquence": 0,
               "elo_info": [
                 0,
-                " If we get right down to it we can\\t know that we\\re not, say, living in some sort of computer simulation; if that\\s the case the real world could be anything you could imagine with any sort of arbitrary physics and rules",
+                " If we get right down to it we can\\t know that we\\re not, say, living in some sort of computer simulation",
+                []
+              ]
+            },
+            {
+              "content": " if that\\s the case the real world could be anything you could imagine with any sort of arbitrary physics and rules",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2252,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " if that\\s the case the real world could be anything you could imagine with any sort of arbitrary physics and rules",
                 []
               ]
             },
@@ -82,11 +97,7 @@
               "ethos": "0",
               "concreteness": 0.205,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " But, that makes for a boring argument",
-                []
-              ]
+              "elo_info": [0, " But, that makes for a boring argument", []]
             },
             {
               "content": " So lets start with the premise that reality exists and is pretty much how we observe it",
@@ -108,9 +119,7 @@
                     "contextoffset": 4,
                     "errorlength": 4,
                     "message": "Did you mean 'Let's' (let's = let us; lets = 3rd person singular of 'let')?",
-                    "replacements": [
-                      "Let's"
-                    ]
+                    "replacements": ["Let's"]
                   }
                 ]
               ]
@@ -126,11 +135,7 @@
               "ethos": "0",
               "concreteness": 0.1798,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Not too much to ask, right",
-                []
-              ]
+              "elo_info": [0, " Not too much to ask, right", []]
             },
             {
               "content": "The first thing youll realize when you start thinking about this is that to have a non-zero chance of dying you have to live forever",
@@ -152,9 +157,7 @@
                     "contextoffset": 16,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'll"
-                    ]
+                    "replacements": ["you'll"]
                   }
                 ]
               ]
@@ -179,9 +182,7 @@
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'll"
-                    ]
+                    "replacements": ["you'll"]
                   }
                 ]
               ]
@@ -206,9 +207,7 @@
                     "contextoffset": 1,
                     "errorlength": 4,
                     "message": "Did you mean 'Let's' (let's = let us; lets = 3rd person singular of 'let')?",
-                    "replacements": [
-                      "Let's"
-                    ]
+                    "replacements": ["Let's"]
                   }
                 ]
               ]
@@ -233,18 +232,14 @@
                     "contextoffset": 11,
                     "errorlength": 3,
                     "message": "Did you mean 'I'll'?",
-                    "replacements": [
-                      "I'll"
-                    ]
+                    "replacements": ["I'll"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 22,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you're"
-                    ]
+                    "replacements": ["you're"]
                   }
                 ]
               ]
@@ -269,18 +264,14 @@
                     "contextoffset": 32,
                     "errorlength": 2,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "I'm"
-                    ]
+                    "replacements": ["I'm"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 7,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "Calmest"
-                    ]
+                    "replacements": ["Calmest"]
                   }
                 ]
               ]
@@ -330,11 +321,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "200 years: Congratulations",
-                []
-              ]
+              "elo_info": [0, "200 years: Congratulations", []]
             },
             {
               "content": " Youve lived another 200 years and managed to break all records of human lifespan previously known",
@@ -356,9 +343,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You've"
-                    ]
+                    "replacements": ["You've"]
                   }
                 ]
               ]
@@ -417,18 +402,14 @@
                     "contextoffset": 43,
                     "errorlength": 18,
                     "message": "Use simply 'now and then'.",
-                    "replacements": [
-                      "now and then"
-                    ]
+                    "replacements": ["now and then"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 2,
                     "message": "Possible typo: you repeated a whitespace",
-                    "replacements": [
-                      " "
-                    ]
+                    "replacements": [" "]
                   }
                 ]
               ]
@@ -444,11 +425,7 @@
               "ethos": "0",
               "concreteness": 0.1908,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Would that still count as you",
-                []
-              ]
+              "elo_info": [0, " Would that still count as you", []]
             },
             {
               "content": " For the sake of argument lets say sure, why not",
@@ -521,9 +498,7 @@
                     "contextoffset": 14,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you've"
-                    ]
+                    "replacements": ["you've"]
                   }
                 ]
               ]
@@ -565,9 +540,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You're"
-                    ]
+                    "replacements": ["You're"]
                   }
                 ]
               ]
@@ -583,11 +556,7 @@
               "ethos": "0",
               "concreteness": 0.2809,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Aging and disease are distant memories",
-                []
-              ]
+              "elo_info": [0, " Aging and disease are distant memories", []]
             },
             {
               "content": " Youve managed to live through the strife caused by the end of death",
@@ -609,9 +578,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You've"
-                    ]
+                    "replacements": ["You've"]
                   }
                 ]
               ]
@@ -670,9 +637,7 @@
                     "contextoffset": 15,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You've"
-                    ]
+                    "replacements": ["You've"]
                   }
                 ]
               ]
@@ -688,11 +653,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Kudos",
-                []
-              ]
+              "elo_info": [0, " Kudos", []]
             },
             {
               "content": "1,000,000 years: A million years",
@@ -705,11 +666,7 @@
               "ethos": "0",
               "concreteness": 0.2588,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "1,000,000 years: A million years",
-                []
-              ]
+              "elo_info": [0, "1,000,000 years: A million years", []]
             },
             {
               "content": " Wow",
@@ -722,11 +679,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Wow",
-                []
-              ]
+              "elo_info": [0, " Wow", []]
             },
             {
               "content": " How much memory can the human mind hold, anyway",
@@ -807,11 +760,7 @@
               "ethos": "0",
               "concreteness": 0.2131,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Are you still human, even",
-                []
-              ]
+              "elo_info": [0, " Are you still human, even", []]
             },
             {
               "content": " Whatever you are, lets say that youre still you, and youve lived this long",
@@ -833,18 +782,14 @@
                     "contextoffset": 33,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you're"
-                    ]
+                    "replacements": ["you're"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you've"
-                    ]
+                    "replacements": ["you've"]
                   }
                 ]
               ]
@@ -869,9 +814,7 @@
                     "contextoffset": 0,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You've"
-                    ]
+                    "replacements": ["You've"]
                   }
                 ]
               ]
@@ -887,14 +830,27 @@
               "ethos": "0",
               "concreteness": 0.193,
               "eloquence": 0,
+              "elo_info": [0, " Most of human history is in your mind", []]
+            },
+            {
+              "content": " The invention of agriculture and the city happened a mere 10,000 years before you were born",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2091,
+              "eloquence": 0,
               "elo_info": [
                 0,
-                " Most of human history is in your mind",
+                " The invention of agriculture and the city happened a mere 10,000 years before you were born",
                 []
               ]
             },
             {
-              "content": " The invention of agriculture and the city happened a mere 10,000 years before you were born; at this point, thats pretty much a rounding error in your age",
+              "content": " at this point, thats pretty much a rounding error in your age",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "0",
@@ -906,16 +862,14 @@
               "eloquence": 1,
               "elo_info": [
                 1,
-                " The invention of agriculture and the city happened a mere 10,000 years before you were born; at this point, that's pretty much a rounding error in your age",
+                " at this point, that's pretty much a rounding error in your age",
                 [
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "that's"
-                    ]
+                    "replacements": ["that's"]
                   }
                 ]
               ]
@@ -957,9 +911,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You've"
-                    ]
+                    "replacements": ["You've"]
                   }
                 ]
               ]
@@ -1000,11 +952,7 @@
               "ethos": "0",
               "concreteness": 0.1894,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Has another one happened by now",
-                []
-              ]
+              "elo_info": [0, " Has another one happened by now", []]
             },
             {
               "content": " Perhaps a giant comet or meteor has struck the Earth in your lifetime, shrouding it in a cloud of debris that blocked the sun",
@@ -1060,9 +1008,7 @@
                     "contextoffset": 17,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "hasn't"
-                    ]
+                    "replacements": ["hasn't"]
                   }
                 ]
               ]
@@ -1121,9 +1067,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You've"
-                    ]
+                    "replacements": ["You've"]
                   }
                 ]
               ]
@@ -1148,9 +1092,7 @@
                     "contextoffset": 1,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "Don't"
-                    ]
+                    "replacements": ["Don't"]
                   }
                 ]
               ]
@@ -1192,9 +1134,7 @@
                     "contextoffset": 15,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You're"
-                    ]
+                    "replacements": ["You're"]
                   }
                 ]
               ]
@@ -1304,9 +1244,7 @@
                     "contextoffset": 11,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you've"
-                    ]
+                    "replacements": ["you've"]
                   }
                 ]
               ]
@@ -1322,11 +1260,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "(continued)",
-                []
-              ]
+              "elo_info": [0, "(continued)", []]
             },
             {
               "content": "12",
@@ -1339,11 +1273,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "12",
-                []
-              ]
+              "elo_info": [0, "12", []]
             }
           ]
         },
@@ -1441,27 +1371,21 @@
                     "contextoffset": 33,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'd"
-                    ]
+                    "replacements": ["you'd"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'd"
-                    ]
+                    "replacements": ["you'd"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 9,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "elodeas"
-                    ]
+                    "replacements": ["elodeas"]
                   }
                 ]
               ]
@@ -1486,9 +1410,7 @@
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'd"
-                    ]
+                    "replacements": ["you'd"]
                   }
                 ]
               ]
@@ -1513,9 +1435,7 @@
                     "contextoffset": 1,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You'd"
-                    ]
+                    "replacements": ["You'd"]
                   }
                 ]
               ]
@@ -1557,9 +1477,7 @@
                     "contextoffset": 12,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'd"
-                    ]
+                    "replacements": ["you'd"]
                   },
                   {
                     "category": "Possible Typo",
@@ -1591,9 +1509,7 @@
                     "contextoffset": 1,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You'd"
-                    ]
+                    "replacements": ["You'd"]
                   }
                 ]
               ]
@@ -1618,27 +1534,21 @@
                     "contextoffset": 15,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'd"
-                    ]
+                    "replacements": ["you'd"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you're"
-                    ]
+                    "replacements": ["you're"]
                   }
                 ]
               ]
@@ -1663,9 +1573,7 @@
                     "contextoffset": 1,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You'd"
-                    ]
+                    "replacements": ["You'd"]
                   }
                 ]
               ]

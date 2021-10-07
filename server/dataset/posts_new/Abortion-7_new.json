@@ -72,11 +72,7 @@
               "ethos": "0",
               "concreteness": 0.1813,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " It hurt my heart, just looking at them",
-                []
-              ]
+              "elo_info": [0, " It hurt my heart, just looking at them", []]
             },
             {
               "content": " I ran outside and finally, it dawned on me",
@@ -89,11 +85,7 @@
               "ethos": "0",
               "concreteness": 0.1508,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " I ran outside and finally, it dawned on me",
-                []
-              ]
+              "elo_info": [0, " I ran outside and finally, it dawned on me", []]
             },
             {
               "content": " Norma, I said to myself, Theyre right\"",
@@ -115,9 +107,7 @@
                     "contextoffset": 26,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "They're"
-                    ]
+                    "replacements": ["They're"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -131,9 +121,7 @@
                     "contextoffset": 38,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -149,11 +137,7 @@
               "ethos": "1",
               "concreteness": 0.1838,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " I had worked with pregnant women for years",
-                []
-              ]
+              "elo_info": [0, " I had worked with pregnant women for years", []]
             },
             {
               "content": " I had been through three pregnancies and deliveries myself",
@@ -183,11 +167,7 @@
               "ethos": "0",
               "concreteness": 0.1302,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " I should have known",
-                []
-              ]
+              "elo_info": [0, " I should have known", []]
             },
             {
               "content": " Yet something in that poster made me lose my breath",
@@ -226,9 +206,7 @@
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "that's"
-                    ]
+                    "replacements": ["that's"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -242,9 +220,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -269,19 +245,14 @@
                     "contextoffset": 1,
                     "errorlength": 3,
                     "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "It's",
-                      "It is"
-                    ]
+                    "replacements": ["It's", "It is"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "that's"
-                    ]
+                    "replacements": ["that's"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -295,9 +266,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -330,11 +299,7 @@
               "ethos": "0",
               "concreteness": 0.1883,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " I had to face up to the awful reality",
-                []
-              ]
+              "elo_info": [0, " I had to face up to the awful reality", []]
             },
             {
               "content": " Abortion wasnt about products of conception\"",
@@ -356,9 +321,7 @@
                     "contextoffset": 10,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "wasn't"
-                    ]
+                    "replacements": ["wasn't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -372,9 +335,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -399,9 +360,7 @@
                     "contextoffset": 4,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "wasn't"
-                    ]
+                    "replacements": ["wasn't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -415,9 +374,7 @@
                     "contextoffset": 30,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -449,9 +406,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -467,11 +422,7 @@
               "ethos": "0",
               "concreteness": 0.1602,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " All those years I was wrong",
-                []
-              ]
+              "elo_info": [0, " All those years I was wrong", []]
             },
             {
               "content": " Signing that affidavit, I was wrong",
@@ -484,11 +435,7 @@
               "ethos": "0",
               "concreteness": 0.1672,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Signing that affidavit, I was wrong",
-                []
-              ]
+              "elo_info": [0, " Signing that affidavit, I was wrong", []]
             },
             {
               "content": " Working in an abortion clinic, I was wrong",
@@ -501,11 +448,7 @@
               "ethos": "0",
               "concreteness": 0.2391,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Working in an abortion clinic, I was wrong",
-                []
-              ]
+              "elo_info": [0, " Working in an abortion clinic, I was wrong", []]
             },
             {
               "content": " No more of this first trimester, second trimester, third trimester stuff",
@@ -535,11 +478,7 @@
               "ethos": "0",
               "concreteness": 0.188,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Abortion at any point was wrong",
-                []
-              ]
+              "elo_info": [0, " Abortion at any point was wrong", []]
             },
             {
               "content": " It was so clear",
@@ -552,11 +491,7 @@
               "ethos": "0",
               "concreteness": 0.2189,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " It was so clear",
-                []
-              ]
+              "elo_info": [0, " It was so clear", []]
             },
             {
               "content": " Painfully clear",
@@ -569,14 +504,44 @@
               "ethos": "0",
               "concreteness": 0.232,
               "eloquence": 0,
+              "elo_info": [0, " Painfully clear", []]
+            },
+            {
+              "content": "The notion that choice is an important element of the law is not one that is widespread-",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2219,
+              "eloquence": 0,
               "elo_info": [
                 0,
-                " Painfully clear",
+                "The notion that choice is an important element of the law is not one that is widespread-",
                 []
               ]
             },
             {
-              "content": "The notion that choice is an important element of the law is not one that is widespread- you can\\t take drugs, you can\\t commit suicide, there are lot of \"My body, my choice\" things where people understandably disagree with giving people their choices",
+              "content": " you can\\t take drugs, you can\\t commit suicide",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2219,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " you can\\t take drugs, you can\\t commit suicide",
+                []
+              ]
+            },
+            {
+              "content": " there are lot of \"My body, my choice\" things where people understandably disagree with giving people their choices",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -588,25 +553,21 @@
               "eloquence": 2,
               "elo_info": [
                 2,
-                "The notion that choice is an important element of the law is not one that is widespread- you can\\t take drugs, you can\\t commit suicide, there are lot of \u201cMy body, my choice\u201d things where people understandably disagree with giving people their choices",
+                " there are lot of \u201cMy body, my choice\u201d things where people understandably disagree with giving people their choices",
                 [
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -690,11 +651,7 @@
               "ethos": "0",
               "concreteness": 0.1797,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Young people can change their minds too",
-                []
-              ]
+              "elo_info": [0, " Young people can change their minds too", []]
             },
             {
               "content": " Most are opposed to murder",
@@ -707,11 +664,7 @@
               "ethos": "0",
               "concreteness": 0.2548,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Most are opposed to murder",
-                []
-              ]
+              "elo_info": [0, " Most are opposed to murder", []]
             },
             {
               "content": " That is why they are called pro life, not anti choice- because they see themselves as valuing life more highly",
@@ -750,9 +703,7 @@
                     "contextoffset": 43,
                     "errorlength": 3,
                     "message": "Did you mean 'is'?",
-                    "replacements": [
-                      "is"
-                    ]
+                    "replacements": ["is"]
                   }
                 ]
               ]
@@ -785,11 +736,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "6",
-                []
-              ]
+              "elo_info": [0, "6", []]
             }
           ]
         },
@@ -800,7 +747,32 @@
           "reply_votes": "17 points",
           "reply_contents": [
             {
-              "content": "While youre correct that if someone performs an act that they themselves oppose, they are being a hypocrite, being a hypocrite does not mean that someone is wrong or that their stance is less valid (its also tu quoque to make that argument)\"",
+              "content": "While youre correct that if someone performs an act that they themselves oppose, they are being a hypocrite",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2221,
+              "eloquence": 1,
+              "elo_info": [
+                1,
+                "While you're correct that if someone performs an act that they themselves oppose, they are being a hypocrite",
+                [
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 6,
+                    "errorlength": 5,
+                    "message": "Possible spelling mistake found",
+                    "replacements": ["you're"]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": " being a hypocrite does not mean that someone is wrong or that their stance is less valid (its also tu quoque to make that argument)\"",
               "is_claim": "1",
               "claim_type": "disagreement",
               "logos": "0",
@@ -809,29 +781,17 @@
               "relevance": "0",
               "ethos": "0",
               "concreteness": 0.2221,
-              "eloquence": 6,
+              "eloquence": 5,
               "elo_info": [
-                6,
-                "While you're correct that if someone performs an act that they themselves oppose, they are being a hypocrite, being a hypocrite does not mean that someone is wrong or that their stance is less valid (it's also Tu quote to make that argument)\u201d",
+                5,
+                " being a hypocrite does not mean that someone is wrong or that their stance is less valid (it's also Tu quote to make that argument)\u201d",
                 [
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 6,
-                    "errorlength": 5,
-                    "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you're"
-                    ]
-                  },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 3,
                     "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "it's",
-                      "it is"
-                    ]
+                    "replacements": ["it's", "it is"]
                   },
                   {
                     "category": "Possible Typo",
@@ -921,9 +881,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -955,9 +913,7 @@
                     "contextoffset": 43,
                     "errorlength": 8,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "them self"
-                    ]
+                    "replacements": ["them self"]
                   }
                 ]
               ]
@@ -982,9 +938,7 @@
                     "contextoffset": 4,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "doesn't"
-                    ]
+                    "replacements": ["doesn't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -998,9 +952,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -1025,18 +977,14 @@
                     "contextoffset": 0,
                     "errorlength": 2,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "It"
-                    ]
+                    "replacements": ["It"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 19,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "aren't"
-                    ]
+                    "replacements": ["aren't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -1050,9 +998,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -1102,11 +1048,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "3",
-                []
-              ]
+              "elo_info": [0, "3", []]
             }
           ]
         },
@@ -1178,11 +1120,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "4",
-                []
-              ]
+              "elo_info": [0, "4", []]
             }
           ]
         },
@@ -1203,11 +1141,7 @@
               "ethos": "0",
               "concreteness": 0.1651,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "It depends on what the person thinks",
-                []
-              ]
+              "elo_info": [0, "It depends on what the person thinks", []]
             },
             {
               "content": " If theyre anti choice in every single case, then I agree with you\"",
@@ -1229,9 +1163,7 @@
                     "contextoffset": 4,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "they're"
-                    ]
+                    "replacements": ["they're"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -1245,9 +1177,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -1272,29 +1202,21 @@
                     "contextoffset": 4,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "they're"
-                    ]
+                    "replacements": ["they're"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 7,
                     "message": "Possible typo: apostrophe is missing. Did you mean 'mothers'' or 'mother's'?",
-                    "replacements": [
-                      "mothers'",
-                      "mother's"
-                    ]
+                    "replacements": ["mothers'", "mother's"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 3,
                     "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "it's",
-                      "it is"
-                    ]
+                    "replacements": ["it's", "it is"]
                   },
                   {
                     "category": "Possible Typo",
@@ -1359,9 +1281,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]

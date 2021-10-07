@@ -30,9 +30,7 @@
                     "contextoffset": 2,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   }
                 ]
               ]
@@ -57,9 +55,7 @@
                     "contextoffset": 1,
                     "errorlength": 7,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "Nobody"
-                    ]
+                    "replacements": ["Nobody"]
                   }
                 ]
               ]
@@ -101,9 +97,7 @@
                     "contextoffset": 19,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   }
                 ]
               ]
@@ -128,9 +122,7 @@
                     "contextoffset": 1,
                     "errorlength": 10,
                     "message": "Did you forget a comma after a conjunctive/linking adverb?",
-                    "replacements": [
-                      "Conversely,"
-                    ]
+                    "replacements": ["Conversely,"]
                   }
                 ]
               ]
@@ -163,11 +155,7 @@
               "ethos": "0",
               "concreteness": 0.2145,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Part of it is the outlook they have",
-                []
-              ]
+              "elo_info": [0, " Part of it is the outlook they have", []]
             },
             {
               "content": " Part of it is they appreciate their partner and the blessing of the marriage, rather than feeling trapped or oppressed",
@@ -206,9 +194,7 @@
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you're"
-                    ]
+                    "replacements": ["you're"]
                   }
                 ]
               ]
@@ -233,9 +219,7 @@
                     "contextoffset": 31,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "isn't"
-                    ]
+                    "replacements": ["isn't"]
                   }
                 ]
               ]
@@ -260,9 +244,7 @@
                     "contextoffset": 5,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "isn't"
-                    ]
+                    "replacements": ["isn't"]
                   }
                 ]
               ]
@@ -287,9 +269,7 @@
                     "contextoffset": 43,
                     "errorlength": 2,
                     "message": "Put a space after the comma, but not before the comma",
-                    "replacements": [
-                      ","
-                    ]
+                    "replacements": [","]
                   }
                 ]
               ]
@@ -339,11 +319,7 @@
               "ethos": "0",
               "concreteness": 0.18,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Sometimes the roles are better defined",
-                []
-              ]
+              "elo_info": [0, " Sometimes the roles are better defined", []]
             },
             {
               "content": " Sometimes their culture offers more of a support system for the spouse, such as extended family",
@@ -478,9 +454,7 @@
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "there's"
-                    ]
+                    "replacements": ["there's"]
                   }
                 ]
               ]
@@ -505,18 +479,14 @@
                     "contextoffset": 3,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 8,
                     "message": "This word is usually written together. Did you mean 'without'?",
-                    "replacements": [
-                      "without"
-                    ]
+                    "replacements": ["without"]
                   }
                 ]
               ]
@@ -558,10 +528,7 @@
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Did you mean 'can't' or 'cannot'?",
-                    "replacements": [
-                      "can't",
-                      "cannot"
-                    ]
+                    "replacements": ["can't", "cannot"]
                   }
                 ]
               ]
@@ -586,18 +553,14 @@
                     "contextoffset": 1,
                     "errorlength": 8,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "Marriage"
-                    ]
+                    "replacements": ["Marriage"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "there's"
-                    ]
+                    "replacements": ["there's"]
                   }
                 ]
               ]
@@ -613,11 +576,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "4",
-                []
-              ]
+              "elo_info": [0, "4", []]
             }
           ]
         },
@@ -664,9 +623,7 @@
                     "contextoffset": 3,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   },
                   {
                     "category": "Possible Typo",
@@ -703,9 +660,7 @@
                     "contextoffset": 1,
                     "errorlength": 2,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "So"
-                    ]
+                    "replacements": ["So"]
                   }
                 ]
               ]
@@ -730,9 +685,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "Being"
-                    ]
+                    "replacements": ["Being"]
                   }
                 ]
               ]
@@ -748,11 +701,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "5",
-                []
-              ]
+              "elo_info": [0, "5", []]
             }
           ]
         },
@@ -782,9 +731,7 @@
                     "contextoffset": 0,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You're"
-                    ]
+                    "replacements": ["You're"]
                   }
                 ]
               ]
@@ -826,9 +773,7 @@
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   }
                 ]
               ]
@@ -870,9 +815,7 @@
                     "contextoffset": 1,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "You're"
-                    ]
+                    "replacements": ["You're"]
                   }
                 ]
               ]
@@ -888,11 +831,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "5",
-                []
-              ]
+              "elo_info": [0, "5", []]
             }
           ]
         },
@@ -903,7 +842,7 @@
           "reply_votes": "26 points",
           "reply_contents": [
             {
-              "content": "trying to make it workEssentially, by getting married you earn yourself no advantages in your relationshipActually, you just described the chief advantage of marriage: a mutual pledge to try to make it work",
+              "content": "trying to make it work: Essentially, by getting married you earn yourself no advantages in your relationship",
               "is_claim": "1",
               "claim_type": "interpretation",
               "logos": "0",
@@ -912,35 +851,36 @@
               "relevance": "0",
               "ethos": "0",
               "concreteness": 0.2045,
-              "eloquence": 3,
+              "eloquence": 1,
               "elo_info": [
-                3,
-                "Trying to make it workEssentially, by getting married you earn yourself no advantages in your relationshipActually, you just described the chief advantage of marriage: a mutual pledge to try to make it work",
+                1,
+                "Trying to make it work: Essentially, by getting married you earn yourself no advantages in your relationship",
                 [
                   {
                     "category": "Capitalization",
                     "contextoffset": 0,
                     "errorlength": 6,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "Trying"
-                    ]
-                  },
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 18,
-                    "errorlength": 15,
-                    "message": "Possible spelling mistake found",
-                    "replacements": []
-                  },
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 43,
-                    "errorlength": 20,
-                    "message": "Possible spelling mistake found",
-                    "replacements": []
+                    "replacements": ["Trying"]
                   }
                 ]
+              ]
+            },
+            {
+              "content": "Actually, you just described the chief advantage of marriage: a mutual pledge to try to make it work",
+              "is_claim": "1",
+              "claim_type": "interpretation",
+              "logos": "0",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2045,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Actually, you just described the chief advantage of marriage: a mutual pledge to try to make it work",
+                []
               ]
             },
             {
@@ -963,9 +903,7 @@
                     "contextoffset": 15,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "aren't"
-                    ]
+                    "replacements": ["aren't"]
                   },
                   {
                     "category": "Grammar",
@@ -997,18 +935,14 @@
                     "contextoffset": 20,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "who's"
-                    ]
+                    "replacements": ["who's"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "isn't"
-                    ]
+                    "replacements": ["isn't"]
                   }
                 ]
               ]
@@ -1033,9 +967,7 @@
                     "contextoffset": 43,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "you'll"
-                    ]
+                    "replacements": ["you'll"]
                   }
                 ]
               ]
@@ -1068,11 +1000,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "8",
-                []
-              ]
+              "elo_info": [0, "8", []]
             }
           ]
         },
@@ -1110,11 +1038,7 @@
               "ethos": "0",
               "concreteness": 0.2307,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " For some people, marriage works very well",
-                []
-              ]
+              "elo_info": [0, " For some people, marriage works very well", []]
             },
             {
               "content": " If you dont think its for you, then you may well be right, and can avoid it",
@@ -1136,19 +1060,14 @@
                     "contextoffset": 8,
                     "errorlength": 4,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "don't"
-                    ]
+                    "replacements": ["don't"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 19,
                     "errorlength": 3,
                     "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "it's",
-                      "it is"
-                    ]
+                    "replacements": ["it's", "it is"]
                   }
                 ]
               ]
@@ -1173,9 +1092,7 @@
                     "contextoffset": 1,
                     "errorlength": 3,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "But"
-                    ]
+                    "replacements": ["But"]
                   }
                 ]
               ]
@@ -1191,11 +1108,7 @@
               "ethos": "0",
               "concreteness": 0.3353,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "The 50% rate is also vastly misleading",
-                []
-              ]
+              "elo_info": [0, "The 50% rate is also vastly misleading", []]
             },
             {
               "content": " 50% of first marriages do not end in divorce",

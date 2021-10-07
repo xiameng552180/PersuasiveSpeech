@@ -21,11 +21,7 @@
               "ethos": "0",
               "concreteness": 0.2528,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "The current limit is set at 24 weeks",
-                []
-              ]
+              "elo_info": [0, "The current limit is set at 24 weeks", []]
             },
             {
               "content": " After 24 weeks the fetus is viable outside the womb although it is unlikely to develop without being handicapped",
@@ -169,11 +165,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "6",
-                []
-              ]
+              "elo_info": [0, "6", []]
             }
           ]
         },
@@ -210,9 +202,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -252,7 +242,71 @@
               ]
             },
             {
-              "content": " Then you would have to take time off work, you might have to find someone else to take time off work too in order to drive you there, you might have to find someone to mind your kids, you have to find a clinic and make an appointment, you might accidentally go to one of those pro life centers first and your state might have counselling sessions or other hoops for you to jump through",
+              "content": " Then you would have to take time off work",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1866,
+              "eloquence": 0,
+              "elo_info": [0, " Then you would have to take time off work", []]
+            },
+            {
+              "content": " you might have to find someone else to take time off work too in order to drive you there",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1866,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " you might have to find someone else to take time off work too in order to drive you there",
+                []
+              ]
+            },
+            {
+              "content": " you might have to find someone to mind your kids",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1866,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " you might have to find someone to mind your kids",
+                []
+              ]
+            },
+            {
+              "content": " you have to find a clinic and make an appointment",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1866,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " you have to find a clinic and make an appointment",
+                []
+              ]
+            },
+            {
+              "content": " you might accidentally go to one of those pro life centers first and your state might have counselling sessions or other hoops for you to jump through",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -264,17 +318,14 @@
               "eloquence": 1,
               "elo_info": [
                 1,
-                " Then you would have to take time off work, you might have to find someone else to take time off work too in order to drive you there, you might have to find someone to mind your kids, you have to find a clinic and make an appointment, you might accidentally go to one of those pro life centers first and your state might have counseling sessions or other hoops for you to jump through",
+                " you might accidentally go to one of those pro life centers first and your state might have counseling sessions or other hoops for you to jump through",
                 [
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 11,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "counseling",
-                      "counsel ling"
-                    ]
+                    "replacements": ["counseling", "counsel ling"]
                   }
                 ]
               ]
@@ -337,11 +388,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "3",
-                []
-              ]
+              "elo_info": [0, "3", []]
             }
           ]
         },
@@ -362,11 +409,7 @@
               "ethos": "0",
               "concreteness": 0.2002,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "How did you arrive at the 20 week limit",
-                []
-              ]
+              "elo_info": [0, "How did you arrive at the 20 week limit", []]
             },
             {
               "content": " What significant difference is there between a 19 week foetus and a 20 week foetus",
@@ -388,18 +431,14 @@
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "fetus"
-                    ]
+                    "replacements": ["fetus"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "fetus"
-                    ]
+                    "replacements": ["fetus"]
                   }
                 ]
               ]
@@ -424,18 +463,14 @@
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "fetus"
-                    ]
+                    "replacements": ["fetus"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "fetus"
-                    ]
+                    "replacements": ["fetus"]
                   }
                 ]
               ]

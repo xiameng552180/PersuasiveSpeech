@@ -11,7 +11,7 @@
           "reply_votes": "13 points'",
           "reply_contents": [
             {
-              "content": "You have to have a license to drive a carNo you don't, you have to get a license to drive a car on public roads\"",
+              "content": "You have to have a license to drive a car",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -20,25 +20,24 @@
               "relevance": "0",
               "ethos": "0",
               "concreteness": 0.1794,
-              "eloquence": 3,
+              "eloquence": 0,
+              "elo_info": [0, "You have to have a license to drive a car", []]
+            },
+            {
+              "content": "No you don't, you have to get a license to drive a car on public roads\"",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1794,
+              "eloquence": 2,
               "elo_info": [
-                3,
-                "You have to have a license to drive a cargo you don't, you have to get a license to drive a car on public roads\u201d",
+                2,
+                "No you don't, you have to get a license to drive a car on public roads\u201d",
                 [
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 38,
-                    "errorlength": 5,
-                    "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "cargo",
-                      "Carlo",
-                      "Arno",
-                      "Carnot",
-                      "carny",
-                      "car No"
-                    ]
-                  },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
@@ -51,9 +50,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -76,7 +73,7 @@
               ]
             },
             {
-              "content": "and any profession that deals with the health of humans or other animals requires you to be certified in some wayBecause in those cases you are making heath or medical decisions for people that aren't your dependents",
+              "content": "and any profession that deals with the health of humans or other animals requires you to be certified in some way",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -88,16 +85,14 @@
               "eloquence": 2,
               "elo_info": [
                 2,
-                "And any profession that deals with the health of humans or other animals requires you to be certified in some wayBecause in those cases you are making heath or medical decisions for people that aren't your dependents",
+                "And any profession that deals with the health of humans or other animals requires you to be certified in some way",
                 [
                   {
                     "category": "Capitalization",
                     "contextoffset": 0,
                     "errorlength": 3,
                     "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "And"
-                    ]
+                    "replacements": ["And"]
                   },
                   {
                     "category": "Possible Typo",
@@ -107,6 +102,23 @@
                     "replacements": []
                   }
                 ]
+              ]
+            },
+            {
+              "content": "Because in those cases you are making heath or medical decisions for people that aren't your dependents",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "1",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2186,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                "Because in those cases you are making heath or medical decisions for people that aren't your dependents",
+                []
               ]
             },
             {
@@ -180,10 +192,7 @@
                     "contextoffset": 12,
                     "errorlength": 4,
                     "message": "Did you mean 'you're' or 'you are'?",
-                    "replacements": [
-                      "you're",
-                      "you are"
-                    ]
+                    "replacements": ["you're", "you are"]
                   }
                 ]
               ]
@@ -257,7 +266,7 @@
               ]
             },
             {
-              "content": " You don't put put people in jail until they prove they're not a threat - everyone is assumed to have a basic level of competence and morality, and only when they show they are a danger to themselves or others do they get punished",
+              "content": " You don't put put people in jail until they prove they're not a threat -",
               "is_claim": "0",
               "claim_type": "0",
               "logos": "1",
@@ -269,18 +278,33 @@
               "eloquence": 1,
               "elo_info": [
                 1,
-                " You don't put people in jail until they prove they're not a threat - everyone is assumed to have a basic level of competence and morality, and only when they show they are a danger to themselves or others do they get punished",
+                " You don't put people in jail until they prove they're not a threat -",
                 [
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 11,
                     "errorlength": 7,
                     "message": "Possible typo: you repeated a word",
-                    "replacements": [
-                      "put"
-                    ]
+                    "replacements": ["put"]
                   }
                 ]
+              ]
+            },
+            {
+              "content": " everyone is assumed to have a basic level of competence and morality, and only when they show they are a danger to themselves or others do they get punished",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.1977,
+              "eloquence": 0,
+              "elo_info": [
+                0,
+                " everyone is assumed to have a basic level of competence and morality, and only when they show they are a danger to themselves or others do they get punished",
+                []
               ]
             },
             {
@@ -311,11 +335,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "7",
-                []
-              ]
+              "elo_info": [0, "7", []]
             }
           ]
         },
@@ -352,9 +372,7 @@
                     "contextoffset": 39,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   }
                 ]
               ]
@@ -386,9 +404,7 @@
                     "contextoffset": 0,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   }
                 ]
               ]
@@ -430,18 +446,14 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -508,11 +520,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "2",
-                []
-              ]
+              "elo_info": [0, "2", []]
             }
           ]
         },

@@ -11,7 +11,39 @@
           "reply_votes": "2 points",
           "reply_contents": [
             {
-              "content": "its in the process of becoming sentient unless we actively move to stop itI would question why you think something being in the progress of development unless stopped is ethically relevant\"",
+              "content": "its in the process of becoming sentient unless we actively move to stop it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": 0.2279,
+              "eloquence": 2,
+              "elo_info": [
+                2,
+                "Its in the process of becoming sentient unless we actively move to stop it",
+                [
+                  {
+                    "category": "Capitalization",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "This sentence does not start with an uppercase letter",
+                    "replacements": ["Its"]
+                  },
+                  {
+                    "category": "Possible Typo",
+                    "contextoffset": 0,
+                    "errorlength": 3,
+                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
+                    "replacements": ["it's", "it is"]
+                  }
+                ]
+              ]
+            },
+            {
+              "content": "I would question why you think something being in the progress of development unless stopped is ethically relevant\"",
               "is_claim": "1",
               "claim_type": "disagreement",
               "logos": "0",
@@ -20,49 +52,11 @@
               "relevance": "0",
               "ethos": "0",
               "concreteness": 0.2279,
-              "eloquence": 5,
+              "eloquence": 2,
               "elo_info": [
-                5,
-                "Its in the process of becoming sentient unless we actively move to stop it would question why you think something being in the progress of development unless stopped is ethically relevant\u201d",
+                2,
+                "I would question why you think something being in the progress of development unless stopped is ethically relevant\u201d",
                 [
-                  {
-                    "category": "Capitalization",
-                    "contextoffset": 0,
-                    "errorlength": 3,
-                    "message": "This sentence does not start with an uppercase letter",
-                    "replacements": [
-                      "Its"
-                    ]
-                  },
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 0,
-                    "errorlength": 3,
-                    "message": "Did you mean 'it's' (='it is') instead of 'its' (possessive pronoun)?",
-                    "replacements": [
-                      "it's",
-                      "it is"
-                    ]
-                  },
-                  {
-                    "category": "Possible Typo",
-                    "contextoffset": 43,
-                    "errorlength": 3,
-                    "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "it",
-                      "its",
-                      "IT",
-                      "It",
-                      "Ito",
-                      "Ti",
-                      "ii",
-                      "iii",
-                      "ite",
-                      "ti",
-                      "it I"
-                    ]
-                  },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
@@ -75,9 +69,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -109,9 +101,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -127,11 +117,7 @@
               "ethos": "0",
               "concreteness": 0.1782,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Are we any less obligated to stop it",
-                []
-              ]
+              "elo_info": [0, " Are we any less obligated to stop it", []]
             },
             {
               "content": "Similarly, suppose a fetus contains a gene which will cause it to die unless we intervene and give the mother a certain medication",
@@ -170,18 +156,14 @@
                     "contextoffset": 33,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -197,11 +179,7 @@
               "ethos": "0",
               "concreteness": 0.2331,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Are you okay with an abortion in this case",
-                []
-              ]
+              "elo_info": [0, " Are you okay with an abortion in this case", []]
             },
             {
               "content": "In your response to another comment:in one case, we have a growing human being that just so happens to be inside of someone",
@@ -240,10 +218,7 @@
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "tetchy",
-                      "Jetway"
-                    ]
+                    "replacements": ["tetchy", "Jetway"]
                   }
                 ]
               ]
@@ -268,18 +243,14 @@
                     "contextoffset": 30,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -304,36 +275,28 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart opening quote here: '\u201c'.",
-                    "replacements": [
-                      "\u201c"
-                    ]
+                    "replacements": ["\u201c"]
                   },
                   {
                     "category": "Miscellaneous",
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -358,19 +321,14 @@
                     "contextoffset": 13,
                     "errorlength": 5,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "that's"
-                    ]
+                    "replacements": ["that's"]
                   },
                   {
                     "category": "Grammar",
                     "contextoffset": 43,
                     "errorlength": 10,
                     "message": "Don't use indefinite articles with plural words. Did you mean 'a criterion' or simply 'criteria'?",
-                    "replacements": [
-                      "a criterion",
-                      "criteria"
-                    ]
+                    "replacements": ["a criterion", "criteria"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -384,9 +342,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -411,9 +367,7 @@
                     "contextoffset": 43,
                     "errorlength": 15,
                     "message": "Use simply 'proximity'.",
-                    "replacements": [
-                      "proximity"
-                    ]
+                    "replacements": ["proximity"]
                   }
                 ]
               ]
@@ -446,11 +400,7 @@
               "ethos": "0",
               "concreteness": 0.1666,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                " Take it back one more step",
-                []
-              ]
+              "elo_info": [0, " Take it back one more step", []]
             },
             {
               "content": " Sperm will naturally travel up into the ovaries from the vagina, and then be in close proximity, and then become an embryo",
@@ -472,9 +422,7 @@
                     "contextoffset": 43,
                     "errorlength": 15,
                     "message": "Use simply 'proximity'.",
-                    "replacements": [
-                      "proximity"
-                    ]
+                    "replacements": ["proximity"]
                   }
                 ]
               ]
@@ -533,9 +481,7 @@
                     "contextoffset": 33,
                     "errorlength": 10,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "person hood"
-                    ]
+                    "replacements": ["person hood"]
                   }
                 ]
               ]
@@ -560,9 +506,7 @@
                     "contextoffset": 6,
                     "errorlength": 6,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "doesn't"
-                    ]
+                    "replacements": ["doesn't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -576,9 +520,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -620,9 +562,7 @@
                     "contextoffset": 8,
                     "errorlength": 4,
                     "message": "Use 'many' with countable nouns.",
-                    "replacements": [
-                      "many"
-                    ]
+                    "replacements": ["many"]
                   }
                 ]
               ]
@@ -647,37 +587,28 @@
                     "contextoffset": 1,
                     "errorlength": 2,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "I'd"
-                    ]
+                    "replacements": ["I'd"]
                   },
                   {
                     "category": "Redundant Phrases",
                     "contextoffset": 14,
                     "errorlength": 9,
                     "message": "Use simply 'lot'.",
-                    "replacements": [
-                      "lot"
-                    ]
+                    "replacements": ["lot"]
                   },
                   {
                     "category": "Grammar",
                     "contextoffset": 43,
                     "errorlength": 6,
                     "message": "Don't use indefinite articles with plural words. Did you mean 'a way' or simply 'ways'?",
-                    "replacements": [
-                      "a way",
-                      "ways"
-                    ]
+                    "replacements": ["a way", "ways"]
                   },
                   {
                     "category": "Possible Typo",
                     "contextoffset": 43,
                     "errorlength": 8,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "shouldn't"
-                    ]
+                    "replacements": ["shouldn't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -691,9 +622,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -718,9 +647,7 @@
                     "contextoffset": 43,
                     "errorlength": 8,
                     "message": "Possible spelling mistake found",
-                    "replacements": [
-                      "shouldn't"
-                    ]
+                    "replacements": ["shouldn't"]
                   },
                   {
                     "category": "Miscellaneous",
@@ -734,9 +661,7 @@
                     "contextoffset": 43,
                     "errorlength": 1,
                     "message": "Use a smart closing quote here: '\u201d'.",
-                    "replacements": [
-                      "\u201d"
-                    ]
+                    "replacements": ["\u201d"]
                   }
                 ]
               ]
@@ -769,11 +694,7 @@
               "ethos": "0",
               "concreteness": NaN,
               "eloquence": 0,
-              "elo_info": [
-                0,
-                "38",
-                []
-              ]
+              "elo_info": [0, "38", []]
             }
           ]
         },

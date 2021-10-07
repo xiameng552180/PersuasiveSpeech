@@ -11,7 +11,19 @@
           "reply_votes": "2 points",
           "reply_contents": [
             {
-              "content": "its in the process of becoming sentient unless we actively move to stop itI would question why you think something being in the progress of development unless stopped is ethically relevant\"",
+              "content": "its in the process of becoming sentient unless we actively move to stop it",
+              "is_claim": "0",
+              "claim_type": "0",
+              "logos": "1",
+              "pathos": "0",
+              "evidence": "0",
+              "relevance": "0",
+              "ethos": "0",
+              "concreteness": "0",
+              "eloquence": "0"
+            },
+            {
+              "content": "I would question why you think something being in the progress of development unless stopped is ethically relevant\"",
               "is_claim": "1",
               "claim_type": "disagreement",
               "logos": "0",
