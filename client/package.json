@@ -30,7 +30,7 @@
         "remove-overlaps": "^2.1.0",
         "tether": "^1.4.0",
         "tsne-js": "^1.0.3",
-        "underscore": "^1.8.3",
+        "underscore": "^1.12.1",
         "vue": "^2.6.11",
         "vue-awesome": "^2.1.0",
         "vue-material": "^0.5.2",
