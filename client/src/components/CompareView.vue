@@ -771,7 +771,7 @@ export default {
           });
         }
       } else {
-        console.log("ex_id", this.ex_id);
+        // console.log("ex_id", this.ex_id);
         //draw all data
 
         // compute eloquenceSum & is_claimSum
@@ -799,11 +799,11 @@ export default {
         //console.log("barSum", barSum);
       }
 
-      console.log("inputLabels: ", this.inputLabels);
+      // console.log("inputLabels: ", this.inputLabels);
       var data = this.inputLabels["input"].map((d) => {
-        console.log("barview-d", d);
-        console.log("barview-input:", d.label);
-        console.log("barview-data:", this.examplesum[d.feature]);
+        // console.log("barview-d", d);
+        // console.log("barview-input:", d.label);
+        // console.log("barview-data:", this.examplesum[d.feature]);
         return {
           feature: d.feature,
           label: Math.round(d.label - this.examplesum[d.feature]),
