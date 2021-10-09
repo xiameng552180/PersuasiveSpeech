@@ -541,7 +541,7 @@ export default {
               .on("mouseover", (d) => {
                 div.transition().duration(200).style("opacity", 0.7);
                 div
-                  .html(d.data.value.feature + ":" + d.data.value.label)
+                  .html(d.data.value.feature + ":" + d.data.value.label + "%")
                   .style("left", d3.event.pageX + "px")
                   .style("top", d3.event.pageY - 28 + "px");
               })
