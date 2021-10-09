@@ -541,7 +541,12 @@ export default {
               .on("mouseover", (d) => {
                 div.transition().duration(200).style("opacity", 0.7);
                 div
-                  .html(d.data.value.feature + ":" + d.data.value.label)
+                  .html(
+                    d.data.value.feature +
+                      ":" +
+                      d.data.value.label.toFixed(0) +
+                      "%"
+                  )
                   .style("left", d3.event.pageX + "px")
                   .style("top", d3.event.pageY - 28 + "px");
               })
@@ -607,7 +612,7 @@ export default {
             // step 2 got label and highlight content
 
             //console.log("sentenceNum:", this.resultSentence.length);
-            //console.log("each sentence label: ", this.eachSentenceLabel);
+            console.log("each sentence label: ", this.eachSentenceLabel);
 
             //clear
             this.allHighlightTxt = ""; //clear
@@ -625,7 +630,7 @@ export default {
                 //is it a sentence?
                 var colorTxt = "";
                 //console.log("inner sentence", ind, e);
-                //console.log("returnLabel: ", ind, this.eachSentenceLabel[ind]);
+                console.log("returnLabel: ", ind, this.eachSentenceLabel[ind]);
 
                 var logoFlag = 0;
                 var pathoFlag = 0;
@@ -636,161 +641,178 @@ export default {
                 var newStr = "";
                 //claim?
                 //console.log("typeof Sentence", typeof(e), e); //string
-                if (this.eachSentenceLabel[ind][5] != 0) {
-                  //claim
+                if (this.eachSentenceLabel[ind][4] != 0) {
+                  // claim
                   var strTemp =
                     '<span style="background-color: #b6034d; color: white">[Claim]</span>';
                   eachSentenceHighlight = strTemp + e + " ";
                 } else {
-                  //premise
-                  //logos?
-                  if (this.eachSentenceLabel[ind][0] == 1) {
-                    logoFlag = 1;
-                    var strTemp =
-                      '<span style="background-color: #7eb6e4;">[Logos]</span>';
-                    eachSentenceHighlight = strTemp + e + " ";
+                  // premise
+                  var labelStrTemp = "";
+                  var labelMatch = [
+                    '<span style="background-color: #7eb6e4;">[Logos]</span>',
+                    '<span style="background-color: #8cd390;">[Pathos]</span>',
+                    '<span style="background-color: #8f91fc;">[Ethos]</span>',
+                    '<span style="background-color: #fa8cad;">[Evidence]</span>',
+                  ];
+                  this.eachSentenceLabel[ind].forEach((label, ind) => {
+                    if (label !== 0 && ind == 0)
+                      labelStrTemp += labelMatch[ind];
+                    else if (label !== 0 && ind < 4)
+                      labelStrTemp += labelMatch[ind];
+                  });
+                  eachSentenceHighlight = labelStrTemp + e + " ";
+                }
+                // else {
+                //   //premise
+                //   //logos?
+                //   if (this.eachSentenceLabel[ind][0] == 1) {
+                //     logoFlag = 1;
+                //     var strTemp =
+                //       '<span style="background-color: #7eb6e4;">[Logos]</span>';
+                //     eachSentenceHighlight = strTemp + e + " ";
 
-                    //console.log("add logos!", allHighlightTxt);
-                  }
-                  //pathos?
-                  else if (this.eachSentenceLabel[ind][1] == 1) {
-                    if (logoFlag == 1) {
-                      pathoFlag = 1; //multiple label
-                      var strTemp =
-                        '<span style="background-color: #7eb6e4;">[Pathos&Logos]</span>';
-                      eachSentenceHighlight = strTemp + e + " "; //
+                //     //console.log("add logos!", allHighlightTxt);
+                //   }
+                //   //pathos?
+                //   else if (this.eachSentenceLabel[ind][1] == 1) {
+                //     if (logoFlag == 1) {
+                //       pathoFlag = 1; //multiple label
+                //       var strTemp =
+                //         '<span style="background-color: #7eb6e4;">[Pathos&Logos]</span>';
+                //       eachSentenceHighlight = strTemp + e + " "; //
 
-                      //console.log("add pathos!", allHighlightTxt);
-                    } else {
-                      pathoFlag = 1; //multiple label
-                      var strTemp =
-                        '<span style="background-color: #8cd390;">[Pathos]</span>';
+                //       //console.log("add pathos!", allHighlightTxt);
+                //     } else {
+                //       pathoFlag = 1; //multiple label
+                //       var strTemp =
+                //         '<span style="background-color: #8cd390;">[Pathos]</span>';
 
-                      eachSentenceHighlight = strTemp + e + " ";
-                    }
-                  }
-                  //evidence?
-                  else if (this.eachSentenceLabel[ind][3] == 1) {
-                    if (logoFlag == 0 && pathoFlag == 0) {
-                      //single evidence
-                      evidenceFlag = 1;
-                      var strTemp =
-                        '<span style="background-color: #fa8cad;">[Evidence]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
+                //     }
+                //   }
+                //   //evidence?
+                //   else if (this.eachSentenceLabel[ind][3] == 1) {
+                //     if (logoFlag == 0 && pathoFlag == 0) {
+                //       //single evidence
+                //       evidenceFlag = 1;
+                //       var strTemp =
+                //         '<span style="background-color: #fa8cad;">[Evidence]</span>';
 
-                      eachSentenceHighlight = strTemp + e + " ";
+                //       eachSentenceHighlight = strTemp + e + " ";
 
-                      //console.log("add evidence!", allHighlightTxt);
-                    } else if (logoFlag == 1 && pathoFlag == 1) {
-                      //3 labels
-                      evidenceFlag = 1;
-                      var strTemp =
-                        '<span style="background-color: #7eb6e4;">[Pathos&Logos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + " ";
-                    } else if (logoFlag == 1 && pathoFlag == 0) {
-                      //2 labels
-                      evidenceFlag = 1;
-                      var strTemp =
-                        '<span style="background-color: #7eb6e4;">[Logos&Evi.]</span>';
+                //       //console.log("add evidence!", allHighlightTxt);
+                //     } else if (logoFlag == 1 && pathoFlag == 1) {
+                //       //3 labels
+                //       evidenceFlag = 1;
+                //       var strTemp =
+                //         '<span style="background-color: #7eb6e4;">[Pathos&Logos&Evi.]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
+                //     } else if (logoFlag == 1 && pathoFlag == 0) {
+                //       //2 labels
+                //       evidenceFlag = 1;
+                //       var strTemp =
+                //         '<span style="background-color: #7eb6e4;">[Logos&Evi.]</span>';
 
-                      eachSentenceHighlight =
-                        strTemp + this.resultSentence[ind] + " ";
-                    } else if (logoFlag == 0 && pathoFlag == 1) {
-                      //2 labels
-                      evidenceFlag = 1;
-                      var strTemp =
-                        '<span style="background-color: #8cd390;">[Pathos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + " ";
-                    }
-                  }
-                  //ethos?
-                  else if (this.eachSentenceLabel[ind][2] == 1) {
-                    if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0) {
-                      var strTemp =
-                        '<span style="background-color: #8f91fc;">[Ethos]</span>';
-                      eachSentenceHighlight = strTemp + e + " ";
+                //       eachSentenceHighlight =
+                //         strTemp + this.resultSentence[ind] + " ";
+                //     } else if (logoFlag == 0 && pathoFlag == 1) {
+                //       //2 labels
+                //       evidenceFlag = 1;
+                //       var strTemp =
+                //         '<span style="background-color: #8cd390;">[Pathos&Evi.]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
+                //     }
+                //   }
+                //   //ethos?
+                //   else if (this.eachSentenceLabel[ind][2] == 1) {
+                //     if (logoFlag == 0 && pathoFlag == 0 && evidenceFlag == 0) {
+                //       var strTemp =
+                //         '<span style="background-color: #8f91fc;">[Ethos]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
 
-                      //console.log("add ethos!", allHighlightTxt);
-                    } else if (
-                      logoFlag == 1 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 0
-                    ) {
-                      //logo+etho
-                      var strTemp =
-                        '<span style="background-color: #8f91fc;">[Ethos&Logos]</span>';
-                      eachSentenceHighlight = strTemp + e + " ";
-                    } else if (
-                      logoFlag == 1 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 1
-                    ) {
-                      //logo+etho
-                      var strTemp =
-                        '<span style="background-color: #8f91fc;">[Ethos&Logos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + " ";
-                    } else if (
-                      logoFlag == 0 &&
-                      pathoFlag == 0 &&
-                      evidenceFlag == 1
-                    ) {
-                      //logo+etho
-                      var strTemp =
-                        '<span style="background-color: #8f91fc;">[Ethos&Evi.]</span>';
-                      eachSentenceHighlight = strTemp + e + " ";
-                    }
-                    // no other situations
-                  }
-                  //relevance?
-                  // else if (this.eachSentenceLabel[ind][4] == 1) {
-                  //   if (
-                  //     logoFlag == 0 &&
-                  //     pathoFlag == 0 &&
-                  //     evidenceFlag == 0 &&
-                  //     ethoFlag == 0
-                  //   ) {
-                  //     var strTemp =
-                  //       '<span style="background-color: #e05c5c;">[Relevance]</span>';
-                  //     eachSentenceHighlight =
-                  //       strTemp + this.resultSentence[ind] + " ";
-                  //     //console.log("add relevance!", allHighlightTxt);
-                  //   } else if (
-                  //     logoFlag == 1 &&
-                  //     pathoFlag == 0 &&
-                  //     evidenceFlag == 1 &&
-                  //     ethoFlag == 0
-                  //   ) {
-                  //     var strTemp =
-                  //       '<span style="background-color: #e05c5c;">[Logos&Evi.&Rele.]</span>';
-                  //     eachSentenceHighlight =
-                  //       strTemp + this.resultSentence[ind] + " ";
-                  //   } else if (
-                  //     logoFlag == 1 &&
-                  //     pathoFlag == 0 &&
-                  //     evidenceFlag == 0 &&
-                  //     ethoFlag == 0
-                  //   ) {
-                  //     var strTemp =
-                  //       '<span style="background-color: #e05c5c;">[Logos&Rele.]</span>';
-                  //     eachSentenceHighlight =
-                  //       strTemp + this.resultSentence[ind] + " ";
-                  //   } else if (
-                  //     logoFlag == 0 &&
-                  //     pathoFlag == 0 &&
-                  //     evidenceFlag == 1 &&
-                  //     ethoFlag == 0
-                  //   ) {
-                  //     var strTemp =
-                  //       '<span style="background-color: #e05c5c;">[Relevance&Evi.]</span>';
-                  //     eachSentenceHighlight =
-                  //       strTemp + this.resultSentence[ind] + " ";
-                  //   }
-                  //   //no other situations
-                  // } // relevance
-                  // nothing?
-                  else {
-                    eachSentenceHighlight = this.resultSentence[ind] + " ";
-                  }
-                } //is premise
+                //       //console.log("add ethos!", allHighlightTxt);
+                //     } else if (
+                //       logoFlag == 1 &&
+                //       pathoFlag == 0 &&
+                //       evidenceFlag == 0
+                //     ) {
+                //       //logo+etho
+                //       var strTemp =
+                //         '<span style="background-color: #8f91fc;">[Ethos&Logos]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
+                //     } else if (
+                //       logoFlag == 1 &&
+                //       pathoFlag == 0 &&
+                //       evidenceFlag == 1
+                //     ) {
+                //       //logo+etho
+                //       var strTemp =
+                //         '<span style="background-color: #8f91fc;">[Ethos&Logos&Evi.]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
+                //     } else if (
+                //       logoFlag == 0 &&
+                //       pathoFlag == 0 &&
+                //       evidenceFlag == 1
+                //     ) {
+                //       //logo+etho
+                //       var strTemp =
+                //         '<span style="background-color: #8f91fc;">[Ethos&Evi.]</span>';
+                //       eachSentenceHighlight = strTemp + e + " ";
+                //     }
+                //     // no other situations
+                //   }
+                //   //relevance?
+                //   // else if (this.eachSentenceLabel[ind][4] == 1) {
+                //   //   if (
+                //   //     logoFlag == 0 &&
+                //   //     pathoFlag == 0 &&
+                //   //     evidenceFlag == 0 &&
+                //   //     ethoFlag == 0
+                //   //   ) {
+                //   //     var strTemp =
+                //   //       '<span style="background-color: #e05c5c;">[Relevance]</span>';
+                //   //     eachSentenceHighlight =
+                //   //       strTemp + this.resultSentence[ind] + " ";
+                //   //     //console.log("add relevance!", allHighlightTxt);
+                //   //   } else if (
+                //   //     logoFlag == 1 &&
+                //   //     pathoFlag == 0 &&
+                //   //     evidenceFlag == 1 &&
+                //   //     ethoFlag == 0
+                //   //   ) {
+                //   //     var strTemp =
+                //   //       '<span style="background-color: #e05c5c;">[Logos&Evi.&Rele.]</span>';
+                //   //     eachSentenceHighlight =
+                //   //       strTemp + this.resultSentence[ind] + " ";
+                //   //   } else if (
+                //   //     logoFlag == 1 &&
+                //   //     pathoFlag == 0 &&
+                //   //     evidenceFlag == 0 &&
+                //   //     ethoFlag == 0
+                //   //   ) {
+                //   //     var strTemp =
+                //   //       '<span style="background-color: #e05c5c;">[Logos&Rele.]</span>';
+                //   //     eachSentenceHighlight =
+                //   //       strTemp + this.resultSentence[ind] + " ";
+                //   //   } else if (
+                //   //     logoFlag == 0 &&
+                //   //     pathoFlag == 0 &&
+                //   //     evidenceFlag == 1 &&
+                //   //     ethoFlag == 0
+                //   //   ) {
+                //   //     var strTemp =
+                //   //       '<span style="background-color: #e05c5c;">[Relevance&Evi.]</span>';
+                //   //     eachSentenceHighlight =
+                //   //       strTemp + this.resultSentence[ind] + " ";
+                //   //   }
+                //   //   //no other situations
+                //   // } // relevance
+                //   // nothing?
+                //   else {
+                //     eachSentenceHighlight = this.resultSentence[ind] + " ";
+                //   }
+                // } //is premise
               } //cycle
               else {
                 // length<1
@@ -860,10 +882,14 @@ export default {
         this.nodeData[claimNum]["is_claim"] = "1";
         this.nodeData[claimNum]["logos"] = 0;
         this.nodeData[claimNum]["evidence"] = 0;
+        this.nodeData[claimNum]["pathos"] = 0;
+        this.nodeData[claimNum]["ethos"] = 0;
       } else {
         this.nodeData[0]["is_claim"] = "1";
         this.nodeData[0]["logos"] = 0;
         this.nodeData[0]["evidence"] = 0;
+        this.nodeData[claimNum]["pathos"] = 0;
+        this.nodeData[claimNum]["ethos"] = 0;
       }
       console.log("node data1:", this.nodeData);
       console.log("link data1:", this.linkData);

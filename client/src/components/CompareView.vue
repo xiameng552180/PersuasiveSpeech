@@ -379,13 +379,23 @@ export default {
         .on("mouseover", (d) => {
           div.transition().duration(200).style("opacity", 0.7);
           div
-            .html(d.data.value.feature + ":" + d.data.value.label)
+            .html(d.data.value.feature + ":" + d.data.value.label + "%")
             .style("left", d3.event.pageX + "px")
             .style("top", d3.event.pageY - 28 + "px");
         })
         .on("mouseout", function (d) {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
+        })
+        .on("click", function (d) {
+          div.transition().duration(500).style("opacity", 0);
+          DataService.ex_id = "";
+          DataService.selectIDIndex = []; // clear IDarray
+          DataService.selectIDIndex = []; //clear index
+
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
     },
 
@@ -761,7 +771,7 @@ export default {
           });
         }
       } else {
-        console.log("ex_id", this.ex_id);
+        // console.log("ex_id", this.ex_id);
         //draw all data
 
         // compute eloquenceSum & is_claimSum
@@ -789,11 +799,11 @@ export default {
         //console.log("barSum", barSum);
       }
 
-      console.log("inputLabels: ", this.inputLabels);
+      // console.log("inputLabels: ", this.inputLabels);
       var data = this.inputLabels["input"].map((d) => {
-        console.log("barview-d", d);
-        console.log("barview-input:", d.label);
-        console.log("barview-data:", this.examplesum[d.feature]);
+        // console.log("barview-d", d);
+        // console.log("barview-input:", d.label);
+        // console.log("barview-data:", this.examplesum[d.feature]);
         return {
           feature: d.feature,
           label: Math.round(d.label - this.examplesum[d.feature]),
@@ -1166,6 +1176,16 @@ export default {
         .on("mouseout", function (d) {
           div.transition().duration(500).style("opacity", 0);
           // d3.selectAll(".tooltip").remove();
+        })
+        .on("click", function (d) {
+          div.transition().duration(500).style("opacity", 0);
+          DataService.ex_id = id;
+          DataService.selectIDIndex = []; // clear IDarray
+          DataService.selectIDIndex = []; //clear index
+
+          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
 
       // var ticked = function() {
