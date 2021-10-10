@@ -303,6 +303,7 @@ export default {
       this.ex_id = DataService.ex_id;
       this.examples = DataService.examples;
       this.examplesum = DataService.examplesum;
+      this.ex_select = DataService.ex_select;
       //console.log("exampleview:", this.ex_id);
       this.display();
     });
@@ -325,8 +326,9 @@ export default {
         var maxindex = valuearr.indexOf(maxvalue);
         var keyarr = Object.keys(this.examplesum);
         var maxkey = keyarr[maxindex];
-        console.log(maxkey);
-        if (maxkey == "claim") this.click_claim();
+        if (this.ex_select !== "") maxkey = this.ex_select;
+        console.log("highlight on ", maxkey);
+        if (maxkey == "is_claim") this.click_claim();
         if (maxkey == "logos") this.click_logos();
         if (maxkey == "pathos") this.click_pathos();
         if (maxkey == "ethos") this.click_ethos();

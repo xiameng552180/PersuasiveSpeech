@@ -13,8 +13,8 @@ class Service {
     //this.inputdata = [];
     this.selectIDarray = [];
     this.selectIDIndex = [];
-    this.selectTopic = '';
-    this.selectTopicNum = '';
+    this.selectTopic = "";
+    this.selectTopicNum = "";
     this.examplesum = {
       logos: 0,
       pathos: 0,
@@ -24,18 +24,20 @@ class Service {
       is_claim: 0,
       eloquence: 0,
     };
-    this.nodeData= [],
-    this.linkData= [],
-    this.inputLabels = {
-      "input": [
-        { feature: "logos", label: 0 },
-        { feature: "pathos", label: 0 },
-        { feature: "ethos", label: 0 },
-        { feature: "evidence", label: 0 },
-        { feature: "relevance", label: 0 },
-        { feature: "is_claim", label: 0 },
-        { feature: "eloquence", label: 0 }
-      ]};
+    (this.ex_select = ""),
+      (this.nodeData = []),
+      (this.linkData = []),
+      (this.inputLabels = {
+        input: [
+          { feature: "logos", label: 0 },
+          { feature: "pathos", label: 0 },
+          { feature: "ethos", label: 0 },
+          { feature: "evidence", label: 0 },
+          { feature: "relevance", label: 0 },
+          { feature: "is_claim", label: 0 },
+          { feature: "eloquence", label: 0 },
+        ],
+      });
     //this.inputRelationship = [];
 
     return instance;

@@ -116,6 +116,7 @@ export default {
       this.selectIDarray = DataService.selectIDarray;
       this.selectIDIndex = DataService.selectIDIndex;
       this.examplesum = DataService.examplesum;
+      this.ex_select = DataService.ex_select;
       //filtering
       this.selectTopic = DataService.selectTopic;
       this.selectTopicNum = DataService.selectTopicNum;
@@ -991,7 +992,7 @@ export default {
         .on("click", (d) => {
           //muliple select: submit and then check enabled
           if ($("#cbTxt").text() == "Select is enabled") {
-            PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
+            // PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
             this.selectIDarray.push(d.id);
             this.selectIDIndex.push(
               this.examples.map((d) => d.id).indexOf(d.id)
@@ -1003,6 +1004,7 @@ export default {
             DataService.ex_id = d.id;
             DataService.selectIDIndex = []; // clear IDarray
             DataService.selectIDIndex = []; //clear index
+            DataService.ex_select = "";
 
             PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
             // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
@@ -1182,9 +1184,11 @@ export default {
           DataService.ex_id = id;
           DataService.selectIDIndex = []; // clear IDarray
           DataService.selectIDIndex = []; //clear index
+          console.log("click on rose: ", d.data.value.feature);
+          DataService.ex_select = d.data.value.feature;
 
-          PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
-          // PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
+          // PipeService.$emit(PipeService.UPDATE_SELECTVIEW);
+          PipeService.$emit(PipeService.UPDATE_EXAMPLEVIEW);
           PipeService.$emit(PipeService.UPDATE_COMPAREVIEW);
         });
 
