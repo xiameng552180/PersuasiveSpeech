@@ -1,7 +1,7 @@
 <template>
-<div class="row" style="height: 400px; width: 400px;">
-  <svg id="nodelink" height="400"/>
-</div>
+  <div class="row" style="height: 400px; width: 400px">
+    <svg id="nodelink" height="400" />
+  </div>
 </template>
 
 <script>
@@ -20,26 +20,23 @@ export default {
       node: null,
       link: null,
       nodeData: [],
-    }
+    };
   },
   mounted() {
-    
     this.initialize();
     PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
-      
       this.nodeData = DataService.nodeData;
       console.log("nodeview1: ", this.nodeData);
-    //   //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
-    //   //console.log("drawNode!!!");
-      // this.svg3.selectAll("*").remove();
-      $('#nodelink').html("");
+      //   //PipeService.$on(PipeService.UPDATE_NODEVIEW, () => {
+      //   //console.log("drawNode!!!");
+      this.svg3.selectAll("*").remove();
+      $("#nodelink").html("");
       this.drawNodeLink(this.svg3);
     });
     //this.drawNodeLink(this.svg3);
     // console.log("Node:", this.node);
     // console.log("Link:", this.link);
     //});
-
   },
   methods: {
     initialize() {
@@ -90,12 +87,10 @@ export default {
 
       var nodes = [],
         links = [];
-      nodes = this.nodeData.map( 
-        (d, i) => {
-          d.id = i;
-          return d;
-        }
-      );
+      nodes = this.nodeData.map((d, i) => {
+        d.id = i;
+        return d;
+      });
       // console.log(nodes);
       var source = null;
       nodes.forEach((d, i) => {
@@ -110,7 +105,7 @@ export default {
           links.push(newlink);
         }
       });
-      
+
       this.update(links, nodes);
     },
 
@@ -125,16 +120,17 @@ export default {
         .attr("stroke", "black")
         .attr("stroke-width", "2px");
 
-       // add tooltip
-      var tooltip=d3.select("body")
-          .append("div")
-          .attr("class","tooltip")
-          .style("opacity",0.0)
-          .style('z-index', 10)
-          .style('font-size', '12px')
-          .style('color', "white")
-          .style('background', "#535353")	
-          .style('border-radius', "8px");
+      // add tooltip
+      var tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0.0)
+        .style("z-index", 10)
+        .style("font-size", "12px")
+        .style("color", "white")
+        .style("background", "#535353")
+        .style("border-radius", "8px");
 
       this.node = this.svg3
         .selectAll(".node")
@@ -167,23 +163,21 @@ export default {
         // })
         // .append("title")
         // .text(function(d){return d.content});
-        .on("mouseover", function(d){
+        .on("mouseover", function (d) {
           tooltip
-              .html(d.id +": "+ d.content+"<br/>")
-              .style("left",(d3.event.pageX) +"px")
-              .style("top",(d3.event.pageY +20)+"px")
-              .style("opacity",1.0)
+            .html(d.id + ": " + d.content + "<br/>")
+            .style("left", d3.event.pageX + "px")
+            .style("top", d3.event.pageY + 20 + "px")
+            .style("opacity", 1.0);
         })
         // .on('mousemove', function (d, i) {
         //   console.log("mousemove");
         //   return tooltip.style('top', (event.pageY-10)+'px').style('left',(event.pageX+10)+'px');
         // })
-        .on('mouseout', function (d) {
-          tooltip.style("opacity",0.0);
+        .on("mouseout", function (d) {
+          tooltip.style("opacity", 0.0);
           //return tooltip.style('visibility', 'hidden');
         });
-
-
 
       this.simulation1 = d3
         .forceSimulation(nodes) // Force algorithm is applied to data.nodes
@@ -202,13 +196,12 @@ export default {
           d3.forceManyBody().strength(-50).distanceMin(100).distanceMax(100)
         ) // This adds repulsion between nodes.
         .force("center", d3.forceCenter(this.width3 / 2, this.height3 / 2)); // This force attracts nodes to the center of the svg area
-        //.on("tick", this.tickedNodelink);
+      //.on("tick", this.tickedNodelink);
 
-        for (let index = 0; index < 50; index++) {
-          this.simulation1.tick()
-        }
-        this.tickedNodelink();
-
+      for (let index = 0; index < 50; index++) {
+        this.simulation1.tick();
+      }
+      this.tickedNodelink();
     },
 
     tickedNodelink() {
@@ -241,36 +234,34 @@ export default {
       d.fy = d3.event.y;
     },
     // nodelink end//
-
-  }
+  },
 };
 </script>
 
 <style scoped>
-.tooltip{
-    position:absolute;
-    padding:5px;
-    width:120;
-    height:auto;
-    font-family:simsun;
-    font-size:14px;
-    color:black;
-    background-color: rgb(255,255,255);
-    border-width: 2px solid rgb(255,255,255);
-    border-radius:5px;
-}  
-
-.tooltip:after{
-    content: '';
-    position:absolute;
-    bottom:100%;
-    left:20%;
-    margin-left: -8px;
-    width:0;
-    height:0;
-    border-bottom:12px solid rgb(255,255,255);
-    border-right:12px solid transparent;
-    border-left:12px solid transparent;
+.tooltip {
+  position: absolute;
+  padding: 5px;
+  width: 120;
+  height: auto;
+  font-family: simsun;
+  font-size: 14px;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border-width: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
 }
 
+.tooltip:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  margin-left: -8px;
+  width: 0;
+  height: 0;
+  border-bottom: 12px solid rgb(255, 255, 255);
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+}
 </style>
