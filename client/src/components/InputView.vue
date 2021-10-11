@@ -226,7 +226,8 @@ export default {
               }else{
                 $('#errorMess').text("ERROR ");
                 this.eloquenceErrorList.forEach((er, index) => {
-                  $('#errorMess').append(this.highlightWords[index] + ": " + er + ". ");
+                  $('#errorMess').append(this.highlightWords[index] + ": " + er );
+                  // + ". ");
                 });
               }
 
@@ -284,13 +285,13 @@ export default {
                   //claim?
                   console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span style=\"background-color: #90ee8f; \">" + this.resultSentence[ind] + "</span>" + ".";
+                    var strTemp = "<span style=\"background-color: #90ee8f; \">" + this.resultSentence[ind] + "</span>" //+ ".";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp;
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
-                    var strTemp = "<span style=\"background-color: #ffd701;\">" + this.resultSentence[ind] + "</span>"  + ".";
+                    var strTemp = "<span style=\"background-color: #ffd701;\">" + this.resultSentence[ind] + "</span>"  //+ ".";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp;
                     // //logos?
