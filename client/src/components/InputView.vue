@@ -262,16 +262,18 @@ export default {
 
               //return highlight
               // step 1 process sentences
-              var sentenceList = JSON.stringify(this.inputS);
-              var items = sentenceList.split(",");
-              sentenceList = items.join("");
-              sentenceList = sentenceList.replace(/[\n]/g,"");
-              sentenceList = sentenceList.replace("[", "");
-              sentenceList = sentenceList.replace("]", "");             
-              sentenceList = sentenceList.substring(0, sentenceList.length-2)
-              sentenceList = sentenceList.replace(/\"/g, "")
-              console.log("s", sentenceList);
-              var resultSentence = sentenceList.split(/[\.!?]/);//分句子
+              var sentenceList = this.inputS;
+              // JSON.stringify(this.inputS);
+              // var items = sentenceList.split(",");
+              // sentenceList = items.join("");
+              // sentenceList = sentenceList.replace(/[\n]/g,"");
+              // sentenceList = sentenceList.replace("[", "");
+              // sentenceList = sentenceList.replace("]", "");             
+              // sentenceList = sentenceList.substring(0, sentenceList.length-2)
+              // sentenceList = sentenceList.replace(/\"/g, "")
+              // console.log("s", sentenceList);
+              // var resultSentence = sentenceList.split(/[\.!?]/);//分句子
+              var resultSentence = sentenceList;
               // console.log("here1", resultSentence);
               // var resultSentence = this.backdata.map(data => data.content)
 
