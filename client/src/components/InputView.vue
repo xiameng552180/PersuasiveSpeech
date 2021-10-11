@@ -6,7 +6,7 @@
         <label>Claim: </label> 
         <div contenteditable="true" id="userInputDiv" 
         @input="changeDivText($event)"
-        style="height:260px;">{{ inputContent }}</div>
+        style="height:260px; font-size: 20px">{{ inputContent }}</div>
       </div>
       <!-- <div contenteditable="true" id="userInputDiv" 
       style="height:200px;">from an algorithmic perspective, it becomes increasingly difficult. but we can solve it! You can't know what death is, and you can't know how you'll grow and adapt in Prison.</div> -->
@@ -53,6 +53,8 @@ export default {
       widthInput: null,
       heightInput: null,
       userid: "",
+      allHighlightTxt: "",
+      resultSentence: null,
     };
   },
   mounted() {
@@ -84,30 +86,11 @@ export default {
           NetService.uploadInput({"content": this.inputContent, "userid": this.userid}, (x)=>{
             this.backdata = x.data.results; //processing result
             this.inputRelationship = x.data.relationships;
-
-            /////////////////Node view call//////////
-            //call relationship
-            //this.callRelationship(this.backdata, this.inputRelationship);
-            //console.log("call node, relationship function:", data, relationship);
-            // this.backdata.forEach((es) => {
-            //   this.nodeData.push(es);
-            // });
-            // //console.log("node data1:", this.nodeData);
-            // this.nodeData[0]['is_claim'] = "1";
-            // this.nodeData[0]['logos'] = "0";
-            // this.nodeData[0]['evidence'] = "0";
-            // this.nodeData[0]['claim_type'] = "none";
-            // console.log("node data2:", this.nodeData);
-
-            // //update to node view
-            // //DataService.nodeData = this.nodeData;
-            // PipeService.$emit(PipeService.UPDATE_NODEVIEW);
-            // //PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
-             /////////////////Node view call//////////
             //
             console.log("from backend: ", this.backdata);
             console.log("backend relationship:", this.inputRelationship, this.inputRelationship.length);
             var inputKeys = Object.keys(this.backdata);
+             this.inputS = []; //clear
             //console.log("sentence number: ", inputKeys.length);
             /////////////////(Xingbo's try)//////////
             this.callRelationship(this.backdata, this.inputRelationship)
@@ -274,15 +257,18 @@ export default {
               // console.log("s", sentenceList);
               // var resultSentence = sentenceList.split(/[\.!?]/);//分句子
               var resultSentence = sentenceList;
+              this.resultSentence = resultSentence;
               // console.log("here1", resultSentence);
               // var resultSentence = this.backdata.map(data => data.content)
 
               // step 2 got label and highlight content
-              console.log("sentenceNum:", resultSentence.length);
+              console.log("sentenceNum:", this.resultSentence.length);
               //console.log("each sentence label: ", this.eachSentenceLabel);
-              var allHighlightTxt = "";
-              console.log("here2", resultSentence);
-              resultSentence.forEach((e, ind) => {
+              this.allHighlightTxt = ""; //clear
+              this.inputContent = this.inputContent.replace();
+              console.log("here2", this.resultSentence);
+              console.log("here3 inputContent:", this.inputContent);
+              this.resultSentence.forEach((e, ind) => {
                 //console.log("test", e, ind);
                 var eachSentenceHighlight = "";
                 if (e.length > 1){ //is it a sentence?
@@ -290,21 +276,21 @@ export default {
                   //console.log("inner sentence", ind, e);
                   //console.log("returnLabel: ", ind, this.eachSentenceLabel[ind]);
                   
-                  var logoFlag = 0;
-                  var pathoFlag = 0;
-                  var ethoFlag = 0;
-                  var evidenceFlag = 0;
+                  // var logoFlag = 0;
+                  // var pathoFlag = 0;
+                  // var ethoFlag = 0;
+                  // var evidenceFlag = 0;
                   
                   //claim?
                   console.log("error of [5]3", this.eachSentenceLabel[ind][5]);
                   if (this.eachSentenceLabel[ind][5] != 0){ //claim
-                    var strTemp = "<span style=\"background-color: #90ee8f; \">" + resultSentence[ind] + "</span>";
+                    var strTemp = "<span style=\"background-color: #90ee8f; \">" + this.resultSentence[ind] + "</span>" + ".";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp;
                     // console.log("add Claim!", allHighlightTxt);
                   }
                   else { //premise
-                    var strTemp = "<span style=\"background-color: #ffd701;\">" + resultSentence[ind] + "</span>";
+                    var strTemp = "<span style=\"background-color: #ffd701;\">" + this.resultSentence[ind] + "</span>"  + ".";
                     //var claimType = this.eachSentenceLabel[ind][5] 
                     eachSentenceHighlight = strTemp;
                     // //logos?
@@ -397,18 +383,19 @@ export default {
                     // }
                   }
                   
-                  allHighlightTxt += eachSentenceHighlight; //add each sentence to set
+                  this.allHighlightTxt += eachSentenceHighlight; //add each sentence to set
                 }//cycle
               });
               this.highlightWords.forEach((err) =>{
                 console.log("eachError:", err);
-                allHighlightTxt = allHighlightTxt.replace(err, 
+                this.allHighlightTxt = this.allHighlightTxt.replace(err, 
                   "<u style=\"text-decoration-color: red; text-decoration-style: wavy;\">" + err + "</u>");
               })
               
               document.getElementById("userInputDiv").innerHTML = "";
-              document.getElementById("userInputDiv").innerHTML = allHighlightTxt;
-              
+              this.inputContent = "";
+              document.getElementById("userInputDiv").innerHTML = this.allHighlightTxt;
+              PipeService.$emit(PipeService.UPDATE_INPUTVIEW);
               //call relationship
               //this.callRelationship(this.backdata, this.inputRelationship);
               //setTimeout(this.callRelationship(this.backdata, this.inputRelationship), 1000);
@@ -419,6 +406,7 @@ export default {
       },
       callRelationship(data, relationship) {
         console.log("call node, relationship function:", data, relationship.length);
+        this.nodeData = [];
         data.forEach((es) => {
           this.nodeData.push(es);
         });
